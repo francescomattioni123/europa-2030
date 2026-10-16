@@ -7,6 +7,7 @@ Pagina: https://francescomattioni123.github.io/europa-2030/
 - `index.html`: la pagina (mappa a cupola in canvas, scenari, schede paese, calendario, matrice).
 - `data/paesi.js`: governi, sondaggi, scenari per paese.
 - `data/politiche.js`: matrice delle proposte e regole del Consiglio.
+- `data/dossier.js`: fascicoli legislativi UE sul tavolo, con stato, prossima tappa e obiettivo della destra.
 - `data/aggiornamenti.js`: registro degli aggiornamenti e riassunto per WhatsApp.
 - `data/iscrizione.js`: link dei canali (Telegram, email, X) mostrati nel box "Il brief settimanale".
 - `data/mondo-topo.js`: geometria (world-atlas 50m).

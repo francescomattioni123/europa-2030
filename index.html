@@ -232,6 +232,24 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .res.na { background: none; color: var(--muted); border: 1px dashed var(--border); font-weight: 500; }
 .tier-tag { font-size: 10.5px; color: var(--muted); }
 
+/* Dossier */
+.ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ds li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; padding: 11px 12px; border: 1px solid var(--border); border-radius: 10px; background: rgba(0,0,0,0.25); }
+.ds .area { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.ds b.t { display: block; font-size: 13.5px; font-weight: 600; margin: 2px 0 4px; }
+.ds .stato { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--ink-2); margin-right: 6px; vertical-align: middle; }
+.ds .stato.s-trilogo, .ds .stato.s-consiglio, .ds .stato.s-parlamento { border-color: rgba(255,209,102,0.5); color: #ffd166; }
+.ds .stato.s-adottato, .ds .stato.s-attuazione { border-color: rgba(53,201,194,0.5); color: #35c9c2; }
+.ds .stato.s-bloccato { border-color: rgba(239,111,98,0.5); color: #ef6f62; }
+.ds .nota { display: block; font-size: 12.5px; color: var(--ink-2); max-width: 56ch; }
+.ds .next { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 4px; }
+.ds .goal { display: block; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.ds .right { display: grid; gap: 4px; justify-items: end; text-align: right; }
+.ds details { margin-top: 4px; }
+.ds summary { font-family: var(--mono); font-size: 10.5px; color: var(--muted); cursor: pointer; }
+.ds details p { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); max-width: 56ch; }
+.ds details a { color: var(--muted); font-size: 11px; word-break: break-all; }
+
 /* Calendario */
 .cal-card { overflow-x: auto; padding: 10px 6px 4px; }
 .cal-card svg { display: block; min-width: 820px; width: 100%; height: auto; }
@@ -414,7 +432,7 @@ footer.method p { margin: 8px 0 0; }
     <div class="sec-head"><div><div class="eyebrow">Potere reale</div><h2>Cosa può fare questo blocco in Consiglio UE</h2><p>I governi contano quando votano insieme. Qui la mappa dello scenario scelto diventa voti in Consiglio: quanti stati, quanta popolazione, e quali proposte dell'agenda comune diventano bloccabili o approvabili, e da quale anno.</p></div></div>
     <div class="two">
       <div class="card"><div class="in"><h3>Il blocco di destra in Consiglio <small id="cons-when"></small></h3><div id="cons-bars"></div></div></div>
-      <div class="card"><div class="in"><h3>Cosa può fermare e cosa può far passare <small>nello scenario scelto</small></h3><div id="cons-pol"></div></div></div>
+      <div class="card"><div class="in"><h3>I dossier sul tavolo a Bruxelles <small>nello scenario scelto</small></h3><div id="cons-pol"></div></div></div>
     </div>
   </section>
 
@@ -462,7 +480,7 @@ footer.method p { margin: 8px 0 0; }
 <script>
 // Caricamento dati: nell'app nativa prova prima la versione pubblicata (sempre aggiornata), poi quella inclusa nell'app.
 (function () {
-  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js'];
+  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js'];
   const native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
   window.EU30_NATIVE = native;
   const base = native ? 'https://francescomattioni123.github.io/europa-2030/' : '';
@@ -520,6 +538,8 @@ window.__start = function () {
     c_appr: ['maggioranza qualificata', 'qualified majority', 'qualifizierte Mehrheit'], c_block: ['minoranza di blocco', 'blocking minority', 'Sperrminorität'], c_una: ['unanimità', 'unanimity', 'Einstimmigkeit'], c_naz: ['competenza nazionale', 'national competence', 'nationale Zuständigkeit'],
     fl_eyebrow: ['Il brief settimanale', 'The weekly brief', 'Das Wochenbriefing'], fl_title: ['Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario', 'Every Monday: who is up, who is down, what changes in the scenario', 'Jeden Montag: wer steigt, wer fällt, was sich im Szenario ändert'], fl_text: ['Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.', 'Three lines with the numbers and the link to the updated map. Choose where to get it.', 'Drei Zeilen mit den Zahlen und dem Link zur aktualisierten Karte. Wählen Sie, wo Sie es erhalten möchten.'], fl_tg: ['Canale Telegram', 'Telegram channel', 'Telegram-Kanal'], fl_mail: ['Iscriviti via email', 'Subscribe by email', 'Per E-Mail abonnieren'], fl_x: ['Segui su X', 'Follow on X', 'Auf X folgen'], fl_soon: ['in arrivo', 'coming soon', 'demnächst'], fl_share: ['Copia il link della pagina', 'Copy the page link', 'Link der Seite kopieren'], fl_shared: ['Link copiato', 'Link copied', 'Link kopiert'],
     inst_ios_t: ['Aggiungi Europa 2030 alla schermata Home', 'Add Europa 2030 to your Home Screen', 'Europa 2030 zum Home-Bildschirm hinzufügen'], inst_ios_b: ['Tocca Condividi (il quadrato con la freccia) e poi "Aggiungi alla schermata Home": si apre come un\'app, anche senza rete.', 'Tap Share (the square with the arrow), then "Add to Home Screen": it opens like an app, even offline.', 'Tippen Sie auf Teilen (das Quadrat mit dem Pfeil) und dann auf "Zum Home-Bildschirm": öffnet sich wie eine App, auch offline.'], inst_and_t: ['Installa Europa 2030', 'Install Europa 2030', 'Europa 2030 installieren'], inst_and_b: ['Icona sulla schermata Home, schermo intero, funziona anche senza rete.', 'Home screen icon, full screen, works offline too.', 'Symbol auf dem Home-Bildschirm, Vollbild, funktioniert auch offline.'], inst_btn: ['Installa', 'Install', 'Installieren'],
+    ds_next: ['Prossima tappa', 'Next step', 'Nächster Schritt'], ds_goal_b: ['la destra vuole fermarlo', 'the right wants to stop it', 'die Rechte will es stoppen'], ds_goal_a: ['la destra vuole approvarlo', 'the right wants to pass it', 'die Rechte will es beschließen'], ds_goal_m: ['la destra vuole annacquarlo', 'the right wants to water it down', 'die Rechte will es verwässern'], r_mod: ['Modificabile', 'Can be amended', 'Änderbar'], r_all: ['Serve l\'unanimità di tutti i 27', 'Needs all 27 to agree', 'Braucht alle 27'], ds_more: ['Fonti e dettagli', 'Sources and details', 'Quellen und Details'],
+    st_proposta: ['Proposta', 'Proposal', 'Vorschlag'], st_parlamento: ['In Parlamento', 'In Parliament', 'Im Parlament'], st_consiglio: ['In Consiglio', 'In Council', 'Im Rat'], st_trilogo: ['Trilogo', 'Trilogue', 'Trilog'], st_adottato: ['Adottato', 'Adopted', 'Angenommen'], st_attuazione: ['In attuazione', 'In application', 'In Anwendung'], st_bloccato: ['Bloccato', 'Stalled', 'Blockiert'],
     copied: ['Copiato', 'Copied', 'Kopiert'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary', 'WhatsApp-Zusammenfassung kopieren'], copy_prompt: ['Copia il testo:', 'Copy the text:', 'Text kopieren:']
   };
   const t = k => S[k] ? (S[k][LI] != null ? S[k][LI] : S[k][1]) : k;
@@ -536,7 +556,7 @@ window.__start = function () {
       '#novita .eyebrow': 'What\'s new · weekly update', '#nov-older summary': 'Previous updates',
       '#cambi .sec-head .eyebrow': 'Scenario', '#cambi .card:nth-child(2) h3': 'Nationalist right in the polls <small>leading party per country</small>', '#cambi .card:nth-child(2) .empty': 'Value in the latest poll and, in grey, the difference from the last election. Click to open the country file.',
       '#consiglio .sec-head .eyebrow': 'Real power', '#consiglio h2': 'What this bloc can do in the EU Council', '#consiglio .sec-head p': 'Governments count when they vote together. Here the map of the chosen scenario becomes votes in the Council: how many states, how much population, and which proposals of the common agenda become blockable or passable, and from which year.',
-      '#consiglio .card:nth-child(1) h3': 'The right-wing bloc in the Council <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'What it can block and what it can pass <small>in the selected scenario</small>',
+      '#consiglio .card:nth-child(1) h3': 'The right-wing bloc in the Council <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'The dossiers on the table in Brussels <small>in the selected scenario</small>',
       '#cambi .card:nth-child(1) h3': 'Government changes <small id="cambi-count"></small>',
       '#calendario .sec-head .eyebrow': 'Calendar', '#calendario h2': 'The elections that decide 2030', '#calendario .sec-head p': 'Each dot is the next national vote that assigns the government. The colour is the predicted winner in the chosen scenario; dots beyond the horizon stay unlit. A dashed circle is a likely snap election or a government formation without a vote.',
       '#agenda .sec-head .eyebrow': 'Agenda', '#agenda h2': 'What the right can do together', '#agenda .sec-head p': 'Twelve parties, twelve concrete proposals. Where a row is solid blue there is a policy a nationalist-led Europe can really push together; where it breaks, it cannot.',
@@ -556,7 +576,7 @@ window.__start = function () {
       '#novita .eyebrow': 'Neu · wöchentliche Aktualisierung', '#nov-older summary': 'Frühere Aktualisierungen',
       '#cambi .sec-head .eyebrow': 'Szenario', '#cambi .card:nth-child(2) h3': 'Nationalistische Rechte in den Umfragen <small>stärkste Partei je Land</small>', '#cambi .card:nth-child(2) .empty': 'Wert der jüngsten Umfrage und, in Grau, die Differenz zur letzten Wahl. Klicken öffnet das Länderprofil.',
       '#consiglio .sec-head .eyebrow': 'Reale Macht', '#consiglio h2': 'Was dieser Block im EU-Rat erreichen kann', '#consiglio .sec-head p': 'Regierungen zählen, wenn sie gemeinsam abstimmen. Hier wird die Karte des gewählten Szenarios zu Stimmen im Rat: wie viele Staaten, wie viel Bevölkerung, und welche Vorschläge der gemeinsamen Agenda blockierbar oder beschließbar werden, und ab welchem Jahr.',
-      '#consiglio .card:nth-child(1) h3': 'Der rechte Block im Rat <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'Was er blockieren und was er durchsetzen kann <small>im gewählten Szenario</small>',
+      '#consiglio .card:nth-child(1) h3': 'Der rechte Block im Rat <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'Die Dossiers auf dem Tisch in Brüssel <small>im gewählten Szenario</small>',
       '#cambi .card:nth-child(1) h3': 'Regierungswechsel <small id="cambi-count"></small>',
       '#calendario .sec-head .eyebrow': 'Kalender', '#calendario h2': 'Die Wahlen, die 2030 entscheiden', '#calendario .sec-head p': 'Jeder Punkt ist die nächste nationale Wahl, die über die Regierung entscheidet. Die Farbe zeigt den erwarteten Sieger im gewählten Szenario; Punkte jenseits des Horizonts bleiben dunkel. Ein gestrichelter Kreis steht für eine wahrscheinliche Neuwahl oder eine Regierungsbildung ohne Wahl.',
       '#agenda .sec-head .eyebrow': 'Agenda', '#agenda h2': 'Was die Rechte gemeinsam tun kann', '#agenda .sec-head p': 'Zwölf Parteien, zwölf konkrete Vorschläge. Wo eine Zeile durchgehend blau ist, gibt es eine Politik, die ein nationalistisch geführtes Europa wirklich gemeinsam vorantreiben kann; wo sie bricht, nicht.',
@@ -949,7 +969,27 @@ window.__start = function () {
       const now = found && found.s <= state.step;
       return { t, html: found ? `<span class="res ${now ? 'ok' : 'later'}">${verb} ${found.s === 0 ? S.r_now[LI] : S.r_from[LI] + ' ' + STEPS[found.s].label}</span><span class="tier-tag mono">${found.tier.id === 'A' ? S.tg_a[LI] : found.tier.id === 'B' ? S.tg_b[LI] : S.tg_c[LI]}</span>` : `<span class="res no">${S.r_no[LI]}</span>` };
     });
+    if (window.DOSSIER && window.DOSSIER.length) { renderDossier(); return; }
     document.getElementById('cons-pol').innerHTML = `<ul class="pol">${rows.map(({ t, html }) => `<li><div><span class="area mono">${esc(tx(t, 'area'))} · ${{ approvare: S.c_appr, bloccare: S.c_block, unanimita: S.c_una, nazionale: S.c_naz }[t.consiglio][LI]}</span><b>${esc(tx(t, 'titolo'))}</b><span class="nota">${esc(tx(t, 'consiglio_nota'))}</span></div><div class="right">${html}</div></li>`).join('')}</ul>`;
+  }
+
+  function renderDossier() {
+    const esitoD = (b, d) => d.regola === 'unanimita' ? (d.obiettivo_destra === 'approvare' ? b.n >= 27 : b.n >= 1) : (d.obiettivo_destra === 'approvare' ? b.qmv : b.blocking);
+    const items = window.DOSSIER.map(d => {
+      let res;
+      if (d.regola === 'nazionale') res = `<span class="res na">${t('r_na')}</span>`;
+      else {
+        let found = null;
+        for (const tier of TIERS) { for (let s = 0; s <= 5; s++) { if (esitoD(blocco(tier, state.scen, s), d)) { found = { s, tier }; break; } } if (found) break; }
+        const verb = d.regola === 'unanimita' ? (d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_veto')) : d.obiettivo_destra === 'approvare' ? t('r_appr') : d.obiettivo_destra === 'modificare' ? t('r_mod') : t('r_block');
+        if (!found) res = `<span class="res no">${d.regola === 'unanimita' && d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_no')}</span>`;
+        else { const now = found.s <= state.step; res = `<span class="res ${now ? 'ok' : 'later'}">${verb} ${found.s === 0 ? t('r_now') : t('r_from') + ' ' + STEPS[found.s].label}</span><span class="tier-tag mono">${found.tier.id === 'A' ? t('tg_a') : found.tier.id === 'B' ? t('tg_b') : t('tg_c')}</span>`; }
+      }
+      const rule = { qmv: t('c_appr'), unanimita: t('c_una'), nazionale: t('c_naz') }[d.regola] || d.regola;
+      const goal = { bloccare: t('ds_goal_b'), approvare: t('ds_goal_a'), modificare: t('ds_goal_m') }[d.obiettivo_destra] || '';
+      return `<li><div><span class="area">${esc(tx(d, 'area'))} · ${rule}</span><b class="t">${esc(tx(d, 'titolo'))}</b><span class="stato s-${esc(d.stato)}">${t('st_' + d.stato)}</span><span class="goal">${goal}</span><span class="nota">${esc(tx(d, 'stato_nota'))}</span>${tx(d, 'prossima_tappa') ? `<span class="next">${t('ds_next')}: ${esc(tx(d, 'prossima_tappa'))}</span>` : ''}<details><summary>${t('ds_more')}</summary><p>${esc(tx(d, 'descrizione'))} ${esc(tx(d, 'obiettivo_nota'))}</p>${(d.fonti || []).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 60))}</a>`).join('<br>')}</details></div><div class="right">${res}</div></li>`;
+    });
+    document.getElementById('cons-pol').innerHTML = `<ul class="ds">${items.join('')}</ul>`;
   }
 
   /* ---------- Calendario ---------- */

@@ -1,8 +1,8 @@
 // Controllo di coerenza dei file dati. Uso: node scripts/check.js
 const fs = require('fs'), vm = require('vm');
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js']) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
-const { PAESI, POLITICHE, AGGIORNAMENTI, META } = ctx.window;
+for (const f of ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/dossier.js']) if (fs.existsSync(f)) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
+const { PAESI, POLITICHE, AGGIORNAMENTI, META, DOSSIER } = ctx.window;
 const FAM = new Set(['sinistra', 'centrosinistra', 'centro', 'centrodestra', 'destra_nazionalista', 'tecnico']);
 const errs = [];
 const isDate = d => /^\d{4}-\d{2}$/.test(d);
@@ -31,5 +31,6 @@ if (AGGIORNAMENTI[0] && (!AGGIORNAMENTI[0].whatsapp_en || !AGGIORNAMENTI[0].tito
 if (AGGIORNAMENTI[0] && (!AGGIORNAMENTI[0].whatsapp_de || !AGGIORNAMENTI[0].titolo_de || !AGGIORNAMENTI[0].punti_de)) errs.push('voce aggiornamento senza versione tedesca (titolo_de, punti_de, whatsapp_de)');
 for (const p of PAESI) { if (!p.nome_en || !p.governo.note_en || !p.scenario.commento_coalizione_en) errs.push(`${p.sigla}: testi inglesi mancanti (nome_en, governo.note_en, scenario.commento_coalizione_en)`); if (p.anticipate && !p.anticipate.nota_en) errs.push(`${p.sigla}: anticipate.nota_en mancante`); if (!p.nome_de || !p.governo.note_de || !p.scenario.commento_coalizione_de) errs.push(`${p.sigla}: testi tedeschi mancanti (nome_de, governo.note_de, scenario.commento_coalizione_de)`); }
 for (const t of POLITICHE.temi) { if (!t.titolo_en || !t.nota_en || !t.consiglio_nota_en) errs.push(`politiche ${t.id}: testi inglesi mancanti`); if (!t.titolo_de || !t.nota_de || !t.consiglio_nota_de) errs.push(`politiche ${t.id}: testi tedeschi mancanti`); }
+if (DOSSIER) { const ST = ['proposta', 'parlamento', 'consiglio', 'trilogo', 'adottato', 'attuazione', 'bloccato']; for (const d of DOSSIER) { if (!ST.includes(d.stato)) errs.push(`dossier ${d.id}: stato non valido`); if (!['qmv', 'unanimita', 'nazionale'].includes(d.regola)) errs.push(`dossier ${d.id}: regola non valida`); if (!['approvare', 'bloccare', 'modificare'].includes(d.obiettivo_destra)) errs.push(`dossier ${d.id}: obiettivo_destra non valido`); for (const k of ['titolo', 'stato_nota', 'descrizione', 'obiettivo_nota']) for (const l of ['', '_en', '_de']) if (!d[k + l]) errs.push(`dossier ${d.id}: manca ${k + l}`); if (d.prossima_data && !/^\d{4}-\d{2}$/.test(d.prossima_data)) errs.push(`dossier ${d.id}: prossima_data`); } }
 if (errs.length) { console.error('ERRORI:\n' + errs.join('\n')); process.exit(1); }
-console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, aggiornato al ${META.aggiornato}`);
+console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, ${DOSSIER ? DOSSIER.length + ' dossier, ' : ''}aggiornato al ${META.aggiornato}`);
