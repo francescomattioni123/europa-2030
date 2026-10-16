@@ -66,6 +66,9 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .nav .links a:hover { color: var(--ink); background: var(--panel-2); }
 .nav .stamp { font-family: var(--mono); font-size: 11.5px; color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
 .nav .stamp b { color: var(--ink-2); font-weight: 500; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.langbtn { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; border: 1px solid var(--border-2); border-radius: 7px; padding: 4px 8px; color: var(--ink); }
+.langbtn:hover { background: var(--panel-2); }
 .live { width: 6px; height: 6px; border-radius: 50%; background: #19c37d; box-shadow: 0 0 8px #19c37d; }
 
 /* Hero */
@@ -297,7 +300,7 @@ footer.method p { margin: 8px 0 0; }
   <div class="links">
     <a href="#top">Mappa</a><a href="#novita">Novità</a><a href="#cambi">Cambi di governo</a><a href="#consiglio">Consiglio UE</a><a href="#calendario">Calendario</a><a href="#agenda">Agenda</a><a href="#metodo">Metodo</a>
   </div>
-  <div class="stamp"><i class="live"></i>dati al <b id="stamp">15 ott 2026</b></div>
+  <div class="nav-right"><div class="stamp"><i class="live"></i>dati al <b id="stamp">15 ott 2026</b></div><button type="button" class="langbtn" id="lang" aria-label="Lingua">EN</button></div>
 </nav>
 
 <main id="top" class="wrap">
@@ -403,23 +406,94 @@ footer.method p { margin: 8px 0 0; }
 <script>
 (function () {
   const PAESI = window.PAESI, POL = window.POLITICHE, TOPO = window.MONDO_TOPO;
+  /* ---------- Lingua ---------- */
+  const LANG = (() => { try { const s = localStorage.getItem('eu30-lang'); if (s === 'it' || s === 'en') return s; } catch (e) {} return (navigator.language || 'it').toLowerCase().startsWith('it') ? 'it' : 'en'; })();
+  const EN = LANG === 'en';
+  document.documentElement.lang = LANG;
+  // testo di un oggetto dati: campo _en se esiste e la lingua è inglese
+  const tx = (o, k) => (EN && o && o[k + '_en']) ? o[k + '_en'] : (o ? (o[k] == null ? '' : o[k]) : '');
+  const txa = (o, k) => (EN && o && o[k + '_en']) ? o[k + '_en'] : (o ? (o[k] || []) : []);
+  const S = {
+    f_sx: ['Sinistra', 'Left'], f_csx: ['Centrosinistra', 'Centre-left'], f_cen: ['Centro e liberali', 'Centre and liberals'], f_cdx: ['Centrodestra', 'Centre-right'], f_dn: ['Destra nazionalista', 'Nationalist right'], f_tec: ['Concordanza / tecnico', 'Concordance / technocratic'],
+    oggi: ['Oggi', 'Today'], oggi_l: ['oggi', 'today'], fine: ['fine', 'end of'],
+    sc_sq: ['status quo', 'status quo'], sc_pr: ['primo nei sondaggi', 'poll leader'], sc_co: ['coalizione probabile', 'likely coalition'], sc_tr: ['trend continua', 'trend continues'],
+    sc_sq_h: ['I governi di oggi restano in carica fino al 2030.', 'Today\'s governments stay in office until 2030.'],
+    sc_pr_h: ['A ogni elezione il governo va al partito oggi primo nei sondaggi, cordoni sanitari ignorati (AfD in Germania, RN in Francia). Unica eccezione editoriale: Regno Unito a Reform.', 'At each election the government goes to the party currently leading the polls, cordons sanitaires ignored (AfD in Germany, RN in France). One editorial exception: the United Kingdom goes to Reform.'],
+    sc_co_h: ['A ogni elezione vince la coalizione che oggi appare più realistica, con i voti anticipati dove il governo è in crisi. Valutazione editoriale: in Germania e nel Regno Unito si assume che i cordoni cedano.', 'At each election the most realistic coalition wins, with snap elections where the government is in crisis. Editorial call: in Germany and the United Kingdom the cordons are assumed to give way.'],
+    sc_tr_h: ['La crescita della destra nazionalista prosegue fino al 2030 e i cordoni sanitari cedono dove è già vicina al potere.', 'The nationalist right keeps growing to 2030 and cordons sanitaires give way wherever it is already close to power.'],
+    leg_partner: ['Destra nazionalista partner', 'Nationalist right as partner'],
+    tt_today: ['Oggi: ', 'Today: '], tt_dn_gov: [' · destra naz. al governo', ' · nationalist right in government'], tt_at: ['Al', 'By'], tt_partner: [' con destra naz. partner', ' with nationalist right as partner'], tt_leader: ['primo nei sondaggi: ', 'poll leader: '], tt_vote: [' · voto ', ' · election '], tt_early: [' · anticipato prob. ', ' · likely snap '],
+    k1: ['governi guidati dalla destra nazionalista', 'governments led by the nationalist right'], k2: ['paesi con destra nazionalista al governo o in appoggio', 'countries with the nationalist right in government or in support'], k3: ['della popolazione UE sotto un governo a guida nazionalista', 'of the EU population under a nationalist-led government'],
+    vs_oggi: ['rispetto a oggi', 'vs today'], pt_oggi: ['punti rispetto a oggi', 'points vs today'], dec: ['elezioni decisive in arrivo', 'decisive elections ahead'],
+    ch_title0: ['Cosa cambia nello scenario', 'What changes in the scenario'], ch_title: ['Cosa cambia entro il', 'What changes by'], paese: ['paese', 'country'], paesi: ['paesi', 'countries'],
+    ch_empty0: ['Porta il cursore oltre "Oggi" per vedere i cambi di governo previsti dallo scenario. Oggi: 3 governi a guida nazionalista (Italia, Cechia, Slovenia) e 9 paesi con una destra nazionalista al governo o in appoggio.', 'Move the slider past "Today" to see the government changes the scenario predicts. Today: 3 nationalist-led governments (Italy, Czechia, Slovenia) and 9 countries with the nationalist right in government or in support.'],
+    ch_empty: ['Nessun cambio di guida in questo scenario entro l\'orizzonte scelto.', 'No change of leadership in this scenario within the chosen horizon.'],
+    plus_dn: ['+ destra naz.', '+ nationalist right'], plus_dn_p: ['+ destra naz. partner', '+ nationalist right as partner'],
+    close: ['Chiudi', 'Close'], scheda: ['Scheda paese', 'Country file'], dn_gov: ['destra naz. al governo', 'nationalist right in government'],
+    scen_after: ['Scenario', 'Scenario'], after_vote: ['dopo il voto di', 'after the vote of'], with_partner: [' · con destra nazionalista partner', ' · with nationalist right as partner'], change_gov: [' · cambio di governo', ' · change of government'], confirm: [' · conferma', ' · confirmed'],
+    gov_now: ['Governo in carica oggi', 'Government in office today'], who_now: ['Chi comanda oggi', 'Who is in charge today'], presidente: ['Presidente', 'President'], pm: ['Primo ministro', 'Prime minister'], dal: ['dal', 'since'], Dal: ['Dal', 'Since'], capo_gov: ['Capo del governo', 'Head of government'], prossimo_voto: ['Prossimo voto', 'Next election'], ant_prob: ['anticipato probabile', 'likely snap'],
+    t_mag: ['maggioranza', 'majority'], t_min: ['minoranza', 'minority'], t_int: ['affari correnti', 'caretaker'], e_leg: ['legislative', 'legislative'], e_pres: ['presidenziali', 'presidential'],
+    cal_b: ['Calendario.', 'Calendar.'], ant_b: ['Voto anticipato probabile:', 'Likely snap election:'], ant_note: ['Negli scenari diversi dallo status quo la mappa usa questa data.', 'In every scenario other than the status quo the map uses this date.'],
+    sond: ['Sondaggi', 'Polls'], ult: ['Ultime elezioni', 'Last election'], dn_main: ['Destra nazionalista principale', 'Main nationalist-right party'], gruppo: ['gruppo PE', 'EP group'],
+    tr_up: ['▲ in crescita', '▲ rising'], tr_down: ['▼ in calo', '▼ falling'], tr_flat: ['● stabile', '● stable'], dal_voto: ['dal voto', 'since the election'],
+    scen_next: ['Scenari al prossimo voto', 'Scenarios at the next election'], fonti: ['Fonti', 'Sources'],
+    cal_oggi: ['oggi', 'today'],
+    m_prop: ['Proposta', 'Proposal'], m_fav: ['Favorevoli', 'In favour'], m_l0: ['contrario', 'against'], m_l1: ['parziale o ambiguo', 'partial or ambiguous'], m_l2: ['favorevole', 'in favour'], m_na: ['non applicabile', 'not applicable'],
+    conv_h: ['Dove convergono: l\'agenda unitaria realistica', 'Where they converge: the realistic common agenda'], div_h: ['Dove si dividono: ciò che un blocco di destra non può fare insieme', 'Where they split: what a right-wing bloc cannot do together'],
+    tier_a: ['Governi a guida nazionalista', 'Nationalist-led governments'], tier_b: ['+ governi con destra nazionalista partner', '+ governments with the nationalist right as partner'], tier_c: ['+ governi di centrodestra', '+ centre-right governments'],
+    st_qmv: ['Maggioranza qualificata', 'Qualified majority'], st_blk: ['Minoranza di blocco', 'Blocking minority'], st_no: ['Sotto soglia', 'Below threshold'],
+    stati: ['stati su 27', 'states out of 27'], pop_ue: ['della popolazione UE', 'of the EU population'],
+    cons_note: ['Minoranza di blocco: almeno 4 stati con oltre il 35% della popolazione. Maggioranza qualificata: almeno 15 stati con il 65% della popolazione. Regno Unito, Norvegia e Svizzera non votano.', 'Blocking minority: at least 4 states with over 35% of the population. Qualified majority: at least 15 states with 65% of the population. The United Kingdom, Norway and Switzerland do not vote.'],
+    r_na: ['Non passa dal Consiglio', 'Does not go through the Council'], r_appr: ['Approvabile', 'Can pass'], r_block: ['Bloccabile', 'Can be blocked'], r_veto: ['Un veto basta', 'One veto is enough'], r_now: ['già oggi', 'already today'], r_from: ['dal', 'from'], r_no: ['Non entro il 2030', 'Not by 2030'],
+    tg_a: ['solo destra nazionalista', 'nationalist right alone'], tg_b: ['con i partner', 'with its partners'], tg_c: ['con il centrodestra', 'with the centre-right'],
+    c_appr: ['maggioranza qualificata', 'qualified majority'], c_block: ['minoranza di blocco', 'blocking minority'], c_una: ['unanimità', 'unanimity'], c_naz: ['competenza nazionale', 'national competence'],
+    copied: ['Copiato', 'Copied'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary'], copy_prompt: ['Copia il testo:', 'Copy the text:']
+  };
+  const t = k => S[k] ? S[k][EN ? 1 : 0] : k;
+  const MESI = EN ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] : ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+  // testi statici della pagina in inglese
+  if (EN) {
+    const M = {
+      '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
+      '.hero-copy .eyebrow': 'Observatory · EU 27 + United Kingdom, Norway, Switzerland',
+      '.hero h1': 'The map of power<br>in <em>Europe</em>',
+      '.hero .lede': 'Who governs today, who leads the polls and how the continent may change by 2030. Pick a scenario, move the time slider, click a country.',
+      '#seg [data-scen="status_quo"]': 'Status quo', '#seg [data-scen="primo"]': 'Poll leader', '#seg [data-scen="coalizione"]': 'Likely coalition', '#seg [data-scen="trend"]': 'Trend continues',
+      'label[for="anno"]': 'Horizon', '.hud .hint': 'drag to pan · click a country', '#centra': '⌖ centre on Europe',
+      '#novita .eyebrow': 'What\'s new · weekly update', '#nov-older summary': 'Previous updates',
+      '#cambi .sec-head .eyebrow': 'Scenario', '#cambi .card:nth-child(2) h3': 'Nationalist right in the polls <small>leading party per country</small>', '#cambi .card:nth-child(2) .empty': 'Value in the latest poll and, in grey, the difference from the last election. Click to open the country file.',
+      '#consiglio .sec-head .eyebrow': 'Real power', '#consiglio h2': 'What this bloc can do in the EU Council', '#consiglio .sec-head p': 'Governments count when they vote together. Here the map of the chosen scenario becomes votes in the Council: how many states, how much population, and which proposals of the common agenda become blockable or passable, and from which year.',
+      '#consiglio .card:nth-child(1) h3': 'The right-wing bloc in the Council <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'What it can block and what it can pass <small>in the selected scenario</small>',
+      '#cambi .card:nth-child(1) h3': 'Government changes <small id="cambi-count"></small>',
+      '#calendario .sec-head .eyebrow': 'Calendar', '#calendario h2': 'The elections that decide 2030', '#calendario .sec-head p': 'Each dot is the next national vote that assigns the government. The colour is the predicted winner in the chosen scenario; dots beyond the horizon stay unlit. A dashed circle is a likely snap election or a government formation without a vote.',
+      '#agenda .sec-head .eyebrow': 'Agenda', '#agenda h2': 'What the right can do together', '#agenda .sec-head p': 'Twelve parties, twelve concrete proposals. Where a row is solid blue there is a policy a nationalist-led Europe can really push together; where it breaks, it cannot.',
+      '.mlegend span:nth-child(1)': '<i class="cell l2">●</i> in favour', '.mlegend span:nth-child(2)': '<i class="cell l1">◐</i> partial or ambiguous', '.mlegend span:nth-child(3)': '<i class="cell l0">○</i> against', '.mlegend span:nth-child(4)': '<i class="cell ln">–</i> not applicable', '.mlegend span:nth-child(5)': 'EP groups: ECR conservatives · PfE Patriots · ESN Europe of Sovereign Nations',
+      '#metodo > div:nth-child(1) .eyebrow': 'The scenarios', '#metodo > div:nth-child(1) p': '<strong>Status quo</strong>: no government changes. <strong>Poll leader</strong>: at each election the government goes to the family of the party currently first in the polls, mechanically, cordons sanitaires ignored. <strong>Likely coalition</strong>: the coalition that looks most realistic today, cordons included. <strong>Trend continues</strong>: the nationalist right keeps growing and cordons give way where it is already close to power. In the three non-status-quo scenarios, where a government is in crisis (Germany, Austria, Netherlands, Slovakia, Romania, Portugal) the likely snap-election date is used instead of the regular term. These are reading keys, not forecasts. The Council section applies the qualified-majority rules (Article 16 TEU) to Eurostat 2025 populations: 15 states and 65% of the population to pass, 4 states and over 35% to block, unanimity for foreign policy, taxation and Article 7.',
+      '#metodo > div:nth-child(2) .eyebrow': 'The families', '#metodo > div:nth-child(2) p': 'The colour is the family of whoever leads the executive: the president in France and Cyprus, the prime minister elsewhere. Blue hatching over another colour marks a nationalist right in government as a partner or in external support. Edge cases are explained in the country files: ANO in Czechia and SDS in Slovenia are coded as nationalist right; Smer in Slovakia stays nominally left; Switzerland is a concordance government.',
+      '#metodo > div:nth-child(3) .eyebrow': 'Sources', '#metodo > div:nth-child(3) p': 'PolitPro and Europe Elects poll averages, national pollsters cited in each country file (SWG, INSA, YouGov, Verian, Yle, Norstat and others), Wikipedia for results and calendar, national press for government events. The matrix is an editorial synthesis of manifestos and European Parliament votes, not a statement by the parties.',
+      '.nav .stamp': '<i class="live"></i>data as of <b id="stamp"></b>'
+    };
+    for (const [sel, html] of Object.entries(M)) document.querySelectorAll(sel).forEach(el => { el.innerHTML = html; });
+  }
+  const langBtn = document.getElementById('lang');
+  langBtn.textContent = EN ? 'IT' : 'EN'; langBtn.title = EN ? 'Versione italiana' : 'English version';
+  langBtn.addEventListener('click', () => { try { localStorage.setItem('eu30-lang', EN ? 'it' : 'en'); } catch (e) {} location.reload(); });
   const FAM = {
-    sinistra:            { label: 'Sinistra',              hex: '#a8233f', map: '#a8233f' },
-    centrosinistra:      { label: 'Centrosinistra',        hex: '#ef6f62', map: '#ef6f62' },
-    centro:              { label: 'Centro e liberali',     hex: '#b8a21c', map: '#b8a21c' },
-    centrodestra:        { label: 'Centrodestra',          hex: '#35c9c2', map: '#35c9c2' },
-    destra_nazionalista: { label: 'Destra nazionalista',   hex: '#2f5fe8', map: '#2f5fe8' },
-    tecnico:             { label: 'Concordanza / tecnico', hex: '#6b6f7c', map: '#6b6f7c' }
+    sinistra:            { label: t('f_sx'),              hex: '#a8233f', map: '#a8233f' },
+    centrosinistra:      { label: t('f_csx'),        hex: '#ef6f62', map: '#ef6f62' },
+    centro:              { label: t('f_cen'),     hex: '#b8a21c', map: '#b8a21c' },
+    centrodestra:        { label: t('f_cdx'),          hex: '#35c9c2', map: '#35c9c2' },
+    destra_nazionalista: { label: t('f_dn'),   hex: '#2f5fe8', map: '#2f5fe8' },
+    tecnico:             { label: t('f_tec'), hex: '#6b6f7c', map: '#6b6f7c' }
   };
   const DN = '#2f5fe8';
-  const STEPS = [{ label: 'Oggi', y: null }, { label: '2026', y: 2026 }, { label: '2027', y: 2027 }, { label: '2028', y: 2028 }, { label: '2029', y: 2029 }, { label: '2030', y: 2030 }];
+  const STEPS = [{ label: t('oggi'), y: null }, { label: '2026', y: 2026 }, { label: '2027', y: 2027 }, { label: '2028', y: 2028 }, { label: '2029', y: 2029 }, { label: '2030', y: 2030 }];
   const SCEN = {
-    status_quo: { label: 'status quo', help: 'I governi di oggi restano in carica fino al 2030.' },
-    primo: { label: 'primo nei sondaggi', help: 'A ogni elezione il governo va al partito oggi primo nei sondaggi, cordoni sanitari ignorati (AfD in Germania, RN in Francia). Unica eccezione editoriale: Regno Unito a Reform.' },
-    coalizione: { label: 'coalizione probabile', help: 'A ogni elezione vince la coalizione che oggi appare più realistica, con i voti anticipati dove il governo è in crisi. Valutazione editoriale: in Germania e nel Regno Unito si assume che i cordoni cedano.' },
-    trend: { label: 'trend continua', help: 'La crescita della destra nazionalista prosegue fino al 2030 e i cordoni sanitari cedono dove è già vicina al potere.' }
+    status_quo: { label: t('sc_sq'), help: t('sc_sq_h') },
+    primo: { label: t('sc_pr'), help: t('sc_pr_h') },
+    coalizione: { label: t('sc_co'), help: t('sc_co_h') },
+    trend: { label: t('sc_tr'), help: t('sc_tr_h') }
   };
-  const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
   const state = { scen: 'coalizione', step: 5, sel: null };
   const byIso = new Map(PAESI.map(p => [p.iso, p]));
   const bySigla = new Map(PAESI.map(p => [p.sigla, p]));
@@ -472,7 +546,7 @@ footer.method p { margin: 8px 0 0; }
   }));
   document.getElementById('legend').innerHTML =
     ['sinistra', 'centrosinistra', 'centro', 'centrodestra', 'destra_nazionalista', 'tecnico'].map(f => `<span><i class="sw" style="background:${FAM[f].map}"></i>${FAM[f].label}</span>`).join('') +
-    `<span><i class="sw hatch"></i>Destra nazionalista partner</span>`;
+    `<span><i class="sw hatch"></i>${t('leg_partner')}</span>`;
 
   /* ---------- Cupola (canvas): Europa in proiezione ortografica, ritagliata da un arco e una linea di base ---------- */
   const canvas = document.getElementById('globo');
@@ -643,7 +717,7 @@ footer.method p { margin: 8px 0 0; }
   /* ---------- Chips ---------- */
   const chips = document.getElementById('chips');
   function renderChips() {
-    chips.innerHTML = PAESI.map(p => { const st = stato(p); return `<button type="button" class="chip${p.sigla === state.sel ? ' sel' : ''}" data-s="${p.sigla}" title="${esc(p.nome)}"><i class="c" style="background:${FAM[st.fam].map}"></i>${flag(p.sigla)} ${p.sigla}${st.dn && st.fam !== 'destra_nazionalista' ? '<i class="dn"></i>' : ''}</button>`; }).join('');
+    chips.innerHTML = PAESI.map(p => { const st = stato(p); return `<button type="button" class="chip${p.sigla === state.sel ? ' sel' : ''}" data-s="${p.sigla}" title="${esc(tx(p, 'nome'))}"><i class="c" style="background:${FAM[st.fam].map}"></i>${flag(p.sigla)} ${p.sigla}${st.dn && st.fam !== 'destra_nazionalista' ? '<i class="dn"></i>' : ''}</button>`; }).join('');
   }
   chips.addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) select(b.dataset.s); });
 
@@ -651,9 +725,9 @@ footer.method p { margin: 8px 0 0; }
   const tip = document.getElementById('tip');
   function showTip(e, p) {
     const st = stato(p); const L = leader(p);
-    let html = `<div class="t">${flag(p.sigla)} ${esc(p.nome)}</div><div class="s">Oggi: ${esc(L.nome)} (${esc(L.partito)}) · ${FAM[L.famiglia].label}${p.governo.destra_nazionalista_al_governo && p.governo.famiglia !== 'destra_nazionalista' ? ' · destra naz. al governo' : ''}</div>`;
-    if (st.proiettato) { const gd = guida(p, st.fam); html += `<div class="s">Al ${STEPS[state.step].label}: <b style="color:${FAM[st.fam].map}">${gd ? esc(gd.partito) + ' · ' : ''}${FAM[st.fam].label}</b>${st.dn && st.fam !== 'destra_nazionalista' ? ' con destra naz. partner' : ''}</div>`; }
-    html += `<div class="m">primo nei sondaggi: ${esc(p.sondaggi.partiti[0].partito)} ${fmtPct(p.sondaggi.partiti[0].pct)}% · voto ${fmtData(p.prossime_elezioni.data)}${p.anticipate ? ' · anticipato prob. ' + fmtData(p.anticipate.data) : ''}</div>`;
+    let html = `<div class="t">${flag(p.sigla)} ${esc(tx(p, 'nome'))}</div><div class="s">${t('tt_today')}${esc(L.nome)} (${esc(L.partito)}) · ${FAM[L.famiglia].label}${p.governo.destra_nazionalista_al_governo && p.governo.famiglia !== 'destra_nazionalista' ? t('tt_dn_gov') : ''}</div>`;
+    if (st.proiettato) { const gd = guida(p, st.fam); html += `<div class="s">${t('tt_at')} ${STEPS[state.step].label}: <b style="color:${FAM[st.fam].map}">${gd ? esc(gd.partito) + ' · ' : ''}${FAM[st.fam].label}</b>${st.dn && st.fam !== 'destra_nazionalista' ? t('tt_partner') : ''}</div>`; }
+    html += `<div class="m">${t('tt_leader')}${esc(p.sondaggi.partiti[0].partito)} ${fmtPct(p.sondaggi.partiti[0].pct)}%${t('tt_vote')}${fmtData(p.prossime_elezioni.data)}${p.anticipate ? t('tt_early') + fmtData(p.anticipate.data) : ''}</div>`;
     tip.innerHTML = html; tip.classList.add('on');
     tip.style.left = Math.min(e.clientX + 16, window.innerWidth - 300) + 'px'; tip.style.top = Math.min(e.clientY + 16, window.innerHeight - 120) + 'px';
   }
@@ -672,27 +746,27 @@ footer.method p { margin: 8px 0 0; }
     const lead0 = PAESI.filter(p => p.governo.famiglia === 'destra_nazionalista').length;
     const gov0 = PAESI.filter(p => p.governo.destra_nazionalista_al_governo).length;
     const y = STEPS[state.step].y; const votes = y ? PAESI.filter(p => anno(evento(p)) <= y).length : 0;
-    const delta = (a, b) => state.step === 0 ? '' : `${a - b >= 0 ? '+' : ''}${a - b} rispetto a oggi`;
+    const delta = (a, b) => state.step === 0 ? '' : `${a - b >= 0 ? '+' : ''}${a - b} ${t('vs_oggi')}`;
     if (!kpis.children.length) kpis.innerHTML = `
-      <div class="kpi"><div class="v dn num" id="k-lead">0</div><div class="l">governi guidati dalla destra nazionalista</div><div class="d" id="k-lead-d"></div></div>
-      <div class="kpi"><div class="v num" id="k-gov">0</div><div class="l">paesi con destra nazionalista al governo o in appoggio</div><div class="d" id="k-gov-d"></div></div>
-      <div class="kpi"><div class="v num" id="k-votes">0<small style="font-size:0.55em">%</small></div><div class="l">della popolazione UE sotto un governo a guida nazionalista</div><div class="d" id="k-votes-d"></div></div>`;
+      <div class="kpi"><div class="v dn num" id="k-lead">0</div><div class="l">${t('k1')}</div><div class="d" id="k-lead-d"></div></div>
+      <div class="kpi"><div class="v num" id="k-gov">0</div><div class="l">${t('k2')}</div><div class="d" id="k-gov-d"></div></div>
+      <div class="kpi"><div class="v num" id="k-votes">0<small style="font-size:0.55em">%</small></div><div class="l">${t('k3')}</div><div class="d" id="k-votes-d"></div></div>`;
     const popPct = Math.round(blocco(TIERS[0], state.scen, state.step).pop), popPct0 = Math.round(blocco(TIERS[0], 'status_quo', 0).pop);
     countUp(document.getElementById('k-lead'), kprev.lead, lead); countUp(document.getElementById('k-gov'), kprev.gov, gov); countUp(document.getElementById('k-votes').firstChild, kprev.votes, popPct);
     document.getElementById('k-lead-d').textContent = delta(lead, lead0); document.getElementById('k-gov-d').textContent = delta(gov, gov0);
-    document.getElementById('k-votes-d').textContent = state.step === 0 ? `${votes} elezioni decisive in arrivo` : delta(popPct, popPct0).replace('rispetto a oggi', 'punti rispetto a oggi');
+    document.getElementById('k-votes-d').textContent = state.step === 0 ? `${votes} ${t('dec')}` : delta(popPct, popPct0).replace(t('vs_oggi'), t('pt_oggi'));
     Object.assign(kprev, { lead, gov, votes: popPct });
   }
 
   /* ---------- Cambi + ranking ---------- */
   function renderChanges(stati) {
     const changes = stati.filter(x => x.st.cambiato).sort((a, b) => evento(a.p).localeCompare(evento(b.p)));
-    document.getElementById('cambi-title').textContent = state.step === 0 ? 'Cosa cambia nello scenario' : `Cosa cambia entro il ${STEPS[state.step].label}`;
+    document.getElementById('cambi-title').textContent = state.step === 0 ? t('ch_title0') : `${t('ch_title')} ${STEPS[state.step].label}`;
     document.getElementById('cambi-sub').textContent = SCEN[state.scen].help;
-    document.getElementById('cambi-count').textContent = changes.length ? `${changes.length} ${changes.length === 1 ? 'paese' : 'paesi'}` : '';
+    document.getElementById('cambi-count').textContent = changes.length ? `${changes.length} ${changes.length === 1 ? t('paese') : t('paesi')}` : '';
     document.getElementById('changes').innerHTML = changes.length
-      ? `<ul class="changes">${changes.map(({ p, st }) => `<li data-go="${p.sigla}"><span>${flag(p.sigla)} ${esc(p.nome)}</span><span>${pill(p.governo.famiglia)}<span class="arrow">→</span>${pill(st.fam)}${(() => { const gd = guida(p, st.fam); return gd ? ` <span class="mono" style="font-size:11.5px;color:var(--ink-2)">${esc(gd.partito.split(' (')[0])}</span>` : ''; })()}${st.dn && st.fam !== 'destra_nazionalista' ? ' <span class="warn">+ destra naz.</span>' : ''}</span><span class="when">${fmtData(evento(p))}</span></li>`).join('')}</ul>`
-      : `<div class="empty">${state.step === 0 ? 'Porta il cursore oltre "Oggi" per vedere i cambi di governo previsti dallo scenario. Oggi: 3 governi a guida nazionalista (Italia, Cechia, Slovenia) e 9 paesi con una destra nazionalista al governo o in appoggio.' : 'Nessun cambio di guida in questo scenario entro l\'orizzonte scelto.'}</div>`;
+      ? `<ul class="changes">${changes.map(({ p, st }) => `<li data-go="${p.sigla}"><span>${flag(p.sigla)} ${esc(tx(p, 'nome'))}</span><span>${pill(p.governo.famiglia)}<span class="arrow">→</span>${pill(st.fam)}${(() => { const gd = guida(p, st.fam); return gd ? ` <span class="mono" style="font-size:11.5px;color:var(--ink-2)">${esc(gd.partito.split(' (')[0])}</span>` : ''; })()}${st.dn && st.fam !== 'destra_nazionalista' ? ` <span class="warn">${t('plus_dn')}</span>` : ''}</span><span class="when">${fmtData(evento(p))}</span></li>`).join('')}</ul>`
+      : `<div class="empty">${state.step === 0 ? t('ch_empty0') : t('ch_empty')}</div>`;
     const top = PAESI.filter(p => p.destra_principale.pct_sondaggio != null).sort((a, b) => b.destra_principale.pct_sondaggio - a.destra_principale.pct_sondaggio).slice(0, 12);
     const max = top[0].destra_principale.pct_sondaggio;
     document.getElementById('ranking').innerHTML = `<div class="bars">${top.map(p => { const d = p.destra_principale; const short = (d.partito.match(/\(([^)]+)\)/) || [, d.partito])[1]; const dl = d.pct_ultime_elezioni != null ? d.pct_sondaggio - d.pct_ultime_elezioni : null; return `<div class="bar row" data-go="${p.sigla}"><span class="n" title="${esc(d.partito)}">${flag(p.sigla)} ${esc(short)}</span><span class="t"><span class="f dn" style="width:${d.pct_sondaggio / max * 100}%;background:${DN}"></span></span><span class="v num">${fmtPct(d.pct_sondaggio)}${dl != null ? ` <small>${dl >= 0 ? '+' : ''}${fmtPct(dl)}</small>` : ''}</span></div>`; }).join('')}</div>`;
@@ -715,36 +789,36 @@ footer.method p { margin: 8px 0 0; }
     if (!open) return;
     const p = bySigla.get(state.sel), g = p.governo, d = p.destra_principale, s = p.scenario, st = stato(p), L = leader(p);
     const trendCls = d.trend === 'in_crescita' ? 'trend-up' : d.trend === 'in_calo' ? 'trend-down' : 'trend-flat';
-    const trendTxt = d.trend === 'in_crescita' ? '▲ in crescita' : d.trend === 'in_calo' ? '▼ in calo' : '● stabile';
+    const trendTxt = d.trend === 'in_crescita' ? t('tr_up') : d.trend === 'in_calo' ? t('tr_down') : t('tr_flat');
     const dl = d.pct_sondaggio != null && d.pct_ultime_elezioni != null ? d.pct_sondaggio - d.pct_ultime_elezioni : null;
-    const tipo = { maggioranza: 'maggioranza', minoranza: 'minoranza', ad_interim: 'affari correnti' }[g.tipo] || g.tipo;
+    const tipo = { maggioranza: t('t_mag'), minoranza: t('t_min'), ad_interim: t('t_int') }[g.tipo] || g.tipo;
     drawer.innerHTML = `
-      <button type="button" class="close" aria-label="Chiudi">✕</button>
-      <div class="eyebrow">Scheda paese</div>
-      <div class="country-head"><span class="flag">${flag(p.sigla)}</span><h2>${esc(p.nome)}</h2>${pill(L.famiglia)}${g.destra_nazionalista_al_governo && g.famiglia !== 'destra_nazionalista' ? '<span class="warn">destra naz. al governo</span>' : ''}</div>
-      ${st.proiettato ? (() => { const gd = guida(p, st.fam); return `<div class="proj" style="border-color:${FAM[st.fam].map}"><span class="eyebrow">Scenario ${SCEN[state.scen].label} · dopo il voto di ${fmtData(evento(p))}</span><div class="who"><b style="color:${FAM[st.fam].map}">${gd ? esc(gd.partito) : FAM[st.fam].label}</b>${gd && gd.leader ? `<span>${esc(gd.leader)}</span>` : ''}</div><div class="sub">${FAM[st.fam].label}${st.dn && st.fam !== 'destra_nazionalista' ? ' · con destra nazionalista partner' : ''}${st.cambiato ? ' · cambio di governo' : ' · conferma'}</div></div>`; })() : ''}
-      <div class="section"><span class="eyebrow">${st.proiettato ? 'Governo in carica oggi' : 'Chi comanda oggi'}</span>
+      <button type="button" class="close" aria-label="${t('close')}">✕</button>
+      <div class="eyebrow">${t('scheda')}</div>
+      <div class="country-head"><span class="flag">${flag(p.sigla)}</span><h2>${esc(tx(p, 'nome'))}</h2>${pill(L.famiglia)}${g.destra_nazionalista_al_governo && g.famiglia !== 'destra_nazionalista' ? `<span class="warn">${t('dn_gov')}</span>` : ''}</div>
+      ${st.proiettato ? (() => { const gd = guida(p, st.fam); return `<div class="proj" style="border-color:${FAM[st.fam].map}"><span class="eyebrow">${t('scen_after')} ${SCEN[state.scen].label} · ${t('after_vote')} ${fmtData(evento(p))}</span><div class="who"><b style="color:${FAM[st.fam].map}">${gd ? esc(gd.partito) : FAM[st.fam].label}</b>${gd && gd.leader ? `<span>${esc(gd.leader)}</span>` : ''}</div><div class="sub">${FAM[st.fam].label}${st.dn && st.fam !== 'destra_nazionalista' ? t('with_partner') : ''}${st.cambiato ? t('change_gov') : t('confirm')}</div></div>`; })() : ''}
+      <div class="section"><span class="eyebrow">${st.proiettato ? t('gov_now') : t('who_now')}</span>
         <dl class="kv">
-          ${p.capo_stato ? `<dt>Presidente</dt><dd><b>${esc(p.capo_stato.nome)}</b> · ${esc(p.capo_stato.partito)} · dal ${fmtData(p.capo_stato.dal)}</dd><dt>Primo ministro</dt><dd>${esc(g.premier)} · ${esc(g.partito)} · dal ${fmtData(g.dal)} · ${tipo}</dd>` : `<dt>Capo del governo</dt><dd><b>${esc(g.premier)}</b> · ${esc(g.partito)}</dd><dt>Dal</dt><dd>${fmtData(g.dal)} · ${tipo}</dd>`}
-          <dt>Prossimo voto</dt><dd>${fmtData(p.prossime_elezioni.data)} · ${esc(p.prossime_elezioni.tipo)}${p.anticipate ? ` · <span class="warn">anticipato probabile ${fmtData(p.anticipate.data)}</span>` : ''}</dd>
+          ${p.capo_stato ? `<dt>${t('presidente')}</dt><dd><b>${esc(p.capo_stato.nome)}</b> · ${esc(p.capo_stato.partito)} · ${t('dal')} ${fmtData(p.capo_stato.dal)}</dd><dt>${t('pm')}</dt><dd>${esc(g.premier)} · ${esc(g.partito)} · ${t('dal')} ${fmtData(g.dal)} · ${tipo}</dd>` : `<dt>${t('capo_gov')}</dt><dd><b>${esc(g.premier)}</b> · ${esc(g.partito)}</dd><dt>${t('Dal')}</dt><dd>${fmtData(g.dal)} · ${tipo}</dd>`}
+          <dt>${t('prossimo_voto')}</dt><dd>${fmtData(p.prossime_elezioni.data)} · ${p.prossime_elezioni.tipo === 'presidenziali' ? t('e_pres') : t('e_leg')}${p.anticipate ? ` · <span class="warn">${t('ant_prob')} ${fmtData(p.anticipate.data)}</span>` : ''}</dd>
         </dl>
         <div class="tags">${g.coalizione.map(c => `<span class="tag" style="border-left-color:${FAM[c.famiglia].hex}">${esc(c.partito)}</span>`).join('')}</div>
-        ${p.capo_stato ? `<p class="note">${esc(p.capo_stato.nota)}</p>` : ''}
-        <p class="note">${esc(g.note)}</p>
-        ${p.prossime_elezioni.note ? `<p class="note"><b>Calendario.</b> ${esc(p.prossime_elezioni.note)}</p>` : ''}
-        ${p.anticipate ? `<p class="note"><b class="warn">Voto anticipato probabile: ${fmtData(p.anticipate.data)}.</b> ${esc(p.anticipate.nota)} Negli scenari diversi dallo status quo la mappa usa questa data.</p>` : ''}
+        ${p.capo_stato ? `<p class="note">${esc(tx(p.capo_stato, 'nota'))}</p>` : ''}
+        <p class="note">${esc(tx(g, 'note'))}</p>
+        ${p.prossime_elezioni.note ? `<p class="note"><b>${t('cal_b')}</b> ${esc(tx(p.prossime_elezioni, 'note'))}</p>` : ''}
+        ${p.anticipate ? `<p class="note"><b class="warn">${t('ant_b')} ${fmtData(p.anticipate.data)}.</b> ${esc(tx(p.anticipate, 'nota'))} ${t('ant_note')}</p>` : ''}
       </div>
-      <div class="section"><span class="eyebrow">Sondaggi · ${esc(p.sondaggi.fonte)}</span>${bars(p.sondaggi.partiti)}</div>
-      <div class="section"><span class="eyebrow">Ultime elezioni · ${fmtData(p.ultime_elezioni.data)}</span>${bars(p.ultime_elezioni.risultati)}</div>
-      <div class="section"><span class="eyebrow">Destra nazionalista principale</span>
-        <div class="dnbox"><div><b>${esc(d.partito)}</b><div class="sub">${esc(d.leader)} · gruppo PE ${esc(d.gruppo_pe)}</div></div>
-        <div style="text-align:right"><div class="big num">${d.pct_sondaggio != null ? fmtPct(d.pct_sondaggio) + '%' : '—'}</div><div class="sub ${trendCls}">${trendTxt}${dl != null ? ` · ${dl >= 0 ? '+' : ''}${fmtPct(dl)} dal voto` : ''}</div></div></div>
+      <div class="section"><span class="eyebrow">${t('sond')} · ${esc(tx(p.sondaggi, 'fonte'))}</span>${bars(p.sondaggi.partiti)}</div>
+      <div class="section"><span class="eyebrow">${t('ult')} · ${fmtData(p.ultime_elezioni.data)}</span>${bars(p.ultime_elezioni.risultati)}</div>
+      <div class="section"><span class="eyebrow">${t('dn_main')}</span>
+        <div class="dnbox"><div><b>${esc(d.partito)}</b><div class="sub">${esc(d.leader)} · ${t('gruppo')} ${esc(d.gruppo_pe)}</div></div>
+        <div style="text-align:right"><div class="big num">${d.pct_sondaggio != null ? fmtPct(d.pct_sondaggio) + '%' : '—'}</div><div class="sub ${trendCls}">${trendTxt}${dl != null ? ` · ${dl >= 0 ? '+' : ''}${fmtPct(dl)} ${t('dal_voto')}` : ''}</div></div></div>
       </div>
-      <div class="section"><span class="eyebrow">Scenari al prossimo voto</span>
-        <div class="scen-rows">${Object.keys(SCEN).map(k => `<div class="scen-row${k === state.scen ? ' on' : ''}"><span class="k">${SCEN[k].label}</span><span>${pill(scenFam(p, k))}${scenPartner(p, k) ? ' <span class="warn">+ destra naz. partner</span>' : ''}</span></div>`).join('')}</div>
-        <p class="note">${esc(s.commento_coalizione)}</p>
+      <div class="section"><span class="eyebrow">${t('scen_next')}</span>
+        <div class="scen-rows">${Object.keys(SCEN).map(k => `<div class="scen-row${k === state.scen ? ' on' : ''}"><span class="k">${SCEN[k].label}</span><span>${pill(scenFam(p, k))}${scenPartner(p, k) ? ` <span class="warn">${t('plus_dn_p')}</span>` : ''}</span></div>`).join('')}</div>
+        <p class="note">${esc(tx(s, 'commento_coalizione'))}</p>
       </div>
-      <div class="section"><span class="eyebrow">Fonti</span><div class="srcs">${p.fonti.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 72))}</a>`).join('<br>')}</div></div>`;
+      <div class="section"><span class="eyebrow">${t('fonti')}</span><div class="srcs">${p.fonti.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 72))}</a>`).join('<br>')}</div></div>`;
     drawer.scrollTop = 0;
   }
 
@@ -752,9 +826,9 @@ footer.method p { margin: 8px 0 0; }
   const UE = PAESI.filter(p => p.ue);
   const POP_UE = UE.reduce((a, p) => a + p.popolazione, 0);
   const TIERS = [
-    { id: 'A', label: 'Governi a guida nazionalista', test: st => st.fam === 'destra_nazionalista' },
-    { id: 'B', label: '+ governi con destra nazionalista partner', test: st => st.dn },
-    { id: 'C', label: '+ governi di centrodestra', test: st => st.dn || st.fam === 'centrodestra' }
+    { id: 'A', label: t('tier_a'), test: st => st.fam === 'destra_nazionalista' },
+    { id: 'B', label: t('tier_b'), test: st => st.dn },
+    { id: 'C', label: t('tier_c'), test: st => st.dn || st.fam === 'centrodestra' }
   ];
   function blocco(tier, scen, step) {
     const m = UE.filter(p => tier.test(stato(p, scen, step)));
@@ -763,28 +837,28 @@ footer.method p { margin: 8px 0 0; }
   }
   function esito(b, tipo) { return tipo === 'approvare' ? b.qmv : tipo === 'bloccare' ? b.blocking : tipo === 'unanimita' ? b.n >= 1 : false; }
   function renderConsiglio() {
-    const when = state.step === 0 ? 'oggi' : 'fine ' + STEPS[state.step].label;
+    const when = state.step === 0 ? t('oggi_l') : t('fine') + ' ' + STEPS[state.step].label;
     document.getElementById('cons-when').textContent = `${when} · ${SCEN[state.scen].label}`;
-    const bars = TIERS.map(t => {
-      const b = blocco(t, state.scen, state.step);
-      const stat = b.qmv ? ['qmv', 'Maggioranza qualificata'] : b.blocking ? ['blk', 'Minoranza di blocco'] : ['no', 'Sotto soglia'];
+    const bars = TIERS.map(tier => {
+      const b = blocco(tier, state.scen, state.step);
+      const stat = b.qmv ? ['qmv', t('st_qmv')] : b.blocking ? ['blk', t('st_blk')] : ['no', t('st_no')];
       const segs = b.paesi.slice().sort((x, y) => y.popolazione - x.popolazione).map(p => { const st = stato(p); const w = p.popolazione / POP_UE * 100; return `<i style="width:${w}%;background:${FAM[st.fam].map}" title="${esc(p.nome)} · ${p.popolazione} mln">${w > 3.2 ? p.sigla : ''}</i>`; }).join('');
-      return `<div class="tier"><div class="tier-head"><span>${t.label}</span><span class="st ${stat[0]}">${stat[1]}</span></div>
+      return `<div class="tier"><div class="tier-head"><span>${tier.label}</span><span class="st ${stat[0]}">${stat[1]}</span></div>
         <div class="tier-bar"><div class="segs">${segs}</div><i class="mark" style="left:35%"><b>35%</b></i><i class="mark" style="left:65%"><b>65%</b></i></div>
-        <div class="tier-foot mono"><span>${b.n} stati su 27</span><span>${b.pop.toFixed(0)}% della popolazione UE</span></div></div>`;
+        <div class="tier-foot mono"><span>${b.n} ${t('stati')}</span><span>${b.pop.toFixed(0)}% ${t('pop_ue')}</span></div></div>`;
     }).join('');
-    document.getElementById('cons-bars').innerHTML = bars + `<p class="empty" style="margin:12px 0 0">Minoranza di blocco: almeno 4 stati con oltre il 35% della popolazione. Maggioranza qualificata: almeno 15 stati con il 65% della popolazione. Regno Unito, Norvegia e Svizzera non votano.</p>`;
+    document.getElementById('cons-bars').innerHTML = bars + `<p class="empty" style="margin:12px 0 0">${t('cons_note')}</p>`;
     // politiche: primo anno in cui il blocco (dal più stretto al più largo) ottiene l'esito richiesto
     const rows = POL.temi.map(t => {
-      if (t.consiglio === 'nazionale') return { t, html: `<span class="res na">Non passa dal Consiglio</span>` };
+      if (t.consiglio === 'nazionale') return { t, html: `<span class="res na">${S.r_na[EN ? 1 : 0]}</span>` };
       let found = null;
       // blocco più stretto che ci riesce entro il 2030, e primo anno in cui ci riesce
       for (const tier of TIERS) { for (let s = 0; s <= 5; s++) { if (esito(blocco(tier, state.scen, s), t.consiglio)) { found = { s, tier }; break; } } if (found) break; }
-      const verb = { approvare: 'Approvabile', bloccare: 'Bloccabile', unanimita: 'Un veto basta' }[t.consiglio];
+      const verb = { approvare: S.r_appr, bloccare: S.r_block, unanimita: S.r_veto }[t.consiglio][EN ? 1 : 0];
       const now = found && found.s <= state.step;
-      return { t, html: found ? `<span class="res ${now ? 'ok' : 'later'}">${verb} ${found.s === 0 ? 'già oggi' : 'dal ' + STEPS[found.s].label}</span><span class="tier-tag mono">${found.tier.id === 'A' ? 'solo destra nazionalista' : found.tier.id === 'B' ? 'con i partner' : 'con il centrodestra'}</span>` : `<span class="res no">Non entro il 2030</span>` };
+      return { t, html: found ? `<span class="res ${now ? 'ok' : 'later'}">${verb} ${found.s === 0 ? S.r_now[EN ? 1 : 0] : S.r_from[EN ? 1 : 0] + ' ' + STEPS[found.s].label}</span><span class="tier-tag mono">${found.tier.id === 'A' ? S.tg_a[EN ? 1 : 0] : found.tier.id === 'B' ? S.tg_b[EN ? 1 : 0] : S.tg_c[EN ? 1 : 0]}</span>` : `<span class="res no">${S.r_no[EN ? 1 : 0]}</span>` };
     });
-    document.getElementById('cons-pol').innerHTML = `<ul class="pol">${rows.map(({ t, html }) => `<li><div><span class="area mono">${esc(t.area)} · ${{ approvare: 'maggioranza qualificata', bloccare: 'minoranza di blocco', unanimita: 'unanimità', nazionale: 'competenza nazionale' }[t.consiglio]}</span><b>${esc(t.titolo)}</b><span class="nota">${esc(t.consiglio_nota)}</span></div><div class="right">${html}</div></li>`).join('')}</ul>`;
+    document.getElementById('cons-pol').innerHTML = `<ul class="pol">${rows.map(({ t, html }) => `<li><div><span class="area mono">${esc(tx(t, 'area'))} · ${{ approvare: S.c_appr, bloccare: S.c_block, unanimita: S.c_una, nazionale: S.c_naz }[t.consiglio][EN ? 1 : 0]}</span><b>${esc(tx(t, 'titolo'))}</b><span class="nota">${esc(tx(t, 'consiglio_nota'))}</span></div><div class="right">${html}</div></li>`).join('')}</ul>`;
   }
 
   /* ---------- Calendario ---------- */
@@ -805,7 +879,7 @@ footer.method p { margin: 8px 0 0; }
     gx.selectAll('text').attr('fill', '#6f7486').attr('font-family', 'Geist Mono, monospace').attr('font-size', 12).attr('dx', 6).attr('text-anchor', 'start');
     const today = new Date(2026, 9, 15);
     cal.append('line').attr('x1', x(today)).attr('x2', x(today)).attr('y1', top - 32).attr('y2', CH - 18).attr('stroke', '#f2f3f7').attr('stroke-dasharray', '3 3').attr('stroke-opacity', 0.5);
-    cal.append('text').attr('x', x(today) + 6).attr('y', CH - 8).attr('fill', '#aeb3c2').attr('font-family', 'Geist Mono, monospace').attr('font-size', 11).text('oggi');
+    cal.append('text').attr('x', x(today) + 6).attr('y', CH - 8).attr('fill', '#aeb3c2').attr('font-family', 'Geist Mono, monospace').attr('font-size', 11).text(t('cal_oggi'));
     const y = STEPS[state.step].y;
     const it = cal.append('g').selectAll('g').data(items).join('g').attr('transform', d => `translate(${x(d.date)},${top + d.lane * laneH + 8})`).style('cursor', 'pointer')
       .on('click', (e, d) => select(d.p.sigla)).on('mousemove', (e, d) => showTip(e, d.p)).on('mouseleave', hideTip);
@@ -822,11 +896,11 @@ footer.method p { margin: 8px 0 0; }
   function renderMatrix() {
     const T = document.getElementById('matrix');
     const sym = { 2: '●', 1: '◐', 0: '○' };
-    T.innerHTML = `<thead><tr><th class="row">Proposta</th>${POL.partiti.map(pt => `<th><span class="fl">${flag(pt.paese)}</span>${esc(pt.nome)}<span class="g">${esc(pt.gruppo)}</span></th>`).join('')}<th>Favorevoli</th></tr></thead>
-      <tbody>${POL.temi.map(t => { const vals = POL.partiti.map(pt => t.voti[pt.id]); const fav = vals.filter(v => v === 2).length, app = vals.filter(v => v != null).length; return `<tr><th class="row"><span class="area">${esc(t.area)}</span>${esc(t.titolo)}<span class="nota">${esc(t.nota)}</span></th>${POL.partiti.map(pt => { const v = t.voti[pt.id]; const lab = v == null ? 'non applicabile' : ['contrario', 'parziale o ambiguo', 'favorevole'][v]; return `<td><span class="cell ${v == null ? 'ln' : 'l' + v}" title="${esc(pt.nome)}: ${lab}">${v == null ? '–' : sym[v]}</span></td>`; }).join('')}<td class="score"><i class="sb"><i style="width:${fav / app * 100}%"></i></i><span>${fav}/${app}</span></td></tr>`; }).join('')}</tbody>`;
+    T.innerHTML = `<thead><tr><th class="row">${t('m_prop')}</th>${POL.partiti.map(pt => `<th><span class="fl">${flag(pt.paese)}</span>${esc(pt.nome)}<span class="g">${esc(pt.gruppo)}</span></th>`).join('')}<th>${t('m_fav')}</th></tr></thead>
+      <tbody>${POL.temi.map(t => { const vals = POL.partiti.map(pt => t.voti[pt.id]); const fav = vals.filter(v => v === 2).length, app = vals.filter(v => v != null).length; return `<tr><th class="row"><span class="area">${esc(tx(t, 'area'))}</span>${esc(tx(t, 'titolo'))}<span class="nota">${esc(tx(t, 'nota'))}</span></th>${POL.partiti.map(pt => { const v = t.voti[pt.id]; const lab = v == null ? S.m_na[EN ? 1 : 0] : [S.m_l0, S.m_l1, S.m_l2][v][EN ? 1 : 0]; return `<td><span class="cell ${v == null ? 'ln' : 'l' + v}" title="${esc(pt.nome)}: ${lab}">${v == null ? '–' : sym[v]}</span></td>`; }).join('')}<td class="score"><i class="sb"><i style="width:${fav / app * 100}%"></i></i><span>${fav}/${app}</span></td></tr>`; }).join('')}</tbody>`;
     document.getElementById('convdiv').innerHTML = `
-      <div class="card conv"><div class="in"><h3>Dove convergono: l'agenda unitaria realistica</h3><ul>${POL.convergenze.map(c => `<li><strong>${esc(c.titolo)}</strong><span>${esc(c.testo)}</span></li>`).join('')}</ul></div></div>
-      <div class="card div"><div class="in"><h3>Dove si dividono: ciò che un blocco di destra non può fare insieme</h3><ul>${POL.divergenze.map(c => `<li><strong>${esc(c.titolo)}</strong><span>${esc(c.testo)}</span></li>`).join('')}</ul></div></div>`;
+      <div class="card conv"><div class="in"><h3>${t('conv_h')}</h3><ul>${POL.convergenze.map(c => `<li><strong>${esc(tx(c, 'titolo'))}</strong><span>${esc(tx(c, 'testo'))}</span></li>`).join('')}</ul></div></div>
+      <div class="card div"><div class="in"><h3>${t('div_h')}</h3><ul>${POL.divergenze.map(c => `<li><strong>${esc(tx(c, 'titolo'))}</strong><span>${esc(tx(c, 'testo'))}</span></li>`).join('')}</ul></div></div>`;
   }
 
   /* ---------- Reveal ---------- */
@@ -843,17 +917,17 @@ footer.method p { margin: 8px 0 0; }
     if (M.aggiornato) { const [y, m, d] = M.aggiornato.split('-'); document.getElementById('stamp').textContent = `${+d} ${MESI[+m - 1]} ${y}`; }
     if (!A.length) { document.getElementById('novita').hidden = true; return; }
     const last = A[0];
-    document.getElementById('nov-title').textContent = (() => { const [y, m, d] = last.data.split('-'); return `${+d} ${MESI[+m - 1]} ${y}: ${last.titolo}`; })();
-    document.getElementById('nov-list').innerHTML = last.punti.map(x => `<li>${esc(x)}</li>`).join('');
+    document.getElementById('nov-title').textContent = (() => { const [y, m, d] = last.data.split('-'); return `${+d} ${MESI[+m - 1]} ${y}: ${tx(last, 'titolo')}`; })();
+    document.getElementById('nov-list').innerHTML = txa(last, 'punti').map(x => `<li>${esc(x)}</li>`).join('');
     const older = A.slice(1);
     if (!older.length) document.getElementById('nov-older').hidden = true;
-    else document.getElementById('nov-older-list').innerHTML = older.map(a => { const [y, m, d] = a.data.split('-'); return `<div><b>${+d} ${MESI[+m - 1]} ${y} · ${esc(a.titolo)}</b><ul>${a.punti.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`; }).join('');
+    else document.getElementById('nov-older-list').innerHTML = older.map(a => { const [y, m, d] = a.data.split('-'); return `<div><b>${+d} ${MESI[+m - 1]} ${y} · ${esc(tx(a, 'titolo'))}</b><ul>${txa(a, 'punti').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`; }).join('');
     const btn = document.getElementById('nov-copy');
     btn.addEventListener('click', () => {
-      const txt = last.whatsapp || last.punti.join(' ');
-      const ok = () => { btn.textContent = 'Copiato'; btn.classList.add('done'); setTimeout(() => { btn.textContent = 'Copia il riassunto per WhatsApp'; btn.classList.remove('done'); }, 2000); };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok).catch(() => window.prompt('Copia il testo:', txt));
-      else window.prompt('Copia il testo:', txt);
+      const txt = tx(last, 'whatsapp') || txa(last, 'punti').join(' ');
+      btn.textContent = t('copy'); const ok = () => { btn.textContent = t('copied'); btn.classList.add('done'); setTimeout(() => { btn.textContent = t('copy'); btn.classList.remove('done'); }, 2000); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok).catch(() => window.prompt(t('copy_prompt'), txt));
+      else window.prompt(t('copy_prompt'), txt);
     });
   })();
 
@@ -861,7 +935,7 @@ footer.method p { margin: 8px 0 0; }
   function render() {
     document.getElementById('seg-help').textContent = SCEN[state.scen].help;
     document.getElementById('hud-scen').textContent = SCEN[state.scen].label;
-    document.getElementById('hud-anno').textContent = state.step === 0 ? 'oggi' : 'fine ' + STEPS[state.step].label;
+    document.getElementById('hud-anno').textContent = state.step === 0 ? t('oggi_l') : t('fine') + ' ' + STEPS[state.step].label;
     document.getElementById('cur').textContent = STEPS[state.step].label;
     ticks.querySelectorAll('span').forEach((s, i) => s.classList.toggle('on', i === state.step));
     const stati = PAESI.map(p => ({ p, st: stato(p) }));

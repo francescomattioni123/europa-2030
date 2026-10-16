@@ -27,5 +27,8 @@ for (const t of POLITICHE.temi) { for (const pt of POLITICHE.partiti) if (!(pt.i
 if (!/^\d{4}-\d{2}-\d{2}$/.test(META.aggiornato)) errs.push('META.aggiornato non valido');
 if (!AGGIORNAMENTI.length || AGGIORNAMENTI[0].data !== META.aggiornato) errs.push('AGGIORNAMENTI[0].data deve coincidere con META.aggiornato');
 if (AGGIORNAMENTI[0] && (!AGGIORNAMENTI[0].whatsapp || AGGIORNAMENTI[0].whatsapp.length > 900)) errs.push('whatsapp mancante o troppo lungo');
+if (AGGIORNAMENTI[0] && (!AGGIORNAMENTI[0].whatsapp_en || !AGGIORNAMENTI[0].titolo_en || !AGGIORNAMENTI[0].punti_en)) errs.push('voce aggiornamento senza versione inglese (titolo_en, punti_en, whatsapp_en)');
+for (const p of PAESI) { if (!p.nome_en || !p.governo.note_en || !p.scenario.commento_coalizione_en) errs.push(`${p.sigla}: testi inglesi mancanti (nome_en, governo.note_en, scenario.commento_coalizione_en)`); if (p.anticipate && !p.anticipate.nota_en) errs.push(`${p.sigla}: anticipate.nota_en mancante`); }
+for (const t of POLITICHE.temi) if (!t.titolo_en || !t.nota_en || !t.consiglio_nota_en) errs.push(`politiche ${t.id}: testi inglesi mancanti`);
 if (errs.length) { console.error('ERRORI:\n' + errs.join('\n')); process.exit(1); }
 console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, aggiornato al ${META.aggiornato}`);
