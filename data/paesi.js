@@ -1,7 +1,7 @@
 // popolazione: milioni, Eurostat 1 gennaio 2025 (arrotondata); ue: membro dell'Unione.
 // Dati politici per paese, aggiornati al 15 ottobre 2026. Fonti per paese nel campo "fonti".
 // scenario.coalizione = coalizione più probabile secondo i sondaggi (valutazione); scenario.trend = se la crescita della destra nazionalista continua.
-// I campi *_en sono le versioni inglesi dei testi (nome, note, nota, fonte, commento_coalizione): vanno aggiornati insieme a quelli italiani.
+// I campi *_en e *_de sono le versioni inglese e tedesca dei testi (nome, note, nota, fonte, commento_coalizione): vanno aggiornati insieme a quelli italiani.
 // Lo scenario "primo nei sondaggi" è calcolato in pagina dal primo partito in sondaggi.partiti (override con scenario.primo).
 window.PAESI = [
  {
@@ -34,7 +34,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Governo stabile al quarto anno; FdI in leggera crescita (27-28%). Novità del 2026: Futuro Nazionale di Vannacci (scissione dalla Lega) al 7-8%, che erode la Lega ma allarga l'area di destra.",
-   "note_en": "Stable government in its fourth year; FdI slightly up (27-28%). New in 2026: Vannacci's Futuro Nazionale (a breakaway from the Lega) at 7-8%, which erodes the Lega but widens the right-wing camp."
+   "note_en": "Stable government in its fourth year; FdI slightly up (27-28%). New in 2026: Vannacci's Futuro Nazionale (a breakaway from the Lega) at 7-8%, which erodes the Lega but widens the right-wing camp.",
+   "note_de": "Stabile Regierung im vierten Jahr; FdI mit leichtem Zuwachs (27-28%). Neu 2026: Futuro Nazionale von Vannacci (Abspaltung von der Lega) bei 7-8%, das die Lega schwächt, aber das rechte Lager insgesamt vergrößert."
   },
   "ultime_elezioni": {
    "data": "2022-09",
@@ -75,7 +76,8 @@ window.PAESI = [
    "data": "2027-12",
    "tipo": "legislative",
    "note": "Scadenza naturale della legislatura (entro il 22 dicembre 2027); si discute di un voto anticipato in primavera 2027.",
-   "note_en": "End of the regular parliamentary term (by 22 December 2027); a snap election in spring 2027 is under discussion."
+   "note_en": "End of the regular parliamentary term (by 22 December 2027); a snap election in spring 2027 is under discussion.",
+   "note_de": "Reguläres Ende der Legislaturperiode (bis zum 22. Dezember 2027); eine Neuwahl im Frühjahr 2027 wird diskutiert."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -117,7 +119,8 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     }
    ],
-   "fonte_en": "SWG (7-12 October 2026)"
+   "fonte_en": "SWG (7-12 October 2026)",
+   "fonte_de": "SWG (7.-12. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "FdI",
@@ -132,7 +135,8 @@ window.PAESI = [
    "status_quo": "destra_nazionalista",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "Il centrodestra a guida FdI supera il 42-43% e resterebbe maggioranza anche senza Vannacci; il campo largo (PD-M5S-AVS) è competitivo solo se pienamente unito. La destra nazionalista governa già e, salvo crolli, è favorita per il 2027.",
-   "commento_coalizione_en": "The FdI-led centre-right is above 42-43% and would retain a majority even without Vannacci; the broad progressive alliance (PD-M5S-AVS) is competitive only if fully united. The nationalist right already governs and, barring a collapse, is the favourite for 2027."
+   "commento_coalizione_en": "The FdI-led centre-right is above 42-43% and would retain a majority even without Vannacci; the broad progressive alliance (PD-M5S-AVS) is competitive only if fully united. The nationalist right already governs and, barring a collapse, is the favourite for 2027.",
+   "commento_coalizione_de": "Das Mitte-rechts-Bündnis unter Führung der FdI liegt über 42-43% und hätte auch ohne Vannacci die Mehrheit; das breite Lager (PD-M5S-AVS) ist nur bei voller Geschlossenheit konkurrenzfähig. Die nationalistische Rechte regiert bereits und ist, sofern es nicht zu Einbrüchen kommt, für 2027 Favoritin."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Italian_general_election",
@@ -141,7 +145,8 @@ window.PAESI = [
   ],
   "popolazione": 58.9,
   "ue": true,
-  "nome_en": "Italy"
+  "nome_en": "Italy",
+  "nome_de": "Italien"
  },
  {
   "iso": "250",
@@ -169,7 +174,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Governo Lecornu II (dal 10 ottobre 2025), di minoranza, sopravvive grazie alla non-censura del PS e ha usato il 49.3 per il bilancio 2026. Pressione dei mercati sul debito; il bilancio 2027 in discussione da metà ottobre 2026 è il prossimo test.",
-   "note_en": "The Lecornu II minority government (since 10 October 2025) survives thanks to the PS declining to censure it and used Article 49.3 to pass the 2026 budget. Market pressure on the debt; the 2027 budget, under debate from mid-October 2026, is the next test."
+   "note_en": "The Lecornu II minority government (since 10 October 2025) survives thanks to the PS declining to censure it and used Article 49.3 to pass the 2026 budget. Market pressure on the debt; the 2027 budget, under debate from mid-October 2026, is the next test.",
+   "note_de": "Die Minderheitsregierung Lecornu II (seit dem 10. Oktober 2025) überlebt dank des Verzichts der PS auf ein Misstrauensvotum und hat für den Haushalt 2026 den Artikel 49.3 genutzt. Druck der Märkte wegen der Verschuldung; der ab Mitte Oktober 2026 beratene Haushalt 2027 ist der nächste Test."
   },
   "ultime_elezioni": {
    "data": "2024-07",
@@ -210,7 +216,8 @@ window.PAESI = [
    "data": "2027-04",
    "tipo": "presidenziali",
    "note": "Presidenziali aprile-maggio 2027 (Le Pen favorita nei sondaggi, eleggibile dopo l'appello del 7/7/2026 ma con ricorso in Cassazione pendente); legislative entro giugno 2029 salvo nuovo scioglimento.",
-   "note_en": "Presidential election April-May 2027 (Le Pen leads the polls, eligible after the appeal ruling of 7 July 2026 but with an appeal to the Court of Cassation pending); legislative elections by June 2029 unless parliament is dissolved again."
+   "note_en": "Presidential election April-May 2027 (Le Pen leads the polls, eligible after the appeal ruling of 7 July 2026 but with an appeal to the Court of Cassation pending); legislative elections by June 2029 unless parliament is dissolved again.",
+   "note_de": "Präsidentschaftswahl April-Mai 2027 (Le Pen in den Umfragen Favoritin, nach dem Berufungsurteil vom 7.7.2026 wählbar, aber mit anhängiger Revision vor dem Kassationshof); Parlamentswahl bis Juni 2029, sofern keine erneute Auflösung erfolgt."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -242,7 +249,8 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     }
    ],
-   "fonte_en": "PolitPro, legislative polling average (15 October 2026)"
+   "fonte_en": "PolitPro, legislative polling average (15 October 2026)",
+   "fonte_de": "PolitPro, Umfragedurchschnitt Parlamentswahl (15. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "RN",
@@ -257,7 +265,8 @@ window.PAESI = [
    "status_quo": "centro",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "Con il RN al 35% e Le Pen al 32-37% al primo turno delle presidenziali, la destra nazionalista è la favorita per guidare esecutivo ed Eliseo nel 2027; il fronte repubblicano è indebolito e il RN potrebbe governare da solo o con parte di LR.",
-   "commento_coalizione_en": "With RN at 35% and Le Pen at 32-37% in the first round of the presidential election, the nationalist right is the favourite to lead both the government and the Élysée in 2027; the republican front is weakened and RN could govern alone or with part of LR."
+   "commento_coalizione_en": "With RN at 35% and Le Pen at 32-37% in the first round of the presidential election, the nationalist right is the favourite to lead both the government and the Élysée in 2027; the republican front is weakened and RN could govern alone or with part of LR.",
+   "commento_coalizione_de": "Mit dem RN bei 35% und Le Pen bei 32-37% im ersten Wahlgang der Präsidentschaftswahl ist die nationalistische Rechte Favoritin für die Führung von Regierung und Élysée im Jahr 2027; die republikanische Front ist geschwächt, und der RN könnte allein oder mit einem Teil von LR regieren."
   },
   "fonti": [
    "https://politpro.eu/en/france",
@@ -270,11 +279,13 @@ window.PAESI = [
    "famiglia": "centro",
    "dal": "2017-05",
    "nota": "Nella Quinta Repubblica è il presidente a guidare l'esecutivo: il primo ministro Lecornu gestisce un governo di minoranza fino alle presidenziali del 2027.",
-   "nota_en": "In the Fifth Republic the president leads the executive: Prime Minister Lecornu runs a minority government until the 2027 presidential election."
+   "nota_en": "In the Fifth Republic the president leads the executive: Prime Minister Lecornu runs a minority government until the 2027 presidential election.",
+   "nota_de": "In der Fünften Republik führt der Präsident die Exekutive: Premierminister Lecornu leitet bis zur Präsidentschaftswahl 2027 eine Minderheitsregierung."
   },
   "popolazione": 68.6,
   "ue": true,
-  "nome_en": "France"
+  "nome_en": "France",
+  "nome_de": "Frankreich"
  },
  {
   "iso": "276",
@@ -298,7 +309,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Grande coalizione nero-rossa molto impopolare (circa 89% di insoddisfatti nel DeutschlandTrend di ottobre 2026) e logorata da liti su sanità, fisco e pensioni; Merz esclude elezioni anticipate. L'AfD ha superato stabilmente la Union nei sondaggi.",
-   "note_en": "Deeply unpopular black-red grand coalition (around 89% dissatisfied in the October 2026 DeutschlandTrend), worn down by rows over health, tax and pensions; Merz rules out an early election. The AfD has consistently overtaken the Union in the polls."
+   "note_en": "Deeply unpopular black-red grand coalition (around 89% dissatisfied in the October 2026 DeutschlandTrend), worn down by rows over health, tax and pensions; Merz rules out an early election. The AfD has consistently overtaken the Union in the polls.",
+   "note_de": "Sehr unbeliebte schwarz-rote Große Koalition (rund 89% Unzufriedene im DeutschlandTrend vom Oktober 2026), zermürbt durch Streit über Gesundheit, Steuern und Renten; Merz schließt eine Neuwahl aus. Die AfD hat die Union in den Umfragen dauerhaft überholt."
   },
   "ultime_elezioni": {
    "data": "2025-02",
@@ -339,7 +351,8 @@ window.PAESI = [
    "data": "2029-03",
    "tipo": "legislative",
    "note": "Scadenza naturale (entro il 26 marzo 2029); coalizione senza maggioranza nei sondaggi ma Merz esclude il voto anticipato.",
-   "note_en": "End of the regular term (by 26 March 2029); the coalition has no majority in the polls but Merz rules out a snap election."
+   "note_en": "End of the regular term (by 26 March 2029); the coalition has no majority in the polls but Merz rules out a snap election.",
+   "note_de": "Reguläres Ende der Legislaturperiode (bis zum 26. März 2029); Koalition ohne Mehrheit in den Umfragen, aber Merz schließt eine Neuwahl aus."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -381,7 +394,8 @@ window.PAESI = [
      "famiglia": "sinistra"
     }
    ],
-   "fonte_en": "INSA (9-12 October 2026)"
+   "fonte_en": "INSA (9-12 October 2026)",
+   "fonte_de": "INSA (9.-12. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "AfD",
@@ -396,7 +410,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "L'AfD è primo partito al 26-30% e Union, SPD e Verdi insieme non arrivano al 50%: dopo un voto anticipato una maggioranza senza l'AfD non esiste nei numeri, e il cordone (Brandmauer) regge solo finché la CDU accetta di governare con tutta la sinistra. Qui si assume che ceda: governo a guida AfD o AfD-Union.",
-   "commento_coalizione_en": "The AfD is the largest party at 26-30% and the Union, SPD and Greens together fall short of 50%: after a snap election no majority without the AfD exists in the numbers, and the firewall (Brandmauer) holds only as long as the CDU is willing to govern with the entire left. The assumption here is that it gives way: an AfD-led or AfD-Union government."
+   "commento_coalizione_en": "The AfD is the largest party at 26-30% and the Union, SPD and Greens together fall short of 50%: after a snap election no majority without the AfD exists in the numbers, and the firewall (Brandmauer) holds only as long as the CDU is willing to govern with the entire left. The assumption here is that it gives way: an AfD-led or AfD-Union government.",
+   "commento_coalizione_de": "Die AfD ist mit 26-30% stärkste Partei, und Union, SPD und Grüne kommen zusammen nicht auf 50%: Nach einer Neuwahl gibt es rechnerisch keine Mehrheit ohne die AfD, und die Brandmauer hält nur, solange die CDU bereit ist, mit der gesamten Linken zu regieren. Hier wird angenommen, dass sie fällt: Regierung unter Führung der AfD oder AfD-Union."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_German_federal_election",
@@ -406,11 +421,13 @@ window.PAESI = [
   "anticipate": {
    "data": "2028-03",
    "nota": "Coalizione Merz senza maggioranza nei sondaggi e con l'89% di insoddisfatti: una crisi prima della scadenza del 2029 è lo sbocco più probabile.",
-   "nota_en": "The Merz coalition has no majority in the polls and 89% dissatisfied: a crisis before the 2029 end of term is the most likely outcome."
+   "nota_en": "The Merz coalition has no majority in the polls and 89% dissatisfied: a crisis before the 2029 end of term is the most likely outcome.",
+   "nota_de": "Koalition Merz ohne Mehrheit in den Umfragen und mit 89% Unzufriedenen: Eine Krise vor dem regulären Ende 2029 ist der wahrscheinlichste Ausgang."
   },
   "popolazione": 83.6,
   "ue": true,
-  "nome_en": "Germany"
+  "nome_en": "Germany",
+  "nome_de": "Deutschland"
  },
  {
   "iso": "724",
@@ -434,7 +451,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Dopo la rottura con Junts (ottobre 2025) e la bocciatura dei decreti sulla casa, Sánchez ha sciolto le Cortes il 5 ottobre 2026 e convocato elezioni anticipate per il 29 novembre 2026; il governo resta in carica fino all'insediamento del successivo.",
-   "note_en": "After the break with Junts (October 2025) and the defeat of the housing decrees, Sánchez dissolved the Cortes on 5 October 2026 and called a snap election for 29 November 2026; the government remains in office until its successor is sworn in."
+   "note_en": "After the break with Junts (October 2025) and the defeat of the housing decrees, Sánchez dissolved the Cortes on 5 October 2026 and called a snap election for 29 November 2026; the government remains in office until its successor is sworn in.",
+   "note_de": "Nach dem Bruch mit Junts (Oktober 2025) und der Ablehnung der Wohnungsdekrete hat Sánchez die Cortes am 5. Oktober 2026 aufgelöst und eine Neuwahl für den 29. November 2026 angesetzt; die Regierung bleibt bis zum Amtsantritt der nächsten im Amt."
   },
   "ultime_elezioni": {
    "data": "2023-07",
@@ -475,7 +493,8 @@ window.PAESI = [
    "data": "2026-11",
    "tipo": "legislative",
    "note": "Elezioni generali anticipate il 29 novembre 2026 (scadenza naturale era agosto 2027).",
-   "note_en": "Snap general election on 29 November 2026 (the regular term would have ended in August 2027)."
+   "note_en": "Snap general election on 29 November 2026 (the regular term would have ended in August 2027).",
+   "note_de": "Vorgezogene Parlamentswahl am 29. November 2026 (reguläres Ende der Legislaturperiode wäre August 2027 gewesen)."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -517,7 +536,8 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     }
    ],
-   "fonte_en": "GAD3 for Vocento (6-8 October 2026)"
+   "fonte_en": "GAD3 for Vocento (6-8 October 2026)",
+   "fonte_de": "GAD3 für Vocento (6.-8. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "Vox",
@@ -535,7 +555,8 @@ window.PAESI = [
    "partner_coalizione": true,
    "commento_coalizione": "PP e Vox sommano circa 198 seggi (maggioranza assoluta 176): il 29 novembre è molto probabile un governo Feijóo con Vox come partner o appoggio esterno. Vox è in forte crescita (18-19%) ma resta junior partner; difficile che guidi da solo l'esecutivo entro il 2030.",
    "partner_primo": true,
-   "commento_coalizione_en": "PP and Vox together total around 198 seats (absolute majority 176): on 29 November a Feijóo government with Vox as a partner or providing external support is very likely. Vox is growing strongly (18-19%) but remains the junior partner; it is unlikely to lead the government on its own by 2030."
+   "commento_coalizione_en": "PP and Vox together total around 198 seats (absolute majority 176): on 29 November a Feijóo government with Vox as a partner or providing external support is very likely. Vox is growing strongly (18-19%) but remains the junior partner; it is unlikely to lead the government on its own by 2030.",
+   "commento_coalizione_de": "PP und Vox kommen zusammen auf rund 198 Sitze (absolute Mehrheit 176): Am 29. November ist eine Regierung Feijóo mit Vox als Partner oder externer Stütze sehr wahrscheinlich. Vox wächst stark (18-19%), bleibt aber Juniorpartner; dass Vox bis 2030 allein die Regierung führt, ist unwahrscheinlich."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Spanish_general_election",
@@ -544,7 +565,8 @@ window.PAESI = [
   ],
   "popolazione": 49.1,
   "ue": true,
-  "nome_en": "Spain"
+  "nome_en": "Spain",
+  "nome_de": "Spanien"
  },
  {
   "iso": "826",
@@ -564,7 +586,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Burnham ha sostituito Starmer il 20 luglio 2026 dopo le sue dimissioni (eletto leader senza avversari); ha rimosso Reeves e dato una svolta sociale. Il 'Burnham bounce' ha riportato il Labour davanti a Reform UK, indebolito anche dallo scandalo della donazione a Farage.",
-   "note_en": "Burnham replaced Starmer on 20 July 2026 after the latter's resignation (elected leader unopposed); he removed Reeves and shifted the party leftwards on social policy. The 'Burnham bounce' has put Labour back ahead of Reform UK, which has also been weakened by the scandal over the donation to Farage."
+   "note_en": "Burnham replaced Starmer on 20 July 2026 after the latter's resignation (elected leader unopposed); he removed Reeves and shifted the party leftwards on social policy. The 'Burnham bounce' has put Labour back ahead of Reform UK, which has also been weakened by the scandal over the donation to Farage.",
+   "note_de": "Burnham hat am 20. Juli 2026 nach dessen Rücktritt Starmer abgelöst (ohne Gegenkandidaten zum Parteichef gewählt); er hat Reeves entlassen und einen sozialpolitischen Kurswechsel eingeleitet. Der 'Burnham bounce' hat Labour wieder vor Reform UK gebracht, das zudem durch den Skandal um die Spende an Farage geschwächt ist."
   },
   "ultime_elezioni": {
    "data": "2024-07",
@@ -605,7 +628,8 @@ window.PAESI = [
    "data": "2029-08",
    "tipo": "legislative",
    "note": "Scadenza legale 15 agosto 2029; Burnham ha una larga maggioranza e non ha annunciato voto anticipato.",
-   "note_en": "Statutory deadline 15 August 2029; Burnham has a large majority and has not announced a snap election."
+   "note_en": "Statutory deadline 15 August 2029; Burnham has a large majority and has not announced a snap election.",
+   "note_de": "Gesetzliche Frist 15. August 2029; Burnham verfügt über eine breite Mehrheit und hat keine Neuwahl angekündigt."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -642,7 +666,8 @@ window.PAESI = [
      "famiglia": "centrosinistra"
     }
    ],
-   "fonte_en": "YouGov (11-12 October 2026)"
+   "fonte_en": "YouGov (11-12 October 2026)",
+   "fonte_de": "YouGov (11.-12. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "Reform UK",
@@ -658,7 +683,8 @@ window.PAESI = [
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "Assunzione editoriale della piattaforma: Reform UK vince le elezioni del 2029. Nei sondaggi di ottobre 2026 Reform è terza (21%) dietro Labour (24%) e Tory (23%), dopo aver guidato per oltre un anno sopra il 30%: qui si assume che torni a quei livelli e che il maggioritario trasformi il plateau in una maggioranza di seggi per Farage.",
    "primo": "destra_nazionalista",
-   "commento_coalizione_en": "Editorial assumption of the platform: Reform UK wins the 2029 election. In the October 2026 polls Reform is third (21%) behind Labour (24%) and the Tories (23%), after leading for over a year above 30%: the assumption here is that it returns to those levels and that first-past-the-post turns the plateau into a majority of seats for Farage."
+   "commento_coalizione_en": "Editorial assumption of the platform: Reform UK wins the 2029 election. In the October 2026 polls Reform is third (21%) behind Labour (24%) and the Tories (23%), after leading for over a year above 30%: the assumption here is that it returns to those levels and that first-past-the-post turns the plateau into a majority of seats for Farage.",
+   "commento_coalizione_de": "Redaktionelle Annahme der Plattform: Reform UK gewinnt die Wahl 2029. In den Umfragen vom Oktober 2026 liegt Reform mit 21% auf Platz drei hinter Labour (24%) und den Tories (23%), nachdem die Partei über ein Jahr lang mit mehr als 30% geführt hatte: Hier wird angenommen, dass sie zu diesen Werten zurückkehrt und das Mehrheitswahlrecht das Plateau in eine Sitzmehrheit für Farage verwandelt."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_United_Kingdom_general_election",
@@ -667,7 +693,8 @@ window.PAESI = [
   ],
   "popolazione": 69.3,
   "ue": false,
-  "nome_en": "United Kingdom"
+  "nome_en": "United Kingdom",
+  "nome_de": "Vereinigtes Königreich"
  },
  {
   "iso": "528",
@@ -695,7 +722,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Primo gabinetto di minoranza dal 1945 (66 seggi su 150), insediato il 23 febbraio 2026 dopo quattro mesi di formazione; cerca maggioranze variabili (PRO su clima/azoto, JA21 su migrazione). Soddisfazione al 24%: D66 dimezzata nei sondaggi, VVD ai minimi, JA21 ai massimi.",
-   "note_en": "First minority cabinet since 1945 (66 of 150 seats), sworn in on 23 February 2026 after four months of coalition talks; it seeks shifting majorities (PRO on climate/nitrogen, JA21 on migration). Approval at 24%: D66 halved in the polls, VVD at record lows, JA21 at record highs."
+   "note_en": "First minority cabinet since 1945 (66 of 150 seats), sworn in on 23 February 2026 after four months of coalition talks; it seeks shifting majorities (PRO on climate/nitrogen, JA21 on migration). Approval at 24%: D66 halved in the polls, VVD at record lows, JA21 at record highs.",
+   "note_de": "Erstes Minderheitskabinett seit 1945 (66 von 150 Sitzen), vereidigt am 23. Februar 2026 nach vier Monaten Regierungsbildung; es sucht wechselnde Mehrheiten (PRO bei Klima/Stickstoff, JA21 bei Migration). Zufriedenheit bei 24%: D66 in den Umfragen halbiert, VVD auf Tiefstwerten, JA21 auf Höchstwerten."
   },
   "ultime_elezioni": {
    "data": "2025-10",
@@ -736,7 +764,8 @@ window.PAESI = [
    "data": "2030-03",
    "tipo": "legislative",
    "note": "Scadenza regolare (data da confermare). Gabinetto di minoranza molto fragile: elezioni anticipate probabili ben prima.",
-   "note_en": "Regular end of term (date to be confirmed). Very fragile minority cabinet: a snap election is likely well before then."
+   "note_en": "Regular end of term (date to be confirmed). Very fragile minority cabinet: a snap election is likely well before then.",
+   "note_de": "Reguläres Ende der Legislaturperiode (Datum noch zu bestätigen). Sehr fragiles Minderheitskabinett: Eine Neuwahl ist deutlich früher wahrscheinlich."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -778,7 +807,8 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     }
    ],
-   "fonte_en": "PolitPro, polling average (15 October 2026)"
+   "fonte_en": "PolitPro, polling average (15 October 2026)",
+   "fonte_de": "PolitPro, Umfragedurchschnitt (15. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "PVV",
@@ -793,7 +823,8 @@ window.PAESI = [
    "status_quo": "centro",
    "coalizione": "centrosinistra",
    "commento_coalizione": "Il PVV è in calo ma la destra nazionalista nel complesso (PVV+JA21+FvD circa 31%) cresce, trainata da JA21 di Eerdmans, più accettabile come partner per VVD e CDA. Con i numeri attuali guiderebbe PRO (Klaver), ma un governo VVD-CDA-JA21 (eventualmente con PVV) è uno scenario realistico se la coalizione Jetten cade.",
-   "commento_coalizione_en": "The PVV is declining but the nationalist right as a whole (PVV+JA21+FvD, around 31%) is growing, driven by Eerdmans' JA21, which is more acceptable as a partner for VVD and CDA. On current numbers PRO (Klaver) would lead, but a VVD-CDA-JA21 government (possibly with the PVV) is a realistic scenario if the Jetten coalition falls."
+   "commento_coalizione_en": "The PVV is declining but the nationalist right as a whole (PVV+JA21+FvD, around 31%) is growing, driven by Eerdmans' JA21, which is more acceptable as a partner for VVD and CDA. On current numbers PRO (Klaver) would lead, but a VVD-CDA-JA21 government (possibly with the PVV) is a realistic scenario if the Jetten coalition falls.",
+   "commento_coalizione_de": "Die PVV verliert, aber die nationalistische Rechte insgesamt (PVV+JA21+FvD rund 31%) wächst, getragen von der JA21 von Eerdmans, die für VVD und CDA als Partner akzeptabler ist. Mit den aktuellen Zahlen würde PRO (Klaver) die Regierung führen, doch eine Regierung VVD-CDA-JA21 (gegebenenfalls mit PVV) ist ein realistisches Szenario, falls die Koalition Jetten stürzt."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Dutch_general_election",
@@ -803,11 +834,13 @@ window.PAESI = [
   "anticipate": {
    "data": "2027-09",
    "nota": "Primo gabinetto di minoranza dal 1945, soddisfazione al 24%: caduta e voto anticipato probabili ben prima del 2030.",
-   "nota_en": "First minority cabinet since 1945, approval at 24%: a collapse and a snap election are likely well before 2030."
+   "nota_en": "First minority cabinet since 1945, approval at 24%: a collapse and a snap election are likely well before 2030.",
+   "nota_de": "Erstes Minderheitskabinett seit 1945, Zufriedenheit bei 24%: Sturz und Neuwahl deutlich vor 2030 wahrscheinlich."
   },
   "popolazione": 18.0,
   "ue": true,
-  "nome_en": "Netherlands"
+  "nome_en": "Netherlands",
+  "nome_de": "Niederlande"
  },
  {
   "iso": "056",
@@ -843,7 +876,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Coalizione 'Arizona' di maggioranza impegnata in austerità e riforme (pensioni, lavoro) contestate dai sindacati; De Wever resta popolare e N-VA è l'unico partito di governo premiato nei sondaggi, mentre il Vlaams Belang lo supera in diverse rilevazioni fiamminghe.",
-   "note_en": "The 'Arizona' majority coalition is pursuing austerity and reforms (pensions, labour) contested by the trade unions; De Wever remains popular and N-VA is the only governing party rewarded in the polls, while Vlaams Belang overtakes it in several Flemish surveys."
+   "note_en": "The 'Arizona' majority coalition is pursuing austerity and reforms (pensions, labour) contested by the trade unions; De Wever remains popular and N-VA is the only governing party rewarded in the polls, while Vlaams Belang overtakes it in several Flemish surveys.",
+   "note_de": "Die Mehrheitskoalition 'Arizona' setzt auf Sparkurs und von den Gewerkschaften bekämpfte Reformen (Renten, Arbeitsmarkt); De Wever bleibt beliebt, und die N-VA ist die einzige Regierungspartei, die in den Umfragen zulegt, während der Vlaams Belang sie in mehreren flämischen Erhebungen überholt."
   },
   "ultime_elezioni": {
    "data": "2024-06",
@@ -884,7 +918,8 @@ window.PAESI = [
    "data": "2029-06",
    "tipo": "legislative",
    "note": "Scadenza fissa quinquennale (giugno 2029, insieme a regionali ed europee).",
-   "note_en": "Fixed five-year term (June 2029, alongside regional and European elections)."
+   "note_en": "Fixed five-year term (June 2029, alongside regional and European elections).",
+   "note_de": "Feste fünfjährige Wahlperiode (Juni 2029, zusammen mit Regional- und Europawahl)."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -926,7 +961,8 @@ window.PAESI = [
      "famiglia": "sinistra"
     }
    ],
-   "fonte_en": "PolitPro, regional averages (15 October 2026): figures by region, not national"
+   "fonte_en": "PolitPro, regional averages (15 October 2026): figures by region, not national",
+   "fonte_de": "PolitPro, regionale Durchschnitte (15. Oktober 2026): Werte je Region, nicht landesweit"
   },
   "destra_principale": {
    "partito": "Vlaams Belang",
@@ -941,7 +977,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrodestra",
    "commento_coalizione": "Il Vlaams Belang è primo partito nelle Fiandre (26-28%) ma resta escluso dal cordone sanitario: con i numeri attuali un nuovo esecutivo verrebbe ancora formato da N-VA e MR. Solo se N-VA rompesse il cordone dopo il 2029 (ipotesi che De Wever esclude) la destra nazionalista potrebbe entrare al governo federale o fiammingo.",
-   "commento_coalizione_en": "Vlaams Belang is the largest party in Flanders (26-28%) but remains excluded by the cordon sanitaire: on current numbers a new government would still be formed by N-VA and MR. Only if N-VA broke the cordon after 2029 (a possibility De Wever rules out) could the nationalist right enter the federal or Flemish government."
+   "commento_coalizione_en": "Vlaams Belang is the largest party in Flanders (26-28%) but remains excluded by the cordon sanitaire: on current numbers a new government would still be formed by N-VA and MR. Only if N-VA broke the cordon after 2029 (a possibility De Wever rules out) could the nationalist right enter the federal or Flemish government.",
+   "commento_coalizione_de": "Der Vlaams Belang ist in Flandern stärkste Partei (26-28%), bleibt aber durch die Brandmauer ausgeschlossen: Mit den aktuellen Zahlen würde eine neue Regierung weiterhin von N-VA und MR gebildet. Nur wenn die N-VA nach 2029 die Brandmauer aufgäbe (was De Wever ausschließt), könnte die nationalistische Rechte in die föderale oder die flämische Regierung einziehen."
   },
   "fonti": [
    "https://politpro.eu/nl/belgie",
@@ -950,7 +987,8 @@ window.PAESI = [
   ],
   "popolazione": 11.8,
   "ue": true,
-  "nome_en": "Belgium"
+  "nome_en": "Belgium",
+  "nome_de": "Belgien"
  },
  {
   "iso": "040",
@@ -978,7 +1016,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Coalizione tripartita nero-rosso-rosa in forte difficoltà: 63% di insoddisfatti, FPÖ al 37-41% e coalizione senza maggioranza nei sondaggi. A ottobre 2026 Babler ha annunciato il ritiro graduale dalla guida SPÖ; Stocker esclude elezioni anticipate.",
-   "note_en": "The black-red-pink three-party coalition is in serious difficulty: 63% dissatisfied, FPÖ at 37-41% and the coalition without a majority in the polls. In October 2026 Babler announced his gradual withdrawal from the SPÖ leadership; Stocker rules out an early election."
+   "note_en": "The black-red-pink three-party coalition is in serious difficulty: 63% dissatisfied, FPÖ at 37-41% and the coalition without a majority in the polls. In October 2026 Babler announced his gradual withdrawal from the SPÖ leadership; Stocker rules out an early election.",
+   "note_de": "Schwarz-rot-pinke Dreierkoalition in großen Schwierigkeiten: 63% Unzufriedene, FPÖ bei 37-41% und Koalition ohne Mehrheit in den Umfragen. Im Oktober 2026 hat Babler seinen schrittweisen Rückzug von der SPÖ-Spitze angekündigt; Stocker schließt eine Neuwahl aus."
   },
   "ultime_elezioni": {
    "data": "2024-09",
@@ -1019,7 +1058,8 @@ window.PAESI = [
    "data": "2029-09",
    "tipo": "legislative",
    "note": "Scadenza naturale (autunno 2029); pressione crescente per il voto anticipato data la crisi della coalizione.",
-   "note_en": "End of the regular term (autumn 2029); growing pressure for a snap election given the coalition crisis."
+   "note_en": "End of the regular term (autumn 2029); growing pressure for a snap election given the coalition crisis.",
+   "note_de": "Reguläres Ende der Legislaturperiode (Herbst 2029); angesichts der Koalitionskrise wachsender Druck in Richtung Neuwahl."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1056,7 +1096,8 @@ window.PAESI = [
      "famiglia": "sinistra"
     }
    ],
-   "fonte_en": "IFDD (7-10 October 2026)"
+   "fonte_en": "IFDD (7-10 October 2026)",
+   "fonte_de": "IFDD (7.-10. Oktober 2026)"
   },
   "destra_principale": {
    "partito": "FPÖ",
@@ -1071,7 +1112,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "Con la FPÖ vicina al 40% e la coalizione sotto il 50%, alle prossime elezioni Kickl sarebbe quasi certamente incaricato e potrebbe governare con la ÖVP come junior partner o persino sfiorare la maggioranza assoluta in seggi. È il caso più maturo in Europa per un governo guidato dalla destra nazionalista.",
-   "commento_coalizione_en": "With the FPÖ close to 40% and the coalition below 50%, at the next election Kickl would almost certainly be asked to form a government and could govern with the ÖVP as junior partner or even come close to an absolute majority of seats. It is the most advanced case in Europe for a government led by the nationalist right."
+   "commento_coalizione_en": "With the FPÖ close to 40% and the coalition below 50%, at the next election Kickl would almost certainly be asked to form a government and could govern with the ÖVP as junior partner or even come close to an absolute majority of seats. It is the most advanced case in Europe for a government led by the nationalist right.",
+   "commento_coalizione_de": "Mit der FPÖ nahe 40% und der Koalition unter 50% würde Kickl bei der nächsten Wahl fast sicher den Regierungsauftrag erhalten und könnte mit der ÖVP als Juniorpartner regieren oder sogar nahe an eine absolute Mandatsmehrheit herankommen. Es ist der reifste Fall in Europa für eine von der nationalistischen Rechten geführte Regierung."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Austrian_legislative_election",
@@ -1081,11 +1123,13 @@ window.PAESI = [
   "anticipate": {
    "data": "2027-09",
    "nota": "Coalizione tripartita sotto il 50% nei sondaggi e in crisi di leadership: il voto anticipato è più probabile della scadenza naturale del 2029.",
-   "nota_en": "Three-party coalition below 50% in the polls and in a leadership crisis: a snap election is more likely than the regular end of term in 2029."
+   "nota_en": "Three-party coalition below 50% in the polls and in a leadership crisis: a snap election is more likely than the regular end of term in 2029.",
+   "nota_de": "Dreierkoalition unter 50% in den Umfragen und in einer Führungskrise: Eine Neuwahl ist wahrscheinlicher als das reguläre Ende der Legislaturperiode 2029."
   },
   "popolazione": 9.2,
   "ue": true,
-  "nome_en": "Austria"
+  "nome_en": "Austria",
+  "nome_de": "Österreich"
  },
  {
   "iso": "616",
@@ -1117,7 +1161,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Coalizione pro-UE di Tusk a un anno dal voto del 2027, con il presidente Karol Nawrocki (area PiS) che usa il veto. Polska 2050 è crollata nei sondaggi (circa 1%), mentre la destra è frammentata tra PiS, Konfederacja, Korona (KKP) e il nuovo partito Rozwój Plus di Morawiecki.",
-   "note_en": "Tusk's pro-EU coalition is one year from the 2027 election, with President Karol Nawrocki (PiS camp) wielding his veto. Polska 2050 has collapsed in the polls (around 1%), while the right is fragmented between PiS, Konfederacja, Korona (KKP) and Morawiecki's new party Rozwój Plus."
+   "note_en": "Tusk's pro-EU coalition is one year from the 2027 election, with President Karol Nawrocki (PiS camp) wielding his veto. Polska 2050 has collapsed in the polls (around 1%), while the right is fragmented between PiS, Konfederacja, Korona (KKP) and Morawiecki's new party Rozwój Plus.",
+   "note_de": "Pro-europäische Koalition Tusk ein Jahr vor der Wahl 2027, mit Präsident Karol Nawrocki (PiS-Lager), der sein Veto einsetzt. Polska 2050 ist in den Umfragen eingebrochen (rund 1%), während die Rechte zwischen PiS, Konfederacja, Korona (KKP) und der neuen Partei Rozwój Plus von Morawiecki zersplittert ist."
   },
   "ultime_elezioni": {
    "data": "2023-10",
@@ -1153,7 +1198,8 @@ window.PAESI = [
    "data": "2027-10",
    "tipo": "legislative",
    "note": "Scadenza naturale della legislatura (autunno 2027).",
-   "note_en": "End of the regular parliamentary term (autumn 2027)."
+   "note_en": "End of the regular parliamentary term (autumn 2027).",
+   "note_de": "Reguläres Ende der Legislaturperiode (Herbst 2027)."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1195,7 +1241,8 @@ window.PAESI = [
      "famiglia": "sinistra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "PiS",
@@ -1210,7 +1257,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "KO è primo partito ma la coalizione di governo è stimata attorno al 45% dei seggi; PiS, Konfederacja e KKP (più Rozwój Plus) sommano circa il 50% e potrebbero formare una maggioranza di destra, anche se PiS perde consensi a favore di Konfederacja e Korona. La destra radicale può realisticamente governare nel 2027 in coalizione a guida PiS.",
-   "commento_coalizione_en": "KO is the largest party but the governing coalition is estimated at around 45% of seats; PiS, Konfederacja and KKP (plus Rozwój Plus) total around 50% and could form a right-wing majority, even though PiS is losing support to Konfederacja and Korona. The radical right can realistically govern in 2027 in a PiS-led coalition."
+   "commento_coalizione_en": "KO is the largest party but the governing coalition is estimated at around 45% of seats; PiS, Konfederacja and KKP (plus Rozwój Plus) total around 50% and could form a right-wing majority, even though PiS is losing support to Konfederacja and Korona. The radical right can realistically govern in 2027 in a PiS-led coalition.",
+   "commento_coalizione_de": "KO ist stärkste Partei, aber die Regierungskoalition wird auf rund 45% der Sitze geschätzt; PiS, Konfederacja und KKP (plus Rozwój Plus) kommen zusammen auf rund 50% und könnten eine rechte Mehrheit bilden, auch wenn die PiS Stimmen an Konfederacja und Korona verliert. Die radikale Rechte kann 2027 realistisch in einer Koalition unter Führung der PiS regieren."
   },
   "fonti": [
    "https://politpro.eu/en/poland",
@@ -1219,7 +1267,8 @@ window.PAESI = [
   ],
   "popolazione": 36.6,
   "ue": true,
-  "nome_en": "Poland"
+  "nome_en": "Poland",
+  "nome_de": "Polen"
  },
  {
   "iso": "348",
@@ -1239,7 +1288,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Alle elezioni del 12 aprile 2026 Tisza ha ottenuto 141 seggi su 199 (maggioranza dei due terzi), ponendo fine a 16 anni di governo Orbán; Magyar è premier dal 9 maggio 2026. Orbán è stato rieletto presidente di Fidesz a giugno 2026 e resta leader dell'opposizione.",
-   "note_en": "In the election of 12 April 2026 Tisza won 141 of 199 seats (a two-thirds majority), ending 16 years of Orbán government; Magyar has been prime minister since 9 May 2026. Orbán was re-elected president of Fidesz in June 2026 and remains leader of the opposition."
+   "note_en": "In the election of 12 April 2026 Tisza won 141 of 199 seats (a two-thirds majority), ending 16 years of Orbán government; Magyar has been prime minister since 9 May 2026. Orbán was re-elected president of Fidesz in June 2026 and remains leader of the opposition.",
+   "note_de": "Bei der Wahl am 12. April 2026 hat Tisza 141 von 199 Sitzen (Zweidrittelmehrheit) gewonnen und damit 16 Jahre Regierung Orbán beendet; Magyar ist seit dem 9. Mai 2026 Ministerpräsident. Orbán wurde im Juni 2026 als Fidesz-Vorsitzender wiedergewählt und bleibt Oppositionsführer."
   },
   "ultime_elezioni": {
    "data": "2026-04",
@@ -1265,7 +1315,8 @@ window.PAESI = [
    "data": "2030-04",
    "tipo": "legislative",
    "note": "Scadenza naturale della legislatura.",
-   "note_en": "End of the regular parliamentary term."
+   "note_en": "End of the regular parliamentary term.",
+   "note_de": "Reguläres Ende der Legislaturperiode."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1292,7 +1343,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Fidesz-KDNP",
@@ -1307,7 +1359,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrodestra",
    "commento_coalizione": "Tisza domina con oltre il 60% nei sondaggi; Fidesz è crollato dal 38,6% al 25-26% con un lieve recupero negli ultimi mesi, mentre Mi Hazánk (ESN) cresce all'8-10%. Un ritorno della destra nazionalista al governo entro il 2030 appare oggi improbabile.",
-   "commento_coalizione_en": "Tisza dominates with over 60% in the polls; Fidesz has collapsed from 38.6% to 25-26% with a slight recovery in recent months, while Mi Hazánk (ESN) is growing to 8-10%. A return of the nationalist right to government by 2030 currently looks unlikely."
+   "commento_coalizione_en": "Tisza dominates with over 60% in the polls; Fidesz has collapsed from 38.6% to 25-26% with a slight recovery in recent months, while Mi Hazánk (ESN) is growing to 8-10%. A return of the nationalist right to government by 2030 currently looks unlikely.",
+   "commento_coalizione_de": "Tisza dominiert mit über 60% in den Umfragen; Fidesz ist von 38,6% auf 25-26% eingebrochen, mit leichter Erholung in den letzten Monaten, während Mi Hazánk (ESN) auf 8-10% wächst. Eine Rückkehr der nationalistischen Rechten an die Regierung bis 2030 erscheint derzeit unwahrscheinlich."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Hungarian_parliamentary_election",
@@ -1315,7 +1368,8 @@ window.PAESI = [
   ],
   "popolazione": 9.6,
   "ue": true,
-  "nome_en": "Hungary"
+  "nome_en": "Hungary",
+  "nome_de": "Ungarn"
  },
  {
   "iso": "203",
@@ -1343,7 +1397,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Terzo governo Babiš (ANO 9 ministri, Motoristé 4, SPD 3), nominato il 9 dicembre 2025; Tomio Okamura (SPD) è presidente della Camera. ANO è classificato qui come destra nazionalista perché membro di Patrioti per l'Europa e alleato di SPD, pur restando un partito populista a vocazione tecnocratica. Il governo ha superato una mozione di sfiducia a ottobre 2026 (101-83), ma alle amministrative del 9-10 ottobre ANO ha perso terreno.",
-   "note_en": "Third Babiš government (ANO 9 ministers, Motoristé 4, SPD 3), appointed on 9 December 2025; Tomio Okamura (SPD) is Speaker of the Chamber of Deputies. ANO is classified here as nationalist right because it is a member of Patriots for Europe and allied with SPD, while remaining a populist party with a technocratic bent. The government survived a no-confidence motion in October 2026 (101-83), but ANO lost ground in the local elections of 9-10 October."
+   "note_en": "Third Babiš government (ANO 9 ministers, Motoristé 4, SPD 3), appointed on 9 December 2025; Tomio Okamura (SPD) is Speaker of the Chamber of Deputies. ANO is classified here as nationalist right because it is a member of Patriots for Europe and allied with SPD, while remaining a populist party with a technocratic bent. The government survived a no-confidence motion in October 2026 (101-83), but ANO lost ground in the local elections of 9-10 October.",
+   "note_de": "Dritte Regierung Babiš (ANO 9 Minister, Motoristé 4, SPD 3), ernannt am 9. Dezember 2025; Tomio Okamura (SPD) ist Präsident der Abgeordnetenkammer. ANO wird hier als nationalistische Rechte eingestuft, weil die Partei Mitglied der Patrioten für Europa und Verbündete der SPD ist, auch wenn sie eine populistische Partei mit technokratischer Ausrichtung bleibt. Die Regierung hat im Oktober 2026 ein Misstrauensvotum überstanden (101-83), aber bei den Kommunalwahlen am 9.-10. Oktober hat ANO verloren."
   },
   "ultime_elezioni": {
    "data": "2025-10",
@@ -1384,7 +1439,8 @@ window.PAESI = [
    "data": "2029-10",
    "tipo": "legislative",
    "note": "Scadenza naturale; presidenziali a gennaio 2028.",
-   "note_en": "End of the regular term; presidential election in January 2028."
+   "note_en": "End of the regular term; presidential election in January 2028.",
+   "note_de": "Reguläres Ende der Legislaturperiode; Präsidentschaftswahl im Januar 2028."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1426,7 +1482,8 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "ANO",
@@ -1441,7 +1498,8 @@ window.PAESI = [
    "status_quo": "destra_nazionalista",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "ANO resta primo con il 31-32% ma l'attuale maggioranza ANO-SPD-Motoristé sarebbe a rischio: i Motoristé sono sotto la soglia del 5% e l'opposizione (STAN, ODS, Piráti) cresce. La destra radicale (SPD) governa già oggi come partner minore e potrebbe restarlo, ma dipende dalla tenuta di ANO.",
-   "commento_coalizione_en": "ANO remains first at 31-32% but the current ANO-SPD-Motoristé majority would be at risk: Motoristé are below the 5% threshold and the opposition (STAN, ODS, Piráti) is growing. The radical right (SPD) already governs today as a junior partner and could remain so, but this depends on ANO holding up."
+   "commento_coalizione_en": "ANO remains first at 31-32% but the current ANO-SPD-Motoristé majority would be at risk: Motoristé are below the 5% threshold and the opposition (STAN, ODS, Piráti) is growing. The radical right (SPD) already governs today as a junior partner and could remain so, but this depends on ANO holding up.",
+   "commento_coalizione_de": "ANO bleibt mit 31-32% stärkste Partei, aber die aktuelle Mehrheit ANO-SPD-Motoristé wäre gefährdet: Die Motoristé liegen unter der 5%-Hürde, und die Opposition (STAN, ODS, Piráti) wächst. Die radikale Rechte (SPD) regiert bereits heute als Juniorpartner und könnte es bleiben, hängt aber von der Stabilität von ANO ab."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2025_Czech_parliamentary_election",
@@ -1450,7 +1508,8 @@ window.PAESI = [
   ],
   "popolazione": 10.9,
   "ue": true,
-  "nome_en": "Czech Republic"
+  "nome_en": "Czech Republic",
+  "nome_de": "Tschechien"
  },
  {
   "iso": "703",
@@ -1478,7 +1537,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Smer è nominalmente socialdemocratico ma ha compiuto una svolta nazional-populista e filo-russa. Il 29 settembre 2026 il parlamento ha rimosso il vicepremier Taraba (quota SNS); la maggioranza è scesa a 76-78 seggi su 150 e Fico ha evocato elezioni anticipate a gennaio 2027 e una possibile alleanza con Republika.",
-   "note_en": "Smer is nominally social democratic but has taken a national-populist and pro-Russian turn. On 29 September 2026 parliament removed Deputy Prime Minister Taraba (SNS quota); the majority has fallen to 76-78 of 150 seats and Fico has floated a snap election in January 2027 and a possible alliance with Republika."
+   "note_en": "Smer is nominally social democratic but has taken a national-populist and pro-Russian turn. On 29 September 2026 parliament removed Deputy Prime Minister Taraba (SNS quota); the majority has fallen to 76-78 of 150 seats and Fico has floated a snap election in January 2027 and a possible alliance with Republika.",
+   "note_de": "Smer ist nominell sozialdemokratisch, hat aber einen national-populistischen und russlandfreundlichen Kurswechsel vollzogen. Am 29. September 2026 hat das Parlament Vizepremier Taraba (SNS-Kontingent) abgesetzt; die Mehrheit ist auf 76-78 von 150 Sitzen gesunken, und Fico hat eine Neuwahl im Januar 2027 und ein mögliches Bündnis mit Republika ins Spiel gebracht."
   },
   "ultime_elezioni": {
    "data": "2023-09",
@@ -1519,7 +1579,8 @@ window.PAESI = [
    "data": "2027-09",
    "tipo": "legislative",
    "note": "Scadenza naturale; possibili anticipate a gennaio 2027 secondo Fico (richiede maggioranza qualificata).",
-   "note_en": "End of the regular term; a possible snap election in January 2027 according to Fico (requires a qualified majority)."
+   "note_en": "End of the regular term; a possible snap election in January 2027 according to Fico (requires a qualified majority).",
+   "note_de": "Reguläres Ende der Legislaturperiode; laut Fico mögliche Neuwahl im Januar 2027 (erfordert qualifizierte Mehrheit)."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1561,7 +1622,8 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Republika",
@@ -1577,7 +1639,8 @@ window.PAESI = [
    "partner_trend": true,
    "coalizione": "centro",
    "commento_coalizione": "Le opposizioni (PS, SaS, KDH, Slovensko, Demokrati) sommano circa il 48% contro il 36% di Smer-Hlas-Republika, con SNS sotto soglia: con i numeri attuali guiderebbe PS. Se la crescita di Republika continua, lo scenario alternativo è un governo Smer-Republika a guida Fico, nazional-populista pur se nominalmente di sinistra.",
-   "commento_coalizione_en": "The opposition parties (PS, SaS, KDH, Slovensko, Demokrati) total around 48% against 36% for Smer-Hlas-Republika, with SNS below the threshold: on current numbers PS would lead. If Republika's growth continues, the alternative scenario is a Fico-led Smer-Republika government, national-populist even if nominally left-wing."
+   "commento_coalizione_en": "The opposition parties (PS, SaS, KDH, Slovensko, Demokrati) total around 48% against 36% for Smer-Hlas-Republika, with SNS below the threshold: on current numbers PS would lead. If Republika's growth continues, the alternative scenario is a Fico-led Smer-Republika government, national-populist even if nominally left-wing.",
+   "commento_coalizione_de": "Die Opposition (PS, SaS, KDH, Slovensko, Demokrati) kommt zusammen auf rund 48% gegenüber 36% für Smer-Hlas-Republika, mit der SNS unter der Hürde: Mit den aktuellen Zahlen würde PS die Regierung führen. Setzt sich das Wachstum von Republika fort, ist das Alternativszenario eine Regierung Smer-Republika unter Fico, national-populistisch, wenn auch nominell links."
   },
   "fonti": [
    "https://politpro.eu/en/slovakia",
@@ -1586,11 +1649,13 @@ window.PAESI = [
   "anticipate": {
    "data": "2027-01",
    "nota": "Fico ha evocato elezioni anticipate a gennaio 2027 dopo la rottura con la SNS.",
-   "nota_en": "Fico has floated a snap election in January 2027 after the break with the SNS."
+   "nota_en": "Fico has floated a snap election in January 2027 after the break with the SNS.",
+   "nota_de": "Fico hat nach dem Bruch mit der SNS eine Neuwahl im Januar 2027 ins Spiel gebracht."
   },
   "popolazione": 5.4,
   "ue": true,
-  "nome_en": "Slovakia"
+  "nome_en": "Slovakia",
+  "nome_de": "Slowakei"
  },
  {
   "iso": "642",
@@ -1618,7 +1683,8 @@ window.PAESI = [
    "tipo": "ad_interim",
    "destra_nazionalista_al_governo": false,
    "note": "Il PSD è uscito dalla grande coalizione il 23 aprile 2026 e il 5 maggio il governo Bolojan è caduto con una mozione PSD-AUR; Bolojan resta premier ad interim. Dopo tre tentativi falliti, il presidente Nicușor Dan ha designato il diplomatico Luca Niculescu, con PSD in governo e appoggio esterno PNL-UDMR; voto di fiducia previsto intorno al 16-20 ottobre 2026 (esito da verificare).",
-   "note_en": "The PSD left the grand coalition on 23 April 2026 and on 5 May the Bolojan government fell to a PSD-AUR motion; Bolojan remains interim prime minister. After three failed attempts, President Nicușor Dan nominated the diplomat Luca Niculescu, with the PSD in government and external support from PNL-UDMR; the confidence vote is expected around 16-20 October 2026 (outcome to be verified)."
+   "note_en": "The PSD left the grand coalition on 23 April 2026 and on 5 May the Bolojan government fell to a PSD-AUR motion; Bolojan remains interim prime minister. After three failed attempts, President Nicușor Dan nominated the diplomat Luca Niculescu, with the PSD in government and external support from PNL-UDMR; the confidence vote is expected around 16-20 October 2026 (outcome to be verified).",
+   "note_de": "Die PSD ist am 23. April 2026 aus der Großen Koalition ausgetreten, und am 5. Mai ist die Regierung Bolojan durch einen Misstrauensantrag von PSD und AUR gestürzt; Bolojan bleibt geschäftsführender Premier. Nach drei gescheiterten Anläufen hat Präsident Nicușor Dan den Diplomaten Luca Niculescu nominiert, mit der PSD in der Regierung und externer Unterstützung von PNL-UDMR; Vertrauensabstimmung voraussichtlich um den 16.-20. Oktober 2026 (Ausgang noch zu prüfen)."
   },
   "ultime_elezioni": {
    "data": "2024-12",
@@ -1659,7 +1725,8 @@ window.PAESI = [
    "data": "2028-12",
    "tipo": "legislative",
    "note": "Scadenza naturale; AUR chiede elezioni anticipate ma presidente e partiti tradizionali le escludono.",
-   "note_en": "End of the regular term; AUR is calling for a snap election but the president and the mainstream parties rule it out."
+   "note_en": "End of the regular term; AUR is calling for a snap election but the president and the mainstream parties rule it out.",
+   "note_de": "Reguläres Ende der Legislaturperiode; die AUR fordert eine Neuwahl, aber Präsident und traditionelle Parteien schließen sie aus."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1701,7 +1768,8 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "AUR",
@@ -1716,7 +1784,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "AUR è stabilmente primo attorno al 36-40% (il doppio del 2024) e con i partiti sovranisti minori sfiorerebbe la maggioranza assoluta; i partiti tradizionali resistono grazie al cordone sanitario del presidente Dan ma la crisi di governo li logora. La destra radicale potrebbe realisticamente governare dopo il 2028, da sola o con il PSD.",
-   "commento_coalizione_en": "AUR is consistently first at around 36-40% (double its 2024 result) and, together with the smaller sovereignist parties, would come close to an absolute majority; the mainstream parties hold on thanks to President Dan's cordon sanitaire but the government crisis is wearing them down. The radical right could realistically govern after 2028, alone or with the PSD."
+   "commento_coalizione_en": "AUR is consistently first at around 36-40% (double its 2024 result) and, together with the smaller sovereignist parties, would come close to an absolute majority; the mainstream parties hold on thanks to President Dan's cordon sanitaire but the government crisis is wearing them down. The radical right could realistically govern after 2028, alone or with the PSD.",
+   "commento_coalizione_de": "Die AUR liegt stabil mit rund 36-40% vorn (doppelt so viel wie 2024) und würde mit den kleineren souveränistischen Parteien knapp an die absolute Mehrheit herankommen; die traditionellen Parteien halten dank der Brandmauer von Präsident Dan stand, doch die Regierungskrise zermürbt sie. Die radikale Rechte könnte nach 2028 realistisch regieren, allein oder mit der PSD."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Romanian_political_crisis",
@@ -1725,11 +1794,13 @@ window.PAESI = [
   "anticipate": {
    "data": "2027-06",
    "nota": "Crisi di governo aperta da maggio 2026 e AUR che chiede il voto: elezioni anticipate plausibili nel 2027.",
-   "nota_en": "Government crisis open since May 2026 and AUR calling for a vote: a snap election is plausible in 2027."
+   "nota_en": "Government crisis open since May 2026 and AUR calling for a vote: a snap election is plausible in 2027.",
+   "nota_de": "Seit Mai 2026 offene Regierungskrise und die AUR fordert Wahlen: Eine Neuwahl 2027 ist plausibel."
   },
   "popolazione": 19.1,
   "ue": true,
-  "nome_en": "Romania"
+  "nome_en": "Romania",
+  "nome_de": "Rumänien"
  },
  {
   "iso": "100",
@@ -1749,7 +1820,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "L'ex presidente Radev ha vinto le anticipate del 19 aprile 2026 (settime dal 2021) con il 44,6% e 131 seggi su 240: primo governo monocolore con maggioranza assoluta dal 1997. Bulgaria Progressista è un movimento populista-sovranista di matrice sociale, con posizioni ambigue su Russia e Ucraina; classificazione centrosinistra indicativa. Presidenziali il 25 ottobre 2026 con la presidente Iotova nettamente favorita.",
-   "note_en": "Former president Radev won the snap election of 19 April 2026 (the seventh since 2021) with 44.6% and 131 of 240 seats: the first single-party government with an absolute majority since 1997. Progressive Bulgaria is a populist-sovereignist movement with a social-policy focus and ambiguous positions on Russia and Ukraine; its centre-left classification is indicative. Presidential election on 25 October 2026 with President Iotova the clear favourite."
+   "note_en": "Former president Radev won the snap election of 19 April 2026 (the seventh since 2021) with 44.6% and 131 of 240 seats: the first single-party government with an absolute majority since 1997. Progressive Bulgaria is a populist-sovereignist movement with a social-policy focus and ambiguous positions on Russia and Ukraine; its centre-left classification is indicative. Presidential election on 25 October 2026 with President Iotova the clear favourite.",
+   "note_de": "Ex-Präsident Radev hat die Neuwahl vom 19. April 2026 (die siebte seit 2021) mit 44,6% und 131 von 240 Sitzen gewonnen: erste Einparteienregierung mit absoluter Mehrheit seit 1997. Progressives Bulgarien ist eine populistisch-souveränistische Bewegung mit sozialer Prägung und uneindeutigen Positionen zu Russland und der Ukraine; die Einstufung als Mitte-links ist nur indikativ. Präsidentschaftswahl am 25. Oktober 2026 mit Präsidentin Iotova als klarer Favoritin."
   },
   "ultime_elezioni": {
    "data": "2026-04",
@@ -1785,7 +1857,8 @@ window.PAESI = [
    "data": "2030-04",
    "tipo": "legislative",
    "note": "Legislative a scadenza naturale nel 2030; presidenziali il 25 ottobre 2026 (Iotova favorita).",
-   "note_en": "Legislative elections at the end of the regular term in 2030; presidential election on 25 October 2026 (Iotova the favourite)."
+   "note_en": "Legislative elections at the end of the regular term in 2030; presidential election on 25 October 2026 (Iotova the favourite).",
+   "note_de": "Parlamentswahl zum regulären Ende der Legislaturperiode 2030; Präsidentschaftswahl am 25. Oktober 2026 (Iotova Favoritin)."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1827,7 +1900,8 @@ window.PAESI = [
      "famiglia": "centrosinistra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Vazrazhdane",
@@ -1842,7 +1916,8 @@ window.PAESI = [
    "status_quo": "centrosinistra",
    "coalizione": "centrosinistra",
    "commento_coalizione": "Bulgaria Progressista resta dominante (40-44%) anche se in lieve calo; Vazrazhdane, crollato dal 13% del 2024 al 4% del 2026, recupera leggermente. La destra radicale non è in grado di governare; il vero nodo è la deriva sovranista dello stesso governo Radev.",
-   "commento_coalizione_en": "Progressive Bulgaria remains dominant (40-44%) though slightly down; Vazrazhdane, which collapsed from 13% in 2024 to 4% in 2026, is recovering slightly. The radical right is in no position to govern; the real issue is the sovereignist drift of the Radev government itself."
+   "commento_coalizione_en": "Progressive Bulgaria remains dominant (40-44%) though slightly down; Vazrazhdane, which collapsed from 13% in 2024 to 4% in 2026, is recovering slightly. The radical right is in no position to govern; the real issue is the sovereignist drift of the Radev government itself.",
+   "commento_coalizione_de": "Progressives Bulgarien bleibt dominant (40-44%), wenn auch mit leichtem Rückgang; Wasraschdane, von 13% im Jahr 2024 auf 4% im Jahr 2026 eingebrochen, erholt sich leicht. Die radikale Rechte ist nicht regierungsfähig; der eigentliche Knackpunkt ist der souveränistische Kurs der Regierung Radev selbst."
   },
   "fonti": [
    "https://politpro.eu/en/bulgaria",
@@ -1850,7 +1925,8 @@ window.PAESI = [
   ],
   "popolazione": 6.4,
   "ue": true,
-  "nome_en": "Bulgaria"
+  "nome_en": "Bulgaria",
+  "nome_de": "Bulgarien"
  },
  {
   "iso": "191",
@@ -1874,7 +1950,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Terzo governo Plenković: HDZ con il Movimento Patriottico (DP) di Penava e il sostegno dei deputati delle minoranze. Rapporti tesi con DP nel 2026, ma Plenković non ha alternative; il gradimento del governo è ai minimi, con HDZ al 25% in CRO Demoskop di ottobre.",
-   "note_en": "Third Plenković government: HDZ with Penava's Homeland Movement (DP) and the support of the national-minority MPs. Relations with DP were strained in 2026, but Plenković has no alternatives; government approval is at record lows, with HDZ at 25% in the October CRO Demoskop poll."
+   "note_en": "Third Plenković government: HDZ with Penava's Homeland Movement (DP) and the support of the national-minority MPs. Relations with DP were strained in 2026, but Plenković has no alternatives; government approval is at record lows, with HDZ at 25% in the October CRO Demoskop poll.",
+   "note_de": "Dritte Regierung Plenković: HDZ mit der Heimatbewegung (DP) von Penava und der Unterstützung der Minderheitenabgeordneten. Angespanntes Verhältnis zur DP im Jahr 2026, doch Plenković hat keine Alternativen; die Zustimmung zur Regierung ist auf einem Tiefstand, die HDZ liegt im CRO Demoskop vom Oktober bei 25%."
   },
   "ultime_elezioni": {
    "data": "2024-04",
@@ -1910,7 +1987,8 @@ window.PAESI = [
    "data": "2028-04",
    "tipo": "legislative",
    "note": "Scadenza naturale della legislatura.",
-   "note_en": "End of the regular parliamentary term."
+   "note_en": "End of the regular parliamentary term.",
+   "note_de": "Reguläres Ende der Legislaturperiode."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -1942,7 +2020,8 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Most",
@@ -1960,7 +2039,8 @@ window.PAESI = [
    "partner_coalizione": true,
    "commento_coalizione": "HDZ resta primo ma in calo; DP è crollato sotto la soglia del 5% e il voto di destra si sposta su Most (conservatore-sovranista, 11%). Un governo HDZ-Most è lo sbocco più probabile; la sinistra (SDP+Možemo, circa 39%) cresce ma senza alleati sufficienti. La destra radicale può governare solo come partner minore di HDZ.",
    "partner_primo": true,
-   "commento_coalizione_en": "HDZ remains first but is declining; DP has collapsed below the 5% threshold and the right-wing vote is shifting to Most (conservative-sovereignist, 11%). An HDZ-Most government is the most likely outcome; the left (SDP+Možemo, around 39%) is growing but lacks sufficient allies. The radical right can govern only as a junior partner of HDZ."
+   "commento_coalizione_en": "HDZ remains first but is declining; DP has collapsed below the 5% threshold and the right-wing vote is shifting to Most (conservative-sovereignist, 11%). An HDZ-Most government is the most likely outcome; the left (SDP+Možemo, around 39%) is growing but lacks sufficient allies. The radical right can govern only as a junior partner of HDZ.",
+   "commento_coalizione_de": "Die HDZ bleibt stärkste Partei, verliert aber; die DP ist unter die 5%-Hürde gefallen, und die rechten Stimmen wandern zu Most (konservativ-souveränistisch, 11%). Eine Regierung HDZ-Most ist der wahrscheinlichste Ausgang; die Linke (SDP+Možemo, rund 39%) wächst, aber ohne ausreichende Verbündete. Die radikale Rechte kann nur als Juniorpartner der HDZ regieren."
   },
   "fonti": [
    "https://politpro.eu/en/croatia",
@@ -1968,7 +2048,8 @@ window.PAESI = [
   ],
   "popolazione": 3.9,
   "ue": true,
-  "nome_en": "Croatia"
+  "nome_en": "Croatia",
+  "nome_de": "Kroatien"
  },
  {
   "iso": "705",
@@ -2004,7 +2085,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": true,
    "note": "Dopo le elezioni del 22 marzo 2026 (Svoboda di Golob primo di misura ma senza maggioranza), Janša è stato eletto premier per la quarta volta il 22 maggio e il governo è entrato in carica il 4 giugno. La coalizione conta 43 seggi su 90 e si regge sull'appoggio esterno del partito populista Resni.ca (5 seggi). SDS siede nel PPE a Strasburgo pur essendo nazional-conservatore.",
-   "note_en": "After the election of 22 March 2026 (Golob's Svoboda narrowly first but without a majority), Janša was elected prime minister for the fourth time on 22 May and the government took office on 4 June. The coalition holds 43 of 90 seats and relies on outside support from the populist party Resni.ca (5 seats). SDS sits with the EPP in Strasbourg despite being national-conservative."
+   "note_en": "After the election of 22 March 2026 (Golob's Svoboda narrowly first but without a majority), Janša was elected prime minister for the fourth time on 22 May and the government took office on 4 June. The coalition holds 43 of 90 seats and relies on outside support from the populist party Resni.ca (5 seats). SDS sits with the EPP in Strasbourg despite being national-conservative.",
+   "note_de": "Nach der Wahl vom 22. März 2026 (Golobs Svoboda knapp stärkste Kraft, aber ohne Mehrheit) wurde Janša am 22. Mai zum vierten Mal zum Ministerpräsidenten gewählt; die Regierung trat am 4. Juni ihr Amt an. Die Koalition verfügt über 43 von 90 Sitzen und stützt sich auf die externe Unterstützung der populistischen Partei Resni.ca (5 Sitze). Die SDS sitzt in Straßburg in der EVP-Fraktion, obwohl sie nationalkonservativ ist."
   },
   "ultime_elezioni": {
    "data": "2026-03",
@@ -2050,7 +2132,8 @@ window.PAESI = [
    "data": "2030-03",
    "tipo": "legislative",
    "note": "Scadenza naturale; presidenziali a fine 2027.",
-   "note_en": "End of the regular term; presidential election in late 2027."
+   "note_en": "End of the regular term; presidential election in late 2027.",
+   "note_de": "Reguläres Ende der Legislaturperiode; Präsidentschaftswahl Ende 2027."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2092,7 +2175,8 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "SDS",
@@ -2107,7 +2191,8 @@ window.PAESI = [
    "status_quo": "destra_nazionalista",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "SDS è ora primo partito e il blocco di destra sfiora il 46% contro il 43% del centrosinistra: la destra nazionalista governa già e manterrebbe la guida. La fragilità sta nella maggioranza relativa (43 seggi) e nella dipendenza da Resni.ca.",
-   "commento_coalizione_en": "SDS is now the largest party and the right-wing bloc is close to 46% against 43% for the centre-left: the nationalist right already governs and would retain the lead. The fragility lies in the relative majority (43 seats) and the dependence on Resni.ca."
+   "commento_coalizione_en": "SDS is now the largest party and the right-wing bloc is close to 46% against 43% for the centre-left: the nationalist right already governs and would retain the lead. The fragility lies in the relative majority (43 seats) and the dependence on Resni.ca.",
+   "commento_coalizione_de": "Die SDS ist nun stärkste Partei, und der rechte Block kommt auf knapp 46 % gegenüber 43 % für Mitte-links: Die nationalistische Rechte regiert bereits und würde die Führung behalten. Die Schwachstelle liegt in der relativen Mehrheit (43 Sitze) und in der Abhängigkeit von Resni.ca."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Slovenian_parliamentary_election",
@@ -2115,7 +2200,8 @@ window.PAESI = [
   ],
   "popolazione": 2.1,
   "ue": true,
-  "nome_en": "Slovenia"
+  "nome_en": "Slovenia",
+  "nome_de": "Slowenien"
  },
  {
   "iso": "752",
@@ -2147,12 +2233,14 @@ window.PAESI = [
    "tipo": "ad_interim",
    "destra_nazionalista_al_governo": true,
    "note": "Il blocco di centrosinistra (S, V, C, MP) ha vinto le elezioni del 13 settembre 2026 con 176 seggi su 349 contro i 173 dei partiti di Tidö; Kristersson si è dimesso il 17 settembre e resta in carica per gli affari correnti. Magdalena Andersson (S) non è riuscita a formare un governo per il veto incrociato tra Centerpartiet e Vänsterpartiet: il 15 ottobre 2026 il Riksdag ha bocciato la sua nomina (99 sì, 248 no).",
-   "note_en": "The centre-left bloc (S, V, C, MP) won the election of 13 September 2026 with 176 of 349 seats against 173 for the Tidö parties; Kristersson resigned on 17 September and remains in office in a caretaker capacity. Magdalena Andersson (S) failed to form a government because of the mutual veto between Centerpartiet and Vänsterpartiet: on 15 October 2026 the Riksdag rejected her nomination (99 in favour, 248 against)."
+   "note_en": "The centre-left bloc (S, V, C, MP) won the election of 13 September 2026 with 176 of 349 seats against 173 for the Tidö parties; Kristersson resigned on 17 September and remains in office in a caretaker capacity. Magdalena Andersson (S) failed to form a government because of the mutual veto between Centerpartiet and Vänsterpartiet: on 15 October 2026 the Riksdag rejected her nomination (99 in favour, 248 against).",
+   "note_de": "Der Mitte-links-Block (S, V, C, MP) hat die Wahl vom 13. September 2026 mit 176 von 349 Sitzen gegenüber 173 für die Tidö-Parteien gewonnen; Kristersson trat am 17. September zurück und bleibt geschäftsführend im Amt. Magdalena Andersson (S) konnte wegen der gegenseitigen Vetos von Centerpartiet und Vänsterpartiet keine Regierung bilden: Am 15. Oktober 2026 lehnte der Riksdag ihre Nominierung ab (99 Ja, 248 Nein)."
   },
   "transizione": {
    "data": "2026-12",
    "nota": "Formazione del nuovo governo dopo il voto di settembre 2026",
-   "nota_en": "Formation of the new government after the September 2026 election"
+   "nota_en": "Formation of the new government after the September 2026 election",
+   "nota_de": "Regierungsbildung nach der Wahl vom September 2026"
   },
   "ultime_elezioni": {
    "data": "2026-09",
@@ -2193,7 +2281,8 @@ window.PAESI = [
    "data": "2030-09",
    "tipo": "legislative",
    "note": "Scadenza ordinaria settembre 2030; possibili elezioni straordinarie se il Riksdag respinge quattro candidati premier.",
-   "note_en": "Regular term ends September 2030; an extraordinary election is possible if the Riksdag rejects four candidates for prime minister."
+   "note_en": "Regular term ends September 2030; an extraordinary election is possible if the Riksdag rejects four candidates for prime minister.",
+   "note_de": "Reguläre Wahl im September 2030; außerordentliche Wahlen möglich, falls der Riksdag vier Kandidaten für das Amt des Ministerpräsidenten ablehnt."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2235,7 +2324,8 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "Verian/SVT Väljarbarometer (28 Sep – 11 Oct 2026)"
+   "fonte_en": "Verian/SVT Väljarbarometer (28 Sep – 11 Oct 2026)",
+   "fonte_de": "Verian/SVT Väljarbarometer (28. Sept. – 11. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Sverigedemokraterna (SD)",
@@ -2251,7 +2341,8 @@ window.PAESI = [
    "partner_trend": true,
    "coalizione": "centrosinistra",
    "commento_coalizione": "I sondaggi post-voto confermano una maggioranza risicata del blocco rosso-verde, ma l'impasse fra C e V rende incerto un governo Andersson. Gli SD sono scesi dal 20,5% del 2022 al 17,5% e restano confinati al ruolo di partner esterno di un centrodestra a guida M; un governo a guida SD non è realistico.",
-   "commento_coalizione_en": "Post-election polls confirm a narrow majority for the red-green bloc, but the deadlock between C and V makes an Andersson government uncertain. SD have fallen from 20.5% in 2022 to 17.5% and remain confined to the role of outside partner of an M-led centre-right; an SD-led government is not realistic."
+   "commento_coalizione_en": "Post-election polls confirm a narrow majority for the red-green bloc, but the deadlock between C and V makes an Andersson government uncertain. SD have fallen from 20.5% in 2022 to 17.5% and remain confined to the role of outside partner of an M-led centre-right; an SD-led government is not realistic.",
+   "commento_coalizione_de": "Die Umfragen nach der Wahl bestätigen eine knappe Mehrheit des rot-grünen Blocks, doch die Blockade zwischen C und V macht eine Regierung Andersson ungewiss. Die SD sind von 20,5 % im Jahr 2022 auf 17,5 % gefallen und bleiben auf die Rolle eines externen Partners einer Mitte-rechts-Regierung unter Führung der M beschränkt; eine Regierung unter SD-Führung ist nicht realistisch."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Swedish_general_election",
@@ -2259,7 +2350,8 @@ window.PAESI = [
   ],
   "popolazione": 10.6,
   "ue": true,
-  "nome_en": "Sweden"
+  "nome_en": "Sweden",
+  "nome_de": "Schweden"
  },
  {
   "iso": "208",
@@ -2291,7 +2383,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Dopo le elezioni anticipate del 24 marzo 2026 (convocate sull'onda della crisi con Trump sulla Groenlandia) i socialdemocratici hanno perso 12 seggi ma Frederiksen ha formato il 3 giugno 2026 un governo di minoranza a quattro (82 seggi su 179) sostenuto dall'esterno da Enhedslisten e Alternativet.",
-   "note_en": "After the snap election of 24 March 2026 (called in the wake of the crisis with Trump over Greenland) the Social Democrats lost 12 seats, but on 3 June 2026 Frederiksen formed a four-party minority government (82 of 179 seats) supported from outside by Enhedslisten and Alternativet."
+   "note_en": "After the snap election of 24 March 2026 (called in the wake of the crisis with Trump over Greenland) the Social Democrats lost 12 seats, but on 3 June 2026 Frederiksen formed a four-party minority government (82 of 179 seats) supported from outside by Enhedslisten and Alternativet.",
+   "note_de": "Nach der Neuwahl vom 24. März 2026 (ausgerufen im Zuge der Grönland-Krise mit Trump) verloren die Sozialdemokraten 12 Sitze, doch Frederiksen bildete am 3. Juni 2026 eine Minderheitsregierung aus vier Parteien (82 von 179 Sitzen), die von Enhedslisten und Alternativet von außen gestützt wird."
   },
   "ultime_elezioni": {
    "data": "2026-03",
@@ -2332,7 +2425,8 @@ window.PAESI = [
    "data": "2030-03",
    "tipo": "legislative",
    "note": "Scadenza legale entro il 23 marzo 2030.",
-   "note_en": "Legal deadline by 23 March 2030."
+   "note_en": "Legal deadline by 23 March 2030.",
+   "note_de": "Gesetzliche Frist: spätestens 23. März 2030."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2374,7 +2468,8 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Dansk Folkeparti (DF)",
@@ -2390,7 +2485,8 @@ window.PAESI = [
    "partner_trend": true,
    "coalizione": "centrosinistra",
    "commento_coalizione": "Nei sondaggi il blocco rosso resta intorno al 53% e conserverebbe la maggioranza, mentre DF è risalito al 13% diventando il primo partito del blocco blu. Un ritorno al potere del centrodestra passerebbe per un governo Venstre/Konservative/LA con DF e Danmarksdemokraterne come partner di sostegno, non per un premier di destra radicale.",
-   "commento_coalizione_en": "In the polls the red bloc remains around 53% and would keep its majority, while DF has climbed back to 13%, becoming the largest party in the blue bloc. A return to power for the centre-right would come through a Venstre/Konservative/LA government with DF and Danmarksdemokraterne as supporting partners, not through a radical-right prime minister."
+   "commento_coalizione_en": "In the polls the red bloc remains around 53% and would keep its majority, while DF has climbed back to 13%, becoming the largest party in the blue bloc. A return to power for the centre-right would come through a Venstre/Konservative/LA government with DF and Danmarksdemokraterne as supporting partners, not through a radical-right prime minister.",
+   "commento_coalizione_de": "In den Umfragen liegt der rote Block weiterhin bei rund 53 % und würde die Mehrheit behalten, während die DF auf 13 % gestiegen ist und damit stärkste Partei des blauen Blocks wurde. Eine Rückkehr von Mitte-rechts an die Macht würde über eine Regierung aus Venstre, Konservative und LA mit DF und Danmarksdemokraterne als Stützpartnern führen, nicht über einen rechtsradikalen Ministerpräsidenten."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Danish_general_election",
@@ -2398,7 +2494,8 @@ window.PAESI = [
   ],
   "popolazione": 6.0,
   "ue": true,
-  "nome_en": "Denmark"
+  "nome_en": "Denmark",
+  "nome_de": "Dänemark"
  },
  {
   "iso": "246",
@@ -2430,7 +2527,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Il governo Orpo (Kokoomus, Veri Finlandesi, RKP, Cristianodemocratici) è in carica dal giugno 2023 con politiche di austerità e stretta sull'immigrazione. I partiti di governo sono in forte calo nei sondaggi mentre la SDP di Antti Lindtman guida stabilmente.",
-   "note_en": "The Orpo government (Kokoomus, Finns Party, RKP, Christian Democrats) has been in office since June 2023 with austerity policies and a crackdown on immigration. The governing parties are falling sharply in the polls while Antti Lindtman's SDP leads steadily."
+   "note_en": "The Orpo government (Kokoomus, Finns Party, RKP, Christian Democrats) has been in office since June 2023 with austerity policies and a crackdown on immigration. The governing parties are falling sharply in the polls while Antti Lindtman's SDP leads steadily.",
+   "note_de": "Die Regierung Orpo (Kokoomus, Wahre Finnen, RKP, Christdemokraten) ist seit Juni 2023 im Amt und steht für Sparpolitik und eine Verschärfung der Einwanderungspolitik. Die Regierungsparteien verlieren in den Umfragen deutlich, während die SDP von Antti Lindtman stabil vorn liegt."
   },
   "ultime_elezioni": {
    "data": "2023-04",
@@ -2471,7 +2569,8 @@ window.PAESI = [
    "data": "2027-04",
    "tipo": "legislative",
    "note": "Elezioni parlamentari fissate per il 18 aprile 2027.",
-   "note_en": "Parliamentary election scheduled for 18 April 2027."
+   "note_en": "Parliamentary election scheduled for 18 April 2027.",
+   "note_de": "Parlamentswahl angesetzt für den 18. April 2027."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2513,7 +2612,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Yle/Taloustutkimus (7 Sep – 5 Oct 2026)"
+   "fonte_en": "Yle/Taloustutkimus (7 Sep – 5 Oct 2026)",
+   "fonte_de": "Yle/Taloustutkimus (7. Sept. – 5. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Perussuomalaiset (PS)",
@@ -2528,7 +2628,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrosinistra",
    "commento_coalizione": "Con la SDP al 22-23% e i partiti di governo in calo, nel 2027 è probabile un governo a guida socialdemocratica con Centro e sinistra. I Veri Finlandesi, pur risaliti al 16,5%, sono ben sotto il 20,1% del 2023 e difficilmente potrebbero guidare un esecutivo.",
-   "commento_coalizione_en": "With the SDP at 22-23% and the governing parties in decline, a Social Democrat-led government with the Centre and the left is likely in 2027. The Finns Party, although back up to 16.5%, are well below their 20.1% of 2023 and could hardly lead a government."
+   "commento_coalizione_en": "With the SDP at 22-23% and the governing parties in decline, a Social Democrat-led government with the Centre and the left is likely in 2027. The Finns Party, although back up to 16.5%, are well below their 20.1% of 2023 and could hardly lead a government.",
+   "commento_coalizione_de": "Mit der SDP bei 22–23 % und den Regierungsparteien im Abwärtstrend ist 2027 eine sozialdemokratisch geführte Regierung mit Zentrum und Linksbündnis wahrscheinlich. Die Wahren Finnen liegen zwar wieder bei 16,5 %, aber deutlich unter den 20,1 % von 2023 und könnten kaum eine Regierung führen."
   },
   "fonti": [
    "https://politpro.eu/en/finland",
@@ -2536,7 +2637,8 @@ window.PAESI = [
   ],
   "popolazione": 5.6,
   "ue": true,
-  "nome_en": "Finland"
+  "nome_en": "Finland",
+  "nome_de": "Finnland"
  },
  {
   "iso": "578",
@@ -2556,7 +2658,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Il Partito Laburista governa da solo in minoranza (53 seggi su 169) dopo l'uscita del Senterpartiet a inizio 2025; alle elezioni dell'8 settembre 2025 il blocco rosso-verde ha conservato la maggioranza (88 seggi). Il Fremskrittspartiet di Sylvi Listhaug ha più che raddoppiato i seggi (47) ed è ora primo partito in tutti i sondaggi.",
-   "note_en": "The Labour Party governs alone in minority (53 of 169 seats) after the Senterpartiet left in early 2025; at the election of 8 September 2025 the red-green bloc retained its majority (88 seats). Sylvi Listhaug's Fremskrittspartiet more than doubled its seats (47) and is now the largest party in every poll."
+   "note_en": "The Labour Party governs alone in minority (53 of 169 seats) after the Senterpartiet left in early 2025; at the election of 8 September 2025 the red-green bloc retained its majority (88 seats). Sylvi Listhaug's Fremskrittspartiet more than doubled its seats (47) and is now the largest party in every poll.",
+   "note_de": "Die Arbeiterpartei regiert seit dem Austritt der Senterpartiet Anfang 2025 allein als Minderheitsregierung (53 von 169 Sitzen); bei der Wahl vom 8. September 2025 behielt der rot-grüne Block die Mehrheit (88 Sitze). Die Fremskrittspartiet von Sylvi Listhaug hat ihre Sitze mehr als verdoppelt (47) und liegt nun in allen Umfragen auf Platz eins."
   },
   "ultime_elezioni": {
    "data": "2025-09",
@@ -2597,7 +2700,8 @@ window.PAESI = [
    "data": "2029-09",
    "tipo": "legislative",
    "note": "Legislatura fissa di quattro anni; prossime elezioni allo Storting nel settembre 2029.",
-   "note_en": "Fixed four-year term; next Storting election in September 2029."
+   "note_en": "Fixed four-year term; next Storting election in September 2029.",
+   "note_de": "Feste vierjährige Legislaturperiode; nächste Storting-Wahl im September 2029."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2639,7 +2743,8 @@ window.PAESI = [
      "famiglia": "centrosinistra"
     }
    ],
-   "fonte_en": "pollofpolls.no, national average October 2026"
+   "fonte_en": "pollofpolls.no, national average October 2026",
+   "fonte_de": "pollofpolls.no, nationaler Durchschnitt Oktober 2026"
   },
   "destra_principale": {
    "partito": "Fremskrittspartiet (FrP)",
@@ -2654,7 +2759,8 @@ window.PAESI = [
    "status_quo": "centrosinistra",
    "coalizione": "destra_nazionalista",
    "commento_coalizione": "Con il FrP oltre il 33% e Høyre sotto il 14%, i sondaggi di ottobre 2026 danno a FrP+H da soli la maggioranza (87 mandati): Sylvi Listhaug sarebbe la prima premier di destra populista della Scandinavia, con Høyre come partner junior. È lo scenario più concreto di governo a guida nazional-populista tra i paesi analizzati.",
-   "commento_coalizione_en": "With FrP above 33% and Høyre below 14%, the October 2026 polls give FrP+H a majority on their own (87 mandates): Sylvi Listhaug would be Scandinavia's first populist-right prime minister, with Høyre as junior partner. This is the most concrete scenario of a national-populist-led government among the countries analysed."
+   "commento_coalizione_en": "With FrP above 33% and Høyre below 14%, the October 2026 polls give FrP+H a majority on their own (87 mandates): Sylvi Listhaug would be Scandinavia's first populist-right prime minister, with Høyre as junior partner. This is the most concrete scenario of a national-populist-led government among the countries analysed.",
+   "commento_coalizione_de": "Mit der FrP bei über 33 % und Høyre unter 14 % geben die Umfragen vom Oktober 2026 FrP und H allein die Mehrheit (87 Mandate): Sylvi Listhaug wäre die erste rechtspopulistische Ministerpräsidentin Skandinaviens, mit Høyre als Juniorpartner. Es ist das konkreteste Szenario einer nationalpopulistisch geführten Regierung unter den untersuchten Ländern."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2025_Norwegian_parliamentary_election",
@@ -2662,7 +2768,8 @@ window.PAESI = [
   ],
   "popolazione": 5.6,
   "ue": false,
-  "nome_en": "Norway"
+  "nome_en": "Norway",
+  "nome_de": "Norwegen"
  },
  {
   "iso": "372",
@@ -2690,7 +2797,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Governo FF-FG con l'appoggio di un gruppo di deputati indipendenti, insediato il 23 gennaio 2025. Accordo di rotazione: Simon Harris (FG) dovrebbe diventare Taoiseach nel novembre 2027. Catherine Connolly (sostenuta dalla sinistra) è presidente dal novembre 2025.",
-   "note_en": "FF-FG government with the support of a group of independent TDs, sworn in on 23 January 2025. Rotation agreement: Simon Harris (FG) is due to become Taoiseach in November 2027. Catherine Connolly (backed by the left) has been president since November 2025."
+   "note_en": "FF-FG government with the support of a group of independent TDs, sworn in on 23 January 2025. Rotation agreement: Simon Harris (FG) is due to become Taoiseach in November 2027. Catherine Connolly (backed by the left) has been president since November 2025.",
+   "note_de": "Regierung aus FF und FG mit Unterstützung einer Gruppe unabhängiger Abgeordneter, im Amt seit dem 23. Januar 2025. Rotationsvereinbarung: Simon Harris (FG) soll im November 2027 Taoiseach werden. Catherine Connolly (von der Linken unterstützt) ist seit November 2025 Präsidentin."
   },
   "ultime_elezioni": {
    "data": "2024-11",
@@ -2731,7 +2839,8 @@ window.PAESI = [
    "data": "2030-01",
    "tipo": "legislative",
    "note": "Il Dáil deve essere sciolto entro il 17 dicembre 2029; elezioni entro gennaio 2030.",
-   "note_en": "The Dáil must be dissolved by 17 December 2029; election by January 2030."
+   "note_en": "The Dáil must be dissolved by 17 December 2029; election by January 2030.",
+   "note_de": "Der Dáil muss bis zum 17. Dezember 2029 aufgelöst werden; Wahl bis Januar 2030."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2773,7 +2882,8 @@ window.PAESI = [
      "famiglia": "centrosinistra"
     }
    ],
-   "fonte_en": "Ireland Thinks / Sunday Independent (4 Oct 2026)"
+   "fonte_en": "Ireland Thinks / Sunday Independent (4 Oct 2026)",
+   "fonte_de": "Ireland Thinks / Sunday Independent (4. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Aontú",
@@ -2788,7 +2898,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrodestra",
    "commento_coalizione": "Il quadro è frammentato: Sinn Féin è primo partito ma intorno al 20% e senza alleati sufficienti, mentre FF e FG insieme restano la combinazione più probabile, magari con Aontú o Independent Ireland come stampelle. La destra nazional-conservatrice (Aontú al record dell'8%) cresce ma non ha alcuna prospettiva di guidare il governo.",
-   "commento_coalizione_en": "The picture is fragmented: Sinn Féin is the largest party but at around 20% and without sufficient allies, while FF and FG together remain the most likely combination, perhaps propped up by Aontú or Independent Ireland. The national-conservative right (Aontú at a record 8%) is growing but has no prospect whatsoever of leading the government."
+   "commento_coalizione_en": "The picture is fragmented: Sinn Féin is the largest party but at around 20% and without sufficient allies, while FF and FG together remain the most likely combination, perhaps propped up by Aontú or Independent Ireland. The national-conservative right (Aontú at a record 8%) is growing but has no prospect whatsoever of leading the government.",
+   "commento_coalizione_de": "Das Bild ist zersplittert: Sinn Féin ist stärkste Partei, liegt aber bei rund 20 % und hat nicht genügend Verbündete, während FF und FG zusammen die wahrscheinlichste Kombination bleiben, möglicherweise mit Aontú oder Independent Ireland als Stützen. Die nationalkonservative Rechte (Aontú mit Rekordwert von 8 %) wächst, hat aber keinerlei Aussicht, die Regierung zu führen."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Next_Irish_general_election",
@@ -2796,7 +2907,8 @@ window.PAESI = [
   ],
   "popolazione": 5.4,
   "ue": true,
-  "nome_en": "Ireland"
+  "nome_en": "Ireland",
+  "nome_de": "Irland"
  },
  {
   "iso": "620",
@@ -2820,7 +2932,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Governo AD di minoranza (91 seggi su 230) in carica dal 5 giugno 2025 dopo le terze elezioni in tre anni. Montenegro esclude accordi con Chega; il socialista António José Seguro ha vinto le presidenziali di febbraio 2026 battendo André Ventura al ballottaggio (66,8%-33,2%). La disapprovazione del governo supera il 60%.",
-   "note_en": "AD minority government (91 of 230 seats) in office since 5 June 2025 after the third election in three years. Montenegro rules out deals with Chega; the socialist António José Seguro won the presidential election of February 2026, beating André Ventura in the run-off (66.8%-33.2%). Disapproval of the government exceeds 60%."
+   "note_en": "AD minority government (91 of 230 seats) in office since 5 June 2025 after the third election in three years. Montenegro rules out deals with Chega; the socialist António José Seguro won the presidential election of February 2026, beating André Ventura in the run-off (66.8%-33.2%). Disapproval of the government exceeds 60%.",
+   "note_de": "Minderheitsregierung der AD (91 von 230 Sitzen), im Amt seit dem 5. Juni 2025 nach der dritten Wahl in drei Jahren. Montenegro schließt Absprachen mit Chega aus; der Sozialist António José Seguro gewann die Präsidentschaftswahl im Februar 2026 in der Stichwahl gegen André Ventura (66,8 % zu 33,2 %). Die Ablehnung der Regierung liegt bei über 60 %."
   },
   "ultime_elezioni": {
    "data": "2025-05",
@@ -2861,7 +2974,8 @@ window.PAESI = [
    "data": "2029-10",
    "tipo": "legislative",
    "note": "Scadenza legale entro il 14 ottobre 2029, salvo scioglimento anticipato (frequente in Portogallo).",
-   "note_en": "Legal deadline by 14 October 2029, barring early dissolution (frequent in Portugal)."
+   "note_en": "Legal deadline by 14 October 2029, barring early dissolution (frequent in Portugal).",
+   "note_de": "Gesetzliche Frist: spätestens 14. Oktober 2029, vorbehaltlich einer vorzeitigen Auflösung (in Portugal häufig)."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -2898,7 +3012,8 @@ window.PAESI = [
      "famiglia": "sinistra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Chega",
@@ -2913,7 +3028,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrosinistra",
    "commento_coalizione": "PS e Chega sono appaiati intorno al 28% con l'AD scesa sotto il 24%: se si votasse oggi il PS sarebbe il candidato più probabile a un governo di minoranza, ma la somma AD+Chega+IL resta maggioritaria. Se la crescita di Chega continua, Ventura potrebbe diventare primo partito e rendere difficile al PSD mantenere il cordone sanitario.",
-   "commento_coalizione_en": "PS and Chega are level at around 28% with AD down below 24%: if the vote were held today the PS would be the most likely candidate for a minority government, but AD+Chega+IL together still hold a majority. If Chega's growth continues, Ventura could become the largest party and make it hard for the PSD to maintain the cordon sanitaire."
+   "commento_coalizione_en": "PS and Chega are level at around 28% with AD down below 24%: if the vote were held today the PS would be the most likely candidate for a minority government, but AD+Chega+IL together still hold a majority. If Chega's growth continues, Ventura could become the largest party and make it hard for the PSD to maintain the cordon sanitaire.",
+   "commento_coalizione_de": "PS und Chega liegen gleichauf bei rund 28 %, die AD ist unter 24 % gefallen: Bei einer Wahl heute wäre die PS der wahrscheinlichste Kandidat für eine Minderheitsregierung, doch AD, Chega und IL hätten zusammen weiterhin die Mehrheit. Hält der Aufstieg von Chega an, könnte Ventura stärkste Kraft werden und es der PSD erschweren, die Brandmauer aufrechtzuerhalten."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Next_Portuguese_legislative_election",
@@ -2922,11 +3038,13 @@ window.PAESI = [
   "anticipate": {
    "data": "2028-03",
    "nota": "Terzo governo di minoranza in tre anni e scioglimenti frequenti: difficile arrivare al 2029.",
-   "nota_en": "Third minority government in three years and frequent dissolutions: reaching 2029 will be difficult."
+   "nota_en": "Third minority government in three years and frequent dissolutions: reaching 2029 will be difficult.",
+   "nota_de": "Dritte Minderheitsregierung in drei Jahren und häufige Parlamentsauflösungen: Ein Durchhalten bis 2029 ist schwierig."
   },
   "popolazione": 10.7,
   "ue": true,
-  "nome_en": "Portugal"
+  "nome_en": "Portugal",
+  "nome_de": "Portugal"
  },
  {
   "iso": "300",
@@ -2946,7 +3064,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Nea Dimokratia governa da sola con maggioranza assoluta (156 seggi) dal giugno 2023. Il consenso è crollato dal 40,6% a circa il 30% per caro-vita, scandalo OPEKEPE e strage di Tempi; l'opposizione è frammentata tra il nuovo partito di Tsipras (ELAS), PASOK, Elliniki Lysi e il movimento di Maria Karystianou.",
-   "note_en": "Nea Dimokratia has governed alone with an absolute majority (156 seats) since June 2023. Its support has collapsed from 40.6% to around 30% over the cost of living, the OPEKEPE scandal and the Tempi disaster; the opposition is fragmented between Tsipras's new party (ELAS), PASOK, Elliniki Lysi and Maria Karystianou's movement."
+   "note_en": "Nea Dimokratia has governed alone with an absolute majority (156 seats) since June 2023. Its support has collapsed from 40.6% to around 30% over the cost of living, the OPEKEPE scandal and the Tempi disaster; the opposition is fragmented between Tsipras's new party (ELAS), PASOK, Elliniki Lysi and Maria Karystianou's movement.",
+   "note_de": "Nea Dimokratia regiert seit Juni 2023 allein mit absoluter Mehrheit (156 Sitze). Die Zustimmung ist wegen der hohen Lebenshaltungskosten, des OPEKEPE-Skandals und des Zugunglücks von Tempi von 40,6 % auf rund 30 % eingebrochen; die Opposition ist zersplittert zwischen der neuen Partei von Tsipras (ELAS), PASOK, Elliniki Lysi und der Bewegung von Maria Karystianou."
   },
   "ultime_elezioni": {
    "data": "2023-06",
@@ -2987,7 +3106,8 @@ window.PAESI = [
    "data": "2027-07",
    "tipo": "legislative",
    "note": "Scadenza della legislatura: elezioni entro l'estate 2027; Mitsotakis esclude il voto anticipato.",
-   "note_en": "End of the parliamentary term: election by summer 2027; Mitsotakis rules out a snap election."
+   "note_en": "End of the parliamentary term: election by summer 2027; Mitsotakis rules out a snap election.",
+   "note_de": "Reguläres Ende der Legislaturperiode: Wahl bis Sommer 2027; Mitsotakis schließt eine Neuwahl aus."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -3029,7 +3149,8 @@ window.PAESI = [
      "famiglia": "sinistra"
     }
    ],
-   "fonte_en": "PolitPro, weighted average (15 Oct 2026)"
+   "fonte_en": "PolitPro, weighted average (15 Oct 2026)",
+   "fonte_de": "PolitPro, gewichteter Durchschnitt (15. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Elliniki Lysi",
@@ -3044,7 +3165,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrodestra",
    "commento_coalizione": "ND resta prima con 12-15 punti di vantaggio ma intorno al 30% non otterrebbe la maggioranza assoluta: probabile un secondo turno elettorale o una coalizione con PASOK. La destra radicale è frammentata (Elliniki Lysi, Foni Logikis, Niki) e sommata non supera il 12-13%: può al più condizionare ND, non guidare il governo.",
-   "commento_coalizione_en": "ND remains first with a 12-15 point lead but at around 30% would not win an absolute majority: a second round of elections or a coalition with PASOK is likely. The radical right is fragmented (Elliniki Lysi, Foni Logikis, Niki) and combined does not exceed 12-13%: at most it can influence ND, not lead the government."
+   "commento_coalizione_en": "ND remains first with a 12-15 point lead but at around 30% would not win an absolute majority: a second round of elections or a coalition with PASOK is likely. The radical right is fragmented (Elliniki Lysi, Foni Logikis, Niki) and combined does not exceed 12-13%: at most it can influence ND, not lead the government.",
+   "commento_coalizione_de": "Die ND bleibt mit 12–15 Punkten Vorsprung vorn, würde aber bei rund 30 % keine absolute Mehrheit erreichen: Wahrscheinlich sind ein zweiter Wahlgang oder eine Koalition mit der PASOK. Die radikale Rechte ist zersplittert (Elliniki Lysi, Foni Logikis, Niki) und kommt zusammen nicht über 12–13 %: Sie kann die ND allenfalls beeinflussen, aber nicht die Regierung führen."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Greek_parliamentary_election",
@@ -3052,7 +3174,8 @@ window.PAESI = [
   ],
   "popolazione": 10.4,
   "ue": true,
-  "nome_en": "Greece"
+  "nome_en": "Greece",
+  "nome_de": "Griechenland"
  },
  {
   "iso": "756",
@@ -3084,7 +3207,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Governo di concordanza permanente a sette membri (formula 2-2-2-1 dal 2008). La presidenza ruota ogni anno: nel 2026 spetta a Guy Parmelin dell'UDC, che è il primo partito con 62 seggi al Consiglio nazionale. Nessun partito 'guida' l'esecutivo.",
-   "note_en": "Permanent seven-member concordance government (2-2-2-1 formula since 2008). The presidency rotates every year: in 2026 it falls to Guy Parmelin of the UDC/SVP, which is the largest party with 62 seats in the National Council. No party 'leads' the executive."
+   "note_en": "Permanent seven-member concordance government (2-2-2-1 formula since 2008). The presidency rotates every year: in 2026 it falls to Guy Parmelin of the UDC/SVP, which is the largest party with 62 seats in the National Council. No party 'leads' the executive.",
+   "note_de": "Dauerhafte Konkordanzregierung mit sieben Mitgliedern (Zauberformel 2-2-2-1 seit 2008). Das Präsidium wechselt jährlich: 2026 steht es Guy Parmelin von der UDC/SVP zu, die mit 62 Sitzen im Nationalrat stärkste Partei ist. Keine Partei „führt“ die Exekutive."
   },
   "ultime_elezioni": {
    "data": "2023-10",
@@ -3125,7 +3249,8 @@ window.PAESI = [
    "data": "2027-10",
    "tipo": "legislative",
    "note": "Elezioni federali il 24 ottobre 2027; il Consiglio federale viene poi eletto dall'Assemblea federale a dicembre 2027.",
-   "note_en": "Federal election on 24 October 2027; the Federal Council is then elected by the Federal Assembly in December 2027."
+   "note_en": "Federal election on 24 October 2027; the Federal Council is then elected by the Federal Assembly in December 2027.",
+   "note_de": "Eidgenössische Wahlen am 24. Oktober 2027; der Bundesrat wird anschließend im Dezember 2027 von der Bundesversammlung gewählt."
   },
   "sondaggi": {
    "data": "2025-10",
@@ -3162,7 +3287,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "SRG/Sotomo Wahlbarometer (Oct 2025); no national poll for 2026 found"
+   "fonte_en": "SRG/Sotomo Wahlbarometer (Oct 2025); no national poll for 2026 found",
+   "fonte_de": "SRG/Sotomo Wahlbarometer (Okt. 2025); keine nationale Umfrage 2026 gefunden"
   },
   "destra_principale": {
    "partito": "UDC/SVP",
@@ -3181,7 +3307,8 @@ window.PAESI = [
    "commento_coalizione": "Il sistema di concordanza impedisce a qualsiasi partito di 'guidare' il governo: anche con l'UDC verso il 30% (massimo storico nel barometro SRG 2025) la composizione 2-2-2-1 del Consiglio federale non cambierebbe. L'influenza della destra nazionalista passa per le iniziative popolari (es. 'No a una Svizzera da 10 milioni') più che per la guida dell'esecutivo.",
    "primo": "tecnico",
    "partner_primo": true,
-   "commento_coalizione_en": "The concordance system prevents any party from 'leading' the government: even with the UDC/SVP heading towards 30% (a record high in the 2025 SRG barometer) the 2-2-2-1 composition of the Federal Council would not change. The nationalist right's influence runs through popular initiatives (e.g. 'No to a 10-million Switzerland') rather than through leadership of the executive."
+   "commento_coalizione_en": "The concordance system prevents any party from 'leading' the government: even with the UDC/SVP heading towards 30% (a record high in the 2025 SRG barometer) the 2-2-2-1 composition of the Federal Council would not change. The nationalist right's influence runs through popular initiatives (e.g. 'No to a 10-million Switzerland') rather than through leadership of the executive.",
+   "commento_coalizione_de": "Das Konkordanzsystem verhindert, dass eine einzelne Partei die Regierung „führt“: Selbst mit der UDC/SVP bei annähernd 30 % (historischer Höchstwert im SRG-Barometer 2025) würde sich die Zusammensetzung 2-2-2-1 des Bundesrats nicht ändern. Der Einfluss der nationalistischen Rechten läuft eher über Volksinitiativen (z. B. „Keine 10-Millionen-Schweiz“) als über die Führung der Exekutive."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2023_Swiss_federal_election",
@@ -3189,7 +3316,8 @@ window.PAESI = [
   ],
   "popolazione": 9.0,
   "ue": false,
-  "nome_en": "Switzerland"
+  "nome_en": "Switzerland",
+  "nome_de": "Schweiz"
  },
  {
   "iso": "233",
@@ -3213,7 +3341,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Coalizione Reform–Eesti 200 (SDE espulsa a marzo 2025) ridotta a 50 seggi su 101 dopo le defezioni di due deputati nel 2026; governo molto impopolare, i due partiti di coalizione sommano circa il 12-14% nei sondaggi a cinque mesi dal voto.",
-   "note_en": "Reform–Eesti 200 coalition (SDE expelled in March 2025) reduced to 50 of 101 seats after two MPs defected in 2026; a deeply unpopular government, the two coalition parties together poll around 12-14% five months before the election."
+   "note_en": "Reform–Eesti 200 coalition (SDE expelled in March 2025) reduced to 50 of 101 seats after two MPs defected in 2026; a deeply unpopular government, the two coalition parties together poll around 12-14% five months before the election.",
+   "note_de": "Koalition aus Reform und Eesti 200 (SDE im März 2025 ausgeschlossen), nach dem Abgang zweier Abgeordneter 2026 auf 50 von 101 Sitzen geschrumpft; die Regierung ist sehr unbeliebt, die beiden Koalitionsparteien kommen fünf Monate vor der Wahl in den Umfragen zusammen auf etwa 12–14 %."
   },
   "ultime_elezioni": {
    "data": "2023-03",
@@ -3254,7 +3383,8 @@ window.PAESI = [
    "data": "2027-03",
    "tipo": "legislative",
    "note": "Elezioni del Riigikogu entro il 7 marzo 2027.",
-   "note_en": "Riigikogu election by 7 March 2027."
+   "note_en": "Riigikogu election by 7 March 2027.",
+   "note_de": "Wahl zum Riigikogu bis zum 7. März 2027."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -3296,7 +3426,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Norstat / Institute for Societal Studies (14 Sep – 12 Oct 2026), via ERR"
+   "fonte_en": "Norstat / Institute for Societal Studies (14 Sep – 12 Oct 2026), via ERR",
+   "fonte_de": "Norstat / Institute for Societal Studies (14. Sept. – 12. Okt. 2026), via ERR"
   },
   "destra_principale": {
    "partito": "EKRE",
@@ -3312,7 +3443,8 @@ window.PAESI = [
    "partner_trend": true,
    "coalizione": "centrodestra",
    "commento_coalizione": "Con i sondaggi attuali Isamaa (Reinsalu) guiderebbe il prossimo governo, probabilmente con Keskerakond e/o SDE; EKRE, scissa nel 2024 e ferma al 14-18%, non è in grado di guidare un governo ma potrebbe entrare come partner minore di Isamaa (come nel 2019-21), scenario possibile se il centrodestra preferisse una coalizione di destra.",
-   "commento_coalizione_en": "On current polls Isamaa (Reinsalu) would lead the next government, probably with Keskerakond and/or SDE; EKRE, split in 2024 and stuck at 14-18%, is in no position to lead a government but could join as Isamaa's junior partner (as in 2019-21), a possible scenario if the centre-right were to prefer a right-wing coalition."
+   "commento_coalizione_en": "On current polls Isamaa (Reinsalu) would lead the next government, probably with Keskerakond and/or SDE; EKRE, split in 2024 and stuck at 14-18%, is in no position to lead a government but could join as Isamaa's junior partner (as in 2019-21), a possible scenario if the centre-right were to prefer a right-wing coalition.",
+   "commento_coalizione_de": "Nach den aktuellen Umfragen würde Isamaa (Reinsalu) die nächste Regierung führen, wahrscheinlich mit Keskerakond und/oder SDE; die EKRE, 2024 gespalten und bei 14–18 % stagnierend, ist nicht in der Lage, eine Regierung zu führen, könnte aber als Juniorpartner von Isamaa eintreten (wie 2019–21) – ein mögliches Szenario, falls Mitte-rechts eine Rechtskoalition vorziehen sollte."
   },
   "fonti": [
    "https://news.err.ee/1610165908/norstat-isamaa-extends-lead-in-front-of-center-again",
@@ -3320,7 +3452,8 @@ window.PAESI = [
   ],
   "popolazione": 1.4,
   "ue": true,
-  "nome_en": "Estonia"
+  "nome_en": "Estonia",
+  "nome_de": "Estland"
  },
  {
   "iso": "428",
@@ -3352,7 +3485,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
    "note": "Governo nato il 28/5/2026 dopo la caduta di Siliņa (JV). Alle elezioni del 3/10/2026 AS ha stravinto (41 seggi): il presidente Rinkēvičs ha incaricato Kulbergs il 6/10, la nomina formale avverrà con la prima seduta della Saeima il 3/11 e il nuovo governo (probabilmente AS–NA–JV, 58 seggi) è atteso entro il 18/11.",
-   "note_en": "Government formed on 28/5/2026 after the fall of Siliņa (JV). At the election of 3/10/2026 AS won by a landslide (41 seats): President Rinkēvičs asked Kulbergs to form a government on 6/10, the formal nomination will take place at the first sitting of the Saeima on 3/11 and the new government (probably AS–NA–JV, 58 seats) is expected by 18/11."
+   "note_en": "Government formed on 28/5/2026 after the fall of Siliņa (JV). At the election of 3/10/2026 AS won by a landslide (41 seats): President Rinkēvičs asked Kulbergs to form a government on 6/10, the formal nomination will take place at the first sitting of the Saeima on 3/11 and the new government (probably AS–NA–JV, 58 seats) is expected by 18/11.",
+   "note_de": "Regierung gebildet am 28.5.2026 nach dem Sturz von Siliņa (JV). Bei der Wahl vom 3.10.2026 hat AS haushoch gewonnen (41 Sitze): Präsident Rinkēvičs beauftragte Kulbergs am 6.10. mit der Regierungsbildung; die förmliche Ernennung erfolgt mit der ersten Sitzung der Saeima am 3.11., die neue Regierung (wahrscheinlich AS–NA–JV, 58 Sitze) wird bis zum 18.11. erwartet."
   },
   "ultime_elezioni": {
    "data": "2026-10",
@@ -3393,7 +3527,8 @@ window.PAESI = [
    "data": "2030-10",
    "tipo": "legislative",
    "note": "Prossima Saeima a ottobre 2030; nel 2027 la Saeima elegge il presidente della Repubblica.",
-   "note_en": "Next Saeima election in October 2030; in 2027 the Saeima elects the President of the Republic."
+   "note_en": "Next Saeima election in October 2030; in 2027 the Saeima elects the President of the Republic.",
+   "note_de": "Nächste Saeima-Wahl im Oktober 2030; 2027 wählt die Saeima den Staatspräsidenten."
   },
   "sondaggi": {
    "data": "2026-09",
@@ -3435,7 +3570,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "SKDS/LTV (4-16 Sep 2026, last pre-election poll)"
+   "fonte_en": "SKDS/LTV (4-16 Sep 2026, last pre-election poll)",
+   "fonte_de": "SKDS/LTV (4.–16. Sept. 2026, letzte Umfrage vor der Wahl)"
   },
   "destra_principale": {
    "partito": "Latvija pirmajā vietā (LPV)",
@@ -3453,7 +3589,8 @@ window.PAESI = [
    "partner_coalizione": true,
    "commento_coalizione": "Il voto di ottobre 2026 ha consegnato ad AS una posizione dominante: la Lista Unita guiderà un governo di centrodestra con la nazional-conservatrice NA e JV. LPV di Šlesers e la populista SV–AJ sommano il 25% ma restano isolate: la destra radicale governa solo tramite NA come partner minore.",
    "partner_primo": true,
-   "commento_coalizione_en": "The October 2026 vote handed AS a dominant position: the United List will lead a centre-right government with the national-conservative NA and JV. Šlesers's LPV and the populist SV–AJ together total 25% but remain isolated: the radical right governs only through NA as a junior partner."
+   "commento_coalizione_en": "The October 2026 vote handed AS a dominant position: the United List will lead a centre-right government with the national-conservative NA and JV. Šlesers's LPV and the populist SV–AJ together total 25% but remain isolated: the radical right governs only through NA as a junior partner.",
+   "commento_coalizione_de": "Die Wahl vom Oktober 2026 hat AS eine dominante Position verschafft: Die Vereinigte Liste wird eine Mitte-rechts-Regierung mit der nationalkonservativen NA und JV führen. LPV von Šlesers und die populistische SV–AJ kommen zusammen auf 25 %, bleiben aber isoliert: Die radikale Rechte regiert nur über die NA als Juniorpartner mit."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Latvian_parliamentary_election",
@@ -3462,7 +3599,8 @@ window.PAESI = [
   ],
   "popolazione": 1.9,
   "ue": true,
-  "nome_en": "Latvia"
+  "nome_en": "Latvia",
+  "nome_de": "Lettland"
  },
  {
   "iso": "440",
@@ -3494,7 +3632,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "A giugno 2026 i socialdemocratici hanno rotto con la populista Nemuno aušra; la premier Ruginienė si è dimessa e il leader LSDP Sinkevičius è stato insediato il 14/7 alla guida di una coalizione con maggioranza risicata (circa 76 seggi su 141). Il governo resta impopolare e i conservatori TS-LKD guidano i sondaggi.",
-   "note_en": "In June 2026 the Social Democrats broke with the populist Nemuno aušra; Prime Minister Ruginienė resigned and LSDP leader Sinkevičius was sworn in on 14/7 at the head of a coalition with a slim majority (around 76 of 141 seats). The government remains unpopular and the conservative TS-LKD lead the polls."
+   "note_en": "In June 2026 the Social Democrats broke with the populist Nemuno aušra; Prime Minister Ruginienė resigned and LSDP leader Sinkevičius was sworn in on 14/7 at the head of a coalition with a slim majority (around 76 of 141 seats). The government remains unpopular and the conservative TS-LKD lead the polls.",
+   "note_de": "Im Juni 2026 brachen die Sozialdemokraten mit der populistischen Nemuno aušra; Ministerpräsidentin Ruginienė trat zurück, und LSDP-Chef Sinkevičius wurde am 14.7. an die Spitze einer Koalition mit knapper Mehrheit (rund 76 von 141 Sitzen) gewählt. Die Regierung bleibt unbeliebt, die Konservativen von TS-LKD führen die Umfragen an."
   },
   "ultime_elezioni": {
    "data": "2024-10",
@@ -3535,7 +3674,8 @@ window.PAESI = [
    "data": "2028-10",
    "tipo": "legislative",
    "note": "Seimas a ottobre 2028; presidenziali a maggio 2029.",
-   "note_en": "Seimas election in October 2028; presidential election in May 2029."
+   "note_en": "Seimas election in October 2028; presidential election in May 2029.",
+   "note_de": "Seimas-Wahl im Oktober 2028; Präsidentschaftswahl im Mai 2029."
   },
   "sondaggi": {
    "data": "2026-08",
@@ -3572,7 +3712,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Baltijos tyrimai (31 Aug 2026), via PolitPro"
+   "fonte_en": "Baltijos tyrimai (31 Aug 2026), via PolitPro",
+   "fonte_de": "Baltijos tyrimai (31. Aug. 2026), via PolitPro"
   },
   "destra_principale": {
    "partito": "Nemuno aušra",
@@ -3587,7 +3728,8 @@ window.PAESI = [
    "status_quo": "centrosinistra",
    "coalizione": "centrodestra",
    "commento_coalizione": "Se si votasse oggi TS-LKD sarebbe primo partito e guiderebbe un governo di centrodestra con i liberali; Nemuno aušra, espulsa dalla coalizione e in calo rispetto al 2024, è isolata e potrebbe tornare al governo solo come partner di una LSDP indebolita, scenario oggi poco probabile.",
-   "commento_coalizione_en": "If the vote were held today TS-LKD would be the largest party and would lead a centre-right government with the liberals; Nemuno aušra, expelled from the coalition and down on 2024, is isolated and could return to government only as the partner of a weakened LSDP, a scenario that is unlikely today."
+   "commento_coalizione_en": "If the vote were held today TS-LKD would be the largest party and would lead a centre-right government with the liberals; Nemuno aušra, expelled from the coalition and down on 2024, is isolated and could return to government only as the partner of a weakened LSDP, a scenario that is unlikely today.",
+   "commento_coalizione_de": "Bei einer Wahl heute wäre TS-LKD stärkste Partei und würde eine Mitte-rechts-Regierung mit den Liberalen führen; Nemuno aušra, aus der Koalition ausgeschlossen und gegenüber 2024 im Abwärtstrend, ist isoliert und könnte nur als Partner einer geschwächten LSDP in die Regierung zurückkehren – ein derzeit wenig wahrscheinliches Szenario."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Sinkevi%C4%8Dius_Cabinet",
@@ -3595,7 +3737,8 @@ window.PAESI = [
   ],
   "popolazione": 2.9,
   "ue": true,
-  "nome_en": "Lithuania"
+  "nome_en": "Lithuania",
+  "nome_de": "Litauen"
  },
  {
   "iso": "442",
@@ -3619,7 +3762,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Coalizione CSV–DP con 35 seggi su 60, stabile ma in calo nei consensi: nei sondaggi 2026 CSV, DP e LSAP sono quasi appaiati e la maggioranza uscente (circa 44-45%) non verrebbe riconfermata.",
-   "note_en": "CSV–DP coalition with 35 of 60 seats, stable but losing support: in the 2026 polls CSV, DP and LSAP are almost level and the outgoing majority (around 44-45%) would not be renewed."
+   "note_en": "CSV–DP coalition with 35 of 60 seats, stable but losing support: in the 2026 polls CSV, DP and LSAP are almost level and the outgoing majority (around 44-45%) would not be renewed.",
+   "note_de": "Koalition aus CSV und DP mit 35 von 60 Sitzen, stabil, aber mit sinkender Zustimmung: In den Umfragen 2026 liegen CSV, DP und LSAP fast gleichauf, und die amtierende Mehrheit (rund 44–45 %) würde nicht bestätigt."
   },
   "ultime_elezioni": {
    "data": "2023-10",
@@ -3660,7 +3804,8 @@ window.PAESI = [
    "data": "2028-10",
    "tipo": "legislative",
    "note": "Elezioni della Camera dei deputati entro l'8 ottobre 2028.",
-   "note_en": "Chamber of Deputies election by 8 October 2028."
+   "note_en": "Chamber of Deputies election by 8 October 2028.",
+   "note_de": "Wahl zur Abgeordnetenkammer bis zum 8. Oktober 2028."
   },
   "sondaggi": {
    "data": "2026-10",
@@ -3702,7 +3847,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "ILRES / RTL-Luxemburger Wort (22 Sep – 2 Oct 2026)"
+   "fonte_en": "ILRES / RTL-Luxemburger Wort (22 Sep – 2 Oct 2026)",
+   "fonte_de": "ILRES / RTL-Luxemburger Wort (22. Sept. – 2. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "ADR",
@@ -3717,7 +3863,8 @@ window.PAESI = [
    "status_quo": "centrodestra",
    "coalizione": "centrodestra",
    "commento_coalizione": "CSV resta primo partito ma la perdita di consensi apre a una coalizione alternativa DP–LSAP–Verdi; l'ADR cresce (12-13%) ma anche con il CSV non raggiungerebbe la maggioranza e nessun partito la considera un partner: la destra radicale non può realisticamente governare entro il 2030.",
-   "commento_coalizione_en": "CSV remains the largest party but its loss of support opens the way to an alternative DP–LSAP–Greens coalition; the ADR is growing (12-13%) but even with the CSV it would not reach a majority and no party regards it as a partner: the radical right cannot realistically govern by 2030."
+   "commento_coalizione_en": "CSV remains the largest party but its loss of support opens the way to an alternative DP–LSAP–Greens coalition; the ADR is growing (12-13%) but even with the CSV it would not reach a majority and no party regards it as a partner: the radical right cannot realistically govern by 2030.",
+   "commento_coalizione_de": "Die CSV bleibt stärkste Partei, doch der Stimmenverlust eröffnet die Möglichkeit einer alternativen Koalition aus DP, LSAP und Grünen; die ADR legt zu (12–13 %), würde aber auch mit der CSV keine Mehrheit erreichen, und keine Partei betrachtet sie als Partner: Die radikale Rechte kann bis 2030 realistischerweise nicht regieren."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Next_Luxembourg_general_election",
@@ -3725,7 +3872,8 @@ window.PAESI = [
   ],
   "popolazione": 0.68,
   "ue": true,
-  "nome_en": "Luxembourg"
+  "nome_en": "Luxembourg",
+  "nome_de": "Luxemburg"
  },
  {
   "iso": "470",
@@ -3745,7 +3893,8 @@ window.PAESI = [
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
    "note": "Abela (premier dal gennaio 2020) ha vinto le elezioni anticipate del 30/5/2026, quarta vittoria consecutiva del Labour. Maggioranza ridotta (42 seggi contro 37 del PN di Alex Borg) e vantaggio di voti quasi dimezzato rispetto al 2022.",
-   "note_en": "Abela (prime minister since January 2020) won the snap election of 30/5/2026, Labour's fourth consecutive victory. Reduced majority (42 seats against 37 for Alex Borg's PN) and a vote lead almost halved compared with 2022."
+   "note_en": "Abela (prime minister since January 2020) won the snap election of 30/5/2026, Labour's fourth consecutive victory. Reduced majority (42 seats against 37 for Alex Borg's PN) and a vote lead almost halved compared with 2022.",
+   "note_de": "Abela (Premierminister seit Januar 2020) hat die Neuwahl vom 30.5.2026 gewonnen, der vierte Sieg der Labour Party in Folge. Verkleinerte Mehrheit (42 Sitze gegenüber 37 für die PN von Alex Borg) und ein gegenüber 2022 fast halbierter Stimmenvorsprung."
   },
   "ultime_elezioni": {
    "data": "2026-05",
@@ -3766,7 +3915,8 @@ window.PAESI = [
    "data": "2031-06",
    "tipo": "legislative",
    "note": "Legislatura quinquennale: scadenza legale intorno all'estate 2031.",
-   "note_en": "Five-year term: legal deadline around summer 2031."
+   "note_en": "Five-year term: legal deadline around summer 2031.",
+   "note_de": "Fünfjährige Legislaturperiode: gesetzliche Frist etwa im Sommer 2031."
   },
   "sondaggi": {
    "data": "2026-05",
@@ -3783,7 +3933,8 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "MaltaToday (13-24 May 2026, last pre-election poll)"
+   "fonte_en": "MaltaToday (13-24 May 2026, last pre-election poll)",
+   "fonte_de": "MaltaToday (13.–24. Mai 2026, letzte Umfrage vor der Wahl)"
   },
   "destra_principale": {
    "partito": "Nessuna forza rilevante",
@@ -3798,14 +3949,16 @@ window.PAESI = [
    "status_quo": "centrosinistra",
    "coalizione": "centrosinistra",
    "commento_coalizione": "Sistema bipartitico senza una destra radicale rilevante: il Labour ha appena rinnovato il mandato fino al 2031 e l'unica alternativa è il PN di centrodestra; nessuno scenario di governo per la destra nazionalista.",
-   "commento_coalizione_en": "Two-party system with no significant radical right: Labour has just renewed its mandate until 2031 and the only alternative is the centre-right PN; no government scenario for the nationalist right."
+   "commento_coalizione_en": "Two-party system with no significant radical right: Labour has just renewed its mandate until 2031 and the only alternative is the centre-right PN; no government scenario for the nationalist right.",
+   "commento_coalizione_de": "Zweiparteiensystem ohne relevante radikale Rechte: Labour hat sein Mandat gerade bis 2031 erneuert, und die einzige Alternative ist die Mitte-rechts-Partei PN; kein Regierungsszenario für die nationalistische Rechte."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Maltese_general_election"
   ],
   "popolazione": 0.56,
   "ue": true,
-  "nome_en": "Malta"
+  "nome_en": "Malta",
+  "nome_de": "Malta"
  },
  {
   "iso": "196",
@@ -3833,7 +3986,8 @@ window.PAESI = [
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
    "note": "Repubblica presidenziale senza primo ministro: il gabinetto è nominato dal presidente Christodoulides (indipendente, ex DISY). Dopo le legislative del 24/5/2026 EDEK e DIPA hanno perso tutti i seggi e il governo si regge in Parlamento solo su DIKO (8 seggi su 56).",
-   "note_en": "Presidential republic with no prime minister: the cabinet is appointed by President Christodoulides (independent, formerly DISY). After the parliamentary election of 24/5/2026 EDEK and DIPA lost all their seats and the government relies in Parliament solely on DIKO (8 of 56 seats)."
+   "note_en": "Presidential republic with no prime minister: the cabinet is appointed by President Christodoulides (independent, formerly DISY). After the parliamentary election of 24/5/2026 EDEK and DIPA lost all their seats and the government relies in Parliament solely on DIKO (8 of 56 seats).",
+   "note_de": "Präsidialrepublik ohne Premierminister: Das Kabinett wird von Präsident Christodoulides (parteilos, ehemals DISY) ernannt. Nach der Parlamentswahl vom 24.5.2026 haben EDEK und DIPA alle Sitze verloren, und die Regierung stützt sich im Parlament nur noch auf DIKO (8 von 56 Sitzen)."
   },
   "ultime_elezioni": {
    "data": "2026-05",
@@ -3874,7 +4028,8 @@ window.PAESI = [
    "data": "2028-02",
    "tipo": "presidenziali",
    "note": "Presidenziali a febbraio 2028; legislative a maggio 2031.",
-   "note_en": "Presidential election in February 2028; parliamentary election in May 2031."
+   "note_en": "Presidential election in February 2028; parliamentary election in May 2031.",
+   "note_de": "Präsidentschaftswahl im Februar 2028; Parlamentswahl im Mai 2031."
   },
   "sondaggi": {
    "data": "2026-05",
@@ -3911,7 +4066,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Parliamentary election results 24/5/2026 (no subsequent party poll found)"
+   "fonte_en": "Parliamentary election results 24/5/2026 (no subsequent party poll found)",
+   "fonte_de": "Ergebnisse der Parlamentswahl vom 24.5.2026 (keine spätere Parteienumfrage gefunden)"
   },
   "destra_principale": {
    "partito": "ELAM",
@@ -3926,7 +4082,8 @@ window.PAESI = [
    "status_quo": "centro",
    "coalizione": "centrodestra",
    "commento_coalizione": "Nel sistema presidenziale conta il voto del 2028: DISY è tornato primo partito e i partiti centristi che sostengono Christodoulides sono crollati, quindi il prossimo presidente verrebbe probabilmente dall'area di centrodestra. ELAM, terza forza all'11%, può pesare come ago della bilancia al ballottaggio ma non ha la massa per esprimere un presidente entro il 2030.",
-   "commento_coalizione_en": "In the presidential system the 2028 vote is what counts: DISY is back as the largest party and the centrist parties backing Christodoulides have collapsed, so the next president would probably come from the centre-right camp. ELAM, the third force at 11%, can act as kingmaker in the run-off but lacks the critical mass to produce a president by 2030."
+   "commento_coalizione_en": "In the presidential system the 2028 vote is what counts: DISY is back as the largest party and the centrist parties backing Christodoulides have collapsed, so the next president would probably come from the centre-right camp. ELAM, the third force at 11%, can act as kingmaker in the run-off but lacks the critical mass to produce a president by 2030.",
+   "commento_coalizione_de": "Im Präsidialsystem zählt die Wahl 2028: DISY ist wieder stärkste Partei, und die zentristischen Parteien, die Christodoulides stützen, sind eingebrochen; der nächste Präsident käme daher wahrscheinlich aus dem Mitte-rechts-Lager. ELAM, drittstärkste Kraft mit 11 %, kann in der Stichwahl als Zünglein an der Waage wirken, hat aber nicht das Gewicht, bis 2030 einen Präsidenten zu stellen."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Cypriot_legislative_election",
@@ -3934,6 +4091,7 @@ window.PAESI = [
   ],
   "popolazione": 0.97,
   "ue": true,
-  "nome_en": "Cyprus"
+  "nome_en": "Cyprus",
+  "nome_de": "Zypern"
  }
 ];
