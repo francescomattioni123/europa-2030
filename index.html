@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Europa 2030</title>
+<meta name="description" content="Chi governa in Europa, chi è primo nei sondaggi e come può cambiare la mappa del potere entro il 2030. Scenari, Consiglio UE e agenda comune delle destre.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Europa 2030 · la mappa del potere in Europa">
+<meta property="og:description" content="Chi governa oggi, chi è primo nei sondaggi e come può cambiare il continente entro il 2030. Quattro scenari, 30 paesi, il potere reale in Consiglio UE.">
+<meta property="og:url" content="https://francescomattioni123.github.io/europa-2030/">
+<meta property="og:image" content="https://francescomattioni123.github.io/europa-2030/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Europa 2030 · la mappa del potere in Europa">
+<meta name="twitter:description" content="Chi governa oggi, chi è primo nei sondaggi e come può cambiare il continente entro il 2030.">
+<meta name="twitter:image" content="https://francescomattioni123.github.io/europa-2030/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -137,6 +151,20 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 #nov-older-list { margin-top: 8px; display: grid; gap: 8px; }
 #nov-older-list b { color: var(--ink-2); font-family: var(--mono); font-size: 11.5px; }
 #nov-older-list ul { margin: 2px 0 0; padding-left: 18px; }
+
+/* Segui */
+.follow { margin-top: 12px; border: 1px solid rgba(47,95,232,0.45); background: linear-gradient(90deg, rgba(47,95,232,0.14), rgba(47,95,232,0.03)); border-radius: var(--r); padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+.follow h3 { font-size: 18px; margin: 4px 0 0; }
+.follow p { margin: 4px 0 0; color: var(--ink-2); font-size: 13.5px; max-width: 56ch; }
+.follow-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.fbtn { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--border-2); background: rgba(255,255,255,0.05); color: var(--ink); text-decoration: none; }
+.fbtn:hover { background: rgba(255,255,255,0.1); }
+.fbtn.primary { background: #ffffff; color: #06070b; border-color: #ffffff; }
+.fbtn.primary:hover { background: #e9ebf2; }
+.fbtn.soon { opacity: 0.55; cursor: default; }
+.fbtn.soon:hover { background: rgba(255,255,255,0.05); }
+.fbtn small { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--muted); }
+.fbtn.primary small { color: #4a4f63; }
 
 /* Sezioni */
 .sec { padding-block: 56px 20px; }
@@ -349,6 +377,11 @@ footer.method p { margin: 8px 0 0; }
     </div>
   </section>
 
+  <section class="follow reveal" id="segui">
+    <div class="follow-copy"><span class="eyebrow" id="fl-eyebrow">Il brief settimanale</span><h3 id="fl-title">Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario</h3><p id="fl-text">Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.</p></div>
+    <div class="follow-btns" id="fl-btns"></div>
+  </section>
+
   <section class="sec reveal" id="cambi">
     <div class="sec-head"><div><div class="eyebrow">Scenario</div><h2 id="cambi-title">Cosa cambia</h2><p id="cambi-sub"></p></div></div>
     <div class="two">
@@ -401,6 +434,7 @@ footer.method p { margin: 8px 0 0; }
 <script src="data/paesi.js"></script>
 <script src="data/politiche.js"></script>
 <script src="data/aggiornamenti.js"></script>
+<script src="data/iscrizione.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <script>
@@ -447,6 +481,7 @@ footer.method p { margin: 8px 0 0; }
     r_na: ['Non passa dal Consiglio', 'Does not go through the Council'], r_appr: ['Approvabile', 'Can pass'], r_block: ['Bloccabile', 'Can be blocked'], r_veto: ['Un veto basta', 'One veto is enough'], r_now: ['già oggi', 'already today'], r_from: ['dal', 'from'], r_no: ['Non entro il 2030', 'Not by 2030'],
     tg_a: ['solo destra nazionalista', 'nationalist right alone'], tg_b: ['con i partner', 'with its partners'], tg_c: ['con il centrodestra', 'with the centre-right'],
     c_appr: ['maggioranza qualificata', 'qualified majority'], c_block: ['minoranza di blocco', 'blocking minority'], c_una: ['unanimità', 'unanimity'], c_naz: ['competenza nazionale', 'national competence'],
+    fl_eyebrow: ['Il brief settimanale', 'The weekly brief'], fl_title: ['Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario', 'Every Monday: who is up, who is down, what changes in the scenario'], fl_text: ['Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.', 'Three lines with the numbers and the link to the updated map. Choose where to get it.'], fl_tg: ['Canale Telegram', 'Telegram channel'], fl_mail: ['Iscriviti via email', 'Subscribe by email'], fl_x: ['Segui su X', 'Follow on X'], fl_soon: ['in arrivo', 'coming soon'], fl_share: ['Copia il link della pagina', 'Copy the page link'], fl_shared: ['Link copiato', 'Link copied'],
     copied: ['Copiato', 'Copied'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary'], copy_prompt: ['Copia il testo:', 'Copy the text:']
   };
   const t = k => S[k] ? S[k][EN ? 1 : 0] : k;
@@ -929,6 +964,21 @@ footer.method p { margin: 8px 0 0; }
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok).catch(() => window.prompt(t('copy_prompt'), txt));
       else window.prompt(t('copy_prompt'), txt);
     });
+  })();
+
+  /* ---------- Segui ---------- */
+  (function () {
+    const I = window.ISCRIZIONE || {};
+    document.getElementById('fl-eyebrow').textContent = t('fl_eyebrow'); document.getElementById('fl-title').textContent = t('fl_title'); document.getElementById('fl-text').textContent = t('fl_text');
+    const btn = (href, label, cls, icon) => href
+      ? `<a class="fbtn ${cls}" href="${esc(href)}" target="_blank" rel="noopener">${icon}${label}</a>`
+      : `<span class="fbtn soon" title="${t('fl_soon')}">${icon}${label} <small>· ${t('fl_soon')}</small></span>`;
+    const tg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.47 8.7 20.2c.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.2-.4-1.7-1.3-1.4L2.4 11.2c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4 10.7-6.7c.5-.3 1-.1.6.2"/></svg>';
+    const mail = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>';
+    const xi = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.1-6.7L5.4 22H2.3l7.6-8.7L2 2h6.7l4.6 6.1zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg>';
+    document.getElementById('fl-btns').innerHTML = btn(I.telegram, t('fl_tg'), 'primary', tg) + btn(I.email_form, t('fl_mail'), '', mail) + (I.x ? btn(I.x, t('fl_x'), '', xi) : '') + `<button type="button" class="fbtn" id="fl-copy">${t('fl_share')}</button>`;
+    const c = document.getElementById('fl-copy'); const url = I.pagina || location.href.split('#')[0];
+    c.addEventListener('click', () => { const ok = () => { c.textContent = t('fl_shared'); setTimeout(() => c.textContent = t('fl_share'), 2000); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok).catch(() => window.prompt('URL', url)); else window.prompt('URL', url); });
   })();
 
   /* ---------- Render ---------- */
