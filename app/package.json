@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "www": "rm -rf www && mkdir -p www/data www/icons && cp ../index.html ../manifest.json www/ && cp ../data/*.js www/data/ && cp ../icons/*.png www/icons/",
+    "sync": "npm run www && npx cap sync ios"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,6 @@
     "@capacitor/ios": "^6.2.2",
     "@capacitor/splash-screen": "^6.0.4",
     "@capacitor/status-bar": "^6.0.3"
-  }
+  },
+  "private": true
 }
