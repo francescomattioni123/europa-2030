@@ -57,6 +57,7 @@
   --nav-h: 56px;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html, body { margin: 0; background: var(--bg); color: var(--ink); }
 html { scroll-behavior: smooth; }
 body { font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -80,7 +81,7 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .bgfx::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1.2px); background-size: 28px 28px; mask-image: radial-gradient(circle at 70% 30%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(circle at 70% 30%, #000 20%, transparent 75%); }
 
 /* Nav */
-.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); background: rgba(6,7,11,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav { position: sticky; top: 0; z-index: 30; height: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); padding-top: env(safe-area-inset-top, 0px); display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); background: rgba(6,7,11,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .nav .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.01em; }
 .nav .logo i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent-glow); }
 .nav .links { display: flex; gap: 4px; }
@@ -454,14 +455,24 @@ footer.method p { margin: 8px 0 0; }
 <div class="tip" id="tip"></div>
 
 <script src="data/mondo-topo.js"></script>
-<script src="data/paesi.js"></script>
-<script src="data/politiche.js"></script>
-<script src="data/aggiornamenti.js"></script>
-<script src="data/iscrizione.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <script>
+// Caricamento dati: nell'app nativa prova prima la versione pubblicata (sempre aggiornata), poi quella inclusa nell'app.
 (function () {
+  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js'];
+  const native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  window.EU30_NATIVE = native;
+  const base = native ? 'https://francescomattioni123.github.io/europa-2030/' : '';
+  const load = src => new Promise((ok, ko) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = ko; document.head.appendChild(s); });
+  (async () => {
+    for (const f of FILES) { try { await load(base + f + (base ? '?t=' + Date.now() : '')); } catch (e) { if (base) { try { await load(f); } catch (e2) {} } } }
+    if (window.__start) window.__start();
+  })();
+})();
+</script>
+<script>
+window.__start = function () {
   const PAESI = window.PAESI, POL = window.POLITICHE, TOPO = window.MONDO_TOPO;
   /* ---------- Lingua ---------- */
   const LANG = (() => { try { const s = localStorage.getItem('eu30-lang'); if (s === 'it' || s === 'en') return s; } catch (e) {} return (navigator.language || 'it').toLowerCase().startsWith('it') ? 'it' : 'en'; })();
@@ -518,7 +529,7 @@ footer.method p { margin: 8px 0 0; }
       '.hero h1': 'The map of power<br>in <em>Europe</em>',
       '.hero .lede': 'Who governs today, who leads the polls and how the continent may change by 2030. Pick a scenario, move the time slider, click a country.',
       '#seg [data-scen="status_quo"]': 'Status quo', '#seg [data-scen="primo"]': 'Poll leader', '#seg [data-scen="coalizione"]': 'Likely coalition', '#seg [data-scen="trend"]': 'Trend continues',
-      'label[for="anno"]': 'Horizon', '.hud .hint': 'drag to pan · click a country', '#centra': '⌖ centre on Europe',
+      'label[for="anno"]': 'Horizon', '.hud .hint': 'drag to pan · click a country', '.hud .read span:nth-child(2)': 'scenario <b id="hud-scen"></b> · horizon <b id="hud-anno"></b>', '#centra': '⌖ centre on Europe',
       '#novita .eyebrow': 'What\'s new · weekly update', '#nov-older summary': 'Previous updates',
       '#cambi .sec-head .eyebrow': 'Scenario', '#cambi .card:nth-child(2) h3': 'Nationalist right in the polls <small>leading party per country</small>', '#cambi .card:nth-child(2) .empty': 'Value in the latest poll and, in grey, the difference from the last election. Click to open the country file.',
       '#consiglio .sec-head .eyebrow': 'Real power', '#consiglio h2': 'What this bloc can do in the EU Council', '#consiglio .sec-head p': 'Governments count when they vote together. Here the map of the chosen scenario becomes votes in the Council: how many states, how much population, and which proposals of the common agenda become blockable or passable, and from which year.',
@@ -981,7 +992,7 @@ footer.method p { margin: 8px 0 0; }
     const older = A.slice(1);
     if (!older.length) document.getElementById('nov-older').hidden = true;
     else document.getElementById('nov-older-list').innerHTML = older.map(a => { const [y, m, d] = a.data.split('-'); return `<div><b>${+d} ${MESI[+m - 1]} ${y} · ${esc(tx(a, 'titolo'))}</b><ul>${txa(a, 'punti').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`; }).join('');
-    const btn = document.getElementById('nov-copy');
+    const btn = document.getElementById('nov-copy'); btn.textContent = t('copy');
     btn.addEventListener('click', () => {
       const txt = tx(last, 'whatsapp') || txa(last, 'punti').join(' ');
       btn.textContent = t('copy'); const ok = () => { btn.textContent = t('copied'); btn.classList.add('done'); setTimeout(() => { btn.textContent = t('copy'); btn.classList.remove('done'); }, 2000); };
@@ -1007,6 +1018,7 @@ footer.method p { margin: 8px 0 0; }
 
   /* ---------- App: service worker e invito all'installazione ---------- */
   (function () {
+    if (window.EU30_NATIVE) return;
     const canSW = 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost') && !/claude\.ai$/.test(location.hostname);
     if (canSW) navigator.serviceWorker.register('sw.js').catch(() => {});
     const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true || /[?&]app=1/.test(location.search);
@@ -1033,7 +1045,7 @@ footer.method p { margin: 8px 0 0; }
   }
   renderMatrix();
   render();
-})();
+};
 </script>
 </body>
 </html>
