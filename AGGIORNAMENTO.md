@@ -1,7 +1,7 @@
 # Aggiornamento settimanale di Europa 2030
 
 Questa pagina (https://francescomattioni123.github.io/europa-2030/) è una dashboard statica: `index.html` legge i file in `data/`.
-L'aggiornamento settimanale tocca SOLO i file dati. Non modificare `index.html` né `data/mondo-topo.js`.
+L'aggiornamento settimanale tocca SOLO i file dati. Non modificare `index.html`, `sw.js`, `manifest.json`, `icons/` né `data/mondo-topo.js`.
 
 ## Cosa fare, nell'ordine
 

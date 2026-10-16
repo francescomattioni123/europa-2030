@@ -18,6 +18,14 @@
 <meta name="twitter:title" content="Europa 2030 · la mappa del potere in Europa">
 <meta name="twitter:description" content="Chi governa oggi, chi è primo nei sondaggi e come può cambiare il continente entro il 2030.">
 <meta name="twitter:image" content="https://francescomattioni123.github.io/europa-2030/og.jpg">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#06070b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Europa 2030">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -292,6 +300,15 @@ footer.method p { margin: 8px 0 0; }
 .srcs { font-size: 12px; color: var(--muted); word-break: break-all; line-height: 1.7; }
 .srcs a { color: var(--muted); }
 
+/* Installazione */
+.install { position: fixed; left: 12px; right: 12px; bottom: calc(env(safe-area-inset-bottom, 0px) + 12px); z-index: 45; display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: rgba(11,13,20,0.96); border: 1px solid var(--border-2); border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); backdrop-filter: blur(10px); max-width: 560px; margin-inline: auto; }
+.install img { border-radius: 10px; flex: none; }
+.install-text { display: grid; gap: 2px; font-size: 13px; min-width: 0; flex: 1; }
+.install-text b { font-size: 14px; }
+.install-text span { color: var(--ink-2); }
+.install-x { flex: none; width: 28px; height: 28px; border-radius: 7px; color: var(--muted); border: 1px solid var(--border); }
+.install-x:hover { color: var(--ink); }
+
 /* Tooltip */
 .tip { position: fixed; z-index: 50; pointer-events: none; background: rgba(8,9,14,0.92); border: 1px solid var(--border-2); border-radius: 10px; padding: 10px 12px; font-size: 13px; max-width: 290px; box-shadow: 0 12px 30px rgba(0,0,0,.5); opacity: 0; transition: opacity .12s; backdrop-filter: blur(8px); }
 .tip.on { opacity: 1; }
@@ -427,6 +444,12 @@ footer.method p { margin: 8px 0 0; }
 </main>
 
 <div class="scrim" id="scrim"></div>
+<div class="install" id="install" hidden>
+  <img src="icons/icon-192.png" alt="" width="40" height="40">
+  <div class="install-text"><b id="inst-title"></b><span id="inst-body"></span></div>
+  <button type="button" class="fbtn primary" id="inst-btn" hidden></button>
+  <button type="button" class="install-x" id="inst-close" aria-label="Chiudi">✕</button>
+</div>
 <aside class="drawer" id="drawer" aria-label="Scheda paese"></aside>
 <div class="tip" id="tip"></div>
 
@@ -482,6 +505,7 @@ footer.method p { margin: 8px 0 0; }
     tg_a: ['solo destra nazionalista', 'nationalist right alone'], tg_b: ['con i partner', 'with its partners'], tg_c: ['con il centrodestra', 'with the centre-right'],
     c_appr: ['maggioranza qualificata', 'qualified majority'], c_block: ['minoranza di blocco', 'blocking minority'], c_una: ['unanimità', 'unanimity'], c_naz: ['competenza nazionale', 'national competence'],
     fl_eyebrow: ['Il brief settimanale', 'The weekly brief'], fl_title: ['Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario', 'Every Monday: who is up, who is down, what changes in the scenario'], fl_text: ['Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.', 'Three lines with the numbers and the link to the updated map. Choose where to get it.'], fl_tg: ['Canale Telegram', 'Telegram channel'], fl_mail: ['Iscriviti via email', 'Subscribe by email'], fl_x: ['Segui su X', 'Follow on X'], fl_soon: ['in arrivo', 'coming soon'], fl_share: ['Copia il link della pagina', 'Copy the page link'], fl_shared: ['Link copiato', 'Link copied'],
+    inst_ios_t: ['Aggiungi Europa 2030 alla schermata Home', 'Add Europa 2030 to your Home Screen'], inst_ios_b: ['Tocca Condividi (il quadrato con la freccia) e poi "Aggiungi alla schermata Home": si apre come un\'app, anche senza rete.', 'Tap Share (the square with the arrow), then "Add to Home Screen": it opens like an app, even offline.'], inst_and_t: ['Installa Europa 2030', 'Install Europa 2030'], inst_and_b: ['Icona sulla schermata Home, schermo intero, funziona anche senza rete.', 'Home screen icon, full screen, works offline too.'], inst_btn: ['Installa', 'Install'],
     copied: ['Copiato', 'Copied'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary'], copy_prompt: ['Copia il testo:', 'Copy the text:']
   };
   const t = k => S[k] ? S[k][EN ? 1 : 0] : k;
@@ -979,6 +1003,22 @@ footer.method p { margin: 8px 0 0; }
     document.getElementById('fl-btns').innerHTML = btn(I.telegram, t('fl_tg'), 'primary', tg) + btn(I.email_form, t('fl_mail'), '', mail) + (I.x ? btn(I.x, t('fl_x'), '', xi) : '') + `<button type="button" class="fbtn" id="fl-copy">${t('fl_share')}</button>`;
     const c = document.getElementById('fl-copy'); const url = I.pagina || location.href.split('#')[0];
     c.addEventListener('click', () => { const ok = () => { c.textContent = t('fl_shared'); setTimeout(() => c.textContent = t('fl_share'), 2000); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok).catch(() => window.prompt('URL', url)); else window.prompt('URL', url); });
+  })();
+
+  /* ---------- App: service worker e invito all'installazione ---------- */
+  (function () {
+    const canSW = 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost') && !/claude\.ai$/.test(location.hostname);
+    if (canSW) navigator.serviceWorker.register('sw.js').catch(() => {});
+    const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true || /[?&]app=1/.test(location.search);
+    const box = document.getElementById('install'); if (!box || standalone) return;
+    let dismissed = false; try { dismissed = localStorage.getItem('eu30-install') === 'no'; } catch (e) {}
+    if (dismissed) return;
+    const ua = navigator.userAgent; const ios = /iPhone|iPad|iPod/.test(ua) && !/CriOS|FxiOS/.test(ua) && /Safari/.test(ua);
+    const show = (title, body, btn) => { document.getElementById('inst-title').textContent = title; document.getElementById('inst-body').textContent = body; const b = document.getElementById('inst-btn'); if (btn) { b.textContent = t('inst_btn'); b.hidden = false; b.onclick = btn; } box.hidden = false; };
+    document.getElementById('inst-close').addEventListener('click', () => { box.hidden = true; try { localStorage.setItem('eu30-install', 'no'); } catch (e) {} });
+    if (ios) setTimeout(() => show(t('inst_ios_t'), t('inst_ios_b'), null), 2500);
+    let deferred = null;
+    window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; show(t('inst_and_t'), t('inst_and_b'), async () => { deferred.prompt(); await deferred.userChoice; box.hidden = true; }); });
   })();
 
   /* ---------- Render ---------- */
