@@ -250,6 +250,48 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .ds details p { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); max-width: 56ch; }
 .ds details a { color: var(--muted); font-size: 11px; word-break: break-all; }
 
+/* Voto atteso in Consiglio */
+.vote { margin: 8px 0 6px; display: grid; gap: 4px; }
+.vote .eyebrow { font-size: 10px; }
+.vstrip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; gap: 1px; background: rgba(255,255,255,0.04); }
+.vq { display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-family: var(--mono); font-size: 8.5px; color: rgba(6,7,11,0.85); min-width: 3px; }
+.vlegend .vq { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.vq.v-favorevole { background: #35c9c2; }
+.vq.v-condizionato { background: repeating-linear-gradient(45deg, #35c9c2 0 3px, rgba(53,201,194,0.35) 3px 6px); }
+.vq.v-contrario { background: #ef6f62; }
+.vq.v-astensione, .vq.v-opt_out { background: #6b6f7c; }
+.vq.v-opt_out { background: repeating-linear-gradient(135deg, #6b6f7c 0 3px, #3c3f4a 3px 6px); }
+.vq.v-da_verificare { background: transparent; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); color: var(--muted); }
+.vq.nuovo { box-shadow: inset 0 -3px 0 #2f5fe8; }
+.vq.v-da_verificare.nuovo { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35), inset 0 -3px 0 #2f5fe8; }
+.vq.dec { outline: 1px solid #ffffff; outline-offset: -1px; }
+.vnums { font-size: 11px; color: var(--ink-2); }
+.vdec { font-size: 12px; color: var(--muted); }
+.vdec b { color: var(--ink); font-weight: 600; margin-right: 4px; white-space: nowrap; }
+.vlegend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); margin-bottom: 10px; }
+.vlegend span { display: inline-flex; align-items: center; gap: 6px; }
+.exv { font-size: 12.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.exv.ex-passa { background: #35c9c2; color: #06070b; }
+.exv.ex-bloccato { background: #ef6f62; color: #06070b; }
+.exv.ex-incerto { background: transparent; color: #ffd166; border: 1px dashed rgba(255,209,102,0.7); }
+.conf { font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.conf.c-alta { color: var(--ink-2); }
+.conf.c-bassa { color: #ffd166; }
+.frag { font-family: var(--mono); font-size: 10.5px; color: #ffd166; max-width: 22ch; text-align: right; }
+.oldv { display: grid; gap: 1px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); font-size: 11px; color: var(--muted); max-width: 26ch; text-align: right; }
+.oldv .mono { font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+.cv { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.cv li { border: 1px solid var(--border); border-radius: 10px; padding: 9px 11px; background: rgba(0,0,0,0.25); display: grid; gap: 5px; }
+.cv li > b { font-size: 13px; font-weight: 600; }
+.cv-v { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 12px; }
+.cv-lab { font-size: 10.5px; color: var(--muted); min-width: 14ch; }
+.vtag { font-size: 11.5px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
+.vtag.v-favorevole { background: #35c9c2; color: #06070b; } .vtag.v-condizionato { background: rgba(53,201,194,0.25); color: #35c9c2; border: 1px solid rgba(53,201,194,0.6); }
+.vtag.v-contrario { background: #ef6f62; color: #06070b; } .vtag.v-astensione, .vtag.v-opt_out { background: #3c3f4a; color: var(--ink); }
+.vtag.v-da_verificare { border: 1px dashed rgba(255,255,255,0.4); color: var(--muted); }
+.cv-n { flex-basis: 100%; color: var(--ink-2); }
+.cv-src { font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+
 /* Calendario */
 .cal-card { overflow-x: auto; padding: 10px 6px 4px; }
 .cal-card svg { display: block; min-width: 820px; width: 100%; height: auto; }
@@ -348,6 +390,10 @@ footer.method p { margin: 8px 0 0; }
   .hud .hint { display: none; }
 }
 @media (max-width: 560px) {
+  .ds li { grid-template-columns: 1fr; }
+  .ds .right { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; text-align: left; gap: 4px 10px; }
+  .ds .right .oldv { flex-basis: 100%; }
+  .oldv, .frag { text-align: left; max-width: none; }
   .kpis { grid-template-columns: 1fr 1fr; }
   .seg { grid-template-columns: 1fr 1fr; }
   .changes li { grid-template-columns: 1fr; gap: 4px; }
@@ -477,10 +523,11 @@ footer.method p { margin: 8px 0 0; }
 <script src="data/mondo-topo.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="consiglio.js"></script>
 <script>
 // Caricamento dati: nell'app nativa prova prima la versione pubblicata (sempre aggiornata), poi quella inclusa nell'app.
 (function () {
-  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js'];
+  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js', 'data/posizioni.js'];
   const native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
   window.EU30_NATIVE = native;
   const base = native ? 'https://francescomattioni123.github.io/europa-2030/' : '';
@@ -540,6 +587,15 @@ window.__start = function () {
     inst_ios_t: ['Aggiungi Europa 2030 alla schermata Home', 'Add Europa 2030 to your Home Screen', 'Europa 2030 zum Home-Bildschirm hinzufügen'], inst_ios_b: ['Tocca Condividi (il quadrato con la freccia) e poi "Aggiungi alla schermata Home": si apre come un\'app, anche senza rete.', 'Tap Share (the square with the arrow), then "Add to Home Screen": it opens like an app, even offline.', 'Tippen Sie auf Teilen (das Quadrat mit dem Pfeil) und dann auf "Zum Home-Bildschirm": öffnet sich wie eine App, auch offline.'], inst_and_t: ['Installa Europa 2030', 'Install Europa 2030', 'Europa 2030 installieren'], inst_and_b: ['Icona sulla schermata Home, schermo intero, funziona anche senza rete.', 'Home screen icon, full screen, works offline too.', 'Symbol auf dem Home-Bildschirm, Vollbild, funktioniert auch offline.'], inst_btn: ['Installa', 'Install', 'Installieren'],
     ds_next: ['Prossima tappa', 'Next step', 'Nächster Schritt'], ds_goal_b: ['la destra vuole fermarlo', 'the right wants to stop it', 'die Rechte will es stoppen'], ds_goal_a: ['la destra vuole approvarlo', 'the right wants to pass it', 'die Rechte will es beschließen'], ds_goal_m: ['la destra vuole annacquarlo', 'the right wants to water it down', 'die Rechte will es verwässern'], r_mod: ['Modificabile', 'Can be amended', 'Änderbar'], r_all: ['Serve l\'unanimità di tutti i 27', 'Needs all 27 to agree', 'Braucht alle 27'], ds_more: ['Fonti e dettagli', 'Sources and details', 'Quellen und Details'],
     st_proposta: ['Proposta', 'Proposal', 'Vorschlag'], st_parlamento: ['In Parlamento', 'In Parliament', 'Im Parlament'], st_consiglio: ['In Consiglio', 'In Council', 'Im Rat'], st_trilogo: ['Trilogo', 'Trilogue', 'Trilog'], st_adottato: ['Adottato', 'Adopted', 'Angenommen'], st_attuazione: ['In attuazione', 'In application', 'In Anwendung'], st_bloccato: ['Bloccato', 'Stalled', 'Blockiert'],
+    v_favorevole: ['Favorevole', 'In favour', 'Dafür'], v_contrario: ['Contrario', 'Against', 'Dagegen'], v_astensione: ['Astensione', 'Abstention', 'Enthaltung'], v_condizionato: ['Condizionato', 'Conditional', 'Unter Vorbehalt'], v_opt_out: ['Opt-out', 'Opt-out', 'Opt-out'], v_da_verificare: ['Da verificare', 'To be verified', 'Zu prüfen'],
+    ex_passa: ['Passa', 'Passes', 'Wird angenommen'], ex_bloccato: ['Bloccato', 'Blocked', 'Blockiert'], ex_incerto: ['Incerto', 'Uncertain', 'Ungewiss'],
+    conf_alta: ['confidenza alta', 'high confidence', 'hohe Sicherheit'], conf_media: ['confidenza media', 'medium confidence', 'mittlere Sicherheit'], conf_bassa: ['confidenza bassa', 'low confidence', 'geringe Sicherheit'],
+    ex_fav: ['favorevoli', 'in favour', 'dafür'], ex_con: ['contrari', 'against', 'dagegen'], ex_ast: ['astenuti o opt-out', 'abstaining or opt-out', 'Enthaltung oder Opt-out'], ex_dv: ['da verificare', 'to be verified', 'zu prüfen'], ex_pop: ['della popolazione', 'of the population', 'der Bevölkerung'],
+    ex_dec: ['Governi decisivi', 'Decisive governments', 'Entscheidende Regierungen'], ex_nodec: ['Nessun governo da solo cambia l\'esito', 'No single government changes the outcome', 'Keine einzelne Regierung ändert das Ergebnis'],
+    ex_fragile: ['fragile: dipende da voti condizionati', 'fragile: relies on conditional votes', 'fragil: hängt von Stimmen unter Vorbehalt ab'],
+    ex_compatto: ['Ipotesi di blocco compatto', 'Compact-bloc hypothesis', 'Annahme eines geschlossenen Blocks'], ex_title: ['Voto atteso in Consiglio, governo per governo', 'Expected Council vote, government by government', 'Erwartete Abstimmung im Rat, Regierung für Regierung'], ex_nuovo: ['nuovo governo nello scenario', 'new government in the scenario', 'neue Regierung im Szenario'],
+    mot_blocco: ['minoranza di blocco', 'blocking minority', 'Sperrminorität'], mot_mancano: ['mancano voti favorevoli', 'not enough votes in favour', 'zu wenige Ja-Stimmen'], mot_veto: ['veto', 'veto', 'Veto'],
+    cv_title: ['Come vota su…', 'How it votes on…', 'Wie es abstimmt über…'], cv_now: ['governo attuale', 'current government', 'aktuelle Regierung'], cv_scen: ['nello scenario', 'in the scenario', 'im Szenario'], cv_src: ['fonte', 'source', 'Quelle'],
     copied: ['Copiato', 'Copied', 'Kopiert'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary', 'WhatsApp-Zusammenfassung kopieren'], copy_prompt: ['Copia il testo:', 'Copy the text:', 'Text kopieren:']
   };
   const t = k => S[k] ? (S[k][LI] != null ? S[k][LI] : S[k][1]) : k;
@@ -925,6 +981,7 @@ window.__start = function () {
         <div class="dnbox"><div><b>${esc(d.partito)}</b><div class="sub">${esc(d.leader)} · ${t('gruppo')} ${esc(d.gruppo_pe)}</div></div>
         <div style="text-align:right"><div class="big num">${d.pct_sondaggio != null ? fmtPct(d.pct_sondaggio) + '%' : '—'}</div><div class="sub ${trendCls}">${trendTxt}${dl != null ? ` · ${dl >= 0 ? '+' : ''}${fmtPct(dl)} ${t('dal_voto')}` : ''}</div></div></div>
       </div>
+      ${window.POSIZIONI && window.DOSSIER && window.EU30C && p.ue ? (() => { const st2 = stato(p); const rows = window.DOSSIER.filter(d => d.regola !== 'nazionale').map(d => { const vNow = EU30C.votoAtteso(window.POSIZIONI, d.id, p, { cambiato: false }); const vScen = st2.cambiato ? EU30C.votoAtteso(window.POSIZIONI, d.id, p, st2) : null; const cell = (v, lab) => `<div class="cv-v"><span class="cv-lab mono">${lab}</span><span class="vtag v-${v.voto}">${t('v_' + v.voto)}</span>${v.confidenza ? `<span class="conf c-${v.confidenza}">${t('conf_' + v.confidenza)}</span>` : ''}${tx(v, 'nota') ? `<span class="cv-n">${esc(tx(v, 'nota'))}</span>` : ''}${v.fonte ? `<a class="cv-src" href="${esc(v.fonte)}" target="_blank" rel="noopener">${t('cv_src')}</a>` : ''}</div>`; return `<li><b>${esc(tx(d, 'titolo'))}</b>${cell(vNow, t('cv_now'))}${vScen ? cell(vScen, `${t('cv_scen')} ${SCEN[state.scen].label}${vScen.partito ? ' · ' + esc(vScen.partito) : ''}`) : ''}</li>`; }).join(''); return `<div class="section"><span class="eyebrow">${t('cv_title')}</span><ul class="cv">${rows}</ul></div>`; })() : ''}
       <div class="section"><span class="eyebrow">${t('scen_next')}</span>
         <div class="scen-rows">${Object.keys(SCEN).map(k => `<div class="scen-row${k === state.scen ? ' on' : ''}"><span class="k">${SCEN[k].label}</span><span>${pill(scenFam(p, k))}${scenPartner(p, k) ? ` <span class="warn">${t('plus_dn_p')}</span>` : ''}</span></div>`).join('')}</div>
         <p class="note">${esc(tx(s, 'commento_coalizione'))}</p>
@@ -975,21 +1032,37 @@ window.__start = function () {
 
   function renderDossier() {
     const esitoD = (b, d) => d.regola === 'unanimita' ? (d.obiettivo_destra === 'approvare' ? b.n >= 27 : b.n >= 1) : (d.obiettivo_destra === 'approvare' ? b.qmv : b.blocking);
+    const POS = window.POSIZIONI, y = STEPS[state.step].y;
     const items = window.DOSSIER.map(d => {
-      let res;
-      if (d.regola === 'nazionale') res = `<span class="res na">${t('r_na')}</span>`;
+      // vecchio verdetto: ipotesi di blocco compatto
+      let old;
+      if (d.regola === 'nazionale') old = t('r_na');
       else {
         let found = null;
         for (const tier of TIERS) { for (let s = 0; s <= 5; s++) { if (esitoD(blocco(tier, state.scen, s), d)) { found = { s, tier }; break; } } if (found) break; }
         const verb = d.regola === 'unanimita' ? (d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_veto')) : d.obiettivo_destra === 'approvare' ? t('r_appr') : d.obiettivo_destra === 'modificare' ? t('r_mod') : t('r_block');
-        if (!found) res = `<span class="res no">${d.regola === 'unanimita' && d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_no')}</span>`;
-        else { const now = found.s <= state.step; res = `<span class="res ${now ? 'ok' : 'later'}">${verb} ${found.s === 0 ? t('r_now') : t('r_from') + ' ' + STEPS[found.s].label}</span><span class="tier-tag mono">${found.tier.id === 'A' ? t('tg_a') : found.tier.id === 'B' ? t('tg_b') : t('tg_c')}</span>`; }
+        old = !found ? (d.regola === 'unanimita' && d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_no')) : `${verb} ${found.s === 0 ? t('r_now') : t('r_from') + ' ' + STEPS[found.s].label} · ${found.tier.id === 'A' ? t('tg_a') : found.tier.id === 'B' ? t('tg_b') : t('tg_c')}`;
       }
+      // nuovo verdetto: voto atteso governo per governo
+      let res = '', vote = '';
+      if (d.regola === 'nazionale') res = `<span class="res na">${t('r_na')}</span>`;
+      else if (POS && POS.dossier && POS.dossier[d.id] && window.EU30C) {
+        const V = EU30C.verdetto(PAESI, POS, d, state.scen, y), k = V.conti;
+        res = `<span class="exv ex-${V.esito}">${t('ex_' + V.esito)}</span><span class="conf c-${V.confidenza}">${t('conf_' + V.confidenza)}</span>${V.fragile ? `<span class="frag">${t('ex_fragile')}</span>` : ''}`;
+        const ord = V.righe.slice().sort((a, b) => b.pop - a.pop);
+        const strip = ord.map(r => `<i class="vq v-${r.v.voto}${r.v.origine === 'nuovo' ? ' nuovo' : ''}${V.decisivi.includes(r.sigla) ? ' dec' : ''}" style="flex:${Math.max(r.pop, 0.6)}" title="${esc(tx(bySigla.get(r.sigla), 'nome'))} · ${t('v_' + r.v.voto)}${r.v.confidenza ? ' · ' + t('conf_' + r.v.confidenza) : ''}${r.v.origine === 'nuovo' ? ' · ' + t('ex_nuovo') : ''}">${r.pop > 9 ? r.sigla : ''}</i>`).join('');
+        const mot = V.motivo ? ` · ${t('mot_' + V.motivo)}` : '';
+        const nums = d.regola === 'unanimita'
+          ? `${k.fav} ${t('ex_fav')} · ${k.con} ${t('ex_con')} · ${k.ast} ${t('ex_ast')} · ${k.dv} ${t('ex_dv')}${mot}`
+          : `${k.fav} ${t('ex_fav')} (${k.popFav.toFixed(1).replace('.', LANG === 'en' ? '.' : ',')}% ${t('ex_pop')}) · ${k.con} ${t('ex_con')} · ${k.ast} ${t('ex_ast')} · ${k.dv} ${t('ex_dv')}${mot}`;
+        const dec = V.decisivi.length ? `${t('ex_dec')}: ${V.decisivi.map(s => `<b>${flag(s)} ${s}</b>`).join(' ')}` : t('ex_nodec');
+        vote = `<div class="vote"><span class="eyebrow">${t('ex_title')}</span><div class="vstrip">${strip}</div><span class="vnums mono">${nums}</span><span class="vdec">${dec}</span></div>`;
+      } else res = `<span class="res no">${t('v_da_verificare')}</span>`;
       const rule = { qmv: t('c_appr'), unanimita: t('c_una'), nazionale: t('c_naz') }[d.regola] || d.regola;
       const goal = { bloccare: t('ds_goal_b'), approvare: t('ds_goal_a'), modificare: t('ds_goal_m') }[d.obiettivo_destra] || '';
-      return `<li><div><span class="area">${esc(tx(d, 'area'))} · ${rule}</span><b class="t">${esc(tx(d, 'titolo'))}</b><span class="stato s-${esc(d.stato)}">${t('st_' + d.stato)}</span><span class="goal">${goal}</span><span class="nota">${esc(tx(d, 'stato_nota'))}</span>${tx(d, 'prossima_tappa') ? `<span class="next">${t('ds_next')}: ${esc(tx(d, 'prossima_tappa'))}</span>` : ''}<details><summary>${t('ds_more')}</summary><p>${esc(tx(d, 'descrizione'))} ${esc(tx(d, 'obiettivo_nota'))}</p>${(d.fonti || []).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 60))}</a>`).join('<br>')}</details></div><div class="right">${res}</div></li>`;
+      return `<li><div><span class="area">${esc(tx(d, 'area'))} · ${rule}</span><b class="t">${esc(tx(d, 'titolo'))}</b><span class="stato s-${esc(d.stato)}">${t('st_' + d.stato)}</span><span class="goal">${goal}</span>${vote}<span class="nota">${esc(tx(d, 'stato_nota'))}</span>${tx(d, 'prossima_tappa') ? `<span class="next">${t('ds_next')}: ${esc(tx(d, 'prossima_tappa'))}</span>` : ''}<details><summary>${t('ds_more')}</summary><p>${esc(tx(d, 'descrizione'))} ${esc(tx(d, 'obiettivo_nota'))}</p>${(d.fonti || []).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 60))}</a>`).join('<br>')}</details></div><div class="right">${res}<span class="oldv"><span class="mono">${t('ex_compatto')}</span>${esc(old)}</span></div></li>`;
     });
-    document.getElementById('cons-pol').innerHTML = `<ul class="ds">${items.join('')}</ul>`;
+    document.getElementById('cons-pol').innerHTML = `<div class="vlegend">${['favorevole', 'condizionato', 'astensione', 'opt_out', 'contrario', 'da_verificare'].map(v => `<span><i class="vq v-${v}"></i>${t('v_' + v)}</span>`).join('')}<span><i class="vq v-favorevole nuovo"></i>${t('ex_nuovo')}</span></div><ul class="ds">${items.join('')}</ul>`;
   }
 
   /* ---------- Calendario ---------- */

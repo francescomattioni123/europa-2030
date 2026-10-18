@@ -1,8 +1,8 @@
 // Controllo di coerenza dei file dati. Uso: node scripts/check.js
 const fs = require('fs'), vm = require('vm');
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/dossier.js']) if (fs.existsSync(f)) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
-const { PAESI, POLITICHE, AGGIORNAMENTI, META, DOSSIER } = ctx.window;
+for (const f of ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/dossier.js', 'data/posizioni.js']) if (fs.existsSync(f)) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
+const { PAESI, POLITICHE, AGGIORNAMENTI, META, DOSSIER, POSIZIONI } = ctx.window;
 const FAM = new Set(['sinistra', 'centrosinistra', 'centro', 'centrodestra', 'destra_nazionalista', 'tecnico']);
 const errs = [];
 const isDate = d => /^\d{4}-\d{2}$/.test(d);
@@ -32,5 +32,34 @@ if (AGGIORNAMENTI[0] && (!AGGIORNAMENTI[0].whatsapp_de || !AGGIORNAMENTI[0].tito
 for (const p of PAESI) { if (!p.nome_en || !p.governo.note_en || !p.scenario.commento_coalizione_en) errs.push(`${p.sigla}: testi inglesi mancanti (nome_en, governo.note_en, scenario.commento_coalizione_en)`); if (p.anticipate && !p.anticipate.nota_en) errs.push(`${p.sigla}: anticipate.nota_en mancante`); if (!p.nome_de || !p.governo.note_de || !p.scenario.commento_coalizione_de) errs.push(`${p.sigla}: testi tedeschi mancanti (nome_de, governo.note_de, scenario.commento_coalizione_de)`); }
 for (const t of POLITICHE.temi) { if (!t.titolo_en || !t.nota_en || !t.consiglio_nota_en) errs.push(`politiche ${t.id}: testi inglesi mancanti`); if (!t.titolo_de || !t.nota_de || !t.consiglio_nota_de) errs.push(`politiche ${t.id}: testi tedeschi mancanti`); }
 if (DOSSIER) { const ST = ['proposta', 'parlamento', 'consiglio', 'trilogo', 'adottato', 'attuazione', 'bloccato']; for (const d of DOSSIER) { if (!ST.includes(d.stato)) errs.push(`dossier ${d.id}: stato non valido`); if (!['qmv', 'unanimita', 'nazionale'].includes(d.regola)) errs.push(`dossier ${d.id}: regola non valida`); if (!['approvare', 'bloccare', 'modificare'].includes(d.obiettivo_destra)) errs.push(`dossier ${d.id}: obiettivo_destra non valido`); for (const k of ['titolo', 'stato_nota', 'descrizione', 'obiettivo_nota']) for (const l of ['', '_en', '_de']) if (!d[k + l]) errs.push(`dossier ${d.id}: manca ${k + l}`); if (d.prossima_data && !/^\d{4}-\d{2}$/.test(d.prossima_data)) errs.push(`dossier ${d.id}: prossima_data`); } }
+// posizioni dei governi per dossier (v2, passo 1)
+if (DOSSIER) {
+  const UE27 = new Set(PAESI.filter(p => p.ue).map(p => p.sigla));
+  const VOTI = ['favorevole', 'contrario', 'astensione', 'condizionato', 'opt_out', 'da_verificare'], CONF = ['alta', 'media', 'bassa'];
+  const checkPos = (where, e) => {
+    if (!VOTI.includes(e.voto)) errs.push(`${where}: voto "${e.voto}" non valido`);
+    if (e.voto !== 'da_verificare' && !CONF.includes(e.confidenza)) errs.push(`${where}: confidenza mancante o non valida`);
+    if (e.confidenza && !CONF.includes(e.confidenza)) errs.push(`${where}: confidenza "${e.confidenza}" non valida`);
+    if ((e.confidenza === 'alta' || e.confidenza === 'media') && !/^https?:\/\//.test(e.fonte || '')) errs.push(`${where}: fonte obbligatoria con confidenza ${e.confidenza}`);
+    if (e.data && !/^\d{4}-\d{2}(-\d{2})?$/.test(e.data)) errs.push(`${where}: data non valida`);
+    if (!e.nota || !e.nota_en || !e.nota_de) errs.push(`${where}: servono nota, nota_en e nota_de`);
+  };
+  if (!POSIZIONI || !POSIZIONI.dossier) errs.push('posizioni.js mancante o senza "dossier"');
+  else {
+    for (const d of DOSSIER) if (!POSIZIONI.dossier[d.id]) errs.push(`posizioni: manca la voce del dossier ${d.id}`);
+    for (const [id, P] of Object.entries(POSIZIONI.dossier)) {
+      if (!DOSSIER.find(d => d.id === id)) errs.push(`posizioni: dossier ${id} non esiste in dossier.js`);
+      for (const k of ['atto', 'atto_en', 'atto_de']) if (!P[k]) errs.push(`posizioni ${id}: manca ${k}`);
+      if (!['passa', 'bloccato'].includes(P.esito_voluto_destra)) errs.push(`posizioni ${id}: esito_voluto_destra deve essere passa o bloccato`);
+      for (const [sig, e] of Object.entries(P.governi || {})) { if (!UE27.has(sig)) errs.push(`posizioni ${id}: sigla ${sig} non è UE27`); checkPos(`posizioni ${id}.governi.${sig}`, e); }
+      for (const [key, e] of Object.entries(P.nuovi || {})) {
+        const [sig, fam] = key.split(':');
+        if (!UE27.has(sig)) errs.push(`posizioni ${id}: sigla ${sig} non è UE27`);
+        if (!FAM.has(fam)) errs.push(`posizioni ${id}.nuovi.${key}: famiglia non valida`);
+        checkPos(`posizioni ${id}.nuovi.${key}`, e);
+      }
+    }
+  }
+}
 if (errs.length) { console.error('ERRORI:\n' + errs.join('\n')); process.exit(1); }
-console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, ${DOSSIER ? DOSSIER.length + ' dossier, ' : ''}aggiornato al ${META.aggiornato}`);
+console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, ${DOSSIER ? DOSSIER.length + ' dossier, ' : ''}${POSIZIONI ? Object.values(POSIZIONI.dossier).reduce((a, P) => a + Object.keys(P.governi || {}).length + Object.keys(P.nuovi || {}).length, 0) + ' posizioni, ' : ''}aggiornato al ${META.aggiornato}`);
