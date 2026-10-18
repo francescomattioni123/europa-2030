@@ -49,7 +49,7 @@ async function scarica(ind) {
     const v = d.value[pos];
     out[g] = v === undefined ? null : v;
   }
-  const aggiornato = (d.extension && d.extension.datastructure && d.extension.datastructure.updated) || (d.updated) || null;
+  const aggiornato = d.updated ? String(d.updated).slice(0, 10) : null; // data dell'ultimo aggiornamento Eurostat del dataset
   return { valori: out, aggiornato, url, dims: ids.map(k => `${k}:${Object.keys(d.dimension[k].category.index).length}`).join(' ') };
 }
 
@@ -68,8 +68,8 @@ async function diagnostica(ind) {
     try {
       const r = await scarica(ind);
       const nulli = GEO.filter(g => r.valori[g] == null);
-      ris[ind.id] = { nome: ind.nome, nome_en: ind.nome_en, nome_de: ind.nome_de, dataset: ind.dataset, periodo: ind.time, fonte: `https://ec.europa.eu/eurostat/databrowser/view/${ind.dataset}/default/table`, valori: r.valori };
-      console.log(`ok  ${ind.id.padEnd(22)} ${ind.dataset.padEnd(16)} ${ind.time.padEnd(8)} EU27 ${String(r.valori.EU27_2020).padStart(10)}${nulli.length ? '  mancanti: ' + nulli.join(' ') : ''}`);
+      ris[ind.id] = { nome: ind.nome, nome_en: ind.nome_en, nome_de: ind.nome_de, dataset: ind.dataset, periodo: ind.time, aggiornato_eurostat: r.aggiornato, fonte: `https://ec.europa.eu/eurostat/databrowser/view/${ind.dataset}/default/table`, valori: r.valori };
+      console.log(`ok  ${ind.id.padEnd(22)} ${ind.dataset.padEnd(16)} ${ind.time.padEnd(8)} agg. ${r.aggiornato} EU27 ${String(r.valori.EU27_2020).padStart(10)}${nulli.length ? '  mancanti: ' + nulli.join(' ') : ''}`);
     } catch (e) {
       errori++;
       console.log(`ERR ${ind.id.padEnd(22)} ${ind.dataset.padEnd(16)} ${ind.time}: ${e.message}`);
@@ -77,8 +77,10 @@ async function diagnostica(ind) {
     }
   }
   if (errori) { console.error(`\n${errori} indicatori falliti: correggi i filtri in INDICATORI.`); process.exit(1); }
-  const out = { generato: new Date().toISOString().slice(0, 10), anno: ANNO, mese: MESE, geo: GEO, indicatori: ris };
+  const estratto = new Date().toISOString().slice(0, 10);
+  const out = { estratto, anno: ANNO, mese: MESE, geo: GEO, indicatori: ris };
   const dest = path.join(__dirname, '..', 'data', 'migrazione.js');
-  fs.writeFileSync(dest, `// Indicatori Eurostat su migrazione, asilo e rimpatri (UE27 e Stati membri). Generato da scripts/migrazione.js, non modificare a mano.\n// Codici geo Eurostat: EL = Grecia. Dati arrotondati a 5 da Eurostat; "rimpatri_totali" include i trasferimenti verso altri Stati membri.\nwindow.MIGRAZIONE = ${JSON.stringify(out, null, 1)};\n`);
+  const agg = [...new Set(Object.values(ris).map(x => `${x.dataset} ${x.aggiornato_eurostat}`))].join(', ');
+  fs.writeFileSync(dest, `// Indicatori Eurostat su migrazione, asilo e rimpatri (UE27 e Stati membri). Generato da scripts/migrazione.js, non modificare a mano.\n// Estratto dall'API Eurostat il ${estratto}. Ultimo aggiornamento Eurostat dei dataset: ${agg}.\n// Codici geo Eurostat: EL = Grecia. Dati arrotondati a 5 da Eurostat; "rimpatri_totali" include i trasferimenti verso altri Stati membri.\nwindow.MIGRAZIONE = ${JSON.stringify(out, null, 1)};\n`);
   console.log(`\nscritto ${path.relative(process.cwd(), dest)}: ${Object.keys(ris).length} indicatori × ${GEO.length} geo`);
 })();
