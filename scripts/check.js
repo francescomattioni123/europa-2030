@@ -1,8 +1,8 @@
 // Controllo di coerenza dei file dati. Uso: node scripts/check.js
 const fs = require('fs'), vm = require('vm');
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/dossier.js', 'data/posizioni.js']) if (fs.existsSync(f)) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
-const { PAESI, POLITICHE, AGGIORNAMENTI, META, DOSSIER, POSIZIONI } = ctx.window;
+for (const f of ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/dossier.js', 'data/posizioni.js', 'data/piano.js']) if (fs.existsSync(f)) vm.runInContext(fs.readFileSync(f, 'utf8'), ctx);
+const { PAESI, POLITICHE, AGGIORNAMENTI, META, DOSSIER, POSIZIONI, PIANO } = ctx.window;
 const FAM = new Set(['sinistra', 'centrosinistra', 'centro', 'centrodestra', 'destra_nazionalista', 'tecnico']);
 const errs = [];
 const isDate = d => /^\d{4}-\d{2}$/.test(d);
@@ -61,5 +61,17 @@ if (DOSSIER) {
     }
   }
 }
+// piano (v2, passo 2)
+if (PIANO) {
+  const L3 = (o, k, where) => { for (const l of ['', '_en', '_de']) if (!o[k + l]) errs.push(`piano ${where}: manca ${k + l}`); };
+  L3(PIANO, 'nome', 'nome'); L3(PIANO, 'premessa', 'premessa');
+  for (const x of PIANO.perimetro || []) L3(x, 'testo', 'perimetro');
+  for (const o of PIANO.obiettivi || []) { L3(o, 'etichetta', 'obiettivi'); if (typeof o.obiettivo !== 'number') errs.push(`piano obiettivo ${o.id}: valore non numerico`); }
+  const ST = ['in_vigore', 'adottato_non_applicato', 'proposta', 'nuova'], LV = ['ue', 'nazionale', 'terzo_paese'], RG = ['qmv', 'unanimita', 'nazionale', null];
+  for (const pl of PIANO.pilastri || []) { L3(pl, 'titolo', 'pilastro ' + pl.id); L3(pl, 'descrizione', 'pilastro ' + pl.id); for (const m of pl.misure || []) { L3(m, 'titolo', 'misura ' + m.id); L3(m, 'testo', 'misura ' + m.id); if (!ST.includes(m.stato)) errs.push(`piano misura ${m.id}: stato non valido`); if (!LV.includes(m.livello)) errs.push(`piano misura ${m.id}: livello non valido`); if (!RG.includes(m.regola === undefined ? null : m.regola)) errs.push(`piano misura ${m.id}: regola non valida`); if (m.dossier && DOSSIER && !DOSSIER.find(d => d.id === m.dossier)) errs.push(`piano misura ${m.id}: dossier ${m.dossier} inesistente`); if (!(m.fonte || []).length && m.stato !== 'nuova') errs.push(`piano misura ${m.id}: fonte mancante`); } }
+  for (const s of PIANO.tappe || []) { L3(s, 'titolo', 'tappa'); if (!/^\d{4}-\d{2}$/.test(s.data)) errs.push(`piano tappa ${s.titolo}: data non valida`); }
+  for (const r of PIANO.paesi || []) { if (!PAESI.find(p => p.sigla === r.sigla && p.ue)) errs.push(`piano paesi: sigla ${r.sigla} non è UE27`); if (!r.fonte) errs.push(`piano paesi ${r.sigla}: fonte mancante`); }
+  for (const v of PIANO.vincoli || []) { L3(v, 'nome', 'vincolo'); L3(v, 'testo', 'vincolo'); }
+}
 if (errs.length) { console.error('ERRORI:\n' + errs.join('\n')); process.exit(1); }
-console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, ${DOSSIER ? DOSSIER.length + ' dossier, ' : ''}${POSIZIONI ? Object.values(POSIZIONI.dossier).reduce((a, P) => a + Object.keys(P.governi || {}).length + Object.keys(P.nuovi || {}).length, 0) + ' posizioni, ' : ''}aggiornato al ${META.aggiornato}`);
+console.log(`ok: ${PAESI.length} paesi, ${POLITICHE.temi.length} temi, ${DOSSIER ? DOSSIER.length + ' dossier, ' : ''}${POSIZIONI ? Object.values(POSIZIONI.dossier).reduce((a, P) => a + Object.keys(P.governi || {}).length + Object.keys(P.nuovi || {}).length, 0) + ' posizioni, ' : ''}${PIANO ? 'piano con ' + (PIANO.pilastri || []).reduce((a, pl) => a + (pl.misure || []).length, 0) + ' misure, ' : ''}aggiornato al ${META.aggiornato}`);
