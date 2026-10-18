@@ -292,6 +292,48 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .cv-n { flex-basis: 100%; color: var(--ink-2); }
 .cv-src { font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
 
+/* Piano */
+.piano-kpi { margin-bottom: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) { .piano-kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.per { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.per-col { border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; background: var(--panel); }
+.per-col h3 { font-size: 13px; margin-bottom: 8px; font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.per-col.in h3 { color: #35c9c2; } .per-col.out h3 { color: var(--muted); }
+.per-col ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 13.5px; display: grid; gap: 4px; }
+.pils { display: grid; gap: 12px; }
+.pil-head { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 10px; }
+.pil-n { font-size: 22px; font-weight: 600; color: var(--accent); line-height: 1.1; }
+.pil-head h3 { margin: 0 0 4px; font-size: 17px; }
+.pil-head p { margin: 0; color: var(--ink-2); font-size: 13.5px; max-width: 70ch; }
+.mis { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.mis li { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; background: rgba(0,0,0,0.25); display: grid; gap: 4px; }
+.mis-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; align-items: center; }
+.mis-top b { font-size: 13.5px; font-weight: 600; }
+.mis-tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.mtag { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+.mtag.lv-ue { color: #8fb4ff; border-color: rgba(47,95,232,0.5); } .mtag.lv-terzo_paese { color: #ffd166; border-color: rgba(255,209,102,0.45); }
+.mtag.st-in_vigore { color: #35c9c2; border-color: rgba(53,201,194,0.5); } .mtag.st-nuova { color: #ffffff; border-color: #ffffff; }
+.mis li p { margin: 0; font-size: 13px; color: var(--ink-2); }
+.mis-num { font-size: 11px; color: var(--ink); }
+.mis-src { font-size: 10.5px; color: var(--muted); } .mis-src a { color: var(--muted); }
+.piano-two { margin-top: 16px; }
+.tappe { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.tappe li { display: grid; grid-template-columns: 72px 1fr; gap: 10px; font-size: 13px; }
+.tappe .when { color: var(--accent); font-size: 11px; padding-top: 2px; }
+.tappe b { display: block; font-weight: 600; } .tappe span:not(.when) { color: var(--ink-2); }
+.vinc { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; }
+.vinc li b { display: block; font-weight: 600; } .vinc li span { color: var(--ink-2); } .vinc li a { font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-left: 6px; }
+.ptab-wrap { overflow-x: auto; }
+.ptab { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13px; }
+.ptab th, .ptab td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.ptab th { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+.ptab td.num, .ptab th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.ptab tr[data-go] { cursor: pointer; } .ptab tr[data-go]:hover td { background: rgba(255,255,255,0.03); }
+.ptab .tbar { display: inline-block; width: 56px; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; vertical-align: middle; margin-right: 8px; overflow: hidden; }
+.ptab .tbar i { display: block; height: 100%; background: #35c9c2; }
+.ptab td.gap { color: #ffd166; }
+@media (max-width: 700px) { .per { grid-template-columns: 1fr; } }
+
 /* Calendario */
 .cal-card { overflow-x: auto; padding: 10px 6px 4px; }
 .cal-card svg { display: block; min-width: 820px; width: 100%; height: auto; }
@@ -410,7 +452,7 @@ footer.method p { margin: 8px 0 0; }
 <nav class="nav wrap">
   <a class="logo" href="#top" style="text-decoration:none"><i></i>Europa 2030</a>
   <div class="links">
-    <a href="#top">Mappa</a><a href="#novita">Novità</a><a href="#cambi">Cambi di governo</a><a href="#consiglio">Consiglio UE</a><a href="#calendario">Calendario</a><a href="#agenda">Agenda</a><a href="#metodo">Metodo</a>
+    <a href="#top">Mappa</a><a href="#novita">Novità</a><a href="#cambi">Cambi di governo</a><a href="#consiglio">Consiglio UE</a><a href="#piano">Piano</a><a href="#calendario">Calendario</a><a href="#agenda">Agenda</a><a href="#metodo">Metodo</a>
   </div>
   <div class="nav-right"><div class="stamp"><i class="live"></i>dati al <b id="stamp">15 ott 2026</b></div><div class="langs" role="group" aria-label="Lingua"><button type="button" class="langbtn" data-lang="it">IT</button><button type="button" class="langbtn" data-lang="en">EN</button><button type="button" class="langbtn" data-lang="de">DE</button></div></div>
 </nav>
@@ -487,6 +529,19 @@ footer.method p { margin: 8px 0 0; }
     <div class="card cal-card"><svg id="cal" viewBox="0 0 1000 300"></svg></div>
   </section>
 
+  <section class="sec reveal" id="piano" hidden>
+    <div class="sec-head"><div><div class="eyebrow" id="piano-eyebrow">Piano</div><h2 id="piano-title"></h2><p id="piano-sub"></p></div></div>
+    <div class="kpis piano-kpi" id="piano-kpi"></div>
+    <div class="per" id="piano-per"></div>
+    <div class="pils" id="piano-pil"></div>
+    <div class="two piano-two">
+      <div class="card"><div class="in"><h3 id="piano-h-tappe"></h3><ul class="tappe" id="piano-tappe"></ul></div></div>
+      <div class="card"><div class="in"><h3 id="piano-h-vinc"></h3><ul class="vinc" id="piano-vinc"></ul></div></div>
+    </div>
+    <div class="card" style="margin-top:16px"><div class="in"><h3 id="piano-h-paesi"></h3><div class="ptab-wrap" id="piano-paesi"></div></div></div>
+    <p class="srcs" id="piano-fonti" style="margin-top:12px"></p>
+  </section>
+
   <section class="sec reveal" id="agenda">
     <div class="sec-head"><div><div class="eyebrow">Agenda</div><h2>Cosa possono fare insieme le destre</h2><p>Dodici partiti, dodici proposte concrete. Dove la riga è tutta blu c'è una politica che un'Europa a trazione nazionalista può davvero portare avanti; dove si spezza, no.</p></div></div>
     <div class="card matrix-wrap"><table class="matrix" id="matrix"></table></div>
@@ -527,7 +582,7 @@ footer.method p { margin: 8px 0 0; }
 <script>
 // Caricamento dati: nell'app nativa prova prima la versione pubblicata (sempre aggiornata), poi quella inclusa nell'app.
 (function () {
-  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js', 'data/posizioni.js'];
+  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js', 'data/posizioni.js', 'data/piano.js'];
   const native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
   window.EU30_NATIVE = native;
   const base = native ? 'https://francescomattioni123.github.io/europa-2030/' : '';
@@ -596,6 +651,13 @@ window.__start = function () {
     ex_compatto: ['Ipotesi di blocco compatto', 'Compact-bloc hypothesis', 'Annahme eines geschlossenen Blocks'], ex_title: ['Voto atteso in Consiglio, governo per governo', 'Expected Council vote, government by government', 'Erwartete Abstimmung im Rat, Regierung für Regierung'], ex_nuovo: ['nuovo governo nello scenario', 'new government in the scenario', 'neue Regierung im Szenario'],
     mot_blocco: ['minoranza di blocco', 'blocking minority', 'Sperrminorität'], mot_mancano: ['mancano voti favorevoli', 'not enough votes in favour', 'zu wenige Ja-Stimmen'], mot_veto: ['veto', 'veto', 'Veto'],
     cv_title: ['Come vota su…', 'How it votes on…', 'Wie es abstimmt über…'], cv_now: ['governo attuale', 'current government', 'aktuelle Regierung'], cv_scen: ['nello scenario', 'in the scenario', 'im Szenario'], cv_src: ['fonte', 'source', 'Quelle'],
+    pl_oggi: ['oggi', 'today', 'heute'], pl_dentro: ['Chi rientra nel piano', 'Who is covered', 'Wer erfasst ist'], pl_fuori: ['Chi non rientra', 'Who is not covered', 'Wer nicht erfasst ist'],
+    pl_st_vigore: ['in vigore', 'in force', 'in Kraft'], pl_st_adottato: ['adottato, non ancora applicato', 'adopted, not yet applied', 'beschlossen, noch nicht angewandt'], pl_st_proposta: ['proposta sul tavolo', 'proposal on the table', 'Vorschlag auf dem Tisch'], pl_st_nuova: ['misura nuova del piano', 'new measure of the plan', 'neue Maßnahme des Plans'],
+    pl_lv_ue: ['livello UE', 'EU level', 'EU-Ebene'], pl_lv_naz: ['livello nazionale', 'national level', 'nationale Ebene'], pl_lv_terzo: ['con i paesi terzi', 'with third countries', 'mit Drittstaaten'],
+    pl_h_tappe: ['Tappe', 'Milestones', 'Etappen'], pl_h_vinc: ['Vincoli legali che il piano rispetta', 'Legal constraints the plan respects', 'Rechtliche Grenzen, die der Plan einhält'], pl_h_paesi: ['Paese per paese: ordini di lasciare il territorio, rimpatri effettivi, obiettivo', 'Country by country: orders to leave, effective returns, target', 'Land für Land: Ausreiseanordnungen, tatsächliche Rückführungen, Ziel'],
+    pl_paese: ['Paese', 'Country', 'Land'], pl_ordinati: ['Ordini di lasciare', 'Orders to leave', 'Ausreiseanordnungen'], pl_rimpatriati: ['Rimpatriati', 'Returned', 'Rückgeführt'], pl_tasso: ['Tasso', 'Rate', 'Quote'], pl_obiettivo: ['Obiettivo 2030', 'Target 2030', 'Ziel 2030'], pl_gap: ['Rimpatri in più l\'anno', 'Extra returns per year', 'Zusätzliche Rückführungen pro Jahr'],
+    pl_tab_note: ['Dati Eurostat: cittadini di paesi terzi con ordine di lasciare il territorio e rimpatriati verso un paese terzo nell\'anno indicato (esclusi i trasferimenti Dublino). "Rimpatri in più" = rimpatri annui necessari per raggiungere l\'obiettivo sugli ordini attuali. Clicca un paese per la scheda.', 'Eurostat data: third-country nationals ordered to leave and returned to a third country in the year shown (Dublin transfers excluded). "Extra returns" = yearly returns needed to reach the target on current orders. Click a country for its file.', 'Eurostat-Daten: Drittstaatsangehörige mit Ausreiseanordnung und in einen Drittstaat Rückgeführte im angegebenen Jahr (ohne Dublin-Überstellungen). "Zusätzliche Rückführungen" = jährlich nötige Rückführungen, um das Ziel bei den heutigen Anordnungen zu erreichen. Land anklicken für das Profil.'],
+    pl_eyebrow: ['Piano', 'Plan', 'Plan'],
     copied: ['Copiato', 'Copied', 'Kopiert'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary', 'WhatsApp-Zusammenfassung kopieren'], copy_prompt: ['Copia il testo:', 'Copy the text:', 'Text kopieren:']
   };
   const t = k => S[k] ? (S[k][LI] != null ? S[k][LI] : S[k][1]) : k;
@@ -603,7 +665,7 @@ window.__start = function () {
   // testi statici della pagina nelle altre lingue (l'HTML è in italiano)
   const STATIC = {
     en: {
-      '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
+      '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#piano"]': 'Plan', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
       '.hero-copy .eyebrow': 'Observatory · EU 27 + United Kingdom, Norway, Switzerland',
       '.hero h1': 'The map of power<br>in <em>Europe</em>',
       '.hero .lede': 'Who governs today, who leads the polls and how the continent may change by 2030. Pick a scenario, move the time slider, click a country.',
@@ -623,7 +685,7 @@ window.__start = function () {
       '.nav .stamp': '<i class="live"></i>data as of <b id="stamp"></b>'
     },
     de: {
-      '.links a[href="#top"]': 'Karte', '.links a[href="#novita"]': 'Neu', '.links a[href="#cambi"]': 'Regierungswechsel', '.links a[href="#consiglio"]': 'EU-Rat', '.links a[href="#calendario"]': 'Kalender', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Methode',
+      '.links a[href="#top"]': 'Karte', '.links a[href="#novita"]': 'Neu', '.links a[href="#cambi"]': 'Regierungswechsel', '.links a[href="#consiglio"]': 'EU-Rat', '.links a[href="#piano"]': 'Plan', '.links a[href="#calendario"]': 'Kalender', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Methode',
       '.hero-copy .eyebrow': 'Observatorium · EU 27 + Vereinigtes Königreich, Norwegen, Schweiz',
       '.hero h1': 'Die Landkarte der Macht<br>in <em>Europa</em>',
       '.hero .lede': 'Wer heute regiert, wer in den Umfragen führt und wie sich der Kontinent bis 2030 verändern kann. Szenario wählen, Zeitregler bewegen, Land anklicken.',
@@ -644,6 +706,7 @@ window.__start = function () {
     }
   };
   if (STATIC[LANG]) for (const [sel, html] of Object.entries(STATIC[LANG])) document.querySelectorAll(sel).forEach(el => { el.innerHTML = html; });
+  document.getElementById('piano-eyebrow').textContent = t('pl_eyebrow'); document.getElementById('piano-h-tappe').textContent = t('pl_h_tappe'); document.getElementById('piano-h-vinc').textContent = t('pl_h_vinc'); document.getElementById('piano-h-paesi').textContent = t('pl_h_paesi');
   document.querySelectorAll('.langbtn').forEach(b => { b.classList.toggle('on', b.dataset.lang === LANG); b.addEventListener('click', () => { try { localStorage.setItem('eu30-lang', b.dataset.lang); } catch (e) {} location.reload(); }); });
   const FAM = {
     sinistra:            { label: t('f_sx'),              hex: '#a8233f', map: '#a8233f' },
@@ -1065,6 +1128,39 @@ window.__start = function () {
     document.getElementById('cons-pol').innerHTML = `<div class="vlegend">${['favorevole', 'condizionato', 'astensione', 'opt_out', 'contrario', 'da_verificare'].map(v => `<span><i class="vq v-${v}"></i>${t('v_' + v)}</span>`).join('')}<span><i class="vq v-favorevole nuovo"></i>${t('ex_nuovo')}</span></div><ul class="ds">${items.join('')}</ul>`;
   }
 
+  /* ---------- Piano (GRP) ---------- */
+  function renderPiano() {
+    const P = window.PIANO; const sec = document.getElementById('piano'); if (!P || !sec) { if (sec) sec.hidden = true; return; }
+    sec.hidden = false;
+    const y = STEPS[state.step].y;
+    const num = v => v == null ? '—' : (typeof v === 'number' ? v.toLocaleString(LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT', { useGrouping: true, minimumGroupingDigits: 1 }) : esc(v));
+    const pct = v => v == null ? '—' : (Math.round(v * 10) / 10).toLocaleString(LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT') + '%';
+    document.getElementById('piano-title').textContent = tx(P, 'nome');
+    document.getElementById('piano-sub').textContent = tx(P, 'premessa');
+    // obiettivi
+    document.getElementById('piano-kpi').innerHTML = (P.obiettivi || []).map(o => `<div class="kpi"><div class="v num">${o.unita === '%' ? pct(o.obiettivo) : num(o.obiettivo)}</div><div class="l">${esc(tx(o, 'etichetta'))}</div><div class="d">${t('pl_oggi')}: ${o.unita === '%' ? pct(o.oggi) : num(o.oggi)}${o.anno_oggi ? ' (' + o.anno_oggi + ')' : ''}</div></div>`).join('');
+    // perimetro
+    const per = P.perimetro || [];
+    document.getElementById('piano-per').innerHTML = `<div class="per-col in"><h3>${t('pl_dentro')}</h3><ul>${per.filter(x => x.dentro).map(x => `<li>${esc(tx(x, 'testo'))}</li>`).join('')}</ul></div><div class="per-col out"><h3>${t('pl_fuori')}</h3><ul>${per.filter(x => !x.dentro).map(x => `<li>${esc(tx(x, 'testo'))}</li>`).join('')}</ul></div>`;
+    // pilastri e misure
+    const ST = { in_vigore: t('pl_st_vigore'), adottato_non_applicato: t('pl_st_adottato'), proposta: t('pl_st_proposta'), nuova: t('pl_st_nuova') };
+    const LV = { ue: t('pl_lv_ue'), nazionale: t('pl_lv_naz'), terzo_paese: t('pl_lv_terzo') };
+    const RG = { qmv: t('c_appr'), unanimita: t('c_una'), nazionale: t('c_naz') };
+    document.getElementById('piano-pil').innerHTML = (P.pilastri || []).map((pl, i) => `<div class="card pil"><div class="in"><div class="pil-head"><span class="pil-n mono">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(tx(pl, 'titolo'))}</h3><p>${esc(tx(pl, 'descrizione'))}</p></div></div><ul class="mis">${(pl.misure || []).map(m => {
+      let verdict = '';
+      if (m.dossier && window.DOSSIER && window.POSIZIONI && window.EU30C) { const d = window.DOSSIER.find(x => x.id === m.dossier); if (d && window.POSIZIONI.dossier[d.id]) { const V = EU30C.verdetto(PAESI, window.POSIZIONI, d, state.scen, y); verdict = `<span class="exv ex-${V.esito}" title="${esc(tx(d, 'titolo'))}">${t('ex_' + V.esito)}</span>`; } }
+      return `<li><div class="mis-top"><b>${esc(tx(m, 'titolo'))}</b><span class="mis-tags"><span class="mtag lv-${esc(m.livello)}">${LV[m.livello] || esc(m.livello)}</span><span class="mtag st-${esc(m.stato)}">${ST[m.stato] || esc(m.stato)}</span>${m.regola ? `<span class="mtag">${RG[m.regola]}</span>` : ''}${m.quando ? `<span class="mtag mono">${esc(m.quando)}</span>` : ''}${verdict}</span></div><p>${esc(tx(m, 'testo'))}</p>${m.numero ? `<span class="mis-num mono">${esc(tx(m, 'numero'))}</span>` : ''}${(m.fonte || []).length ? `<span class="mis-src">${m.fonte.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').split('/')[0])}</a>`).join(' · ')}</span>` : ''}</li>`; }).join('')}</ul></div></div>`).join('');
+    // tappe
+    document.getElementById('piano-tappe').innerHTML = (P.tappe || []).map(s => `<li><span class="when mono">${fmtData(s.data)}</span><div><b>${esc(tx(s, 'titolo'))}</b><span>${esc(tx(s, 'testo'))}</span></div></li>`).join('');
+    // paesi
+    const rows = (P.paesi || []).slice().sort((a, b) => (b.ordinati || 0) - (a.ordinati || 0));
+    document.getElementById('piano-paesi').innerHTML = `<table class="ptab"><thead><tr><th>${t('pl_paese')}</th><th>${t('pl_ordinati')}</th><th>${t('pl_rimpatriati')}</th><th>${t('pl_tasso')}</th><th>${t('pl_obiettivo')}</th><th>${t('pl_gap')}</th></tr></thead><tbody>${rows.map(r => { const p = bySigla.get(r.sigla); const target = r.obiettivo_tasso != null && r.ordinati != null ? Math.round(r.ordinati * r.obiettivo_tasso / 100) : null; const gap = target != null && r.rimpatriati != null ? target - r.rimpatriati : null; return `<tr data-go="${r.sigla}"><td>${flag(r.sigla)} ${esc(p ? tx(p, 'nome') : r.sigla)} <small class="mono">${r.anno || ''}</small></td><td class="num">${num(r.ordinati)}</td><td class="num">${num(r.rimpatriati)}</td><td class="num"><span class="tbar"><i style="width:${Math.min(100, r.tasso || 0)}%"></i></span>${pct(r.tasso)}</td><td class="num">${pct(r.obiettivo_tasso)}</td><td class="num ${gap > 0 ? 'gap' : ''}">${gap == null ? '—' : (gap > 0 ? '+' : '') + num(gap)}</td></tr>`; }).join('')}</tbody></table><p class="empty">${t('pl_tab_note')}</p>`;
+    // vincoli
+    document.getElementById('piano-vinc').innerHTML = (P.vincoli || []).map(v => `<li><b>${esc(tx(v, 'nome'))}</b><span>${esc(tx(v, 'testo'))}</span>${v.fonte ? `<a href="${esc(v.fonte)}" target="_blank" rel="noopener">${t('cv_src')}</a>` : ''}</li>`).join('');
+    document.getElementById('piano-fonti').innerHTML = (P.fonti || []).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 72))}</a>`).join('<br>');
+  }
+  document.getElementById('piano').addEventListener('click', e => { const r = e.target.closest('tr[data-go]'); if (r) select(r.dataset.go); });
+
   /* ---------- Calendario ---------- */
   const cal = d3.select('#cal');
   function renderCal() {
@@ -1175,7 +1271,7 @@ window.__start = function () {
     document.getElementById('cur').textContent = STEPS[state.step].label;
     ticks.querySelectorAll('span').forEach((s, i) => s.classList.toggle('on', i === state.step));
     const stati = PAESI.map(p => ({ p, st: stato(p) }));
-    retarget(); renderChips(); renderKpis(stati); renderChanges(stati); renderConsiglio(); renderCal(); renderDrawer();
+    retarget(); renderChips(); renderKpis(stati); renderChanges(stati); renderConsiglio(); renderPiano(); renderCal(); renderDrawer();
   }
   renderMatrix();
   render();
