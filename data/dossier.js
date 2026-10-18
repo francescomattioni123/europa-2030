@@ -9,9 +9,9 @@ window.DOSSIER = [
   "titolo": "Regolamento rimpatri e hub di rimpatrio",
   "titolo_en": "Return Regulation and return hubs",
   "titolo_de": "Rückführungsverordnung und Rückkehrzentren",
-  "descrizione": "Sistema comune europeo dei rimpatri: regole uniformi per le decisioni di rimpatrio, detenzione fino a 30 mesi, divieti d'ingresso fino a 10-20 anni e possibilità di trasferire chi non ha diritto di soggiorno in 'hub di rimpatrio' in paesi terzi. Proposta della Commissione dell'11 marzo 2025.",
-  "descrizione_en": "Common European return system: uniform rules on return decisions, detention of up to 30 months, entry bans of up to 10-20 years and the option of transferring people with no right to stay to 'return hubs' in third countries. Commission proposal of 11 March 2025.",
-  "descrizione_de": "Gemeinsames europäisches Rückführungssystem: einheitliche Regeln für Rückkehrentscheidungen, Haft bis zu 30 Monate, Einreiseverbote bis zu 10-20 Jahre und die Möglichkeit, Personen ohne Aufenthaltsrecht in 'Rückkehrzentren' in Drittstaaten zu überstellen. Kommissionsvorschlag vom 11. März 2025.",
+  "descrizione": "Sistema comune europeo dei rimpatri: regole uniformi per le decisioni di rimpatrio, trattenimento fino a 24 mesi, prorogabili in via eccezionale di 6 (massimo 30), divieti d'ingresso fino a 10-20 anni e possibilità di trasferire chi non ha diritto di soggiorno in 'hub di rimpatrio' in paesi terzi. Proposta della Commissione dell'11 marzo 2025.",
+  "descrizione_en": "Common European return system: uniform rules on return decisions, detention of up to 24 months, exceptionally extendable by 6 (30 at most), entry bans of up to 10-20 years and the option of transferring people with no right to stay to 'return hubs' in third countries. Commission proposal of 11 March 2025.",
+  "descrizione_de": "Gemeinsames europäisches Rückführungssystem: einheitliche Regeln für Rückkehrentscheidungen, Haft bis zu 24 Monate, ausnahmsweise um 6 verlängerbar (höchstens 30), Einreiseverbote bis zu 10-20 Jahre und die Möglichkeit, Personen ohne Aufenthaltsrecht in 'Rückkehrzentren' in Drittstaaten zu überstellen. Kommissionsvorschlag vom 11. März 2025.",
   "stato": "adottato",
   "stato_nota": "Accordo Consiglio-Parlamento il 1° giugno 2026, voto finale del Parlamento il 17 giugno (418-218-30), adozione del Consiglio il 1° ottobre 2026. Secondo Il Sole 24 Ore il regolamento (UE) 2026/2280 è stato pubblicato in Gazzetta il 15 ottobre ed è in vigore dal 16 ottobre 2026; le norme sugli hub si applicano subito, il resto dopo 12 mesi.",
   "stato_nota_en": "Council-Parliament deal on 1 June 2026, final Parliament vote on 17 June (418-218-30), Council adoption on 1 October 2026. According to Il Sole 24 Ore, Regulation (EU) 2026/2280 was published in the Official Journal on 15 October and entered into force on 16 October 2026; the return-hub provisions apply immediately, the rest after 12 months.",
@@ -30,7 +30,7 @@ window.DOSSIER = [
    "https://ecre.org/european-parliament-approval-of-the-return-regulation/",
    "https://en.ilsole24ore.com/art/regulation-on-repatriation-via-third-country-hubs-comes-into-force-today-AJmq7AlB"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-18"
  },
  {
   "id": "paesi_sicuri",
@@ -292,9 +292,9 @@ window.DOSSIER = [
   "descrizione_en": "The Pact (adopted in 2024) introduces border screening, fast-track procedures, an expanded Eurodac and a mandatory but flexible solidarity mechanism: relocations, financial contributions (EUR 20,000 per person) or operational support for states under pressure.",
   "descrizione_de": "Der Pakt (2024 angenommen) führt Grenzscreening, beschleunigte Verfahren, ein erweitertes Eurodac und einen verpflichtenden, aber flexiblen Solidaritätsmechanismus ein: Umverteilungen, Finanzbeiträge (20.000 Euro pro Person) oder operative Unterstützung für Staaten unter Druck.",
   "stato": "attuazione",
-  "stato_nota": "In applicazione dal 12 giugno 2026. Il Consiglio ha fissato l'8 dicembre 2025 il pool 2026 a 21.000 ricollocazioni o 420 milioni (Spagna, Italia, Grecia e Cipro beneficiarie; esenzioni per Cechia, Croazia, Austria e Polonia); Ungheria e Slovacchia hanno dichiarato di non contribuire, la Polonia rifiuta ogni ricollocazione. Euronews stima meno di 1.000 trasferimenti effettivi nel 2026; la valutazione della Commissione attesa a metà ottobre 2026 non è verificata.",
-  "stato_nota_en": "In application since 12 June 2026. On 8 December 2025 the Council set the 2026 pool at 21,000 relocations or EUR 420 million (Spain, Italy, Greece and Cyprus as beneficiaries; exemptions for Czechia, Croatia, Austria and Poland); Hungary and Slovakia declared they will not contribute, Poland refuses any relocation. Euronews expects fewer than 1,000 actual transfers in 2026; the Commission assessment due in mid-October 2026 is unverified.",
-  "stato_nota_de": "Seit 12. Juni 2026 anwendbar. Der Rat legte am 8. Dezember 2025 den Pool 2026 auf 21.000 Umverteilungen oder 420 Mio. fest (Spanien, Italien, Griechenland und Zypern als Begünstigte; Ausnahmen für Tschechien, Kroatien, Österreich und Polen); Ungarn und die Slowakei erklärten, nicht beizutragen, Polen lehnt jede Umverteilung ab. Euronews erwartet 2026 weniger als 1.000 tatsächliche Transfers; die für Mitte Oktober 2026 erwartete Bewertung der Kommission ist nicht verifiziert.",
+  "stato_nota": "In applicazione dal 12 giugno 2026. Il Consiglio ha fissato l'8 dicembre 2025 il pool 2026 a 21.000 ricollocazioni o 420 milioni (Spagna, Italia, Grecia e Cipro beneficiarie; esenzioni per Cechia, Croazia, Austria e Polonia); Ungheria e Slovacchia hanno dichiarato di non contribuire, la Polonia rifiuta ogni ricollocazione. Euronews stima meno di 1.000 trasferimenti effettivi nel 2026; la valutazione della Commissione attesa a metà ottobre 2026 non è verificata. La protezione temporanea per gli ucraini è stata prorogata fino al 4 marzo 2028 con la decisione di esecuzione (UE) 2026/1912 del Consiglio del 30 luglio 2026.",
+  "stato_nota_en": "In application since 12 June 2026. On 8 December 2025 the Council set the 2026 pool at 21,000 relocations or EUR 420 million (Spain, Italy, Greece and Cyprus as beneficiaries; exemptions for Czechia, Croatia, Austria and Poland); Hungary and Slovakia declared they will not contribute, Poland refuses any relocation. Euronews expects fewer than 1,000 actual transfers in 2026; the Commission assessment due in mid-October 2026 is unverified. Temporary protection for Ukrainians was extended to 4 March 2028 by Council Implementing Decision (EU) 2026/1912 of 30 July 2026.",
+  "stato_nota_de": "Seit 12. Juni 2026 anwendbar. Der Rat legte am 8. Dezember 2025 den Pool 2026 auf 21.000 Umverteilungen oder 420 Mio. fest (Spanien, Italien, Griechenland und Zypern als Begünstigte; Ausnahmen für Tschechien, Kroatien, Österreich und Polen); Ungarn und die Slowakei erklärten, nicht beizutragen, Polen lehnt jede Umverteilung ab. Euronews erwartet 2026 weniger als 1.000 tatsächliche Transfers; die für Mitte Oktober 2026 erwartete Bewertung der Kommission ist nicht verifiziert. Der vorübergehende Schutz für Ukrainer wurde mit dem Durchführungsbeschluss (EU) 2026/1912 des Rates vom 30. Juli 2026 bis zum 4. März 2028 verlängert.",
   "prossima_tappa": "Relazione annuale della Commissione sulla migrazione e decisione del Consiglio sul pool di solidarietà 2027 entro fine 2026; possibili procedure d'infrazione contro chi non contribuisce.",
   "prossima_tappa_en": "Commission annual migration report and Council decision on the 2027 solidarity pool by end-2026; possible infringement procedures against non-contributors.",
   "prossima_tappa_de": "Jährlicher Migrationsbericht der Kommission und Ratsbeschluss zum Solidaritätspool 2027 bis Ende 2026; mögliche Vertragsverletzungsverfahren gegen Nicht-Beitragende.",
@@ -307,8 +307,9 @@ window.DOSSIER = [
   "fonti": [
    "https://www.consilium.europa.eu/en/press/press-releases/2025/12/08/migration-and-asylum-member-states-agree-on-solidarity-pool/",
    "https://www.euronews.com/2026/06/12/how-eu-countries-watered-down-solidarity-plans-to-relocate-asylum-seekers",
-   "https://www.hrw.org/news/2026/06/10/questions-and-answers-the-eu-pact-on-migration-and-asylum"
+   "https://www.hrw.org/news/2026/06/10/questions-and-answers-the-eu-pact-on-migration-and-asylum",
+   "https://eur-lex.europa.eu/eli/dec_impl/2026/1912/oj"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-18"
  }
 ];
