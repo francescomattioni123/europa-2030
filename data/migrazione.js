@@ -1,8 +1,8 @@
 // Indicatori Eurostat su migrazione, asilo, rimpatri, popolazione e cittadinanza (UE27 e Stati membri). Generato da scripts/migrazione.js, non modificare a mano.
-// Estratto dall'API Eurostat il 2026-10-18. Ultimo aggiornamento Eurostat dei dataset: migr_eiord 2026-09-30, migr_eirtn 2026-09-25, migr_eipre 2026-05-12, migr_eirfs 2026-05-12, migr_asyappctza 2026-09-03, migr_asydcfsta 2026-08-24, migr_asypenctzm 2026-10-13, migr_asytpsm 2026-10-15, migr_pop1ctz 2026-09-25, migr_pop5ctz 2026-09-25, lfsa_pgaccpm 2026-09-10, migr_acq 2026-03-27, migr_resvalid 2026-09-28.
+// Estratto dall'API Eurostat il 2026-10-19. Ultimo aggiornamento Eurostat dei dataset: migr_eiord 2026-09-30, migr_eirtn 2026-09-25, migr_eipre 2026-05-12, migr_eirfs 2026-05-12, migr_asyappctza 2026-09-03, migr_asydcfsta 2026-08-24, migr_asypenctzm 2026-10-13, migr_asytpsm 2026-10-15, migr_pop1ctz 2026-09-25, migr_pop5ctz 2026-09-25, lfsa_pgaccpm 2026-09-10, lfsa_pganedm 2026-09-10, migr_acq 2026-03-27, migr_resvalid 2026-09-28.
 // Codici geo Eurostat: EL = Grecia. Dati su rimpatri e asilo arrotondati a 5 da Eurostat; "rimpatri_totali" include i trasferimenti verso altri Stati membri. null = dato non trasmesso dallo Stato, mai stimato.
 window.MIGRAZIONE = {
- "estratto": "2026-10-18",
+ "estratto": "2026-10-19",
  "anno": 2025,
  "mese": "2025-12",
  "geo": [
@@ -1196,6 +1196,747 @@ window.MIGRAZIONE = {
     }
    },
    "nota": "Popolazione nelle famiglie private, 15-74 anni, in migliaia. Quote in percentuale del totale (il resto è \"sconosciuto\"). Prima generazione = nati all'estero; seconda generazione = nati nel paese con almeno un genitore nato all'estero."
+  },
+  "stato_migratorio_cittadinanza": {
+   "nome": "Popolazione 15-74 anni per stato migratorio e cittadinanza (indagine forze di lavoro)",
+   "nome_en": "Population aged 15-74 by migration status and citizenship (Labour Force Survey)",
+   "nome_de": "Bevölkerung 15-74 Jahre nach Migrationsstatus und Staatsangehörigkeit (Arbeitskräfteerhebung)",
+   "dataset": "lfsa_pganedm",
+   "aggiornato_eurostat": "2026-09-10",
+   "fonte": "https://ec.europa.eu/eurostat/databrowser/view/lfsa_pganedm/default/table",
+   "valori": {
+    "EU27_2020": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 302713.1,
+      "nati_paese_genitori_paese": 257465.3,
+      "nati_paese_genitore_estero": 24267.3,
+      "nati_estero": 19820.9
+     },
+     "stranieri": {
+      "totale": 32744.3,
+      "nati_paese_genitori_paese": 90.7,
+      "nati_paese_genitore_estero": 1667,
+      "nati_estero": 30963.7
+     },
+     "stranieri_ue": {
+      "totale": 10563.4,
+      "nati_paese_genitori_paese": 32.6,
+      "nati_paese_genitore_estero": 726.4,
+      "nati_estero": 9797.6
+     },
+     "stranieri_extra_ue": {
+      "totale": 22136.5,
+      "nati_paese_genitori_paese": 57.9,
+      "nati_paese_genitore_estero": 939.7,
+      "nati_estero": 21122.9
+     }
+    },
+    "AT": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 5409.8,
+      "nati_paese_genitori_paese": 4342.2,
+      "nati_paese_genitore_estero": 642.1,
+      "nati_estero": 425.6
+     },
+     "stranieri": {
+      "totale": 1456.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 111.1,
+      "nati_estero": 1342.7
+     },
+     "stranieri_ue": {
+      "totale": 754.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 51.4,
+      "nati_estero": 701.8
+     },
+     "stranieri_extra_ue": {
+      "totale": 701.9,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 59.7,
+      "nati_estero": 641
+     }
+    },
+    "BE": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 7635.3,
+      "nati_paese_genitori_paese": 5638.5,
+      "nati_paese_genitore_estero": 1072.6,
+      "nati_estero": 888
+     },
+     "stranieri": {
+      "totale": 1094,
+      "nati_paese_genitori_paese": 4,
+      "nati_paese_genitore_estero": 87.7,
+      "nati_estero": 1001.5
+     },
+     "stranieri_ue": {
+      "totale": 718.4,
+      "nati_paese_genitori_paese": 4,
+      "nati_paese_genitore_estero": 81.8,
+      "nati_estero": 631.8
+     },
+     "stranieri_extra_ue": {
+      "totale": 372.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 5.8,
+      "nati_estero": 366.3
+     }
+    },
+    "BG": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 4794.4,
+      "nati_paese_genitori_paese": 4771.3,
+      "nati_paese_genitore_estero": 13.5,
+      "nati_estero": 9.7
+     },
+     "stranieri": {
+      "totale": 22.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 22.3
+     },
+     "stranieri_ue": {
+      "totale": 2.9,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 2.9
+     },
+     "stranieri_extra_ue": {
+      "totale": 19.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 19.4
+     }
+    },
+    "HR": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 2926.5,
+      "nati_paese_genitori_paese": 2294.2,
+      "nati_paese_genitore_estero": 311.7,
+      "nati_estero": 319.1
+     },
+     "stranieri": {
+      "totale": 19.6,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 18.6
+     },
+     "stranieri_ue": {
+      "totale": 6.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 5.7
+     },
+     "stranieri_extra_ue": {
+      "totale": 13.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 12.9
+     }
+    },
+    "CY": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 540.3,
+      "nati_paese_genitori_paese": 462.9,
+      "nati_paese_genitore_estero": 30,
+      "nati_estero": 47.4
+     },
+     "stranieri": {
+      "totale": 189.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 3.2,
+      "nati_estero": 185.9
+     },
+     "stranieri_ue": {
+      "totale": 72.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 2.5,
+      "nati_estero": 69.8
+     },
+     "stranieri_extra_ue": {
+      "totale": 116.9,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 0.7,
+      "nati_estero": 116.1
+     }
+    },
+    "CZ": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 7518.1,
+      "nati_paese_genitori_paese": 7121.9,
+      "nati_paese_genitore_estero": 268.7,
+      "nati_estero": 120
+     },
+     "stranieri": {
+      "totale": 357.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 3.5,
+      "nati_estero": 352.5
+     },
+     "stranieri_ue": {
+      "totale": 111.8,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 108
+     },
+     "stranieri_extra_ue": {
+      "totale": 245.6,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 244.4
+     }
+    },
+    "DK": null,
+    "EE": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 829,
+      "nati_paese_genitori_paese": 646.1,
+      "nati_paese_genitore_estero": 124.2,
+      "nati_estero": 38.9
+     },
+     "stranieri": {
+      "totale": 182.6,
+      "nati_paese_genitori_paese": 12.9,
+      "nati_paese_genitore_estero": 47.4,
+      "nati_estero": 117.4
+     },
+     "stranieri_ue": {
+      "totale": 7.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 6.3
+     },
+     "stranieri_extra_ue": {
+      "totale": 175.4,
+      "nati_paese_genitori_paese": 12.8,
+      "nati_paese_genitore_estero": 46.8,
+      "nati_estero": 111.1
+     }
+    },
+    "FI": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 3822.3,
+      "nati_paese_genitori_paese": 3485.4,
+      "nati_paese_genitore_estero": 135.1,
+      "nati_estero": 183.3
+     },
+     "stranieri": {
+      "totale": 320.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 4,
+      "nati_estero": 314.1
+     },
+     "stranieri_ue": {
+      "totale": 82.8,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 79.1
+     },
+     "stranieri_extra_ue": {
+      "totale": 237.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 235
+     }
+    },
+    "FR": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 44979.5,
+      "nati_paese_genitori_paese": 34479,
+      "nati_paese_genitore_estero": 6550,
+      "nati_estero": 3095.8
+     },
+     "stranieri": {
+      "totale": 4077.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 64.7,
+      "nati_estero": 4009.8
+     },
+     "stranieri_ue": {
+      "totale": 1060.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 33.2,
+      "nati_estero": 1025
+     },
+     "stranieri_extra_ue": {
+      "totale": 3008.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 31,
+      "nati_estero": 2977
+     }
+    },
+    "DE": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 52471.8,
+      "nati_paese_genitori_paese": 39110.6,
+      "nati_paese_genitore_estero": 8141.7,
+      "nati_estero": 5197.1
+     },
+     "stranieri": {
+      "totale": 10034.5,
+      "nati_paese_genitori_paese": 26.8,
+      "nati_paese_genitore_estero": 847.3,
+      "nati_estero": 9155.9
+     },
+     "stranieri_ue": {
+      "totale": 3529.5,
+      "nati_paese_genitori_paese": 16,
+      "nati_paese_genitore_estero": 374.7,
+      "nati_estero": 3136.5
+     },
+     "stranieri_extra_ue": {
+      "totale": 6499.7,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 472.4,
+      "nati_estero": 6014.5
+     }
+    },
+    "EL": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 7559.3,
+      "nati_paese_genitori_paese": 6896.8,
+      "nati_paese_genitore_estero": 219.2,
+      "nati_estero": 432.9
+     },
+     "stranieri": {
+      "totale": 189.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 13.1,
+      "nati_estero": 175.8
+     },
+     "stranieri_ue": {
+      "totale": 25.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 24.2
+     },
+     "stranieri_extra_ue": {
+      "totale": 163.7,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 12.2,
+      "nati_estero": 151.5
+     }
+    },
+    "HU": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 7089.4,
+      "nati_paese_genitori_paese": 6792.9,
+      "nati_paese_genitore_estero": 131.6,
+      "nati_estero": 161.1
+     },
+     "stranieri": {
+      "totale": 71.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 69.7
+     },
+     "stranieri_ue": {
+      "totale": 29.8,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 28.7
+     },
+     "stranieri_extra_ue": {
+      "totale": 41.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 40.9
+     }
+    },
+    "IE": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 3306.5,
+      "nati_paese_genitori_paese": 2620.3,
+      "nati_paese_genitore_estero": 293.4,
+      "nati_estero": 380
+     },
+     "stranieri": {
+      "totale": 774.6,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 8.4,
+      "nati_estero": 763.7
+     },
+     "stranieri_ue": {
+      "totale": 329.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 6.7,
+      "nati_estero": 322.1
+     },
+     "stranieri_extra_ue": {
+      "totale": 445.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 441.5
+     }
+    },
+    "IT": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 39879.2,
+      "nati_paese_genitori_paese": 36714.3,
+      "nati_paese_genitore_estero": 1155.9,
+      "nati_estero": 1998.4
+     },
+     "stranieri": {
+      "totale": 4233.7,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 195.1,
+      "nati_estero": 4036.7
+     },
+     "stranieri_ue": {
+      "totale": 1174.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 45.7,
+      "nati_estero": 1128.3
+     },
+     "stranieri_extra_ue": {
+      "totale": 3059.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 149.4,
+      "nati_estero": 2908.4
+     }
+    },
+    "LV": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 1188.7,
+      "nati_paese_genitori_paese": 940.4,
+      "nati_paese_genitore_estero": 186.5,
+      "nati_estero": 48.3
+     },
+     "stranieri": {
+      "totale": 159.7,
+      "nati_paese_genitori_paese": 15.1,
+      "nati_paese_genitore_estero": 55.9,
+      "nati_estero": 84
+     },
+     "stranieri_ue": {
+      "totale": 5.9,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 5
+     },
+     "stranieri_extra_ue": {
+      "totale": 153.8,
+      "nati_paese_genitori_paese": 15,
+      "nati_paese_genitore_estero": 55.2,
+      "nati_estero": 79
+     }
+    },
+    "LT": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 2145.3,
+      "nati_paese_genitori_paese": 1972.5,
+      "nati_paese_genitore_estero": 56.8,
+      "nati_estero": 79.8
+     },
+     "stranieri": {
+      "totale": 67,
+      "nati_paese_genitori_paese": 1.5,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 64.3
+     },
+     "stranieri_ue": {
+      "totale": 6.8,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 6.1
+     },
+     "stranieri_extra_ue": {
+      "totale": 60.1,
+      "nati_paese_genitori_paese": 1.2,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 58.2
+     }
+    },
+    "LU": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 264.9,
+      "nati_paese_genitori_paese": 134.9,
+      "nati_paese_genitore_estero": 75.8,
+      "nati_estero": 53.1
+     },
+     "stranieri": {
+      "totale": 255.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 18.6,
+      "nati_estero": 234.6
+     },
+     "stranieri_ue": {
+      "totale": 204.1,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 17.4,
+      "nati_estero": 184.8
+     },
+     "stranieri_extra_ue": {
+      "totale": 51.1,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 49.6
+     }
+    },
+    "MT": null,
+    "NL": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 12494.2,
+      "nati_paese_genitori_paese": 9416.6,
+      "nati_paese_genitore_estero": 1676,
+      "nati_estero": 1401.5
+     },
+     "stranieri": {
+      "totale": 915.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 26.9,
+      "nati_estero": 887.6
+     },
+     "stranieri_ue": {
+      "totale": 471,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 18.5,
+      "nati_estero": 452.3
+     },
+     "stranieri_extra_ue": {
+      "totale": 444.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 8.4,
+      "nati_estero": 435.3
+     }
+    },
+    "PL": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 26943,
+      "nati_paese_genitori_paese": 26535,
+      "nati_paese_genitore_estero": 339.8,
+      "nati_estero": 68.2
+     },
+     "stranieri": {
+      "totale": 649.7,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 645.3
+     },
+     "stranieri_ue": {
+      "totale": 25.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 23.9
+     },
+     "stranieri_extra_ue": {
+      "totale": 624.3,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 621.4
+     }
+    },
+    "PT": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 7607.3,
+      "nati_paese_genitori_paese": 6591.8,
+      "nati_paese_genitore_estero": 397.6,
+      "nati_estero": 604.8
+     },
+     "stranieri": {
+      "totale": 532.2,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 6.1,
+      "nati_estero": 524.2
+     },
+     "stranieri_ue": {
+      "totale": 49.8,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 48.4
+     },
+     "stranieri_extra_ue": {
+      "totale": 482.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 4.8,
+      "nati_estero": 475.8
+     }
+    },
+    "RO": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 14330.2,
+      "nati_paese_genitori_paese": 14311.9,
+      "nati_paese_genitore_estero": 6.7,
+      "nati_estero": 11.7
+     },
+     "stranieri": {
+      "totale": 34.8,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 32.2
+     },
+     "stranieri_ue": {
+      "totale": null,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": null
+     },
+     "stranieri_extra_ue": {
+      "totale": 29.9,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 27.6
+     }
+    },
+    "SK": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 4116.7,
+      "nati_paese_genitori_paese": 4032.2,
+      "nati_paese_genitore_estero": 52.7,
+      "nati_estero": 31.8
+     },
+     "stranieri": {
+      "totale": 23.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 23.2
+     },
+     "stranieri_ue": {
+      "totale": 10.4,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 10.1
+     },
+     "stranieri_extra_ue": {
+      "totale": 12.6,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 12.6
+     }
+    },
+    "SI": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 1425.7,
+      "nati_paese_genitori_paese": 1098.3,
+      "nati_paese_genitore_estero": 149.7,
+      "nati_estero": 94.7
+     },
+     "stranieri": {
+      "totale": 156.7,
+      "nati_paese_genitori_paese": 10.5,
+      "nati_paese_genitore_estero": 1.8,
+      "nati_estero": 144.1
+     },
+     "stranieri_ue": {
+      "totale": 15.7,
+      "nati_paese_genitori_paese": 1.6,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 13.9
+     },
+     "stranieri_extra_ue": {
+      "totale": 141,
+      "nati_paese_genitori_paese": 8.9,
+      "nati_paese_genitore_estero": 1.6,
+      "nati_estero": 130.2
+     }
+    },
+    "ES": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 32021.8,
+      "nati_paese_genitori_paese": 28161.6,
+      "nati_paese_genitore_estero": 1233.5,
+      "nati_estero": 2626.7
+     },
+     "stranieri": {
+      "totale": 5826,
+      "nati_paese_genitori_paese": 1.1,
+      "nati_paese_genitore_estero": 138.2,
+      "nati_estero": 5686.7
+     },
+     "stranieri_ue": {
+      "totale": 1481.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 72,
+      "nati_estero": 1408.6
+     },
+     "stranieri_extra_ue": {
+      "totale": 4319.9,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 66.2,
+      "nati_estero": 4253.4
+     }
+    },
+    "SE": {
+     "anno": 2025,
+     "unita": "migliaia",
+     "nazionali": {
+      "totale": 7018.8,
+      "nati_paese_genitori_paese": 4870.6,
+      "nati_paese_genitore_estero": 831.8,
+      "nati_estero": 1316.4
+     },
+     "stranieri": {
+      "totale": 607.6,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 10.6,
+      "nati_estero": 596.7
+     },
+     "stranieri_ue": {
+      "totale": 205.7,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": 8.5,
+      "nati_estero": 197.2
+     },
+     "stranieri_extra_ue": {
+      "totale": 400.5,
+      "nati_paese_genitori_paese": null,
+      "nati_paese_genitore_estero": null,
+      "nati_estero": 398.1
+     }
+    }
+   },
+   "nota": "Popolazione nelle famiglie private, 15-74 anni, in migliaia. nazionali.nati_paese_genitore_estero = cittadini del paese nati nel paese con almeno un genitore nato all'estero (seconda generazione naturalizzata o nata cittadina); nazionali.nati_estero = cittadini nati all'estero (immigrati naturalizzati). Celle piccole possono essere null per segreto statistico."
   },
   "acquisizioni_cittadinanza": {
    "nome": "Acquisizioni di cittadinanza per anno",

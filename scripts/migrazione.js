@@ -123,6 +123,23 @@ const COMPOSTI = [
     }
   },
   {
+    id: 'stato_migratorio_cittadinanza', dataset: 'lfsa_pganedm',
+    nome: 'Popolazione 15-74 anni per stato migratorio e cittadinanza (indagine forze di lavoro)', nome_en: 'Population aged 15-74 by migration status and citizenship (Labour Force Survey)', nome_de: 'Bevölkerung 15-74 Jahre nach Migrationsstatus und Staatsangehörigkeit (Arbeitskräfteerhebung)',
+    async calcola() {
+      const T = anni(2021, ANNO);
+      const c = await cubo(this.dataset, { geo: GEO, time: T, sex: 'T', age: 'Y15-74', unit: 'THS_PER', isced11: 'TOTAL', citizen: ['TOTAL', 'NAT', 'FOR', 'EU27_2020_FOR', 'NEU27_2020_FOR'], mgstatus: ['TOTAL', 'NBO_NAT', 'NBO_ABR', 'FBO'] });
+      const valori = {};
+      for (const g of GEO) {
+        const u = ultimo(T, t => c.get({ geo: g, time: t, citizen: 'NAT', mgstatus: 'TOTAL' }));
+        if (!u) { valori[g] = null; continue; }
+        const v = (cz, m) => c.get({ geo: g, time: u.anno, citizen: cz, mgstatus: m });
+        const blocco = cz => ({ totale: v(cz, 'TOTAL'), nati_paese_genitori_paese: v(cz, 'NBO_NAT'), nati_paese_genitore_estero: v(cz, 'NBO_ABR'), nati_estero: v(cz, 'FBO') });
+        valori[g] = { anno: +u.anno, unita: 'migliaia', nazionali: blocco('NAT'), stranieri: blocco('FOR'), stranieri_ue: blocco('EU27_2020_FOR'), stranieri_extra_ue: blocco('NEU27_2020_FOR') };
+      }
+      return { valori, aggiornato: c.aggiornato, nota: 'Popolazione nelle famiglie private, 15-74 anni, in migliaia. nazionali.nati_paese_genitore_estero = cittadini del paese nati nel paese con almeno un genitore nato all\'estero (seconda generazione naturalizzata o nata cittadina); nazionali.nati_estero = cittadini nati all\'estero (immigrati naturalizzati). Celle piccole possono essere null per segreto statistico.' };
+    }
+  },
+  {
     id: 'acquisizioni_cittadinanza', dataset: 'migr_acq',
     nome: 'Acquisizioni di cittadinanza per anno', nome_en: 'Acquisitions of citizenship by year', nome_de: 'Einbürgerungen nach Jahr',
     async calcola() {
@@ -204,5 +221,26 @@ const COMPOSTI = [
   const agg = [...new Set(tutti.map(x => `${x.dataset} ${x.aggiornato_eurostat}`))].join(', ');
   const dest = path.join(__dirname, '..', 'data', 'migrazione.js');
   fs.writeFileSync(dest, `// Indicatori Eurostat su migrazione, asilo, rimpatri, popolazione e cittadinanza (UE27 e Stati membri). Generato da scripts/migrazione.js, non modificare a mano.\n// Estratto dall'API Eurostat il ${estratto}. Ultimo aggiornamento Eurostat dei dataset: ${agg}.\n// Codici geo Eurostat: EL = Grecia. Dati su rimpatri e asilo arrotondati a 5 da Eurostat; "rimpatri_totali" include i trasferimenti verso altri Stati membri. null = dato non trasmesso dallo Stato, mai stimato.\nwindow.MIGRAZIONE = ${JSON.stringify(out, null, 1)};\n`);
+  // ---------- data/funnel.json: la catena completa per i 27 Stati (stessi campi della stampa IT/DE/FR), null dove manca ----------
+  const F = {};
+  for (const g of UE27) {
+    const p = composti.popolazione_cittadinanza.valori[g], n = composti.nazionali_nati_estero.valori[g], l = composti.stato_migratorio_lfs.valori[g], sc = composti.stato_migratorio_cittadinanza.valori[g], a = composti.acquisizioni_cittadinanza.valori[g], r = composti.permessi_validi.valori[g], vt = composti.permessi_validi.verifica_protezione_temporanea.valori[g];
+    const I = id => ris[id].valori[g];
+    F[g] = {
+      popolazione: p ? { anno: p.anno, totale: p.totale, nazionali: p.nazionali, altri_ue: p.altri_ue, extra_ue: p.extra_ue, apolidi: p.apolidi } : null,
+      nazionali_nati_estero: n ? { anno: n.anno, nazionali_totale: n.nazionali_totale, nazionali_nati_estero: n.nazionali_nati_estero, quota_pct: n.quota_pct, di_cui_nati_ue: n.di_cui_nati_ue, di_cui_nati_extra_ue: n.di_cui_nati_extra_ue, residenti_nati_estero_ogni_cittadinanza: n.popolazione_nata_estero } : null,
+      lfs_15_74: l ? { anno: l.anno, unita: 'migliaia', totale: l.totale_migliaia, nati_paese_genitori_paese: l.nati_paese_genitori_paese_migliaia, nati_paese_genitore_estero: l.nati_paese_genitore_estero_migliaia, nati_estero: l.nati_estero_migliaia, sconosciuto: l.sconosciuto_migliaia, quote_pct: l.quote_pct } : null,
+      lfs_15_74_per_cittadinanza: sc,
+      acquisizioni_cittadinanza: a ? { anni: a.anni, totale_2015_2024: a.totale_2015_2024 } : null,
+      permessi_validi: r ? { anno: r.anno, totale: r.totale, prime_cinque: r.prime_cinque } : null,
+      verifica_protezione_temporanea_ucraini: vt,
+      protezione_temporanea: { periodo: MESE, valore: I('protezione_temporanea') },
+      asilo: { anno: ANNO, prime_domande: I('asilo_prime_domande'), decisioni: I('asilo_decisioni'), decisioni_positive: I('asilo_positive'), pendenti_dicembre: I('asilo_pendenti') },
+      rimpatri: { anno: ANNO, irregolari_trovati: I('irregolari'), respinti_frontiera: I('respinti'), ordini_di_lasciare: I('ordini'), rimpatriati_verso_paesi_terzi: I('rimpatri_terzi'), rimpatriati_totali: I('rimpatri_totali'), tasso_rimpatrio_paesi_terzi_pct: I('ordini') ? Math.round(I('rimpatri_terzi') / I('ordini') * 1000) / 10 : null }
+    };
+  }
+  const fdest = path.join(__dirname, '..', 'data', 'funnel.json');
+  fs.writeFileSync(fdest, JSON.stringify({ estratto, anno: ANNO, nota: 'Catena migrazione per i 27 Stati UE da Eurostat (vedi data/migrazione.js per dataset e date di aggiornamento). null = dato non trasmesso, mai stimato. Codici geo Eurostat: EL = Grecia.', paesi: F }, null, 1) + '\n');
+  console.log(`scritto ${path.relative(process.cwd(), fdest)}: ${Object.keys(F).length} paesi`);
   console.log(`\nscritto ${path.relative(process.cwd(), dest)}: ${Object.keys(ris).length} indicatori semplici + ${Object.keys(composti).length} composti × ${GEO.length} geo`);
 })();
