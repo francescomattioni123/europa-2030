@@ -75,12 +75,12 @@ window.DOSSIER = [
   "descrizione_en": "The Commission's automotive package (16 December 2025) replaces the 2035 zero-emission requirement with a 90% CO2 cut, with the remaining 10% offset through EU low-carbon steel and renewable fuels, and allows plug-in hybrids and range extenders.",
   "descrizione_de": "Das Automobilpaket der Kommission (16. Dezember 2025) ersetzt die Null-Emissions-Vorgabe 2035 durch eine CO2-Senkung um 90 %, die restlichen 10 % werden durch EU-Stahl mit niedrigen Emissionen und erneuerbare Kraftstoffe ausgeglichen; Plug-in-Hybride und Range Extender bleiben erlaubt.",
   "stato": "parlamento",
-  "stato_nota": "Il relatore Salini (PPE) ha presentato il 2 giugno 2026 una relazione che allenta ulteriormente il testo (90% auto, 80% furgoni, nessuna compensazione); voto in commissione ENVI atteso in autunno. Il 16 ottobre 2026 Francia e Germania hanno concordato il 90% senza compensazione in cambio di regole 'Made in Europe'. Nessuna posizione del Consiglio ancora.",
-  "stato_nota_en": "Rapporteur Salini (EPP) tabled on 2 June 2026 a report loosening the text further (90% cars, 80% vans, no offsetting); ENVI committee vote expected in autumn. On 16 October 2026 France and Germany agreed on 90% without offsetting in exchange for 'Made in Europe' rules. No Council position yet.",
-  "stato_nota_de": "Berichterstatter Salini (EVP) legte am 2. Juni 2026 einen Bericht vor, der den Text weiter lockert (90 % Pkw, 80 % Transporter, kein Ausgleich); Abstimmung im ENVI-Ausschuss im Herbst erwartet. Am 16. Oktober 2026 einigten sich Frankreich und Deutschland auf 90 % ohne Ausgleich im Gegenzug für 'Made in Europe'-Regeln. Noch keine Ratsposition.",
-  "prossima_tappa": "Voto in plenaria del Parlamento previsto il 23 novembre 2026; orientamento generale del Consiglio atteso al Consiglio Ambiente dell'11 dicembre 2026.",
-  "prossima_tappa_en": "Parliament plenary vote expected on 23 November 2026; Council general approach expected at the Environment Council of 11 December 2026.",
-  "prossima_tappa_de": "Plenarabstimmung im Parlament voraussichtlich am 23. November 2026; allgemeine Ausrichtung des Rates beim Umweltrat am 11. Dezember 2026 erwartet.",
+  "stato_nota": "Il relatore Salini (PPE) ha presentato il 2 giugno 2026 una relazione che allenta ulteriormente il testo (90% auto, 80% furgoni, nessuna compensazione). Il 16 ottobre 2026 Francia e Germania hanno concordato il 90% senza compensazione in cambio di regole 'Made in Europe' e lo stesso giorno il Consiglio europeo ha chiesto ai colegislatori di chiudere il pacchetto automotive entro fine 2026. Voto in commissione ENVI previsto il 4-5 novembre 2026; nessuna posizione del Consiglio ancora.",
+  "stato_nota_en": "Rapporteur Salini (EPP) tabled on 2 June 2026 a report loosening the text further (90% cars, 80% vans, no offsetting). On 16 October 2026 France and Germany agreed on 90% without offsetting in exchange for 'Made in Europe' rules, and the same day the European Council asked the co-legislators to conclude the automotive package by the end of 2026. ENVI committee vote expected on 4-5 November 2026; no Council position yet.",
+  "stato_nota_de": "Berichterstatter Salini (EVP) legte am 2. Juni 2026 einen Bericht vor, der den Text weiter lockert (90 % Pkw, 80 % Transporter, kein Ausgleich). Am 16. Oktober 2026 einigten sich Frankreich und Deutschland auf 90 % ohne Ausgleich im Gegenzug für 'Made in Europe'-Regeln, und am selben Tag forderte der Europäische Rat die Mitgesetzgeber auf, das Automobilpaket bis Ende 2026 abzuschließen. Abstimmung im ENVI-Ausschuss voraussichtlich am 4.-5. November 2026; noch keine Ratsposition.",
+  "prossima_tappa": "Voto in commissione ENVI il 4-5 novembre 2026 e plenaria del Parlamento prevista il 23 novembre; orientamento generale del Consiglio atteso al Consiglio Ambiente dell'11 dicembre 2026, con il Consiglio europeo che chiede la chiusura entro fine anno.",
+  "prossima_tappa_en": "ENVI committee vote on 4-5 November 2026 and Parliament plenary expected on 23 November; Council general approach expected at the Environment Council of 11 December 2026, with the European Council asking for closure by year-end.",
+  "prossima_tappa_de": "Abstimmung im ENVI-Ausschuss am 4.-5. November 2026 und Plenum des Parlaments voraussichtlich am 23. November; allgemeine Ausrichtung des Rates beim Umweltrat am 11. Dezember 2026 erwartet, wobei der Europäische Rat den Abschluss bis Jahresende verlangt.",
   "prossima_data": "2026-11",
   "regola": "qmv",
   "obiettivo_destra": "modificare",
@@ -88,11 +88,12 @@ window.DOSSIER = [
   "obiettivo_nota_en": "The bloc wants the ban scrapped in practice: the Meloni government was among the drivers of the revision, ECR and Patriots push for 'technology neutrality' and flexibility for hybrids and e-fuels; no dissent inside the bloc.",
   "obiettivo_nota_de": "Der Block will das Verbot faktisch kippen: Die Regierung Meloni gehörte zu den Treibern der Revision, EKR und Patrioten drängen auf 'Technologieneutralität' und Flexibilität für Hybride und E-Fuels; kein Widerspruch innerhalb des Blocks.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
    "https://www.europarl.europa.eu/legislative-train/package-automotive-package/file-co2-emission-standards-for-new-light-duty-vehicles-and-labelling",
    "https://www.euronews.com/2026/10/16/france-and-germany-strike-car-industry-deal-linking-2035-engine-rules-to-made-in-europe-pu",
    "https://www.eunews.it/en/2026/06/03/salini-fi-unveils-the-report-on-the-revised-co2-standards-for-auto-sector-confindustria-welcomes-them-but-warns-against-weakening/"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-19"
  },
  {
   "id": "clima_2040",
@@ -106,12 +107,12 @@ window.DOSSIER = [
   "descrizione_en": "Amendment of the European Climate Law with a binding 90% net emissions cut by 2040 versus 1990, international credits up to 5% from 2036, two-yearly review clauses and a one-year delay (to 2028) of the ETS2 for buildings and road transport.",
   "descrizione_de": "Änderung des Europäischen Klimagesetzes mit verbindlichem Netto-Emissionsziel von -90 % bis 2040 gegenüber 1990, internationalen Gutschriften bis 5 % ab 2036, zweijährlichen Überprüfungsklauseln und einjähriger Verschiebung (auf 2028) des ETS2 für Gebäude und Straßenverkehr.",
   "stato": "adottato",
-  "stato_nota": "Accordo in trilogo a dicembre 2025, voto del Parlamento il 10 febbraio 2026 (413-226-12), via libera finale del Consiglio il 5 marzo 2026. La legge modificata è in vigore; l'ETS2 partirà nel 2028.",
-  "stato_nota_en": "Trilogue deal in December 2025, Parliament vote on 10 February 2026 (413-226-12), final Council green light on 5 March 2026. The amended law is in force; ETS2 will start in 2028.",
-  "stato_nota_de": "Trilog-Einigung im Dezember 2025, Parlamentsabstimmung am 10. Februar 2026 (413-226-12), endgültiges grünes Licht des Rates am 5. März 2026. Das geänderte Gesetz ist in Kraft; ETS2 startet 2028.",
-  "prossima_tappa": "Proposte legislative della Commissione per il quadro post-2030 e prima relazione biennale di revisione; avvio ETS2 nel gennaio 2028.",
-  "prossima_tappa_en": "Commission legislative proposals for the post-2030 framework and first two-yearly review report; ETS2 launch in January 2028.",
-  "prossima_tappa_de": "Legislativvorschläge der Kommission für den Rahmen nach 2030 und erster zweijährlicher Überprüfungsbericht; Start des ETS2 im Januar 2028.",
+  "stato_nota": "Accordo in trilogo a dicembre 2025, voto del Parlamento il 10 febbraio 2026 (413-226-12), via libera finale del Consiglio il 5 marzo 2026. La legge modificata è in vigore e l'ETS2 partirà nel 2028. Il 16 ottobre 2026 il Consiglio europeo ha chiesto alla Commissione di aggiornare la valutazione d'impatto dell'ETS2 (disegno e salvaguardie) e ai colegislatori di accelerare la riforma della riserva di stabilità del mercato (MSR), su cui Parlamento e Consiglio hanno già i mandati.",
+  "stato_nota_en": "Trilogue deal in December 2025, Parliament vote on 10 February 2026 (413-226-12), final Council green light on 5 March 2026. The amended law is in force and ETS2 will start in 2028. On 16 October 2026 the European Council asked the Commission to update the impact assessment of ETS2 (design and safeguards) and the co-legislators to speed up the reform of the Market Stability Reserve (MSR), on which Parliament and Council already have mandates.",
+  "stato_nota_de": "Trilog-Einigung im Dezember 2025, Parlamentsabstimmung am 10. Februar 2026 (413-226-12), endgültiges grünes Licht des Rates am 5. März 2026. Das geänderte Gesetz ist in Kraft, ETS2 startet 2028. Am 16. Oktober 2026 forderte der Europäische Rat die Kommission auf, die Folgenabschätzung zum ETS2 (Ausgestaltung und Schutzmechanismen) zu aktualisieren, und die Mitgesetzgeber, die Reform der Marktstabilitätsreserve (MSR) zu beschleunigen, zu der Parlament und Rat bereits Mandate haben.",
+  "prossima_tappa": "Trilogo sulla riforma della riserva di stabilità del mercato e valutazione aggiornata dell'ETS2 da parte della Commissione; proposte legislative per il quadro post-2030 e prima relazione biennale di revisione; avvio ETS2 nel gennaio 2028.",
+  "prossima_tappa_en": "Trilogue on the Market Stability Reserve reform and updated ETS2 assessment by the Commission; legislative proposals for the post-2030 framework and first two-yearly review report; ETS2 launch in January 2028.",
+  "prossima_tappa_de": "Trilog zur Reform der Marktstabilitätsreserve und aktualisierte ETS2-Bewertung durch die Kommission; Legislativvorschläge für den Rahmen nach 2030 und erster zweijährlicher Überprüfungsbericht; Start des ETS2 im Januar 2028.",
   "prossima_data": "2028-01",
   "regola": "qmv",
   "obiettivo_destra": "bloccare",
@@ -119,11 +120,12 @@ window.DOSSIER = [
   "obiettivo_nota_en": "ECR, Patriots and ESN voted against in Parliament and want ETS2 postponed or scrapped; the Meloni government pushed in Council for flexibilities (foreign credits, ETS2 delay) rather than a no; Orbán and Fico against the target.",
   "obiettivo_nota_de": "EKR, Patrioten und ESN stimmten im Parlament dagegen und wollen ETS2 verschieben oder streichen; die Regierung Meloni drängte im Rat auf Flexibilitäten (Auslandsgutschriften, ETS2-Verschiebung) statt auf ein Nein; Orbán und Fico gegen das Ziel.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
    "https://www.consilium.europa.eu/en/press/press-releases/2026/03/05/2040-climate-target-council-gives-final-green-light/",
    "https://euperspectives.eu/2026/02/plenary-approved-2040-climate-target-ets2-postponed-until-2028/",
    "https://icapcarbonaction.com/en/news/eu-officially-adopts-2040-climate-target-postpones-ets-2-one-year"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-19"
  },
  {
   "id": "bilancio",
@@ -137,24 +139,26 @@ window.DOSSIER = [
   "descrizione_en": "Commission proposal of 16 July 2025 (about EUR 2 trillion): a single National and Regional Partnership Plan per member state absorbing cohesion, agriculture, fisheries, migration and security, with payments tied to reforms and rule-of-law conditionality, new own resources and repayment of NextGenerationEU debt.",
   "descrizione_de": "Kommissionsvorschlag vom 16. Juli 2025 (rund 2 Billionen Euro): ein einziger nationaler und regionaler Partnerschaftsplan je Mitgliedstaat, der Kohäsion, Landwirtschaft, Fischerei, Migration und Sicherheit bündelt, mit Auszahlungen gekoppelt an Reformen und Rechtsstaatskonditionalität, neuen Eigenmitteln und Rückzahlung der NextGenerationEU-Schulden.",
   "stato": "consiglio",
-  "stato_nota": "La presidenza irlandese ha presentato il 10 ottobre 2026 un 'negotiating box' con cifre (circa 8% in meno della proposta, tagli per 159 miliardi secondo Agence Europe), contestato sia dai frugali sia dai paesi della coesione. Il Consiglio europeo del 15-16 ottobre 2026 ha tenuto la prima vera discussione tra leader e ha incaricato Costa di puntare a un 'accordo tempestivo'; l'obiettivo di fine 2026 non è più considerato vincolante.",
-  "stato_nota_en": "The Irish presidency tabled on 10 October 2026 a negotiating box with figures (about 8% below the proposal, EUR 159 billion in cuts according to Agence Europe), criticised by both frugals and cohesion countries. The European Council of 15-16 October 2026 held the first real leaders' discussion and asked Costa to aim for a 'timely agreement'; the end-2026 target is no longer treated as binding.",
-  "stato_nota_de": "Die irische Präsidentschaft legte am 10. Oktober 2026 eine Verhandlungsbox mit Zahlen vor (rund 8 % unter dem Vorschlag, Kürzungen von 159 Mrd. laut Agence Europe), kritisiert von Sparsamen wie Kohäsionsländern. Der Europäische Rat vom 15.-16. Oktober 2026 führte die erste echte Diskussion der Staats- und Regierungschefs und beauftragte Costa, eine 'rechtzeitige Einigung' anzustreben; das Ziel Ende 2026 gilt nicht mehr als verbindlich.",
-  "prossima_tappa": "Consiglio europeo di dicembre 2026 per un possibile accordo politico; in caso di slittamento, negoziati sotto la presidenza lituana nel primo semestre 2027.",
-  "prossima_tappa_en": "December 2026 European Council for a possible political deal; if it slips, talks continue under the Lithuanian presidency in the first half of 2027.",
-  "prossima_tappa_de": "Europäischer Rat im Dezember 2026 für eine mögliche politische Einigung; bei Verzögerung Verhandlungen unter litauischer Präsidentschaft im ersten Halbjahr 2027.",
-  "prossima_data": "2026-12",
+  "stato_nota": "Il 'negotiating box' della presidenza irlandese del 10 ottobre 2026 (circa 8% in meno della proposta, tagli stimati tra 141 e 159 miliardi) è stato respinto sia dai frugali sia dai paesi della coesione. Al Consiglio europeo del 15-16 ottobre 2026 nessun accordo: i leader hanno incaricato il presidente Costa di condurre i negoziati verso un 'accordo tempestivo', un nuovo box con contributi nazionali più bassi e nuove risorse proprie è atteso entro poche settimane e un vertice straordinario è convocato per il 26 novembre 2026. La scadenza di fine 2026 non è più considerata vincolante.",
+  "stato_nota_en": "The Irish presidency's negotiating box of 10 October 2026 (about 8% below the proposal, with cuts estimated at EUR 141-159 billion) was rejected by both the frugals and the cohesion countries. No agreement at the European Council of 15-16 October 2026: leaders tasked President Costa with leading the talks towards a 'timely agreement', a new box with lower national contributions and new own resources is expected within weeks and an extraordinary summit is called for 26 November 2026. The end-2026 deadline is no longer treated as binding.",
+  "stato_nota_de": "Die Verhandlungsbox der irischen Präsidentschaft vom 10. Oktober 2026 (rund 8 % unter dem Vorschlag, Kürzungen von schätzungsweise 141-159 Mrd.) wurde von Sparsamen wie Kohäsionsländern abgelehnt. Keine Einigung beim Europäischen Rat vom 15.-16. Oktober 2026: Die Staats- und Regierungschefs beauftragten Präsident Costa, die Verhandlungen zu einer 'rechtzeitigen Einigung' zu führen; eine neue Box mit niedrigeren nationalen Beiträgen und neuen Eigenmitteln wird binnen Wochen erwartet, und ein Sondergipfel ist für den 26. November 2026 einberufen. Die Frist Ende 2026 gilt nicht mehr als verbindlich.",
+  "prossima_tappa": "Vertice informale a Dublino il 13 novembre e Consiglio europeo straordinario il 26 novembre 2026 sul nuovo negotiating box di Costa; possibile accordo politico al Consiglio europeo di dicembre, altrimenti negoziati sotto la presidenza lituana nel primo semestre 2027.",
+  "prossima_tappa_en": "Informal summit in Dublin on 13 November and extraordinary European Council on 26 November 2026 on Costa's new negotiating box; possible political deal at the December European Council, otherwise talks under the Lithuanian presidency in the first half of 2027.",
+  "prossima_tappa_de": "Informeller Gipfel in Dublin am 13. November und außerordentlicher Europäischer Rat am 26. November 2026 zu Costas neuer Verhandlungsbox; mögliche politische Einigung beim Europäischen Rat im Dezember, sonst Verhandlungen unter litauischer Präsidentschaft im ersten Halbjahr 2027.",
+  "prossima_data": "2026-11",
   "regola": "unanimita",
   "obiettivo_destra": "modificare",
   "obiettivo_nota": "Blocco diviso: Meloni e PiS difendono coesione e PAC e rifiutano tagli, Babiš e FPÖ sono sul fronte frugale, Fidesz, RN e AfD respingono nuove risorse proprie e condizionalità sullo Stato di diritto; Orbán non è più al tavolo dopo la vittoria di Magyar.",
   "obiettivo_nota_en": "A split bloc: Meloni and PiS defend cohesion and CAP and reject cuts, Babiš and FPÖ lean frugal, Fidesz, RN and AfD reject new own resources and rule-of-law conditionality; Orbán is no longer at the table after Magyar's win.",
   "obiettivo_nota_de": "Gespaltener Block: Meloni und PiS verteidigen Kohäsion und GAP und lehnen Kürzungen ab, Babiš und FPÖ neigen zu den Sparsamen, Fidesz, RN und AfD lehnen neue Eigenmittel und Rechtsstaatskonditionalität ab; Orbán sitzt nach Magyars Sieg nicht mehr am Tisch.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
+   "https://euronews.com/2026/10/15/inconclusive-sparring-at-eu-summit-puts-budget-timeline-into-question",
    "https://www.consilium.europa.eu/en/meetings/european-council/2026/10/15-16/",
    "https://agenceurope.eu/en/bulletin/article/13960/2/mff-2028-2034-amid-persistent-divisions-european-council-no-longer-appears-to-rule-out-agreement-after-end-of-2026",
    "https://www.consilium.europa.eu/en/press/press-releases/2026/06/16/mff-2028-2034-council-backs-simpler-and-more-efficient-financing-for-key-eu-priorities/"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-19"
  },
  {
   "id": "mercosur",
@@ -199,12 +203,12 @@ window.DOSSIER = [
   "descrizione_en": "EU loan of EUR 90 billion for 2026-27 funded by joint borrowing (instead of the 'reparations loan' on Russian assets, dropped over Belgian resistance), repayable only if Russia pays reparations; assets immobilised indefinitely since 11 December 2025 and six-monthly unanimity renewal of individual sanctions.",
   "descrizione_de": "EU-Darlehen von 90 Mrd. Euro für 2026-27 über gemeinsame Schulden (statt des 'Reparationsdarlehens' auf russische Vermögen, das am belgischen Widerstand scheiterte), rückzahlbar nur bei russischen Reparationen; Vermögen seit 11. Dezember 2025 unbefristet eingefroren und halbjährliche einstimmige Verlängerung der Einzelsanktionen.",
   "stato": "attuazione",
-  "stato_nota": "Dopo il veto di Orbán, il nuovo governo Magyar ha sbloccato il prestito il 22-23 aprile 2026 (Ungheria, Cechia e Slovacchia non partecipano); al 7 ottobre 2026 restano accessibili 28,1 miliardi per il 2026. Il 1° ottobre Spagna, Polonia, Paesi Bassi, Svezia e Baltici hanno rilanciato l'uso degli asset per il buco 2027 (stimato fino a 70 miliardi, non verificato). Sanzioni individuali prorogate il 14 marzo 2026 al 15 settembre; l'esito del rinnovo di settembre, contestato dalla Slovacchia, non è verificato. 21° pacchetto adottato il 23 luglio 2026.",
-  "stato_nota_en": "After Orbán's veto, the new Magyar government unblocked the loan on 22-23 April 2026 (Hungary, Czechia and Slovakia do not take part); as of 7 October 2026 EUR 28.1 billion remains accessible for 2026. On 1 October Spain, Poland, the Netherlands, Sweden and the Baltics revived the asset option for the 2027 gap (estimated at up to EUR 70 billion, unverified). Individual sanctions were extended on 14 March 2026 to 15 September; the outcome of the September renewal, contested by Slovakia, is unverified. 21st package adopted on 23 July 2026.",
-  "stato_nota_de": "Nach Orbáns Veto gab die neue Regierung Magyar das Darlehen am 22.-23. April 2026 frei (Ungarn, Tschechien und Slowakei nehmen nicht teil); am 7. Oktober 2026 waren noch 28,1 Mrd. für 2026 abrufbar. Am 1. Oktober brachten Spanien, Polen, die Niederlande, Schweden und die Balten die Vermögensoption für die Lücke 2027 (geschätzt bis 70 Mrd., unbestätigt) wieder ins Spiel. Einzelsanktionen am 14. März 2026 bis 15. September verlängert; das Ergebnis der von der Slowakei bestrittenen September-Verlängerung ist nicht verifiziert. 21. Paket am 23. Juli 2026 angenommen.",
-  "prossima_tappa": "Proposte della Commissione sul fabbisogno 2027 attese nelle prossime settimane e discussione al Consiglio europeo di dicembre 2026; prossimo rinnovo delle sanzioni settoriali a gennaio 2027.",
-  "prossima_tappa_en": "Commission proposals on the 2027 needs expected in the coming weeks and discussion at the December 2026 European Council; next renewal of sectoral sanctions in January 2027.",
-  "prossima_tappa_de": "Kommissionsvorschläge zum Bedarf 2027 in den nächsten Wochen erwartet, Diskussion beim Europäischen Rat im Dezember 2026; nächste Verlängerung der Sektorsanktionen im Januar 2027.",
+  "stato_nota": "Prestito da 90 miliardi sbloccato dal governo Magyar il 22-23 aprile 2026 (Ungheria, Cechia e Slovacchia non partecipano); al 7 ottobre 2026 restano accessibili 28,1 miliardi per il 2026. Il Consiglio europeo del 16 ottobre 2026 ha constatato che il fabbisogno 2026 è coperto e ha chiesto alla Commissione una proposta per i circa 70 miliardi mancanti nel 2027, senza decidere sull'uso degli asset russi. Il 22 settembre 2026 le sanzioni individuali sono state prorogate di 36 mesi (fino al 22 settembre 2029) con il delisting di Usmanov e Fridman; il 12 ottobre 1.646 nuove designazioni, il round più ampio di sempre. 21° pacchetto adottato il 23 luglio 2026; il 22° non è ancora stato proposto.",
+  "stato_nota_en": "The EUR 90 billion loan was unblocked by the Magyar government on 22-23 April 2026 (Hungary, Czechia and Slovakia do not take part); as of 7 October 2026 EUR 28.1 billion remains accessible for 2026. The European Council of 16 October 2026 noted that the 2026 needs are covered and asked the Commission for a proposal on the roughly EUR 70 billion missing in 2027, without deciding on the use of Russian assets. On 22 September 2026 individual sanctions were extended by 36 months (to 22 September 2029) with the delisting of Usmanov and Fridman; on 12 October 1,646 new designations, the largest round ever. 21st package adopted on 23 July 2026; the 22nd has not yet been proposed.",
+  "stato_nota_de": "Das 90-Mrd.-Darlehen wurde von der Regierung Magyar am 22.-23. April 2026 freigegeben (Ungarn, Tschechien und Slowakei nehmen nicht teil); am 7. Oktober 2026 waren noch 28,1 Mrd. für 2026 abrufbar. Der Europäische Rat vom 16. Oktober 2026 stellte fest, dass der Bedarf 2026 gedeckt ist, und forderte von der Kommission einen Vorschlag für die rund 70 Mrd., die 2027 fehlen, ohne über die Nutzung russischer Vermögenswerte zu entscheiden. Am 22. September 2026 wurden die Einzelsanktionen um 36 Monate (bis 22. September 2029) verlängert, bei Streichung von Usmanow und Fridman; am 12. Oktober 1.646 neue Listungen, die größte Runde aller Zeiten. 21. Paket am 23. Juli 2026 angenommen; das 22. ist noch nicht vorgeschlagen.",
+  "prossima_tappa": "Valutazione aggiornata di Commissione e FMI e proposta della Commissione sul fabbisogno 2027 (circa 70 miliardi), da discutere al Consiglio europeo di dicembre 2026; prossimo rinnovo delle sanzioni settoriali a gennaio 2027.",
+  "prossima_tappa_en": "Updated Commission-IMF assessment and Commission proposal on the 2027 needs (about EUR 70 billion), to be discussed at the December 2026 European Council; next renewal of sectoral sanctions in January 2027.",
+  "prossima_tappa_de": "Aktualisierte Bewertung von Kommission und IWF sowie Kommissionsvorschlag zum Bedarf 2027 (rund 70 Mrd.), zu erörtern beim Europäischen Rat im Dezember 2026; nächste Verlängerung der Sektorsanktionen im Januar 2027.",
   "prossima_data": "2026-12",
   "regola": "unanimita",
   "obiettivo_destra": "bloccare",
@@ -212,11 +216,14 @@ window.DOSSIER = [
   "obiettivo_nota_en": "Fico, AfD, RN and FPÖ oppose new joint debt and the use of the assets, Orbán wielded the veto until April; Meloni and PiS instead back aid to Kyiv (Meloni cautious on the assets), Babiš chose the opt-out.",
   "obiettivo_nota_de": "Fico, AfD, RN und FPÖ lehnen neue gemeinsame Schulden und die Nutzung der Vermögen ab, Orbán nutzte das Veto bis April; Meloni und PiS unterstützen dagegen die Hilfe für Kiew (Meloni zurückhaltend bei den Vermögen), Babiš wählte das Opt-out.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
+   "https://www.morganlewis.com/pubs/2026/10/eu-expands-russia-sanctions-blacklist-in-record-designations",
+   "https://www.consilium.europa.eu/en/press/press-releases/2026/10/12/ukraine-s-territorial-integrity-council-lists-77-individuals-over-the-illegal-russian-state-duma-elections-in-the-temporarily-occupied-territories-of-ukraine/",
    "https://www.consilium.europa.eu/en/press/press-releases/2025/12/19/european-council-18-december-2025-ukraine/",
    "https://www.bloomberg.com/news/articles/2026-04-23/eu-finalizes-deal-to-pay-out-90-billion-loan-to-ukraine",
    "https://www.consilium.europa.eu/en/press/press-releases/2026/03/14/russia-s-war-of-aggression-against-ukraine-eu-extends-individual-listings-over-ukraine-s-territorial-integrity-for-a-further-six-months/"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-19"
  },
  {
   "id": "allargamento",
@@ -230,12 +237,12 @@ window.DOSSIER = [
   "descrizione_en": "Opening of the six negotiating clusters (33 chapters) for Ukraine and Moldova, blocked for two years by Orbán's Hungarian veto; each opening requires unanimity of the 27 in an intergovernmental conference.",
   "descrizione_de": "Eröffnung der sechs Verhandlungscluster (33 Kapitel) für die Ukraine und Moldau, zwei Jahre lang durch Orbáns ungarisches Veto blockiert; jede Eröffnung erfordert Einstimmigkeit der 27 in der Regierungskonferenz.",
   "stato": "consiglio",
-  "stato_nota": "Dopo la vittoria di Magyar, cluster 1 aperto il 15 giugno 2026 e cluster 6 il 14 luglio; Budapest ha poi condizionato i cluster 2 e 3 alla legge ucraina sulle scuole delle minoranze, approvata dalla Rada, e i due cluster sono stati aperti il 13 ottobre 2026 a Lussemburgo (24 capitoli su 33 aperti). Restano chiusi i cluster 4 e 5 (agricoltura).",
-  "stato_nota_en": "After Magyar's win, cluster 1 opened on 15 June 2026 and cluster 6 on 14 July; Budapest then tied clusters 2 and 3 to Ukraine's minority-language schooling law, passed by the Rada, and both were opened on 13 October 2026 in Luxembourg (24 of 33 chapters open). Clusters 4 and 5 (agriculture) remain closed.",
-  "stato_nota_de": "Nach Magyars Sieg wurde Cluster 1 am 15. Juni 2026 und Cluster 6 am 14. Juli eröffnet; Budapest knüpfte dann Cluster 2 und 3 an das ukrainische Gesetz zu Minderheitenschulen, das die Rada verabschiedete, und beide wurden am 13. Oktober 2026 in Luxemburg eröffnet (24 von 33 Kapiteln offen). Cluster 4 und 5 (Landwirtschaft) bleiben geschlossen.",
-  "prossima_tappa": "Kiev punta ad aprire i cluster 4 e 5 entro fine 2026 (serve un 'modello speciale' per la PAC); per la Moldova possibile avvio dei benchmark intermedi (IBAR) a novembre 2026.",
-  "prossima_tappa_en": "Kyiv aims to open clusters 4 and 5 by end-2026 (a 'special model' for CAP is needed); for Moldova the interim benchmark process (IBAR) could start in November 2026.",
-  "prossima_tappa_de": "Kiew will Cluster 4 und 5 bis Ende 2026 eröffnen (ein 'Sondermodell' für die GAP ist nötig); für Moldau könnte der Zwischen-Benchmark-Prozess (IBAR) im November 2026 beginnen.",
+  "stato_nota": "Dopo la vittoria di Magyar, cluster 1 aperto il 15 giugno 2026 e cluster 6 il 14 luglio; Budapest ha poi condizionato i cluster 2 e 3 alla legge ucraina sulle scuole delle minoranze, approvata dalla Rada, e i due cluster sono stati aperti il 13 ottobre 2026 a Lussemburgo (24 capitoli su 33 aperti). Il Consiglio europeo del 16 ottobre ha accolto l'apertura auspicando quella di tutti gli altri cluster secondo il merito; il 6 ottobre la Commissione ha presentato la comunicazione 'Preparing for a wider Union' con salvaguardie per i futuri trattati di adesione. Restano chiusi i cluster 4 e 5 (agricoltura).",
+  "stato_nota_en": "After Magyar's win, cluster 1 opened on 15 June 2026 and cluster 6 on 14 July; Budapest then tied clusters 2 and 3 to Ukraine's minority-language schooling law, passed by the Rada, and both were opened on 13 October 2026 in Luxembourg (24 of 33 chapters open). The European Council of 16 October welcomed the opening and looked forward to that of all the other clusters on merit; on 6 October the Commission presented the communication 'Preparing for a wider Union' with safeguards for future accession treaties. Clusters 4 and 5 (agriculture) remain closed.",
+  "stato_nota_de": "Nach Magyars Sieg wurde Cluster 1 am 15. Juni 2026 und Cluster 6 am 14. Juli eröffnet; Budapest knüpfte dann Cluster 2 und 3 an das ukrainische Gesetz zu Minderheitenschulen, das die Rada verabschiedete, und beide wurden am 13. Oktober 2026 in Luxemburg eröffnet (24 von 33 Kapiteln offen). Der Europäische Rat vom 16. Oktober begrüßte die Eröffnung und sieht der Eröffnung aller weiteren Cluster nach Leistung entgegen; am 6. Oktober legte die Kommission die Mitteilung 'Preparing for a wider Union' mit Schutzklauseln für künftige Beitrittsverträge vor. Cluster 4 und 5 (Landwirtschaft) bleiben geschlossen.",
+  "prossima_tappa": "Pacchetto allargamento 2026 della Commissione con roadmap indicative; Kiev punta ad aprire i cluster 4 e 5 entro fine 2026 (serve un 'modello speciale' per la PAC); per la Moldova possibile avvio dei benchmark intermedi (IBAR) a novembre 2026.",
+  "prossima_tappa_en": "Commission 2026 enlargement package with indicative roadmaps; Kyiv aims to open clusters 4 and 5 by end-2026 (a 'special model' for CAP is needed); for Moldova the interim benchmark process (IBAR) could start in November 2026.",
+  "prossima_tappa_de": "Erweiterungspaket 2026 der Kommission mit indikativen Fahrplänen; Kiew will Cluster 4 und 5 bis Ende 2026 eröffnen (ein 'Sondermodell' für die GAP ist nötig); für Moldau könnte der Zwischen-Benchmark-Prozess (IBAR) im November 2026 beginnen.",
   "prossima_data": "2026-12",
   "regola": "unanimita",
   "obiettivo_destra": "modificare",
@@ -243,11 +250,13 @@ window.DOSSIER = [
   "obiettivo_nota_en": "Orbán, Fico, RN, AfD and FPÖ oppose or want to slow Ukrainian accession; Meloni backs it, PiS is in favour but defends Polish farmers on clusters 4-5; Magyar (not of the bloc) lifted the veto with conditions on minorities.",
   "obiettivo_nota_de": "Orbán, Fico, RN, AfD und FPÖ lehnen den Beitritt der Ukraine ab oder wollen ihn bremsen; Meloni unterstützt ihn, PiS ist dafür, verteidigt aber polnische Bauern bei Cluster 4-5; Magyar (nicht im Block) hob das Veto mit Bedingungen zu Minderheiten auf.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
+   "https://www.consilium.europa.eu/en/press/news/20261013-4-accession-conferences-more-progress-for-montenegro-albania-ukraine-and-moldova/",
    "https://www.eurointegration.com.ua/eng/articles/2026/10/14/7247678/",
    "https://www.euronews.com/2026/07/03/ukraine-and-moldova-set-to-open-another-cluster-of-eu-accession-talks",
    "https://www.consilium.europa.eu/en/meetings/european-council/2026/10/15-16/"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-19"
  },
  {
   "id": "omnibus",
@@ -261,24 +270,26 @@ window.DOSSIER = [
   "descrizione_en": "Omnibus I (proposed 26 February 2025) narrows sustainability reporting to companies with over 1,000 employees and EUR 450 million turnover and due diligence to those with over 5,000 employees and EUR 1.5 billion, delaying obligations to 2027 and 2029; nine further omnibuses follow (chemicals, environment, digital, defence).",
   "descrizione_de": "Omnibus I (vorgeschlagen am 26. Februar 2025) beschränkt die Nachhaltigkeitsberichterstattung auf Unternehmen mit über 1.000 Beschäftigten und 450 Mio. Umsatz und die Sorgfaltspflichten auf solche mit über 5.000 Beschäftigten und 1,5 Mrd., mit Verschiebung der Pflichten auf 2027 und 2029; neun weitere Omnibusse folgen (Chemie, Umwelt, Digitales, Verteidigung).",
   "stato": "adottato",
-  "stato_nota": "Omnibus I approvato dal Parlamento il 16 dicembre 2025 e dal Consiglio il 24 febbraio 2026; direttiva (UE) 2026/470 in vigore dal 18 marzo 2026. Tra i seguiti: accordo in trilogo sull'omnibus chimica (17 giugno 2026), mandati del Consiglio sull'omnibus ambientale (24 giugno e 30 settembre 2026), posizioni di Consiglio e Parlamento sull'omnibus digitale-IA (marzo 2026), mentre l'omnibus digitale su GDPR e Data Act è fermo in Consiglio (voto Coreper rinviato a ottobre 2026).",
-  "stato_nota_en": "Omnibus I approved by Parliament on 16 December 2025 and by the Council on 24 February 2026; Directive (EU) 2026/470 in force since 18 March 2026. Follow-ups: trilogue deal on the chemicals omnibus (17 June 2026), Council mandates on the environmental omnibus (24 June and 30 September 2026), Council and Parliament positions on the digital-AI omnibus (March 2026), while the digital omnibus on GDPR and the Data Act is stuck in Council (Coreper vote postponed in October 2026).",
-  "stato_nota_de": "Omnibus I vom Parlament am 16. Dezember 2025 und vom Rat am 24. Februar 2026 gebilligt; Richtlinie (EU) 2026/470 seit 18. März 2026 in Kraft. Folgepakete: Trilog-Einigung zum Chemie-Omnibus (17. Juni 2026), Ratsmandate zum Umwelt-Omnibus (24. Juni und 30. September 2026), Positionen von Rat und Parlament zum Digital-KI-Omnibus (März 2026), während der Digital-Omnibus zu DSGVO und Data Act im Rat feststeckt (AStV-Abstimmung im Oktober 2026 vertagt).",
-  "prossima_tappa": "Recepimento nazionale dell'Omnibus I entro il 19 marzo 2027 (CSDDD entro il 26 luglio 2028); triloghi sugli omnibus ambientale e digitale; roadmap interistituzionale per chiudere tutti gli omnibus entro fine 2027.",
-  "prossima_tappa_en": "National transposition of Omnibus I by 19 March 2027 (CSDDD by 26 July 2028); trilogues on the environmental and digital omnibuses; interinstitutional roadmap to close all omnibuses by end-2027.",
-  "prossima_tappa_de": "Nationale Umsetzung von Omnibus I bis 19. März 2027 (CSDDD bis 26. Juli 2028); Triloge zu Umwelt- und Digital-Omnibus; interinstitutionelle Roadmap zum Abschluss aller Omnibusse bis Ende 2027.",
-  "prossima_data": "2027-03",
+  "stato_nota": "Omnibus I approvato dal Parlamento il 16 dicembre 2025 e dal Consiglio il 24 febbraio 2026; direttiva (UE) 2026/470 in vigore dal 18 marzo 2026. Tra i seguiti: accordo in trilogo sull'omnibus chimica (17 giugno 2026), mandati del Consiglio sull'omnibus ambientale (24 giugno e 30 settembre 2026), posizioni di Consiglio e Parlamento sull'omnibus digitale-IA (marzo 2026), mentre l'omnibus digitale su GDPR e Data Act resta bloccato in Consiglio: il Coreper ha rinviato il voto il 7 ottobre e l'11 ottobre 2026 non lo ha nemmeno discusso, per le riserve di Germania e Francia sui segreti commerciali. Il Consiglio europeo del 16 ottobre ha chiesto di concludere i pacchetti digitale, ambientale e automotive entro fine 2026.",
+  "stato_nota_en": "Omnibus I approved by Parliament on 16 December 2025 and by the Council on 24 February 2026; Directive (EU) 2026/470 in force since 18 March 2026. Follow-ups: trilogue deal on the chemicals omnibus (17 June 2026), Council mandates on the environmental omnibus (24 June and 30 September 2026), Council and Parliament positions on the digital-AI omnibus (March 2026), while the digital omnibus on GDPR and the Data Act remains stuck in Council: Coreper postponed the vote on 7 October and on 11 October 2026 did not even discuss it, owing to German and French reservations on trade secrets. The European Council of 16 October asked for the digital, environmental and automotive packages to be concluded by the end of 2026.",
+  "stato_nota_de": "Omnibus I vom Parlament am 16. Dezember 2025 und vom Rat am 24. Februar 2026 gebilligt; Richtlinie (EU) 2026/470 seit 18. März 2026 in Kraft. Folgepakete: Trilog-Einigung zum Chemie-Omnibus (17. Juni 2026), Ratsmandate zum Umwelt-Omnibus (24. Juni und 30. September 2026), Positionen von Rat und Parlament zum Digital-KI-Omnibus (März 2026), während der Digital-Omnibus zu DSGVO und Data Act im Rat feststeckt: Der AStV vertagte die Abstimmung am 7. Oktober und beriet sie am 11. Oktober 2026 nicht einmal, wegen Vorbehalten Deutschlands und Frankreichs zu Geschäftsgeheimnissen. Der Europäische Rat vom 16. Oktober forderte den Abschluss der Pakete Digital, Umwelt und Automobil bis Ende 2026.",
+  "prossima_tappa": "Voto in commissione ENVI sull'omnibus ambientale il 4 novembre 2026 e avvio dei triloghi; sblocco del mandato Coreper sull'omnibus digitale senza data; recepimento nazionale dell'Omnibus I entro il 19 marzo 2027 (CSDDD entro il 26 luglio 2028).",
+  "prossima_tappa_en": "ENVI committee vote on the environmental omnibus on 4 November 2026 and start of trilogues; unblocking of the Coreper mandate on the digital omnibus with no date set; national transposition of Omnibus I by 19 March 2027 (CSDDD by 26 July 2028).",
+  "prossima_tappa_de": "Abstimmung im ENVI-Ausschuss zum Umwelt-Omnibus am 4. November 2026 und Beginn der Triloge; Freigabe des AStV-Mandats zum Digital-Omnibus ohne Termin; nationale Umsetzung von Omnibus I bis 19. März 2027 (CSDDD bis 26. Juli 2028).",
+  "prossima_data": "2026-11",
   "regola": "qmv",
   "obiettivo_destra": "approvare",
   "obiettivo_nota": "Tutto il blocco è per la deregolamentazione: ECR, Patrioti ed ESN hanno votato con il PPE l'Omnibus I e chiedono di andare oltre (abrogazione della CSDDD); Meloni, Orbán, Babiš e Fico spingono in Consiglio per tagli più profondi.",
   "obiettivo_nota_en": "The whole bloc favours deregulation: ECR, Patriots and ESN voted with the EPP on Omnibus I and want to go further (repeal of CSDDD); Meloni, Orbán, Babiš and Fico push in Council for deeper cuts.",
   "obiettivo_nota_de": "Der ganze Block ist für Deregulierung: EKR, Patrioten und ESN stimmten mit der EVP für Omnibus I und wollen weiter gehen (Aufhebung der CSDDD); Meloni, Orbán, Babiš und Fico drängen im Rat auf tiefere Einschnitte.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
+   "https://agenceurope.eu/en/bulletin/article/13958/17/future-of-digital-omnibus-still-in-limbo-as-member-states-fail-to-agree",
    "https://www.europarl.europa.eu/legislative-train/package-simplification-business/file-first-omnibus-package-on-sustainability-proposal-amending-csrd-and-csddd",
    "https://www.consilium.europa.eu/en/press/press-releases/2026/06/24/simplification-council-agrees-negotiating-stance-to-simplify-and-streamline-environmental-rules/",
    "https://www.hsfkramer.com/notes/esg/2026-posts/omnibus-i-update-csrd-and-csddd-amendment-directive-published-in-the-official-journal"
   ],
-  "aggiornato": "2026-10-16"
+  "aggiornato": "2026-10-19"
  },
  {
   "id": "patto_migrazione",
@@ -292,12 +303,12 @@ window.DOSSIER = [
   "descrizione_en": "The Pact (adopted in 2024) introduces border screening, fast-track procedures, an expanded Eurodac and a mandatory but flexible solidarity mechanism: relocations, financial contributions (EUR 20,000 per person) or operational support for states under pressure.",
   "descrizione_de": "Der Pakt (2024 angenommen) führt Grenzscreening, beschleunigte Verfahren, ein erweitertes Eurodac und einen verpflichtenden, aber flexiblen Solidaritätsmechanismus ein: Umverteilungen, Finanzbeiträge (20.000 Euro pro Person) oder operative Unterstützung für Staaten unter Druck.",
   "stato": "attuazione",
-  "stato_nota": "In applicazione dal 12 giugno 2026. Il Consiglio ha fissato l'8 dicembre 2025 il pool 2026 a 21.000 ricollocazioni o 420 milioni (Spagna, Italia, Grecia e Cipro beneficiarie; esenzioni per Cechia, Croazia, Austria e Polonia); Ungheria e Slovacchia hanno dichiarato di non contribuire, la Polonia rifiuta ogni ricollocazione. Euronews stima meno di 1.000 trasferimenti effettivi nel 2026; la valutazione della Commissione attesa a metà ottobre 2026 non è verificata. La protezione temporanea per gli ucraini è stata prorogata fino al 4 marzo 2028 con la decisione di esecuzione (UE) 2026/1912 del Consiglio del 30 luglio 2026.",
-  "stato_nota_en": "In application since 12 June 2026. On 8 December 2025 the Council set the 2026 pool at 21,000 relocations or EUR 420 million (Spain, Italy, Greece and Cyprus as beneficiaries; exemptions for Czechia, Croatia, Austria and Poland); Hungary and Slovakia declared they will not contribute, Poland refuses any relocation. Euronews expects fewer than 1,000 actual transfers in 2026; the Commission assessment due in mid-October 2026 is unverified. Temporary protection for Ukrainians was extended to 4 March 2028 by Council Implementing Decision (EU) 2026/1912 of 30 July 2026.",
-  "stato_nota_de": "Seit 12. Juni 2026 anwendbar. Der Rat legte am 8. Dezember 2025 den Pool 2026 auf 21.000 Umverteilungen oder 420 Mio. fest (Spanien, Italien, Griechenland und Zypern als Begünstigte; Ausnahmen für Tschechien, Kroatien, Österreich und Polen); Ungarn und die Slowakei erklärten, nicht beizutragen, Polen lehnt jede Umverteilung ab. Euronews erwartet 2026 weniger als 1.000 tatsächliche Transfers; die für Mitte Oktober 2026 erwartete Bewertung der Kommission ist nicht verifiziert. Der vorübergehende Schutz für Ukrainer wurde mit dem Durchführungsbeschluss (EU) 2026/1912 des Rates vom 30. Juli 2026 bis zum 4. März 2028 verlängert.",
-  "prossima_tappa": "Relazione annuale della Commissione sulla migrazione e decisione del Consiglio sul pool di solidarietà 2027 entro fine 2026; possibili procedure d'infrazione contro chi non contribuisce.",
-  "prossima_tappa_en": "Commission annual migration report and Council decision on the 2027 solidarity pool by end-2026; possible infringement procedures against non-contributors.",
-  "prossima_tappa_de": "Jährlicher Migrationsbericht der Kommission und Ratsbeschluss zum Solidaritätspool 2027 bis Ende 2026; mögliche Vertragsverletzungsverfahren gegen Nicht-Beitragende.",
+  "stato_nota": "In applicazione dal 12 giugno 2026. Il Consiglio ha fissato l'8 dicembre 2025 il pool 2026 a 21.000 ricollocazioni o 420 milioni (Spagna, Italia, Grecia e Cipro beneficiarie; esenzioni per Cechia, Croazia, Austria e Polonia); Ungheria e Slovacchia hanno dichiarato di non contribuire, la Polonia rifiuta ogni ricollocazione. Euronews stima meno di 1.000 trasferimenti effettivi nel 2026; la relazione annuale della Commissione, dovuta entro il 15 ottobre 2026, al 19 ottobre non risulta pubblicata. Il Consiglio europeo del 16 ottobre 2026 ha discusso l'approccio globale alla migrazione e sostenuto il quadro di emergenza proposto dalla Commissione (piano in 5 punti del 29 settembre dopo la crisi di Ceuta). La protezione temporanea per gli ucraini resta prorogata fino al 4 marzo 2028 (decisione di esecuzione (UE) 2026/1912).",
+  "stato_nota_en": "In application since 12 June 2026. On 8 December 2025 the Council set the 2026 pool at 21,000 relocations or EUR 420 million (Spain, Italy, Greece and Cyprus as beneficiaries; exemptions for Czechia, Croatia, Austria and Poland); Hungary and Slovakia declared they will not contribute, Poland refuses any relocation. Euronews expects fewer than 1,000 actual transfers in 2026; the Commission's annual report, due by 15 October 2026, had not been published as of 19 October. The European Council of 16 October 2026 discussed the comprehensive approach to migration and backed the emergency framework proposed by the Commission (5-point plan of 29 September after the Ceuta crisis). Temporary protection for Ukrainians remains extended to 4 March 2028 (Implementing Decision (EU) 2026/1912).",
+  "stato_nota_de": "Seit 12. Juni 2026 anwendbar. Der Rat legte am 8. Dezember 2025 den Pool 2026 auf 21.000 Umverteilungen oder 420 Mio. fest (Spanien, Italien, Griechenland und Zypern als Begünstigte; Ausnahmen für Tschechien, Kroatien, Österreich und Polen); Ungarn und die Slowakei erklärten, nicht beizutragen, Polen lehnt jede Umverteilung ab. Euronews erwartet 2026 weniger als 1.000 tatsächliche Transfers; der bis 15. Oktober 2026 fällige Jahresbericht der Kommission war am 19. Oktober noch nicht veröffentlicht. Der Europäische Rat vom 16. Oktober 2026 erörterte den Gesamtansatz zur Migration und unterstützte den von der Kommission vorgeschlagenen Notfallrahmen (5-Punkte-Plan vom 29. September nach der Ceuta-Krise). Der vorübergehende Schutz für Ukrainer bleibt bis zum 4. März 2028 verlängert (Durchführungsbeschluss (EU) 2026/1912).",
+  "prossima_tappa": "Relazione annuale della Commissione (in ritardo rispetto al 15 ottobre) e proposta del pool di solidarietà 2027, poi decisione del Consiglio entro fine 2026; quadro di emergenza UE in preparazione; possibili procedure d'infrazione contro chi non contribuisce.",
+  "prossima_tappa_en": "Commission annual report (overdue since 15 October) and proposal for the 2027 solidarity pool, then Council decision by end-2026; EU emergency framework in preparation; possible infringement procedures against non-contributors.",
+  "prossima_tappa_de": "Jahresbericht der Kommission (seit 15. Oktober überfällig) und Vorschlag für den Solidaritätspool 2027, dann Ratsbeschluss bis Ende 2026; EU-Notfallrahmen in Vorbereitung; mögliche Vertragsverletzungsverfahren gegen Nicht-Beitragende.",
   "prossima_data": "2026-12",
   "regola": "qmv",
   "obiettivo_destra": "modificare",
@@ -305,11 +316,13 @@ window.DOSSIER = [
   "obiettivo_nota_en": "A split bloc: Fidesz, Fico, PiS (and the Tusk government) refuse relocations and payments, RN, AfD and FPÖ want to dismantle the Pact; Meloni, with Italy among the beneficiaries, defends it but demands more externalisation and returns.",
   "obiettivo_nota_de": "Gespaltener Block: Fidesz, Fico, PiS (und die Regierung Tusk) lehnen Umverteilungen und Zahlungen ab, RN, AfD und FPÖ wollen den Pakt abwickeln; Meloni, mit Italien unter den Begünstigten, verteidigt ihn, fordert aber mehr Externalisierung und Rückführungen.",
   "fonti": [
+   "https://www.consilium.europa.eu/media/4tglqede/en-20261016-european-council-conclusions.pdf",
+   "https://home-affairs.ec.europa.eu/news/staying-course-migration-reform-2026-10-02_en",
    "https://www.consilium.europa.eu/en/press/press-releases/2025/12/08/migration-and-asylum-member-states-agree-on-solidarity-pool/",
    "https://www.euronews.com/2026/06/12/how-eu-countries-watered-down-solidarity-plans-to-relocate-asylum-seekers",
    "https://www.hrw.org/news/2026/06/10/questions-and-answers-the-eu-pact-on-migration-and-asylum",
    "https://eur-lex.europa.eu/eli/dec_impl/2026/1912/oj"
   ],
-  "aggiornato": "2026-10-18"
+  "aggiornato": "2026-10-19"
  }
 ];
