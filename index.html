@@ -82,6 +82,18 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 
 /* Nav */
 .nav { position: sticky; top: 0; z-index: 30; height: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); padding-top: env(safe-area-inset-top, 0px); display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); background: rgba(6,7,11,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.tabbar { position: sticky; top: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); z-index: 29; background: rgba(6,7,11,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.tabs { display: flex; gap: 6px; padding-block: 8px; }
+.tab { font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; color: var(--ink-2); border: 1px solid transparent; }
+.tab:hover { color: var(--ink); background: var(--panel-2); }
+.tab.on { color: var(--ink); background: var(--panel-2); border-color: var(--border-2); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04); }
+.tab[data-tab="grp"].on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-glow); }
+body[data-tab="europa"] main > [data-tab="grp"], body[data-tab="grp"] main > [data-tab="europa"], body[data-tab="europa"] .links a[data-tab="grp"], body[data-tab="grp"] .links a[data-tab="europa"] { display: none !important; }
+.grp-head { padding-block: 34px 6px; max-width: 760px; }
+.grp-head h1 { font-size: clamp(34px, 5vw, 58px); letter-spacing: -0.04em; line-height: 1.02; margin: 0; }
+.grp-head h1 em { font-style: normal; color: var(--accent); }
+.grp-head .lede { color: var(--ink-2); font-size: 16px; line-height: 1.5; margin-top: 14px; }
+@media (max-width: 560px) { .tab { font-size: 12.5px; padding: 6px 11px; } .tabs { padding-block: 6px; } }
 .nav .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.01em; }
 .nav .logo i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent-glow); }
 .nav .links { display: flex; gap: 4px; }
@@ -510,13 +522,14 @@ footer.method p { margin: 8px 0 0; }
 <nav class="nav wrap">
   <a class="logo" href="#top" style="text-decoration:none"><i></i>Europa 2030</a>
   <div class="links">
-    <a href="#top">Mappa</a><a href="#novita">Novità</a><a href="#cambi">Cambi di governo</a><a href="#consiglio">Consiglio UE</a><a href="#piano">Piano</a><a href="#funnel">Funnel</a><a href="#calendario">Calendario</a><a href="#agenda">Agenda</a><a href="#metodo">Metodo</a>
+    <a href="#top" data-tab="europa">Mappa</a><a href="#novita" data-tab="europa">Novità</a><a href="#cambi" data-tab="europa">Cambi di governo</a><a href="#consiglio" data-tab="europa">Consiglio UE</a><a href="#calendario" data-tab="europa">Calendario</a><a href="#agenda" data-tab="europa">Agenda</a><a href="#metodo" data-tab="europa">Metodo</a><a href="#piano" data-tab="grp">Piano</a><a href="#funnel" data-tab="grp">Funnel</a>
   </div>
   <div class="nav-right"><div class="stamp"><i class="live"></i>dati al <b id="stamp">15 ott 2026</b></div><div class="langs" role="group" aria-label="Lingua"><button type="button" class="langbtn" data-lang="it">IT</button><button type="button" class="langbtn" data-lang="en">EN</button><button type="button" class="langbtn" data-lang="de">DE</button></div></div>
 </nav>
+<div class="tabbar"><div class="wrap tabs" role="tablist" aria-label="Sezioni"><button type="button" class="tab" data-tab="europa" role="tab">Europa 2030</button><button type="button" class="tab" data-tab="grp" role="tab">Great Remigration Plan</button></div></div>
 
 <main id="top" class="wrap">
-  <section class="hero">
+  <section class="hero" data-tab="europa">
     <div class="hero-copy">
       <div>
         <div class="eyebrow">Osservatorio · UE 27 + Regno Unito, Norvegia, Svizzera</div>
@@ -544,16 +557,16 @@ footer.method p { margin: 8px 0 0; }
       </div>
     </div>
   </section>
-  <div class="stage">
+  <div class="stage" data-tab="europa">
     <canvas id="globo" aria-label="Europa in proiezione sferica, paesi colorati per famiglia politica del governo" role="img"></canvas>
     <div class="hud">
         <div class="read"><span class="hint">trascina per spostare · clicca un paese</span><span>scenario <b id="hud-scen">primo nei sondaggi</b> · orizzonte <b id="hud-anno">oggi</b></span></div>
         <div class="hud-btns"><button type="button" id="zout" aria-label="Riduci">−</button><button type="button" id="zin" aria-label="Ingrandisci">+</button><button type="button" id="centra">⌖ centra l'Europa</button></div>
     </div>
   </div>
-  <div class="chips" id="chips"></div>
+  <div class="chips" id="chips" data-tab="europa"></div>
 
-  <section class="novita card reveal" id="novita">
+  <section class="novita card reveal" id="novita" data-tab="europa">
     <div class="in">
       <div class="nov-head"><div><span class="eyebrow">Novità · aggiornamento settimanale</span><h3 id="nov-title"></h3></div><button type="button" class="copy" id="nov-copy">Copia il riassunto per WhatsApp</button></div>
       <ul id="nov-list"></ul>
@@ -561,12 +574,12 @@ footer.method p { margin: 8px 0 0; }
     </div>
   </section>
 
-  <section class="follow reveal" id="segui">
+  <section class="follow reveal" id="segui" data-tab="europa">
     <div class="follow-copy"><span class="eyebrow" id="fl-eyebrow">Il brief settimanale</span><h3 id="fl-title">Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario</h3><p id="fl-text">Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.</p></div>
     <div class="follow-btns" id="fl-btns"></div>
   </section>
 
-  <section class="sec reveal" id="cambi">
+  <section class="sec reveal" id="cambi" data-tab="europa">
     <div class="sec-head"><div><div class="eyebrow">Scenario</div><h2 id="cambi-title">Cosa cambia</h2><p id="cambi-sub"></p></div></div>
     <div class="two">
       <div class="card"><div class="in"><h3>Cambi di governo <small id="cambi-count"></small></h3><div id="changes"></div></div></div>
@@ -574,7 +587,7 @@ footer.method p { margin: 8px 0 0; }
     </div>
   </section>
 
-  <section class="sec reveal" id="consiglio">
+  <section class="sec reveal" id="consiglio" data-tab="europa">
     <div class="sec-head"><div><div class="eyebrow">Potere reale</div><h2>Cosa può fare questo blocco in Consiglio UE</h2><p>I governi contano quando votano insieme. Qui la mappa dello scenario scelto diventa voti in Consiglio: quanti stati, quanta popolazione, e quali proposte dell'agenda comune diventano bloccabili o approvabili, e da quale anno.</p></div></div>
     <div class="two">
       <div class="card"><div class="in"><h3>Il blocco di destra in Consiglio <small id="cons-when"></small></h3><div id="cons-bars"></div></div></div>
@@ -582,12 +595,17 @@ footer.method p { margin: 8px 0 0; }
     </div>
   </section>
 
-  <section class="sec reveal" id="calendario">
+  <section class="sec reveal" id="calendario" data-tab="europa">
     <div class="sec-head"><div><div class="eyebrow">Calendario</div><h2>Le elezioni che decidono il 2030</h2><p>Ogni punto è il prossimo voto nazionale che assegna il governo. Il colore è il vincitore previsto nello scenario scelto; i punti oltre l'orizzonte restano spenti. Il cerchio tratteggiato è un voto anticipato probabile o una formazione di governo senza voto.</p></div></div>
     <div class="card cal-card"><svg id="cal" viewBox="0 0 1000 300"></svg></div>
   </section>
 
-  <section class="sec reveal" id="piano" hidden>
+  <section class="grp-head" id="grp" data-tab="grp">
+    <div class="eyebrow">GRP · Piano operativo · UE 27</div>
+    <h1 style="margin-top:10px">Great <em>Remigration</em> Plan</h1>
+    <p class="lede">Rimpatriare davvero chi è in Europa senza titolo di soggiorno e gli extra-UE condannati per reati gravi: il piano, le misure, i numeri Eurostat paese per paese e il funnel dalla popolazione ai rimpatri.</p>
+  </section>
+  <section class="sec reveal" id="piano" data-tab="grp" hidden>
     <div class="sec-head"><div><div class="eyebrow" id="piano-eyebrow">Piano</div><h2 id="piano-title"></h2><p id="piano-sub"></p></div></div>
     <div class="kpis piano-kpi" id="piano-kpi"></div>
     <div class="per" id="piano-per"></div>
@@ -600,7 +618,7 @@ footer.method p { margin: 8px 0 0; }
     <p class="srcs" id="piano-fonti" style="margin-top:12px"></p>
   </section>
 
-  <section class="sec reveal" id="funnel" hidden>
+  <section class="sec reveal" id="funnel" data-tab="grp" hidden>
     <div class="sec-head"><div><div class="eyebrow">Funnel</div><h2 id="funnel-title"></h2><p id="funnel-sub"></p></div></div>
     <div class="fsel" id="funnel-sel"></div>
     <div class="fgrid">
@@ -617,7 +635,7 @@ footer.method p { margin: 8px 0 0; }
     <p class="srcs" id="funnel-fonti" style="margin-top:12px"></p>
   </section>
 
-  <section class="sec reveal" id="agenda">
+  <section class="sec reveal" id="agenda" data-tab="europa">
     <div class="sec-head"><div><div class="eyebrow">Agenda</div><h2>Cosa possono fare insieme le destre</h2><p>Dodici partiti, dodici proposte concrete. Dove la riga è tutta blu c'è una politica che un'Europa a trazione nazionalista può davvero portare avanti; dove si spezza, no.</p></div></div>
     <div class="card matrix-wrap"><table class="matrix" id="matrix"></table></div>
     <div class="mlegend">
@@ -630,7 +648,7 @@ footer.method p { margin: 8px 0 0; }
     <div class="convdiv" id="convdiv"></div>
   </section>
 
-  <footer class="method" id="metodo">
+  <footer class="method" id="metodo" data-tab="europa">
     <div><span class="eyebrow">Gli scenari</span>
       <p><strong>Status quo</strong>: nessun governo cambia. <strong>Primo nei sondaggi</strong>: a ogni elezione il governo va alla famiglia del partito oggi primo nei sondaggi, meccanicamente, cordoni sanitari ignorati. <strong>Coalizione probabile</strong>: la coalizione che oggi appare più realistica, cordoni sanitari inclusi. <strong>Trend continua</strong>: la crescita della destra nazionalista prosegue e i cordoni cedono dove è già vicina al potere. Nei tre scenari diversi dallo status quo, dove un governo è in crisi (Germania, Austria, Paesi Bassi, Slovacchia, Romania, Portogallo) si usa la data del voto anticipato probabile, non la scadenza naturale. Sono chiavi di lettura, non previsioni. La sezione sul Consiglio applica le regole del voto a maggioranza qualificata (articolo 16 TUE) alle popolazioni Eurostat 2025: 15 stati e 65% della popolazione per approvare, 4 stati e oltre il 35% per bloccare, unanimità per politica estera, fisco e articolo 7.</p></div>
     <div><span class="eyebrow">Le famiglie</span>
@@ -732,7 +750,7 @@ window.__start = function () {
     pl_h_tappe: ['Tappe', 'Milestones', 'Etappen'], pl_h_vinc: ['Vincoli legali che il piano rispetta', 'Legal constraints the plan respects', 'Rechtliche Grenzen, die der Plan einhält'], pl_h_paesi: ['Paese per paese: ordini di lasciare il territorio, rimpatri effettivi, obiettivo', 'Country by country: orders to leave, effective returns, target', 'Land für Land: Ausreiseanordnungen, tatsächliche Rückführungen, Ziel'],
     pl_paese: ['Paese', 'Country', 'Land'], pl_irregolari: ['Irregolari trovati', 'Found irregular', 'Irregulär aufgegriffen'], pl_ordinati: ['Ordini di lasciare', 'Orders to leave', 'Ausreiseanordnungen'], pl_rimpatriati: ['Rimpatriati', 'Returned', 'Rückgeführt'], pl_tasso: ['Tasso', 'Rate', 'Quote'], pl_obiettivo: ['Obiettivo 2030', 'Target 2030', 'Ziel 2030'], pl_gap: ['Rimpatri in più l\'anno', 'Extra returns per year', 'Zusätzliche Rückführungen pro Jahr'],
     pl_tab_note: ['Dati Eurostat: cittadini di paesi terzi trovati in posizione irregolare, con ordine di lasciare il territorio e rimpatriati verso un paese terzo nell\'anno indicato (esclusi i trasferimenti Dublino). Sono flussi annui, non lo stock di irregolari presenti. "Rimpatri in più" = rimpatri annui necessari per raggiungere l\'obiettivo sugli ordini attuali. Clicca un paese per la scheda.', 'Eurostat data: third-country nationals found to be irregularly present, ordered to leave and returned to a third country in the year shown (Dublin transfers excluded). These are yearly flows, not the stock of irregular migrants present. "Extra returns" = yearly returns needed to reach the target on current orders. Click a country for its file.', 'Eurostat-Daten: irregulär aufgegriffene Drittstaatsangehörige, Ausreiseanordnungen und in einen Drittstaat Rückgeführte im angegebenen Jahr (ohne Dublin-Überstellungen). Jahresflüsse, nicht der Bestand an Irregulären. "Zusätzliche Rückführungen" = jährlich nötige Rückführungen, um das Ziel bei den heutigen Anordnungen zu erreichen. Land anklicken für das Profil.'],
-    pl_eyebrow: ['Piano', 'Plan', 'Plan'],
+    pl_eyebrow: ['Piano', 'Plan', 'Plan'], pl_h2: ['Obiettivi, pilastri, tappe e vincoli', 'Targets, pillars, milestones and limits', 'Ziele, Säulen, Etappen und Grenzen'],
     fn_title: ['Il funnel della migrazione, paese per paese', 'The migration funnel, country by country', 'Der Migrations-Funnel, Land für Land'],
     fn_sub: ['Dalla popolazione residente ai rimpatri eseguiti: tutti i numeri Eurostat di un paese in un\'unica catena, senza stime. Scegli il paese.', 'From the resident population to enforced returns: all of a country\'s Eurostat figures in one chain, with no estimates. Pick a country.', 'Von der Wohnbevölkerung bis zu den vollzogenen Rückführungen: alle Eurostat-Zahlen eines Landes in einer Kette, ohne Schätzungen. Land wählen.'],
     fn_h_steps: ['Dallo stock ai rimpatri', 'From stock to returns', 'Vom Bestand zu den Rückführungen'],
@@ -777,6 +795,7 @@ window.__start = function () {
   const STATIC = {
     en: {
       '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#piano"]': 'Plan', '.links a[href="#funnel"]': 'Funnel', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
+      '.grp-head .eyebrow': 'GRP · Operational plan · EU 27', '.grp-head h1': 'Great <em>Remigration</em> Plan', '.grp-head .lede': 'Actually returning those who are in Europe with no right to stay and the non-EU nationals convicted of serious crimes: the plan, the measures, the Eurostat figures country by country and the funnel from population to returns.',
       '.hero-copy .eyebrow': 'Observatory · EU 27 + United Kingdom, Norway, Switzerland',
       '.hero h1': 'The map of power<br>in <em>Europe</em>',
       '.hero .lede': 'Who governs today, who leads the polls and how the continent may change by 2030. Pick a scenario, move the time slider, click a country.',
@@ -797,6 +816,7 @@ window.__start = function () {
     },
     de: {
       '.links a[href="#top"]': 'Karte', '.links a[href="#novita"]': 'Neu', '.links a[href="#cambi"]': 'Regierungswechsel', '.links a[href="#consiglio"]': 'EU-Rat', '.links a[href="#piano"]': 'Plan', '.links a[href="#funnel"]': 'Funnel', '.links a[href="#calendario"]': 'Kalender', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Methode',
+      '.grp-head .eyebrow': 'GRP · Operativer Plan · EU 27', '.grp-head h1': 'Great <em>Remigration</em> Plan', '.grp-head .lede': 'Wer ohne Aufenthaltsrecht in Europa ist oder als Nicht-EU-Bürger wegen schwerer Straftaten verurteilt wurde, soll tatsächlich zurückgeführt werden: der Plan, die Maßnahmen, die Eurostat-Zahlen Land für Land und der Funnel von der Bevölkerung bis zu den Rückführungen.',
       '.hero-copy .eyebrow': 'Observatorium · EU 27 + Vereinigtes Königreich, Norwegen, Schweiz',
       '.hero h1': 'Die Landkarte der Macht<br>in <em>Europa</em>',
       '.hero .lede': 'Wer heute regiert, wer in den Umfragen führt und wie sich der Kontinent bis 2030 verändern kann. Szenario wählen, Zeitregler bewegen, Land anklicken.',
@@ -819,6 +839,26 @@ window.__start = function () {
   if (STATIC[LANG]) for (const [sel, html] of Object.entries(STATIC[LANG])) document.querySelectorAll(sel).forEach(el => { el.innerHTML = html; });
   document.getElementById('piano-eyebrow').textContent = t('pl_eyebrow'); document.getElementById('piano-h-tappe').textContent = t('pl_h_tappe'); document.getElementById('piano-h-vinc').textContent = t('pl_h_vinc'); document.getElementById('piano-h-paesi').textContent = t('pl_h_paesi');
   document.querySelectorAll('.langbtn').forEach(b => { b.classList.toggle('on', b.dataset.lang === LANG); b.addEventListener('click', () => { try { localStorage.setItem('eu30-lang', b.dataset.lang); } catch (e) {} location.reload(); }); });
+  /* ---------- Schede: "Europa 2030" e "Great Remigration Plan" ---------- */
+  const TABS = ['europa', 'grp'];
+  const tabDiHash = h => { const id = (h || '').replace(/^#\/?/, ''); const el = id && document.getElementById(id); const sec = el && el.closest('[data-tab]'); return sec ? sec.dataset.tab : null; };
+  // salto istantaneo (interrompe anche lo scorrimento "smooth" nativo verso un'ancora calcolata sul layout precedente)
+  const salta = (dove) => { const h = document.documentElement, prev = h.style.scrollBehavior; h.style.scrollBehavior = 'auto'; void getComputedStyle(h).scrollBehavior; const top = typeof dove === 'number' ? dove : (dove ? Math.max(0, dove.getBoundingClientRect().top + window.scrollY - (document.querySelector('.tabbar') ? 110 : 70)) : null); if (top != null) { try { window.scrollTo({ top, behavior: 'instant' }); } catch (e) { window.scrollTo(0, top); } } h.style.scrollBehavior = prev; };
+  function setTab(tab, opts) {
+    if (!TABS.includes(tab)) tab = 'europa';
+    const prev = document.body.dataset.tab;
+    document.body.dataset.tab = tab;
+    document.querySelectorAll('.tab').forEach(b => { b.classList.toggle('on', b.dataset.tab === tab); b.setAttribute('aria-selected', b.dataset.tab === tab); });
+    try { localStorage.setItem('eu30-tab', tab); } catch (e) {}
+    if (prev !== tab) {
+      if (tab === 'europa' && typeof resize === 'function') requestAnimationFrame(resize);
+      if (!(opts && opts.keepScroll)) { salta(0); setTimeout(() => salta(0), 80); }
+    }
+  }
+  document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { setTab(b.dataset.tab); if (location.hash) history.replaceState(null, '', location.pathname + location.search); }));
+  window.addEventListener('hashchange', () => { const tb = tabDiHash(location.hash); const el = document.getElementById(location.hash.slice(1)); if (tb && tb !== document.body.dataset.tab) { setTab(tb, { keepScroll: true }); if (el) { salta(el); setTimeout(() => salta(el), 120); setTimeout(() => salta(el), 500); } } });
+  setTab(tabDiHash(location.hash) || (() => { try { return localStorage.getItem('eu30-tab'); } catch (e) { return null; } })() || 'europa', { keepScroll: true });
+  if (tabDiHash(location.hash)) for (const ms of [60, 300, 800]) setTimeout(() => { const el = document.getElementById(location.hash.slice(1)); if (el) salta(el); }, ms);
   const FAM = {
     sinistra:            { label: t('f_sx'),              hex: '#a8233f', map: '#a8233f' },
     centrosinistra:      { label: t('f_csx'),        hex: '#ef6f62', map: '#ef6f62' },
@@ -1246,7 +1286,7 @@ window.__start = function () {
     const y = STEPS[state.step].y;
     const num = v => v == null ? '—' : (typeof v === 'number' ? v.toLocaleString(LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT', { useGrouping: true, minimumGroupingDigits: 1 }) : esc(v));
     const pct = v => v == null ? '—' : (Math.round(v * 10) / 10).toLocaleString(LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT') + '%';
-    document.getElementById('piano-title').textContent = tx(P, 'nome');
+    document.getElementById('piano-title').textContent = t('pl_h2');
     document.getElementById('piano-sub').textContent = tx(P, 'premessa');
     // obiettivi
     document.getElementById('piano-kpi').innerHTML = (P.obiettivi || []).map(o => `<div class="kpi"><div class="v num">${o.unita === '%' ? pct(o.obiettivo) : num(o.obiettivo)}</div><div class="l">${esc(tx(o, 'etichetta'))}</div><div class="d">${t('pl_oggi')}: ${o.unita === '%' ? pct(o.oggi) : num(o.oggi)}${o.anno_oggi ? ' (' + o.anno_oggi + ')' : ''}</div></div>`).join('');
