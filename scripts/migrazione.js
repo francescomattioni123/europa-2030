@@ -140,6 +140,27 @@ const COMPOSTI = [
     }
   },
   {
+    id: 'rimpatri_per_nazionalita', dataset: 'migr_eiord',
+    nome: 'Ordini di lasciare il territorio e rimpatri verso paesi terzi per paese emittente e cittadinanza: prime dieci nazionalità', nome_en: 'Orders to leave and returns to third countries by issuing country and citizenship: top ten nationalities', nome_de: 'Ausreiseanordnungen und Rückführungen in Drittstaaten nach ausstellendem Land und Staatsangehörigkeit: zehn häufigste',
+    async calcola() {
+      const t = String(ANNO);
+      const o = await cubo('migr_eiord', { geo: GEO, time: t, age: 'TOTAL', sex: 'T', unit: 'PER' });
+      const r = await cubo('migr_eirtn', { geo: GEO, time: t, c_dest: 'THRD', age: 'TOTAL', sex: 'T', unit: 'PER' });
+      const lab = o.etichette('citizen');
+      const esclusi = new Set(['TOTAL', 'UNK', 'STLS', 'RNC', 'EUR', 'AFR', 'ASI', 'AME', 'OCE', 'NAT', 'FOR', 'EU28', 'EU27_2007', 'EU25', 'EU15', 'EFTA', 'EU27_2020', 'EXT_EU27_2020']);
+      const paesi = o.codici('citizen').filter(k => !esclusi.has(k) && !k.includes('_') && k.length === 2);
+      const valori = {};
+      for (const g of GEO) {
+        const totO = o.get({ geo: g, citizen: 'TOTAL' }), totR = r.get({ geo: g, citizen: 'TOTAL' });
+        if (totO == null) { valori[g] = null; continue; }
+        const lista = paesi.map(k => ({ cittadinanza: k, nome: lab[k], ordini: o.get({ geo: g, citizen: k }), rimpatriati: r.get({ geo: g, citizen: k }) })).filter(x => x.ordini != null).sort((a, b) => b.ordini - a.ordini).slice(0, 10)
+          .map(x => Object.assign(x, { tasso_pct: x.rimpatriati != null && x.ordini ? Math.round(x.rimpatriati / x.ordini * 1000) / 10 : null, quota_ordini_pct: totO ? Math.round(x.ordini / totO * 1000) / 10 : null }));
+        valori[g] = { anno: ANNO, ordini_totale: totO, rimpatriati_totale: totR, prime_dieci: lista };
+      }
+      return { valori, aggiornato: o.aggiornato, aggiornato_eurostat_rimpatri: r.aggiornato, nota: 'Ordini (migr_eiord) e rimpatriati verso paesi terzi (migr_eirtn, c_dest THRD) per paese emittente e cittadinanza, arrotondati a 5. Le prime dieci sono per numero di ordini; il tasso è rimpatriati/ordini dello stesso anno (coorti diverse, può superare il 100%). Aggregati e sconosciuti esclusi dalla classifica.' };
+    }
+  },
+  {
     id: 'acquisizioni_cittadinanza', dataset: 'migr_acq',
     nome: 'Acquisizioni di cittadinanza per anno', nome_en: 'Acquisitions of citizenship by year', nome_de: 'Einbürgerungen nach Jahr',
     async calcola() {
@@ -234,6 +255,7 @@ const COMPOSTI = [
       acquisizioni_cittadinanza: a ? { anni: a.anni, totale_2015_2024: a.totale_2015_2024 } : null,
       permessi_validi: r ? { anno: r.anno, totale: r.totale, prime_cinque: r.prime_cinque } : null,
       verifica_protezione_temporanea_ucraini: vt,
+      rimpatri_per_nazionalita: composti.rimpatri_per_nazionalita.valori[g],
       protezione_temporanea: { periodo: MESE, valore: I('protezione_temporanea') },
       asilo: { anno: ANNO, prime_domande: I('asilo_prime_domande'), decisioni: I('asilo_decisioni'), decisioni_positive: I('asilo_positive'), pendenti_dicembre: I('asilo_pendenti') },
       rimpatri: { anno: ANNO, irregolari_trovati: I('irregolari'), respinti_frontiera: I('respinti'), ordini_di_lasciare: I('ordini'), rimpatriati_verso_paesi_terzi: I('rimpatri_terzi'), rimpatriati_totali: I('rimpatri_totali'), tasso_rimpatrio_paesi_terzi_pct: I('ordini') ? Math.round(I('rimpatri_terzi') / I('ordini') * 1000) / 10 : null }
@@ -241,6 +263,8 @@ const COMPOSTI = [
   }
   const fdest = path.join(__dirname, '..', 'data', 'funnel.json');
   fs.writeFileSync(fdest, JSON.stringify({ estratto, anno: ANNO, nota: 'Catena migrazione per i 27 Stati UE da Eurostat (vedi data/migrazione.js per dataset e date di aggiornamento). null = dato non trasmesso, mai stimato. Codici geo Eurostat: EL = Grecia.', paesi: F }, null, 1) + '\n');
-  console.log(`scritto ${path.relative(process.cwd(), fdest)}: ${Object.keys(F).length} paesi`);
+  const fjs = path.join(__dirname, '..', 'data', 'funnel.js');
+  fs.writeFileSync(fjs, `// Stessa catena di data/funnel.json come variabile globale per la pagina. Generato da scripts/migrazione.js, non modificare a mano.\nwindow.FUNNEL = ${fs.readFileSync(fdest, 'utf8').trim()};\n`);
+  console.log(`scritto ${path.relative(process.cwd(), fdest)} e data/funnel.js: ${Object.keys(F).length} paesi`);
   console.log(`\nscritto ${path.relative(process.cwd(), dest)}: ${Object.keys(ris).length} indicatori semplici + ${Object.keys(composti).length} composti × ${GEO.length} geo`);
 })();

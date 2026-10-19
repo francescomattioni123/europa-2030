@@ -1,6 +1,6 @@
 // Service worker di Europa 2030: la pagina e i dati si aggiornano dalla rete quando c'è, altrimenti dalla cache.
-const VERSION = 'eu30-v4';
-const SHELL = ['./', './index.html', './manifest.json', './data/paesi.js', './data/politiche.js', './data/aggiornamenti.js', './data/iscrizione.js', './data/dossier.js', './data/posizioni.js', './data/piano.js', './consiglio.js', './data/mondo-topo.js', './icons/icon-192.png', './icons/icon-512.png'];
+const VERSION = 'eu30-v5';
+const SHELL = ['./', './index.html', './manifest.json', './data/paesi.js', './data/politiche.js', './data/aggiornamenti.js', './data/iscrizione.js', './data/dossier.js', './data/posizioni.js', './data/piano.js', './data/funnel.js', './consiglio.js', './data/mondo-topo.js', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

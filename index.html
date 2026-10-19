@@ -295,6 +295,48 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 /* Piano */
 .piano-kpi { margin-bottom: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 900px) { .piano-kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* funnel */
+.fsel { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.fsel .chip { cursor: pointer; }
+.fsel .chip.on { border-color: var(--accent); color: var(--ink); background: rgba(57,135,229,0.12); box-shadow: 0 0 0 1px var(--accent-glow); }
+.fgrid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px; margin-bottom: 16px; }
+.fgrid2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); }
+.fsteps { list-style: none; margin: 0; padding: 0; }
+.fsteps li { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 150px; gap: 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.fsteps li:last-child { border-bottom: 0; }
+.fsteps li.grp { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 0 4px; border-bottom: 0; }
+.fsteps li.grp:first-child { padding-top: 0; }
+.fsteps .fl small { display: block; color: var(--muted); font-size: 11px; }
+.fsteps .fb { height: 9px; background: rgba(255,255,255,0.06); border-radius: 5px; overflow: hidden; }
+.fsteps .fb i { display: block; height: 100%; background: #35c9c2; }
+.fsteps .fb i.b2 { background: var(--accent); }
+.fsteps .fb i.b3 { background: #ef6f62; }
+.fsteps .fv { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.fsteps .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; font-weight: 400; }
+.fsteps .fv.nd { color: var(--muted); font-weight: 400; font-size: 11.5px; }
+.fstack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 12px 0 10px; background: rgba(255,255,255,0.05); }
+.fstack i { display: block; height: 100%; }
+.flegend { display: grid; gap: 6px; font-size: 12.5px; color: var(--ink-2); }
+.flegend div { display: flex; justify-content: space-between; gap: 10px; }
+.flegend b { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 8px; flex: none; position: relative; top: 1px; }
+.flegend span.v { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink); }
+.c-l1 { background: rgba(255,255,255,0.22); } .c-l2 { background: #35c9c2; } .c-l3 { background: var(--accent); }
+.ftab { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 10px; }
+.ftab th, .ftab td { padding: 5px 6px; border-bottom: 1px solid var(--border); text-align: right; font-variant-numeric: tabular-nums; }
+.ftab th:first-child, .ftab td:first-child { text-align: left; }
+.ftab th { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+.facq { display: flex; align-items: flex-end; gap: 4px; height: 56px; margin-top: 10px; }
+.facq i { flex: 1; background: #35c9c2; opacity: 0.75; border-radius: 2px 2px 0 0; min-height: 2px; position: relative; }
+.facq i:last-child { opacity: 1; }
+.facq i::after { content: attr(data-y); position: absolute; top: 100%; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 9px; color: var(--muted); margin-top: 3px; }
+.facq-tot { font-family: var(--mono); font-size: 11px; color: var(--ink-2); margin-top: 22px; }
+.fperm li { display: grid; grid-template-columns: minmax(0, 1fr) 90px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.fperm li:last-child { border-bottom: 0; }
+.fperm { list-style: none; margin: 0; padding: 0; }
+.fperm .fb { display: block; height: 7px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; margin-top: 5px; } .fperm .fb i { display: block; height: 100%; background: var(--accent); }
+.fperm .fv { text-align: right; font-variant-numeric: tabular-nums; } .fperm .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; }
+.fnd { color: var(--muted); font-size: 12.5px; }
+@media (max-width: 900px) { .fgrid, .fgrid2 { grid-template-columns: 1fr; } .fsteps li { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) 120px; gap: 8px; } }
 .per { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 .per-col { border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; background: var(--panel); }
 .per-col h3 { font-size: 13px; margin-bottom: 8px; font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
@@ -452,7 +494,7 @@ footer.method p { margin: 8px 0 0; }
 <nav class="nav wrap">
   <a class="logo" href="#top" style="text-decoration:none"><i></i>Europa 2030</a>
   <div class="links">
-    <a href="#top">Mappa</a><a href="#novita">Novità</a><a href="#cambi">Cambi di governo</a><a href="#consiglio">Consiglio UE</a><a href="#piano">Piano</a><a href="#calendario">Calendario</a><a href="#agenda">Agenda</a><a href="#metodo">Metodo</a>
+    <a href="#top">Mappa</a><a href="#novita">Novità</a><a href="#cambi">Cambi di governo</a><a href="#consiglio">Consiglio UE</a><a href="#piano">Piano</a><a href="#funnel">Funnel</a><a href="#calendario">Calendario</a><a href="#agenda">Agenda</a><a href="#metodo">Metodo</a>
   </div>
   <div class="nav-right"><div class="stamp"><i class="live"></i>dati al <b id="stamp">15 ott 2026</b></div><div class="langs" role="group" aria-label="Lingua"><button type="button" class="langbtn" data-lang="it">IT</button><button type="button" class="langbtn" data-lang="en">EN</button><button type="button" class="langbtn" data-lang="de">DE</button></div></div>
 </nav>
@@ -542,6 +584,23 @@ footer.method p { margin: 8px 0 0; }
     <p class="srcs" id="piano-fonti" style="margin-top:12px"></p>
   </section>
 
+  <section class="sec reveal" id="funnel" hidden>
+    <div class="sec-head"><div><div class="eyebrow">Funnel</div><h2 id="funnel-title"></h2><p id="funnel-sub"></p></div></div>
+    <div class="fsel" id="funnel-sel"></div>
+    <div class="fgrid">
+      <div class="card"><div class="in"><h3 id="funnel-h-steps"></h3><ol class="fsteps" id="funnel-steps"></ol></div></div>
+      <div>
+        <div class="card"><div class="in"><h3 id="funnel-h-lfs"></h3><div id="funnel-lfs"></div></div></div>
+        <div class="card" style="margin-top:16px"><div class="in"><h3 id="funnel-h-acq"></h3><div id="funnel-acq"></div></div></div>
+      </div>
+    </div>
+    <div class="fgrid fgrid2">
+      <div class="card"><div class="in"><h3 id="funnel-h-perm"></h3><div id="funnel-perm"></div></div></div>
+      <div class="card"><div class="in"><h3 id="funnel-h-naz"></h3><div class="ptab-wrap" id="funnel-naz"></div></div></div>
+    </div>
+    <p class="srcs" id="funnel-fonti" style="margin-top:12px"></p>
+  </section>
+
   <section class="sec reveal" id="agenda">
     <div class="sec-head"><div><div class="eyebrow">Agenda</div><h2>Cosa possono fare insieme le destre</h2><p>Dodici partiti, dodici proposte concrete. Dove la riga è tutta blu c'è una politica che un'Europa a trazione nazionalista può davvero portare avanti; dove si spezza, no.</p></div></div>
     <div class="card matrix-wrap"><table class="matrix" id="matrix"></table></div>
@@ -582,7 +641,7 @@ footer.method p { margin: 8px 0 0; }
 <script>
 // Caricamento dati: nell'app nativa prova prima la versione pubblicata (sempre aggiornata), poi quella inclusa nell'app.
 (function () {
-  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js', 'data/posizioni.js', 'data/piano.js'];
+  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js', 'data/posizioni.js', 'data/piano.js', 'data/funnel.js'];
   const native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
   window.EU30_NATIVE = native;
   const base = native ? 'https://francescomattioni123.github.io/europa-2030/' : '';
@@ -658,6 +717,24 @@ window.__start = function () {
     pl_paese: ['Paese', 'Country', 'Land'], pl_irregolari: ['Irregolari trovati', 'Found irregular', 'Irregulär aufgegriffen'], pl_ordinati: ['Ordini di lasciare', 'Orders to leave', 'Ausreiseanordnungen'], pl_rimpatriati: ['Rimpatriati', 'Returned', 'Rückgeführt'], pl_tasso: ['Tasso', 'Rate', 'Quote'], pl_obiettivo: ['Obiettivo 2030', 'Target 2030', 'Ziel 2030'], pl_gap: ['Rimpatri in più l\'anno', 'Extra returns per year', 'Zusätzliche Rückführungen pro Jahr'],
     pl_tab_note: ['Dati Eurostat: cittadini di paesi terzi trovati in posizione irregolare, con ordine di lasciare il territorio e rimpatriati verso un paese terzo nell\'anno indicato (esclusi i trasferimenti Dublino). Sono flussi annui, non lo stock di irregolari presenti. "Rimpatri in più" = rimpatri annui necessari per raggiungere l\'obiettivo sugli ordini attuali. Clicca un paese per la scheda.', 'Eurostat data: third-country nationals found to be irregularly present, ordered to leave and returned to a third country in the year shown (Dublin transfers excluded). These are yearly flows, not the stock of irregular migrants present. "Extra returns" = yearly returns needed to reach the target on current orders. Click a country for its file.', 'Eurostat-Daten: irregulär aufgegriffene Drittstaatsangehörige, Ausreiseanordnungen und in einen Drittstaat Rückgeführte im angegebenen Jahr (ohne Dublin-Überstellungen). Jahresflüsse, nicht der Bestand an Irregulären. "Zusätzliche Rückführungen" = jährlich nötige Rückführungen, um das Ziel bei den heutigen Anordnungen zu erreichen. Land anklicken für das Profil.'],
     pl_eyebrow: ['Piano', 'Plan', 'Plan'],
+    fn_title: ['Il funnel della migrazione, paese per paese', 'The migration funnel, country by country', 'Der Migrations-Funnel, Land für Land'],
+    fn_sub: ['Dalla popolazione residente ai rimpatri eseguiti: tutti i numeri Eurostat di un paese in un\'unica catena, senza stime. Scegli il paese.', 'From the resident population to enforced returns: all of a country\'s Eurostat figures in one chain, with no estimates. Pick a country.', 'Von der Wohnbevölkerung bis zu den vollzogenen Rückführungen: alle Eurostat-Zahlen eines Landes in einer Kette, ohne Schätzungen. Land wählen.'],
+    fn_h_steps: ['Dallo stock ai rimpatri', 'From stock to returns', 'Vom Bestand zu den Rückführungen'],
+    fn_g_stock: ['Stock: popolazione al 1° gennaio, permessi e domande a fine anno', 'Stock: population on 1 January, permits and applications at year end', 'Bestand: Bevölkerung am 1. Januar, Titel und Anträge zum Jahresende'],
+    fn_g_flow: ['Flussi dell\'anno', 'Flows of the year', 'Ströme des Jahres'],
+    fn_pop: ['Popolazione residente', 'Resident population', 'Wohnbevölkerung'], fn_nat: ['di cui cittadini del paese', 'of which nationals', 'davon Staatsbürger'], fn_eu: ['Cittadini di altri paesi UE', 'Citizens of other EU countries', 'Bürger anderer EU-Länder'], fn_xeu: ['Cittadini extra-UE', 'Non-EU citizens', 'Nicht-EU-Bürger'], fn_natfor: ['Cittadini del paese nati all\'estero', 'Nationals born abroad', 'Im Ausland geborene Staatsbürger'],
+    fn_perm: ['Permessi di soggiorno validi', 'Valid residence permits', 'Gültige Aufenthaltstitel'], fn_tp: ['Protezione temporanea (ucraini)', 'Temporary protection (Ukrainians)', 'Vorübergehender Schutz (Ukrainer)'], fn_pend: ['Domande di asilo pendenti', 'Pending asylum applications', 'Anhängige Asylanträge'],
+    fn_app: ['Prime domande di asilo', 'First-time asylum applications', 'Asyl-Erstanträge'], fn_dec: ['Decisioni di prima istanza', 'First-instance decisions', 'Erstinstanzliche Entscheidungen'], fn_pos: ['di cui positive', 'of which positive', 'davon positiv'], fn_irr: ['Irregolari trovati', 'Irregular migrants found', 'Irregulär Aufgegriffene'], fn_ref: ['Respinti alla frontiera esterna', 'Refused entry at the external border', 'An der Außengrenze zurückgewiesen'], fn_ord: ['Ordini di lasciare il territorio', 'Orders to leave', 'Ausreiseanordnungen'], fn_ret: ['Rimpatriati verso paesi terzi', 'Returned to third countries', 'In Drittstaaten rückgeführt'],
+    fn_of_pop: ['della popolazione', 'of the population', 'der Bevölkerung'], fn_of_irr: ['degli irregolari trovati', 'of those found', 'der Aufgegriffenen'], fn_of_dec: ['delle decisioni', 'of decisions', 'der Entscheidungen'], fn_rate: ['tasso di rimpatrio', 'return rate', 'Rückführungsquote'], fn_of_nat: ['dei cittadini', 'of nationals', 'der Staatsbürger'],
+    fn_h_lfs: ['Chi vive nel paese: origine dei 15-74enni', 'Who lives in the country: origin of those aged 15-74', 'Wer im Land lebt: Herkunft der 15- bis 74-Jährigen'],
+    fn_l1: ['Nati nel paese da genitori nati nel paese', 'Native-born, both parents native-born', 'Im Land geboren, Eltern im Land geboren'], fn_l2: ['Nati nel paese con almeno un genitore nato all\'estero', 'Native-born with at least one parent born abroad', 'Im Land geboren, mindestens ein Elternteil im Ausland geboren'], fn_l3: ['Nati all\'estero', 'Born abroad', 'Im Ausland geboren'],
+    fn_s1: ['nati, genitori del paese', 'native, native parents', 'geboren, Eltern aus dem Land'], fn_s2: ['2ª generazione', '2nd generation', '2. Generation'], fn_s3: ['nati all\'estero', 'born abroad', 'im Ausland geboren'], fn_cit_nat: ['Cittadini', 'Nationals', 'Staatsbürger'], fn_cit_for: ['Stranieri', 'Foreigners', 'Ausländer'], fn_mig: ['migliaia', 'thousands', 'Tausend'], fn_lfs_note: ['Indagine forze di lavoro, famiglie private, 15-74 anni, in migliaia.', 'Labour Force Survey, private households, ages 15-74, thousands.', 'Arbeitskräfteerhebung, Privathaushalte, 15-74 Jahre, in Tausend.'],
+    fn_h_acq: ['Acquisizioni di cittadinanza', 'Acquisitions of citizenship', 'Einbürgerungen'], fn_acq_tot: ['Totale 2015-2024', 'Total 2015-2024', 'Summe 2015-2024'],
+    fn_h_perm: ['Permessi validi: prime cinque nazionalità', 'Valid permits: top five nationalities', 'Gültige Titel: fünf häufigste Staatsangehörigkeiten'],
+    fn_h_naz: ['Ordini di lasciare e rimpatri per nazionalità', 'Orders to leave and returns by nationality', 'Ausreiseanordnungen und Rückführungen nach Staatsangehörigkeit'],
+    fn_naz: ['Nazionalità', 'Nationality', 'Staatsangehörigkeit'], fn_quota: ['Quota', 'Share', 'Anteil'], fn_tot: ['Totale', 'Total', 'Gesamt'],
+    fn_nd: ['dato non trasmesso dallo Stato', 'not reported by the state', 'vom Staat nicht gemeldet'],
+    fn_note: ['Fonte: Eurostat, estrazione del {d}; i nomi dei paesi d\'origine sono nella forma inglese di Eurostat; dati su asilo e rimpatri arrotondati a 5. Tasso = rimpatriati/ordini dello stesso anno. Nessun valore è stimato: dove manca, lo Stato non lo trasmette.', 'Source: Eurostat, extracted on {d}; countries of origin are named as in Eurostat; asylum and return data rounded to 5. Rate = returns/orders in the same year. Nothing is estimated: where a figure is missing, the state does not report it.', 'Quelle: Eurostat, Abruf am {d}; Herkunftsländer in der englischen Eurostat-Schreibweise; Asyl- und Rückführungsdaten auf 5 gerundet. Quote = Rückführungen/Anordnungen desselben Jahres. Nichts ist geschätzt: wo eine Zahl fehlt, meldet der Staat sie nicht.'],
     copied: ['Copiato', 'Copied', 'Kopiert'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary', 'WhatsApp-Zusammenfassung kopieren'], copy_prompt: ['Copia il testo:', 'Copy the text:', 'Text kopieren:']
   };
   const t = k => S[k] ? (S[k][LI] != null ? S[k][LI] : S[k][1]) : k;
@@ -665,7 +742,7 @@ window.__start = function () {
   // testi statici della pagina nelle altre lingue (l'HTML è in italiano)
   const STATIC = {
     en: {
-      '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#piano"]': 'Plan', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
+      '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#piano"]': 'Plan', '.links a[href="#funnel"]': 'Funnel', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
       '.hero-copy .eyebrow': 'Observatory · EU 27 + United Kingdom, Norway, Switzerland',
       '.hero h1': 'The map of power<br>in <em>Europe</em>',
       '.hero .lede': 'Who governs today, who leads the polls and how the continent may change by 2030. Pick a scenario, move the time slider, click a country.',
@@ -685,7 +762,7 @@ window.__start = function () {
       '.nav .stamp': '<i class="live"></i>data as of <b id="stamp"></b>'
     },
     de: {
-      '.links a[href="#top"]': 'Karte', '.links a[href="#novita"]': 'Neu', '.links a[href="#cambi"]': 'Regierungswechsel', '.links a[href="#consiglio"]': 'EU-Rat', '.links a[href="#piano"]': 'Plan', '.links a[href="#calendario"]': 'Kalender', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Methode',
+      '.links a[href="#top"]': 'Karte', '.links a[href="#novita"]': 'Neu', '.links a[href="#cambi"]': 'Regierungswechsel', '.links a[href="#consiglio"]': 'EU-Rat', '.links a[href="#piano"]': 'Plan', '.links a[href="#funnel"]': 'Funnel', '.links a[href="#calendario"]': 'Kalender', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Methode',
       '.hero-copy .eyebrow': 'Observatorium · EU 27 + Vereinigtes Königreich, Norwegen, Schweiz',
       '.hero h1': 'Die Landkarte der Macht<br>in <em>Europa</em>',
       '.hero .lede': 'Wer heute regiert, wer in den Umfragen führt und wie sich der Kontinent bis 2030 verändern kann. Szenario wählen, Zeitregler bewegen, Land anklicken.',
@@ -724,7 +801,7 @@ window.__start = function () {
     coalizione: { label: t('sc_co'), help: t('sc_co_h') },
     trend: { label: t('sc_tr'), help: t('sc_tr_h') }
   };
-  const state = { scen: 'coalizione', step: 5, sel: null };
+  const state = { scen: 'coalizione', step: 5, sel: null, funnel: (() => { try { return localStorage.getItem('eu30-funnel') || 'IT'; } catch (e) { return 'IT'; } })() };
   const byIso = new Map(PAESI.map(p => [p.iso, p]));
   const bySigla = new Map(PAESI.map(p => [p.sigla, p]));
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1264,6 +1341,79 @@ window.__start = function () {
   })();
 
   /* ---------- Render ---------- */
+  function renderFunnel() {
+    const F = window.FUNNEL; const sec = document.getElementById('funnel'); if (!F || !F.paesi || !sec) { if (sec) sec.hidden = true; return; }
+    sec.hidden = false;
+    const loc = LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT';
+    const num = v => v == null ? '—' : v.toLocaleString(loc, { maximumFractionDigits: 1 });
+    const pc = v => v == null ? '—' : (Math.round(v * 10) / 10).toLocaleString(loc) + '%';
+    if (!F.paesi[state.funnel]) state.funnel = 'IT';
+    const sig = state.funnel, D = F.paesi[sig], p = bySigla.get(sig), Y = F.anno;
+    document.getElementById('funnel-title').textContent = t('fn_title');
+    document.getElementById('funnel-sub').textContent = t('fn_sub');
+    document.getElementById('funnel-sel').innerHTML = Object.keys(F.paesi).map(s => `<button type="button" class="chip${s === sig ? ' on' : ''}" data-fsel="${s}" title="${esc(bySigla.get(s) ? tx(bySigla.get(s), 'nome') : s)}">${flag(s)} ${s}</button>`).join('');
+    const P = D.popolazione, N = D.nazionali_nati_estero, A = D.asilo, R = D.rimpatri, PV = D.permessi_validi, TP = D.protezione_temporanea;
+    // catena: gruppo stock e gruppo flussi, barre relative al massimo del gruppo (popolazione e cittadini esclusi)
+    const nome = p ? tx(p, 'nome') : sig;
+    document.getElementById('funnel-h-steps').textContent = `${flag(sig)} ${nome}: ${t('fn_h_steps')}`;
+    const pop = P && P.totale;
+    const riga = (l, v, sub, w, cls, anno) => `<li><span class="fl">${esc(l)}${anno ? `<small>${anno}</small>` : ''}</span><span class="fb">${w != null ? `<i class="${cls || ''}" style="width:${Math.max(0.5, Math.min(100, w))}%"></i>` : ''}</span><span class="fv${v == null ? ' nd' : ''}">${v == null ? t('fn_nd') : num(v)}${sub ? `<small>${sub}</small>` : ''}</span></li>`;
+    const ofPop = v => v != null && pop ? pc(v / pop * 100) + ' ' + t('fn_of_pop') : '';
+    const stock = [
+      [t('fn_eu'), P && P.altri_ue, P && P.anno], [t('fn_xeu'), P && P.extra_ue, P && P.anno], [t('fn_natfor'), N && N.nazionali_nati_estero, N && N.anno],
+      [t('fn_perm'), PV && PV.totale, PV && PV.anno], [t('fn_tp'), TP && TP.valore, TP && TP.periodo], [t('fn_pend'), A && A.pendenti_dicembre, A && A.anno]
+    ];
+    const smax = Math.max(1, ...stock.map(x => x[1] || 0));
+    const flussi = [
+      [t('fn_app'), A && A.prime_domande], [t('fn_dec'), A && A.decisioni], [t('fn_pos'), A && A.decisioni_positive, A && A.decisioni ? pc(A.decisioni_positive / A.decisioni * 100) + ' ' + t('fn_of_dec') : ''],
+      [t('fn_irr'), R && R.irregolari_trovati, '', 'b2'], [t('fn_ref'), R && R.respinti_frontiera, '', 'b2'],
+      [t('fn_ord'), R && R.ordini_di_lasciare, R && R.irregolari_trovati ? pc(R.ordini_di_lasciare / R.irregolari_trovati * 100) + ' ' + t('fn_of_irr') : '', 'b3'],
+      [t('fn_ret'), R && R.rimpatriati_verso_paesi_terzi, R && R.tasso_rimpatrio_paesi_terzi_pct != null ? t('fn_rate') + ' ' + pc(R.tasso_rimpatrio_paesi_terzi_pct) : '', 'b3']
+    ];
+    const fmax = Math.max(1, ...flussi.map(x => x[1] || 0));
+    document.getElementById('funnel-steps').innerHTML =
+      `<li class="grp">${t('fn_g_stock')}</li>` +
+      riga(t('fn_pop'), pop, '', 100, '', P && P.anno) + riga(t('fn_nat'), P && P.nazionali, ofPop(P && P.nazionali), P && pop ? P.nazionali / pop * 100 : null, '', null) +
+      stock.map(([l, v, a]) => riga(l, v, ofPop(v), v != null ? v / smax * 100 : null, '', a)).join('') +
+      `<li class="grp">${t('fn_g_flow')} ${Y}</li>` + flussi.map(([l, v, sub, cls]) => riga(l, v, sub, v != null ? v / fmax * 100 : null, cls, null)).join('');
+    // LFS: composizione per origine e per cittadinanza
+    const L = D.lfs_15_74, LC = D.lfs_15_74_per_cittadinanza;
+    document.getElementById('funnel-h-lfs').textContent = t('fn_h_lfs');
+    let lfs = '';
+    if (L) {
+      const q = L.quote_pct;
+      lfs += `<div class="fstack"><i class="c-l1" style="width:${q.nati_paese_genitori_paese || 0}%"></i><i class="c-l2" style="width:${q.nati_paese_genitore_estero || 0}%"></i><i class="c-l3" style="width:${q.nati_estero || 0}%"></i></div>`;
+      lfs += `<div class="flegend">${[['c-l1', t('fn_l1'), L.nati_paese_genitori_paese, q.nati_paese_genitori_paese], ['c-l2', t('fn_l2'), L.nati_paese_genitore_estero, q.nati_paese_genitore_estero], ['c-l3', t('fn_l3'), L.nati_estero, q.nati_estero]].map(([c, l, v, pq]) => `<div><span><b class="${c}"></b>${esc(l)}</span><span class="v">${pc(pq)} · ${num(v)}k</span></div>`).join('')}</div>`;
+      if (LC) {
+        const row = (l, b) => `<tr><td>${esc(l)}</td><td>${num(b.totale)}</td><td>${num(b.nati_paese_genitori_paese)}</td><td>${num(b.nati_paese_genitore_estero)}</td><td>${num(b.nati_estero)}</td></tr>`;
+        lfs += `<table class="ftab"><thead><tr><th>${t('fn_mig')}</th><th>${t('fn_tot')}</th><th>${esc(t('fn_s1'))}</th><th>${esc(t('fn_s2'))}</th><th>${esc(t('fn_s3'))}</th></tr></thead><tbody>${row(t('fn_cit_nat'), LC.nazionali)}${row(t('fn_cit_for'), LC.stranieri)}</tbody></table>`;
+      }
+      lfs += `<p class="empty" style="margin-top:8px">${t('fn_lfs_note')} ${L.anno}.</p>`;
+    } else lfs = `<p class="fnd">${t('fn_nd')}</p>`;
+    document.getElementById('funnel-lfs').innerHTML = lfs;
+    // acquisizioni 2015-2024
+    const AC = D.acquisizioni_cittadinanza;
+    document.getElementById('funnel-h-acq').textContent = t('fn_h_acq');
+    if (AC) {
+      const ys = Object.keys(AC.anni), mx = Math.max(1, ...ys.map(y => AC.anni[y] || 0));
+      document.getElementById('funnel-acq').innerHTML = `<div class="facq">${ys.map(y => `<i data-y="${y.slice(2)}" style="height:${(AC.anni[y] || 0) / mx * 100}%" title="${y}: ${num(AC.anni[y])}"></i>`).join('')}</div><div class="facq-tot">${t('fn_acq_tot')}: <b>${num(AC.totale_2015_2024)}</b> · ${ys[ys.length - 1]}: ${num(AC.anni[ys[ys.length - 1]])}${P && P.nazionali && AC.totale_2015_2024 != null ? ` · ${pc(AC.totale_2015_2024 / P.nazionali * 100)} ${t('fn_of_nat')}` : ''}</div>`;
+    } else document.getElementById('funnel-acq').innerHTML = `<p class="fnd">${t('fn_nd')}</p>`;
+    // permessi: prime cinque
+    document.getElementById('funnel-h-perm').textContent = `${t('fn_h_perm')}${PV ? ' · ' + PV.anno : ''}`;
+    if (PV && PV.prime_cinque && PV.prime_cinque.length) {
+      const mx = Math.max(1, ...PV.prime_cinque.map(x => x.permessi || 0));
+      document.getElementById('funnel-perm').innerHTML = `<ul class="fperm">${PV.prime_cinque.map(x => `<li><span><span>${esc(x.nome)}</span><span class="fb"><i style="width:${(x.permessi || 0) / mx * 100}%"></i></span></span><span class="fv">${num(x.permessi)}<small>${pc(x.quota_pct)}</small></span></li>`).join('')}</ul><p class="empty" style="margin-top:8px">${t('fn_tot')}: ${num(PV.totale)}</p>`;
+    } else document.getElementById('funnel-perm').innerHTML = `<p class="fnd">${t('fn_nd')}</p>`;
+    // ordini e rimpatri per nazionalità
+    const NZ = D.rimpatri_per_nazionalita;
+    document.getElementById('funnel-h-naz').textContent = `${t('fn_h_naz')}${NZ ? ' · ' + NZ.anno : ''}`;
+    if (NZ && NZ.prime_dieci && NZ.prime_dieci.length) {
+      document.getElementById('funnel-naz').innerHTML = `<table class="ptab" style="min-width:420px"><thead><tr><th>${t('fn_naz')}</th><th>${t('pl_ordinati')}</th><th>${t('fn_quota')}</th><th>${t('pl_rimpatriati')}</th><th>${t('pl_tasso')}</th></tr></thead><tbody>${NZ.prime_dieci.map(x => `<tr><td>${esc(x.nome)}</td><td class="num">${num(x.ordini)}</td><td class="num">${pc(x.quota_ordini_pct)}</td><td class="num">${num(x.rimpatriati)}</td><td class="num"><span class="tbar"><i style="width:${Math.min(100, x.tasso_pct || 0)}%"></i></span>${pc(x.tasso_pct)}</td></tr>`).join('')}<tr><td><b>${t('fn_tot')}</b></td><td class="num"><b>${num(NZ.ordini_totale)}</b></td><td class="num">100%</td><td class="num"><b>${num(NZ.rimpatriati_totale)}</b></td><td class="num">${pc(R && R.tasso_rimpatrio_paesi_terzi_pct)}</td></tr></tbody></table>`;
+    } else document.getElementById('funnel-naz').innerHTML = `<p class="fnd">${t('fn_nd')}</p>`;
+    document.getElementById('funnel-fonti').textContent = t('fn_note').replace('{d}', (() => { const [y, m, d] = String(F.estratto || '').split('-'); return m ? `${+d} ${MESI[+m - 1]} ${y}` : F.estratto; })());
+  }
+  document.getElementById('funnel').addEventListener('click', e => { const b = e.target.closest('[data-fsel]'); if (!b) return; state.funnel = b.dataset.fsel; try { localStorage.setItem('eu30-funnel', state.funnel); } catch (err) {} renderFunnel(); });
+
   function render() {
     document.getElementById('seg-help').textContent = SCEN[state.scen].help;
     document.getElementById('hud-scen').textContent = SCEN[state.scen].label;
@@ -1271,7 +1421,7 @@ window.__start = function () {
     document.getElementById('cur').textContent = STEPS[state.step].label;
     ticks.querySelectorAll('span').forEach((s, i) => s.classList.toggle('on', i === state.step));
     const stati = PAESI.map(p => ({ p, st: stato(p) }));
-    retarget(); renderChips(); renderKpis(stati); renderChanges(stati); renderConsiglio(); renderPiano(); renderCal(); renderDrawer();
+    retarget(); renderChips(); renderKpis(stati); renderChanges(stati); renderConsiglio(); renderPiano(); renderFunnel(); renderCal(); renderDrawer();
   }
   renderMatrix();
   render();

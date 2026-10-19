@@ -1938,6 +1938,2454 @@ window.MIGRAZIONE = {
    },
    "nota": "Popolazione nelle famiglie private, 15-74 anni, in migliaia. nazionali.nati_paese_genitore_estero = cittadini del paese nati nel paese con almeno un genitore nato all'estero (seconda generazione naturalizzata o nata cittadina); nazionali.nati_estero = cittadini nati all'estero (immigrati naturalizzati). Celle piccole possono essere null per segreto statistico."
   },
+  "rimpatri_per_nazionalita": {
+   "nome": "Ordini di lasciare il territorio e rimpatri verso paesi terzi per paese emittente e cittadinanza: prime dieci nazionalità",
+   "nome_en": "Orders to leave and returns to third countries by issuing country and citizenship: top ten nationalities",
+   "nome_de": "Ausreiseanordnungen und Rückführungen in Drittstaaten nach ausstellendem Land und Staatsangehörigkeit: zehn häufigste",
+   "dataset": "migr_eiord",
+   "aggiornato_eurostat": "2026-09-30",
+   "fonte": "https://ec.europa.eu/eurostat/databrowser/view/migr_eiord/default/table",
+   "valori": {
+    "EU27_2020": {
+     "anno": 2025,
+     "ordini_totale": 486705,
+     "rimpatriati_totale": 139270,
+     "prime_dieci": [
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 45265,
+       "rimpatriati": 3135,
+       "tasso_pct": 6.9,
+       "quota_ordini_pct": 9.3
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 28880,
+       "rimpatriati": 4655,
+       "tasso_pct": 16.1,
+       "quota_ordini_pct": 5.9
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 24780,
+       "rimpatriati": 13820,
+       "tasso_pct": 55.8,
+       "quota_ordini_pct": 5.1
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 20055,
+       "rimpatriati": 8420,
+       "tasso_pct": 42,
+       "quota_ordini_pct": 4.1
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 18260,
+       "rimpatriati": 590,
+       "tasso_pct": 3.2,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 16475,
+       "rimpatriati": 4015,
+       "tasso_pct": 24.4,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "TN",
+       "nome": "Tunisia",
+       "ordini": 16240,
+       "rimpatriati": 2885,
+       "tasso_pct": 17.8,
+       "quota_ordini_pct": 3.3
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 14095,
+       "rimpatriati": 10590,
+       "tasso_pct": 75.1,
+       "quota_ordini_pct": 2.9
+      },
+      {
+       "cittadinanza": "SN",
+       "nome": "Senegal",
+       "ordini": 13280,
+       "rimpatriati": 505,
+       "tasso_pct": 3.8,
+       "quota_ordini_pct": 2.7
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 13185,
+       "rimpatriati": 1925,
+       "tasso_pct": 14.6,
+       "quota_ordini_pct": 2.7
+      }
+     ]
+    },
+    "AT": {
+     "anno": 2025,
+     "ordini_totale": 11165,
+     "rimpatriati_totale": 7305,
+     "prime_dieci": [
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 2260,
+       "rimpatriati": 1630,
+       "tasso_pct": 72.1,
+       "quota_ordini_pct": 20.2
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 1085,
+       "rimpatriati": 765,
+       "tasso_pct": 70.5,
+       "quota_ordini_pct": 9.7
+      },
+      {
+       "cittadinanza": "RS",
+       "nome": "Serbia",
+       "ordini": 765,
+       "rimpatriati": 735,
+       "tasso_pct": 96.1,
+       "quota_ordini_pct": 6.9
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 665,
+       "rimpatriati": 55,
+       "tasso_pct": 8.3,
+       "quota_ordini_pct": 6
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 505,
+       "rimpatriati": 15,
+       "tasso_pct": 3,
+       "quota_ordini_pct": 4.5
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 425,
+       "rimpatriati": 100,
+       "tasso_pct": 23.5,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 400,
+       "rimpatriati": 370,
+       "tasso_pct": 92.5,
+       "quota_ordini_pct": 3.6
+      },
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 350,
+       "rimpatriati": 190,
+       "tasso_pct": 54.3,
+       "quota_ordini_pct": 3.1
+      },
+      {
+       "cittadinanza": "IR",
+       "nome": "Iran",
+       "ordini": 315,
+       "rimpatriati": 75,
+       "tasso_pct": 23.8,
+       "quota_ordini_pct": 2.8
+      },
+      {
+       "cittadinanza": "IQ",
+       "nome": "Iraq",
+       "ordini": 305,
+       "rimpatriati": 120,
+       "tasso_pct": 39.3,
+       "quota_ordini_pct": 2.7
+      }
+     ]
+    },
+    "BE": {
+     "anno": 2025,
+     "ordini_totale": 25340,
+     "rimpatriati_totale": 4955,
+     "prime_dieci": [
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 3945,
+       "rimpatriati": 410,
+       "tasso_pct": 10.4,
+       "quota_ordini_pct": 15.6
+      },
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 1975,
+       "rimpatriati": 145,
+       "tasso_pct": 7.3,
+       "quota_ordini_pct": 7.8
+      },
+      {
+       "cittadinanza": "BR",
+       "nome": "Brazil",
+       "ordini": 1545,
+       "rimpatriati": 870,
+       "tasso_pct": 56.3,
+       "quota_ordini_pct": 6.1
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 1310,
+       "rimpatriati": 35,
+       "tasso_pct": 2.7,
+       "quota_ordini_pct": 5.2
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 1235,
+       "rimpatriati": 575,
+       "tasso_pct": 46.6,
+       "quota_ordini_pct": 4.9
+      },
+      {
+       "cittadinanza": "PS",
+       "nome": "Palestine*",
+       "ordini": 1055,
+       "rimpatriati": 10,
+       "tasso_pct": 0.9,
+       "quota_ordini_pct": 4.2
+      },
+      {
+       "cittadinanza": "CD",
+       "nome": "Democratic Republic of the Congo",
+       "ordini": 960,
+       "rimpatriati": 55,
+       "tasso_pct": 5.7,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 900,
+       "rimpatriati": 215,
+       "tasso_pct": 23.9,
+       "quota_ordini_pct": 3.6
+      },
+      {
+       "cittadinanza": "CM",
+       "nome": "Cameroon",
+       "ordini": 860,
+       "rimpatriati": 40,
+       "tasso_pct": 4.7,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "TN",
+       "nome": "Tunisia",
+       "ordini": 765,
+       "rimpatriati": 70,
+       "tasso_pct": 9.2,
+       "quota_ordini_pct": 3
+      }
+     ]
+    },
+    "BG": {
+     "anno": 2025,
+     "ordini_totale": 3880,
+     "rimpatriati_totale": 1150,
+     "prime_dieci": [
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 960,
+       "rimpatriati": 25,
+       "tasso_pct": 2.6,
+       "quota_ordini_pct": 24.7
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 945,
+       "rimpatriati": 5,
+       "tasso_pct": 0.5,
+       "quota_ordini_pct": 24.4
+      },
+      {
+       "cittadinanza": "IQ",
+       "nome": "Iraq",
+       "ordini": 465,
+       "rimpatriati": 60,
+       "tasso_pct": 12.9,
+       "quota_ordini_pct": 12
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 440,
+       "rimpatriati": 375,
+       "tasso_pct": 85.2,
+       "quota_ordini_pct": 11.3
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 215,
+       "rimpatriati": 220,
+       "tasso_pct": 102.3,
+       "quota_ordini_pct": 5.5
+      },
+      {
+       "cittadinanza": "IR",
+       "nome": "Iran",
+       "ordini": 100,
+       "rimpatriati": 10,
+       "tasso_pct": 10,
+       "quota_ordini_pct": 2.6
+      },
+      {
+       "cittadinanza": "PK",
+       "nome": "Pakistan",
+       "ordini": 80,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 2.1
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 75,
+       "rimpatriati": 10,
+       "tasso_pct": 13.3,
+       "quota_ordini_pct": 1.9
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 65,
+       "rimpatriati": 55,
+       "tasso_pct": 84.6,
+       "quota_ordini_pct": 1.7
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 60,
+       "rimpatriati": 35,
+       "tasso_pct": 58.3,
+       "quota_ordini_pct": 1.5
+      }
+     ]
+    },
+    "HR": {
+     "anno": 2025,
+     "ordini_totale": 11330,
+     "rimpatriati_totale": 6560,
+     "prime_dieci": [
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 2385,
+       "rimpatriati": 1925,
+       "tasso_pct": 80.7,
+       "quota_ordini_pct": 21.1
+      },
+      {
+       "cittadinanza": "NP",
+       "nome": "Nepal",
+       "ordini": 1055,
+       "rimpatriati": 290,
+       "tasso_pct": 27.5,
+       "quota_ordini_pct": 9.3
+      },
+      {
+       "cittadinanza": "BA",
+       "nome": "Bosnia and Herzegovina",
+       "ordini": 885,
+       "rimpatriati": 590,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 7.8
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 680,
+       "rimpatriati": 210,
+       "tasso_pct": 30.9,
+       "quota_ordini_pct": 6
+      },
+      {
+       "cittadinanza": "RS",
+       "nome": "Serbia",
+       "ordini": 650,
+       "rimpatriati": 450,
+       "tasso_pct": 69.2,
+       "quota_ordini_pct": 5.7
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 555,
+       "rimpatriati": 245,
+       "tasso_pct": 44.1,
+       "quota_ordini_pct": 4.9
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 510,
+       "rimpatriati": 445,
+       "tasso_pct": 87.3,
+       "quota_ordini_pct": 4.5
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 445,
+       "rimpatriati": 85,
+       "tasso_pct": 19.1,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 420,
+       "rimpatriati": 350,
+       "tasso_pct": 83.3,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 350,
+       "rimpatriati": 35,
+       "tasso_pct": 10,
+       "quota_ordini_pct": 3.1
+      }
+     ]
+    },
+    "CY": {
+     "anno": 2025,
+     "ordini_totale": 15185,
+     "rimpatriati_totale": 10630,
+     "prime_dieci": [
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 4930,
+       "rimpatriati": 4055,
+       "tasso_pct": 82.3,
+       "quota_ordini_pct": 32.5
+      },
+      {
+       "cittadinanza": "CD",
+       "nome": "Democratic Republic of the Congo",
+       "ordini": 1585,
+       "rimpatriati": 270,
+       "tasso_pct": 17,
+       "quota_ordini_pct": 10.4
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 1165,
+       "rimpatriati": 915,
+       "tasso_pct": 78.5,
+       "quota_ordini_pct": 7.7
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 870,
+       "rimpatriati": 845,
+       "tasso_pct": 97.1,
+       "quota_ordini_pct": 5.7
+      },
+      {
+       "cittadinanza": "NP",
+       "nome": "Nepal",
+       "ordini": 625,
+       "rimpatriati": 480,
+       "tasso_pct": 76.8,
+       "quota_ordini_pct": 4.1
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 610,
+       "rimpatriati": 835,
+       "tasso_pct": 136.9,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "CM",
+       "nome": "Cameroon",
+       "ordini": 595,
+       "rimpatriati": 365,
+       "tasso_pct": 61.3,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "PK",
+       "nome": "Pakistan",
+       "ordini": 505,
+       "rimpatriati": 650,
+       "tasso_pct": 128.7,
+       "quota_ordini_pct": 3.3
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 485,
+       "rimpatriati": 365,
+       "tasso_pct": 75.3,
+       "quota_ordini_pct": 3.2
+      },
+      {
+       "cittadinanza": "LK",
+       "nome": "Sri Lanka",
+       "ordini": 375,
+       "rimpatriati": 295,
+       "tasso_pct": 78.7,
+       "quota_ordini_pct": 2.5
+      }
+     ]
+    },
+    "CZ": {
+     "anno": 2025,
+     "ordini_totale": 5250,
+     "rimpatriati_totale": 3180,
+     "prime_dieci": [
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 1935,
+       "rimpatriati": 45,
+       "tasso_pct": 2.3,
+       "quota_ordini_pct": 36.9
+      },
+      {
+       "cittadinanza": "MD",
+       "nome": "Moldova",
+       "ordini": 1300,
+       "rimpatriati": 1285,
+       "tasso_pct": 98.8,
+       "quota_ordini_pct": 24.8
+      },
+      {
+       "cittadinanza": "VN",
+       "nome": "Viet Nam",
+       "ordini": 620,
+       "rimpatriati": 610,
+       "tasso_pct": 98.4,
+       "quota_ordini_pct": 11.8
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 340,
+       "rimpatriati": 330,
+       "tasso_pct": 97.1,
+       "quota_ordini_pct": 6.5
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 180,
+       "rimpatriati": 145,
+       "tasso_pct": 80.6,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "KZ",
+       "nome": "Kazakhstan",
+       "ordini": 120,
+       "rimpatriati": 145,
+       "tasso_pct": 120.8,
+       "quota_ordini_pct": 2.3
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 95,
+       "rimpatriati": 70,
+       "tasso_pct": 73.7,
+       "quota_ordini_pct": 1.8
+      },
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 70,
+       "rimpatriati": 70,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 1.3
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 45,
+       "rimpatriati": 55,
+       "tasso_pct": 122.2,
+       "quota_ordini_pct": 0.9
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 40,
+       "rimpatriati": 40,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 0.8
+      }
+     ]
+    },
+    "DK": {
+     "anno": 2025,
+     "ordini_totale": 2280,
+     "rimpatriati_totale": 975,
+     "prime_dieci": [
+      {
+       "cittadinanza": "TH",
+       "nome": "Thailand",
+       "ordini": 180,
+       "rimpatriati": 95,
+       "tasso_pct": 52.8,
+       "quota_ordini_pct": 7.9
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 160,
+       "rimpatriati": 35,
+       "tasso_pct": 21.9,
+       "quota_ordini_pct": 7
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 130,
+       "rimpatriati": 45,
+       "tasso_pct": 34.6,
+       "quota_ordini_pct": 5.7
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 115,
+       "rimpatriati": 35,
+       "tasso_pct": 30.4,
+       "quota_ordini_pct": 5
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 110,
+       "rimpatriati": 70,
+       "tasso_pct": 63.6,
+       "quota_ordini_pct": 4.8
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 90,
+       "rimpatriati": 15,
+       "tasso_pct": 16.7,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "IR",
+       "nome": "Iran",
+       "ordini": 90,
+       "rimpatriati": 30,
+       "tasso_pct": 33.3,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 80,
+       "rimpatriati": 15,
+       "tasso_pct": 18.8,
+       "quota_ordini_pct": 3.5
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 80,
+       "rimpatriati": 20,
+       "tasso_pct": 25,
+       "quota_ordini_pct": 3.5
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 70,
+       "rimpatriati": 55,
+       "tasso_pct": 78.6,
+       "quota_ordini_pct": 3.1
+      }
+     ]
+    },
+    "EE": {
+     "anno": 2025,
+     "ordini_totale": 660,
+     "rimpatriati_totale": 565,
+     "prime_dieci": [
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 215,
+       "rimpatriati": 200,
+       "tasso_pct": 93,
+       "quota_ordini_pct": 32.6
+      },
+      {
+       "cittadinanza": "MD",
+       "nome": "Moldova",
+       "ordini": 60,
+       "rimpatriati": 65,
+       "tasso_pct": 108.3,
+       "quota_ordini_pct": 9.1
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 45,
+       "rimpatriati": 30,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 6.8
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 40,
+       "rimpatriati": 15,
+       "tasso_pct": 37.5,
+       "quota_ordini_pct": 6.1
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 30,
+       "rimpatriati": 25,
+       "tasso_pct": 83.3,
+       "quota_ordini_pct": 4.5
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 20,
+       "rimpatriati": 20,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 3
+      },
+      {
+       "cittadinanza": "CO",
+       "nome": "Colombia",
+       "ordini": 20,
+       "rimpatriati": 20,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 3
+      },
+      {
+       "cittadinanza": "BY",
+       "nome": "Belarus",
+       "ordini": 15,
+       "rimpatriati": 10,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 2.3
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 15,
+       "rimpatriati": 15,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 2.3
+      },
+      {
+       "cittadinanza": "US",
+       "nome": "United States",
+       "ordini": 15,
+       "rimpatriati": 15,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 2.3
+      }
+     ]
+    },
+    "FI": {
+     "anno": 2025,
+     "ordini_totale": 5070,
+     "rimpatriati_totale": 1820,
+     "prime_dieci": [
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 695,
+       "rimpatriati": 235,
+       "tasso_pct": 33.8,
+       "quota_ordini_pct": 13.7
+      },
+      {
+       "cittadinanza": "IQ",
+       "nome": "Iraq",
+       "ordini": 315,
+       "rimpatriati": 105,
+       "tasso_pct": 33.3,
+       "quota_ordini_pct": 6.2
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 300,
+       "rimpatriati": 120,
+       "tasso_pct": 40,
+       "quota_ordini_pct": 5.9
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 275,
+       "rimpatriati": 80,
+       "tasso_pct": 29.1,
+       "quota_ordini_pct": 5.4
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 240,
+       "rimpatriati": 30,
+       "tasso_pct": 12.5,
+       "quota_ordini_pct": 4.7
+      },
+      {
+       "cittadinanza": "SO",
+       "nome": "Somalia",
+       "ordini": 220,
+       "rimpatriati": 20,
+       "tasso_pct": 9.1,
+       "quota_ordini_pct": 4.3
+      },
+      {
+       "cittadinanza": "VN",
+       "nome": "Viet Nam",
+       "ordini": 200,
+       "rimpatriati": 100,
+       "tasso_pct": 50,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "IR",
+       "nome": "Iran",
+       "ordini": 190,
+       "rimpatriati": 35,
+       "tasso_pct": 18.4,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 175,
+       "rimpatriati": 35,
+       "tasso_pct": 20,
+       "quota_ordini_pct": 3.5
+      },
+      {
+       "cittadinanza": "XK",
+       "nome": "Kosovo*",
+       "ordini": 165,
+       "rimpatriati": 85,
+       "tasso_pct": 51.5,
+       "quota_ordini_pct": 3.3
+      }
+     ]
+    },
+    "FR": {
+     "anno": 2025,
+     "ordini_totale": 137550,
+     "rimpatriati_totale": 14940,
+     "prime_dieci": [
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 26215,
+       "rimpatriati": 1680,
+       "tasso_pct": 6.4,
+       "quota_ordini_pct": 19.1
+      },
+      {
+       "cittadinanza": "TN",
+       "nome": "Tunisia",
+       "ordini": 11295,
+       "rimpatriati": 1300,
+       "tasso_pct": 11.5,
+       "quota_ordini_pct": 8.2
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 10260,
+       "rimpatriati": 1470,
+       "tasso_pct": 14.3,
+       "quota_ordini_pct": 7.5
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 5515,
+       "rimpatriati": 150,
+       "tasso_pct": 2.7,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 5370,
+       "rimpatriati": 955,
+       "tasso_pct": 17.8,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "CI",
+       "nome": "Côte d’Ivoire",
+       "ordini": 4560,
+       "rimpatriati": 285,
+       "tasso_pct": 6.3,
+       "quota_ordini_pct": 3.3
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 4175,
+       "rimpatriati": 1515,
+       "tasso_pct": 36.3,
+       "quota_ordini_pct": 3
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 3485,
+       "rimpatriati": 30,
+       "tasso_pct": 0.9,
+       "quota_ordini_pct": 2.5
+      },
+      {
+       "cittadinanza": "GN",
+       "nome": "Guinea",
+       "ordini": 3440,
+       "rimpatriati": 165,
+       "tasso_pct": 4.8,
+       "quota_ordini_pct": 2.5
+      },
+      {
+       "cittadinanza": "CD",
+       "nome": "Democratic Republic of the Congo",
+       "ordini": 3400,
+       "rimpatriati": 75,
+       "tasso_pct": 2.2,
+       "quota_ordini_pct": 2.5
+      }
+     ]
+    },
+    "DE": {
+     "anno": 2025,
+     "ordini_totale": 55240,
+     "rimpatriati_totale": 29295,
+     "prime_dieci": [
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 7570,
+       "rimpatriati": 6650,
+       "tasso_pct": 87.8,
+       "quota_ordini_pct": 13.7
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 7440,
+       "rimpatriati": 2290,
+       "tasso_pct": 30.8,
+       "quota_ordini_pct": 13.5
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 4920,
+       "rimpatriati": 135,
+       "tasso_pct": 2.7,
+       "quota_ordini_pct": 8.9
+      },
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 3030,
+       "rimpatriati": 1375,
+       "tasso_pct": 45.4,
+       "quota_ordini_pct": 5.5
+      },
+      {
+       "cittadinanza": "IQ",
+       "nome": "Iraq",
+       "ordini": 1870,
+       "rimpatriati": 1590,
+       "tasso_pct": 85,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 1710,
+       "rimpatriati": 710,
+       "tasso_pct": 41.5,
+       "quota_ordini_pct": 3.1
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 1395,
+       "rimpatriati": 2805,
+       "tasso_pct": 201.1,
+       "quota_ordini_pct": 2.5
+      },
+      {
+       "cittadinanza": "SO",
+       "nome": "Somalia",
+       "ordini": 1245,
+       "rimpatriati": 75,
+       "tasso_pct": 6,
+       "quota_ordini_pct": 2.3
+      },
+      {
+       "cittadinanza": "VN",
+       "nome": "Viet Nam",
+       "ordini": 1180,
+       "rimpatriati": 175,
+       "tasso_pct": 14.8,
+       "quota_ordini_pct": 2.1
+      },
+      {
+       "cittadinanza": "IR",
+       "nome": "Iran",
+       "ordini": 1170,
+       "rimpatriati": 235,
+       "tasso_pct": 20.1,
+       "quota_ordini_pct": 2.1
+      }
+     ]
+    },
+    "EL": {
+     "anno": 2025,
+     "ordini_totale": 26635,
+     "rimpatriati_totale": 5050,
+     "prime_dieci": [
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 4505,
+       "rimpatriati": 5,
+       "tasso_pct": 0.1,
+       "quota_ordini_pct": 16.9
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 3600,
+       "rimpatriati": 255,
+       "tasso_pct": 7.1,
+       "quota_ordini_pct": 13.5
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 2575,
+       "rimpatriati": 70,
+       "tasso_pct": 2.7,
+       "quota_ordini_pct": 9.7
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 2210,
+       "rimpatriati": 1805,
+       "tasso_pct": 81.7,
+       "quota_ordini_pct": 8.3
+      },
+      {
+       "cittadinanza": "SD",
+       "nome": "Sudan",
+       "ordini": 2130,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 8
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 1655,
+       "rimpatriati": 1515,
+       "tasso_pct": 91.5,
+       "quota_ordini_pct": 6.2
+      },
+      {
+       "cittadinanza": "SO",
+       "nome": "Somalia",
+       "ordini": 1515,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 5.7
+      },
+      {
+       "cittadinanza": "PK",
+       "nome": "Pakistan",
+       "ordini": 1140,
+       "rimpatriati": 440,
+       "tasso_pct": 38.6,
+       "quota_ordini_pct": 4.3
+      },
+      {
+       "cittadinanza": "ER",
+       "nome": "Eritrea",
+       "ordini": 855,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 3.2
+      },
+      {
+       "cittadinanza": "YE",
+       "nome": "Yemen",
+       "ordini": 855,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 3.2
+      }
+     ]
+    },
+    "HU": {
+     "anno": 2025,
+     "ordini_totale": 9080,
+     "rimpatriati_totale": 4135,
+     "prime_dieci": [
+      {
+       "cittadinanza": "VN",
+       "nome": "Viet Nam",
+       "ordini": 2735,
+       "rimpatriati": 210,
+       "tasso_pct": 7.7,
+       "quota_ordini_pct": 30.1
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 905,
+       "rimpatriati": 885,
+       "tasso_pct": 97.8,
+       "quota_ordini_pct": 10
+      },
+      {
+       "cittadinanza": "RS",
+       "nome": "Serbia",
+       "ordini": 680,
+       "rimpatriati": 655,
+       "tasso_pct": 96.3,
+       "quota_ordini_pct": 7.5
+      },
+      {
+       "cittadinanza": "PH",
+       "nome": "Philippines",
+       "ordini": 510,
+       "rimpatriati": 90,
+       "tasso_pct": 17.6,
+       "quota_ordini_pct": 5.6
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 390,
+       "rimpatriati": 120,
+       "tasso_pct": 30.8,
+       "quota_ordini_pct": 4.3
+      },
+      {
+       "cittadinanza": "KG",
+       "nome": "Kyrgyzstan",
+       "ordini": 325,
+       "rimpatriati": 150,
+       "tasso_pct": 46.2,
+       "quota_ordini_pct": 3.6
+      },
+      {
+       "cittadinanza": "MN",
+       "nome": "Mongolia",
+       "ordini": 325,
+       "rimpatriati": 150,
+       "tasso_pct": 46.2,
+       "quota_ordini_pct": 3.6
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 315,
+       "rimpatriati": 180,
+       "tasso_pct": 57.1,
+       "quota_ordini_pct": 3.5
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 315,
+       "rimpatriati": 135,
+       "tasso_pct": 42.9,
+       "quota_ordini_pct": 3.5
+      },
+      {
+       "cittadinanza": "MK",
+       "nome": "North Macedonia",
+       "ordini": 285,
+       "rimpatriati": 290,
+       "tasso_pct": 101.8,
+       "quota_ordini_pct": 3.1
+      }
+     ]
+    },
+    "IE": {
+     "anno": 2025,
+     "ordini_totale": 6260,
+     "rimpatriati_totale": 2030,
+     "prime_dieci": [
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 1220,
+       "rimpatriati": 525,
+       "tasso_pct": 43,
+       "quota_ordini_pct": 19.5
+      },
+      {
+       "cittadinanza": "BR",
+       "nome": "Brazil",
+       "ordini": 810,
+       "rimpatriati": 410,
+       "tasso_pct": 50.6,
+       "quota_ordini_pct": 12.9
+      },
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 580,
+       "rimpatriati": 50,
+       "tasso_pct": 8.6,
+       "quota_ordini_pct": 9.3
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 440,
+       "rimpatriati": 100,
+       "tasso_pct": 22.7,
+       "quota_ordini_pct": 7
+      },
+      {
+       "cittadinanza": "JO",
+       "nome": "Jordan",
+       "ordini": 370,
+       "rimpatriati": 310,
+       "tasso_pct": 83.8,
+       "quota_ordini_pct": 5.9
+      },
+      {
+       "cittadinanza": "PK",
+       "nome": "Pakistan",
+       "ordini": 350,
+       "rimpatriati": 60,
+       "tasso_pct": 17.1,
+       "quota_ordini_pct": 5.6
+      },
+      {
+       "cittadinanza": "ZA",
+       "nome": "South Africa",
+       "ordini": 245,
+       "rimpatriati": 65,
+       "tasso_pct": 26.5,
+       "quota_ordini_pct": 3.9
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 215,
+       "rimpatriati": 35,
+       "tasso_pct": 16.3,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 190,
+       "rimpatriati": 30,
+       "tasso_pct": 15.8,
+       "quota_ordini_pct": 3
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 170,
+       "rimpatriati": 15,
+       "tasso_pct": 8.8,
+       "quota_ordini_pct": 2.7
+      }
+     ]
+    },
+    "IT": {
+     "anno": 2025,
+     "ordini_totale": 21295,
+     "rimpatriati_totale": 4780,
+     "prime_dieci": [
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 3570,
+       "rimpatriati": 335,
+       "tasso_pct": 9.4,
+       "quota_ordini_pct": 16.8
+      },
+      {
+       "cittadinanza": "TN",
+       "nome": "Tunisia",
+       "ordini": 2425,
+       "rimpatriati": 705,
+       "tasso_pct": 29.1,
+       "quota_ordini_pct": 11.4
+      },
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 2055,
+       "rimpatriati": 85,
+       "tasso_pct": 4.1,
+       "quota_ordini_pct": 9.7
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 1495,
+       "rimpatriati": 860,
+       "tasso_pct": 57.5,
+       "quota_ordini_pct": 7
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 1155,
+       "rimpatriati": 575,
+       "tasso_pct": 49.8,
+       "quota_ordini_pct": 5.4
+      },
+      {
+       "cittadinanza": "PE",
+       "nome": "Peru",
+       "ordini": 1100,
+       "rimpatriati": 240,
+       "tasso_pct": 21.8,
+       "quota_ordini_pct": 5.2
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 890,
+       "rimpatriati": 275,
+       "tasso_pct": 30.9,
+       "quota_ordini_pct": 4.2
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 845,
+       "rimpatriati": 130,
+       "tasso_pct": 15.4,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 595,
+       "rimpatriati": 250,
+       "tasso_pct": 42,
+       "quota_ordini_pct": 2.8
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 555,
+       "rimpatriati": 140,
+       "tasso_pct": 25.2,
+       "quota_ordini_pct": 2.6
+      }
+     ]
+    },
+    "LV": {
+     "anno": 2025,
+     "ordini_totale": 2640,
+     "rimpatriati_totale": 2280,
+     "prime_dieci": [
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 715,
+       "rimpatriati": 680,
+       "tasso_pct": 95.1,
+       "quota_ordini_pct": 27.1
+      },
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 695,
+       "rimpatriati": 670,
+       "tasso_pct": 96.4,
+       "quota_ordini_pct": 26.3
+      },
+      {
+       "cittadinanza": "TJ",
+       "nome": "Tajikistan",
+       "ordini": 265,
+       "rimpatriati": 210,
+       "tasso_pct": 79.2,
+       "quota_ordini_pct": 10
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 175,
+       "rimpatriati": 95,
+       "tasso_pct": 54.3,
+       "quota_ordini_pct": 6.6
+      },
+      {
+       "cittadinanza": "MD",
+       "nome": "Moldova",
+       "ordini": 115,
+       "rimpatriati": 110,
+       "tasso_pct": 95.7,
+       "quota_ordini_pct": 4.4
+      },
+      {
+       "cittadinanza": "BY",
+       "nome": "Belarus",
+       "ordini": 110,
+       "rimpatriati": 105,
+       "tasso_pct": 95.5,
+       "quota_ordini_pct": 4.2
+      },
+      {
+       "cittadinanza": "KZ",
+       "nome": "Kazakhstan",
+       "ordini": 75,
+       "rimpatriati": 65,
+       "tasso_pct": 86.7,
+       "quota_ordini_pct": 2.8
+      },
+      {
+       "cittadinanza": "KG",
+       "nome": "Kyrgyzstan",
+       "ordini": 75,
+       "rimpatriati": 80,
+       "tasso_pct": 106.7,
+       "quota_ordini_pct": 2.8
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 55,
+       "rimpatriati": 45,
+       "tasso_pct": 81.8,
+       "quota_ordini_pct": 2.1
+      },
+      {
+       "cittadinanza": "AZ",
+       "nome": "Azerbaijan",
+       "ordini": 40,
+       "rimpatriati": 35,
+       "tasso_pct": 87.5,
+       "quota_ordini_pct": 1.5
+      }
+     ]
+    },
+    "LT": {
+     "anno": 2025,
+     "ordini_totale": 4900,
+     "rimpatriati_totale": 4545,
+     "prime_dieci": [
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 1795,
+       "rimpatriati": 1795,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 36.6
+      },
+      {
+       "cittadinanza": "BY",
+       "nome": "Belarus",
+       "ordini": 835,
+       "rimpatriati": 815,
+       "tasso_pct": 97.6,
+       "quota_ordini_pct": 17
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 470,
+       "rimpatriati": 420,
+       "tasso_pct": 89.4,
+       "quota_ordini_pct": 9.6
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 225,
+       "rimpatriati": 145,
+       "tasso_pct": 64.4,
+       "quota_ordini_pct": 4.6
+      },
+      {
+       "cittadinanza": "KG",
+       "nome": "Kyrgyzstan",
+       "ordini": 200,
+       "rimpatriati": 205,
+       "tasso_pct": 102.5,
+       "quota_ordini_pct": 4.1
+      },
+      {
+       "cittadinanza": "TJ",
+       "nome": "Tajikistan",
+       "ordini": 185,
+       "rimpatriati": 170,
+       "tasso_pct": 91.9,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 185,
+       "rimpatriati": 145,
+       "tasso_pct": 78.4,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "AZ",
+       "nome": "Azerbaijan",
+       "ordini": 170,
+       "rimpatriati": 150,
+       "tasso_pct": 88.2,
+       "quota_ordini_pct": 3.5
+      },
+      {
+       "cittadinanza": "KZ",
+       "nome": "Kazakhstan",
+       "ordini": 130,
+       "rimpatriati": 135,
+       "tasso_pct": 103.8,
+       "quota_ordini_pct": 2.7
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 120,
+       "rimpatriati": 95,
+       "tasso_pct": 79.2,
+       "quota_ordini_pct": 2.4
+      }
+     ]
+    },
+    "LU": {
+     "anno": 2025,
+     "ordini_totale": 1340,
+     "rimpatriati_totale": 370,
+     "prime_dieci": [
+      {
+       "cittadinanza": "VE",
+       "nome": "Venezuela",
+       "ordini": 135,
+       "rimpatriati": 15,
+       "tasso_pct": 11.1,
+       "quota_ordini_pct": 10.1
+      },
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 80,
+       "rimpatriati": 15,
+       "tasso_pct": 18.8,
+       "quota_ordini_pct": 6
+      },
+      {
+       "cittadinanza": "CM",
+       "nome": "Cameroon",
+       "ordini": 65,
+       "rimpatriati": 5,
+       "tasso_pct": 7.7,
+       "quota_ordini_pct": 4.9
+      },
+      {
+       "cittadinanza": "CO",
+       "nome": "Colombia",
+       "ordini": 65,
+       "rimpatriati": 25,
+       "tasso_pct": 38.5,
+       "quota_ordini_pct": 4.9
+      },
+      {
+       "cittadinanza": "ER",
+       "nome": "Eritrea",
+       "ordini": 55,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 4.1
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 50,
+       "rimpatriati": 10,
+       "tasso_pct": 20,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "BR",
+       "nome": "Brazil",
+       "ordini": 50,
+       "rimpatriati": 25,
+       "tasso_pct": 50,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "TN",
+       "nome": "Tunisia",
+       "ordini": 45,
+       "rimpatriati": 10,
+       "tasso_pct": 22.2,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 45,
+       "rimpatriati": 30,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 45,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 3.4
+      }
+     ]
+    },
+    "MT": {
+     "anno": 2025,
+     "ordini_totale": 1090,
+     "rimpatriati_totale": 1065,
+     "prime_dieci": [
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 160,
+       "rimpatriati": 145,
+       "tasso_pct": 90.6,
+       "quota_ordini_pct": 14.7
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 145,
+       "rimpatriati": 140,
+       "tasso_pct": 96.6,
+       "quota_ordini_pct": 13.3
+      },
+      {
+       "cittadinanza": "CO",
+       "nome": "Colombia",
+       "ordini": 90,
+       "rimpatriati": 90,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 8.3
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 75,
+       "rimpatriati": 75,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 6.9
+      },
+      {
+       "cittadinanza": "RS",
+       "nome": "Serbia",
+       "ordini": 60,
+       "rimpatriati": 55,
+       "tasso_pct": 91.7,
+       "quota_ordini_pct": 5.5
+      },
+      {
+       "cittadinanza": "UK",
+       "nome": "United Kingdom",
+       "ordini": 55,
+       "rimpatriati": 60,
+       "tasso_pct": 109.1,
+       "quota_ordini_pct": 5
+      },
+      {
+       "cittadinanza": "PH",
+       "nome": "Philippines",
+       "ordini": 50,
+       "rimpatriati": 50,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 4.6
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 45,
+       "rimpatriati": 45,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 4.1
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 40,
+       "rimpatriati": 40,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "LY",
+       "nome": "Libya",
+       "ordini": 35,
+       "rimpatriati": 35,
+       "tasso_pct": 100,
+       "quota_ordini_pct": 3.2
+      }
+     ]
+    },
+    "NL": {
+     "anno": 2025,
+     "ordini_totale": 31230,
+     "rimpatriati_totale": 4825,
+     "prime_dieci": [
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 3095,
+       "rimpatriati": 520,
+       "tasso_pct": 16.8,
+       "quota_ordini_pct": 9.9
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 2630,
+       "rimpatriati": 100,
+       "tasso_pct": 3.8,
+       "quota_ordini_pct": 8.4
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 1405,
+       "rimpatriati": 195,
+       "tasso_pct": 13.9,
+       "quota_ordini_pct": 4.5
+      },
+      {
+       "cittadinanza": "US",
+       "nome": "United States",
+       "ordini": 1355,
+       "rimpatriati": 170,
+       "tasso_pct": 12.5,
+       "quota_ordini_pct": 4.3
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 1195,
+       "rimpatriati": 20,
+       "tasso_pct": 1.7,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "CO",
+       "nome": "Colombia",
+       "ordini": 1000,
+       "rimpatriati": 280,
+       "tasso_pct": 28,
+       "quota_ordini_pct": 3.2
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 975,
+       "rimpatriati": 200,
+       "tasso_pct": 20.5,
+       "quota_ordini_pct": 3.1
+      },
+      {
+       "cittadinanza": "SR",
+       "nome": "Suriname",
+       "ordini": 970,
+       "rimpatriati": 150,
+       "tasso_pct": 15.5,
+       "quota_ordini_pct": 3.1
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 845,
+       "rimpatriati": 95,
+       "tasso_pct": 11.2,
+       "quota_ordini_pct": 2.7
+      },
+      {
+       "cittadinanza": "UK",
+       "nome": "United Kingdom",
+       "ordini": 825,
+       "rimpatriati": 120,
+       "tasso_pct": 14.5,
+       "quota_ordini_pct": 2.6
+      }
+     ]
+    },
+    "PL": {
+     "anno": 2025,
+     "ordini_totale": 14760,
+     "rimpatriati_totale": 9690,
+     "prime_dieci": [
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 2245,
+       "rimpatriati": 1965,
+       "tasso_pct": 87.5,
+       "quota_ordini_pct": 15.2
+      },
+      {
+       "cittadinanza": "CO",
+       "nome": "Colombia",
+       "ordini": 1665,
+       "rimpatriati": 630,
+       "tasso_pct": 37.8,
+       "quota_ordini_pct": 11.3
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 1620,
+       "rimpatriati": 1250,
+       "tasso_pct": 77.2,
+       "quota_ordini_pct": 11
+      },
+      {
+       "cittadinanza": "BY",
+       "nome": "Belarus",
+       "ordini": 1435,
+       "rimpatriati": 1305,
+       "tasso_pct": 90.9,
+       "quota_ordini_pct": 9.7
+      },
+      {
+       "cittadinanza": "MD",
+       "nome": "Moldova",
+       "ordini": 1325,
+       "rimpatriati": 1150,
+       "tasso_pct": 86.8,
+       "quota_ordini_pct": 9
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 695,
+       "rimpatriati": 465,
+       "tasso_pct": 66.9,
+       "quota_ordini_pct": 4.7
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 680,
+       "rimpatriati": 430,
+       "tasso_pct": 63.2,
+       "quota_ordini_pct": 4.6
+      },
+      {
+       "cittadinanza": "RU",
+       "nome": "Russia",
+       "ordini": 545,
+       "rimpatriati": 405,
+       "tasso_pct": 74.3,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 370,
+       "rimpatriati": 10,
+       "tasso_pct": 2.7,
+       "quota_ordini_pct": 2.5
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 260,
+       "rimpatriati": 210,
+       "tasso_pct": 80.8,
+       "quota_ordini_pct": 1.8
+      }
+     ]
+    },
+    "PT": {
+     "anno": 2025,
+     "ordini_totale": 18245,
+     "rimpatriati_totale": 825,
+     "prime_dieci": [
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 4015,
+       "rimpatriati": 15,
+       "tasso_pct": 0.4,
+       "quota_ordini_pct": 22
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 2945,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 16.1
+      },
+      {
+       "cittadinanza": "BR",
+       "nome": "Brazil",
+       "ordini": 2515,
+       "rimpatriati": 605,
+       "tasso_pct": 24.1,
+       "quota_ordini_pct": 13.8
+      },
+      {
+       "cittadinanza": "PK",
+       "nome": "Pakistan",
+       "ordini": 1900,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 10.4
+      },
+      {
+       "cittadinanza": "NG",
+       "nome": "Nigeria",
+       "ordini": 1095,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 6
+      },
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 1050,
+       "rimpatriati": 5,
+       "tasso_pct": 0.5,
+       "quota_ordini_pct": 5.8
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 735,
+       "rimpatriati": 5,
+       "tasso_pct": 0.7,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "NP",
+       "nome": "Nepal",
+       "ordini": 590,
+       "rimpatriati": 5,
+       "tasso_pct": 0.8,
+       "quota_ordini_pct": 3.2
+      },
+      {
+       "cittadinanza": "GH",
+       "nome": "Ghana",
+       "ordini": 295,
+       "rimpatriati": 5,
+       "tasso_pct": 1.7,
+       "quota_ordini_pct": 1.6
+      },
+      {
+       "cittadinanza": "AO",
+       "nome": "Angola",
+       "ordini": 290,
+       "rimpatriati": 20,
+       "tasso_pct": 6.9,
+       "quota_ordini_pct": 1.6
+      }
+     ]
+    },
+    "RO": {
+     "anno": 2025,
+     "ordini_totale": 2860,
+     "rimpatriati_totale": 775,
+     "prime_dieci": [
+      {
+       "cittadinanza": "NP",
+       "nome": "Nepal",
+       "ordini": 460,
+       "rimpatriati": 150,
+       "tasso_pct": 32.6,
+       "quota_ordini_pct": 16.1
+      },
+      {
+       "cittadinanza": "LK",
+       "nome": "Sri Lanka",
+       "ordini": 395,
+       "rimpatriati": 135,
+       "tasso_pct": 34.2,
+       "quota_ordini_pct": 13.8
+      },
+      {
+       "cittadinanza": "MD",
+       "nome": "Moldova",
+       "ordini": 295,
+       "rimpatriati": 40,
+       "tasso_pct": 13.6,
+       "quota_ordini_pct": 10.3
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 170,
+       "rimpatriati": 80,
+       "tasso_pct": 47.1,
+       "quota_ordini_pct": 5.9
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 160,
+       "rimpatriati": 20,
+       "tasso_pct": 12.5,
+       "quota_ordini_pct": 5.6
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 145,
+       "rimpatriati": 30,
+       "tasso_pct": 20.7,
+       "quota_ordini_pct": 5.1
+      },
+      {
+       "cittadinanza": "EG",
+       "nome": "Egypt",
+       "ordini": 115,
+       "rimpatriati": 25,
+       "tasso_pct": 21.7,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "VN",
+       "nome": "Viet Nam",
+       "ordini": 115,
+       "rimpatriati": 30,
+       "tasso_pct": 26.1,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 75,
+       "rimpatriati": 30,
+       "tasso_pct": 40,
+       "quota_ordini_pct": 2.6
+      },
+      {
+       "cittadinanza": "ET",
+       "nome": "Ethiopia",
+       "ordini": 65,
+       "rimpatriati": 35,
+       "tasso_pct": 53.8,
+       "quota_ordini_pct": 2.3
+      }
+     ]
+    },
+    "SK": {
+     "anno": 2025,
+     "ordini_totale": 500,
+     "rimpatriati_totale": 395,
+     "prime_dieci": [
+      {
+       "cittadinanza": "RS",
+       "nome": "Serbia",
+       "ordini": 45,
+       "rimpatriati": 50,
+       "tasso_pct": 111.1,
+       "quota_ordini_pct": 9
+      },
+      {
+       "cittadinanza": "UA",
+       "nome": "Ukraine",
+       "ordini": 45,
+       "rimpatriati": 35,
+       "tasso_pct": 77.8,
+       "quota_ordini_pct": 9
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 45,
+       "rimpatriati": 25,
+       "tasso_pct": 55.6,
+       "quota_ordini_pct": 9
+      },
+      {
+       "cittadinanza": "VN",
+       "nome": "Viet Nam",
+       "ordini": 45,
+       "rimpatriati": 30,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 9
+      },
+      {
+       "cittadinanza": "GE",
+       "nome": "Georgia",
+       "ordini": 40,
+       "rimpatriati": 30,
+       "tasso_pct": 75,
+       "quota_ordini_pct": 8
+      },
+      {
+       "cittadinanza": "MD",
+       "nome": "Moldova",
+       "ordini": 35,
+       "rimpatriati": 30,
+       "tasso_pct": 85.7,
+       "quota_ordini_pct": 7
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 30,
+       "rimpatriati": 15,
+       "tasso_pct": 50,
+       "quota_ordini_pct": 6
+      },
+      {
+       "cittadinanza": "PH",
+       "nome": "Philippines",
+       "ordini": 20,
+       "rimpatriati": 15,
+       "tasso_pct": 75,
+       "quota_ordini_pct": 4
+      },
+      {
+       "cittadinanza": "MK",
+       "nome": "North Macedonia",
+       "ordini": 15,
+       "rimpatriati": 10,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 3
+      },
+      {
+       "cittadinanza": "BR",
+       "nome": "Brazil",
+       "ordini": 15,
+       "rimpatriati": 10,
+       "tasso_pct": 66.7,
+       "quota_ordini_pct": 3
+      }
+     ]
+    },
+    "SI": {
+     "anno": 2025,
+     "ordini_totale": 880,
+     "rimpatriati_totale": 175,
+     "prime_dieci": [
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 140,
+       "rimpatriati": 60,
+       "tasso_pct": 42.9,
+       "quota_ordini_pct": 15.9
+      },
+      {
+       "cittadinanza": "RS",
+       "nome": "Serbia",
+       "ordini": 80,
+       "rimpatriati": 10,
+       "tasso_pct": 12.5,
+       "quota_ordini_pct": 9.1
+      },
+      {
+       "cittadinanza": "XK",
+       "nome": "Kosovo*",
+       "ordini": 70,
+       "rimpatriati": 10,
+       "tasso_pct": 14.3,
+       "quota_ordini_pct": 8
+      },
+      {
+       "cittadinanza": "AL",
+       "nome": "Albania",
+       "ordini": 65,
+       "rimpatriati": 5,
+       "tasso_pct": 7.7,
+       "quota_ordini_pct": 7.4
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 65,
+       "rimpatriati": 5,
+       "tasso_pct": 7.7,
+       "quota_ordini_pct": 7.4
+      },
+      {
+       "cittadinanza": "BA",
+       "nome": "Bosnia and Herzegovina",
+       "ordini": 50,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 5.7
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 50,
+       "rimpatriati": 5,
+       "tasso_pct": 10,
+       "quota_ordini_pct": 5.7
+      },
+      {
+       "cittadinanza": "CN",
+       "nome": "China",
+       "ordini": 45,
+       "rimpatriati": 5,
+       "tasso_pct": 11.1,
+       "quota_ordini_pct": 5.1
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 45,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 5.1
+      },
+      {
+       "cittadinanza": "MK",
+       "nome": "North Macedonia",
+       "ordini": 40,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 4.5
+      }
+     ]
+    },
+    "ES": {
+     "anno": 2025,
+     "ordini_totale": 53700,
+     "rimpatriati_totale": 5705,
+     "prime_dieci": [
+      {
+       "cittadinanza": "DZ",
+       "nome": "Algeria",
+       "ordini": 10270,
+       "rimpatriati": 30,
+       "tasso_pct": 0.3,
+       "quota_ordini_pct": 19.1
+      },
+      {
+       "cittadinanza": "SN",
+       "nome": "Senegal",
+       "ordini": 8935,
+       "rimpatriati": 135,
+       "tasso_pct": 1.5,
+       "quota_ordini_pct": 16.6
+      },
+      {
+       "cittadinanza": "ML",
+       "nome": "Mali",
+       "ordini": 8550,
+       "rimpatriati": 5,
+       "tasso_pct": 0.1,
+       "quota_ordini_pct": 15.9
+      },
+      {
+       "cittadinanza": "MA",
+       "nome": "Morocco",
+       "ordini": 5985,
+       "rimpatriati": 905,
+       "tasso_pct": 15.1,
+       "quota_ordini_pct": 11.1
+      },
+      {
+       "cittadinanza": "GN",
+       "nome": "Guinea",
+       "ordini": 3760,
+       "rimpatriati": 10,
+       "tasso_pct": 0.3,
+       "quota_ordini_pct": 7
+      },
+      {
+       "cittadinanza": "CO",
+       "nome": "Colombia",
+       "ordini": 3430,
+       "rimpatriati": 1885,
+       "tasso_pct": 55,
+       "quota_ordini_pct": 6.4
+      },
+      {
+       "cittadinanza": "GM",
+       "nome": "Gambia, The",
+       "ordini": 2585,
+       "rimpatriati": 15,
+       "tasso_pct": 0.6,
+       "quota_ordini_pct": 4.8
+      },
+      {
+       "cittadinanza": "SO",
+       "nome": "Somalia",
+       "ordini": 1710,
+       "rimpatriati": 0,
+       "tasso_pct": 0,
+       "quota_ordini_pct": 3.2
+      },
+      {
+       "cittadinanza": "MR",
+       "nome": "Mauritania",
+       "ordini": 1005,
+       "rimpatriati": 5,
+       "tasso_pct": 0.5,
+       "quota_ordini_pct": 1.9
+      },
+      {
+       "cittadinanza": "PE",
+       "nome": "Peru",
+       "ordini": 755,
+       "rimpatriati": 615,
+       "tasso_pct": 81.5,
+       "quota_ordini_pct": 1.4
+      }
+     ]
+    },
+    "SE": {
+     "anno": 2025,
+     "ordini_totale": 18340,
+     "rimpatriati_totale": 11250,
+     "prime_dieci": [
+      {
+       "cittadinanza": "PK",
+       "nome": "Pakistan",
+       "ordini": 1240,
+       "rimpatriati": 425,
+       "tasso_pct": 34.3,
+       "quota_ordini_pct": 6.8
+      },
+      {
+       "cittadinanza": "IN",
+       "nome": "India",
+       "ordini": 815,
+       "rimpatriati": 505,
+       "tasso_pct": 62,
+       "quota_ordini_pct": 4.4
+      },
+      {
+       "cittadinanza": "IQ",
+       "nome": "Iraq",
+       "ordini": 800,
+       "rimpatriati": 530,
+       "tasso_pct": 66.3,
+       "quota_ordini_pct": 4.4
+      },
+      {
+       "cittadinanza": "IR",
+       "nome": "Iran",
+       "ordini": 770,
+       "rimpatriati": 350,
+       "tasso_pct": 45.5,
+       "quota_ordini_pct": 4.2
+      },
+      {
+       "cittadinanza": "UZ",
+       "nome": "Uzbekistan",
+       "ordini": 695,
+       "rimpatriati": 850,
+       "tasso_pct": 122.3,
+       "quota_ordini_pct": 3.8
+      },
+      {
+       "cittadinanza": "AF",
+       "nome": "Afghanistan",
+       "ordini": 670,
+       "rimpatriati": 50,
+       "tasso_pct": 7.5,
+       "quota_ordini_pct": 3.7
+      },
+      {
+       "cittadinanza": "TR",
+       "nome": "Türkiye",
+       "ordini": 625,
+       "rimpatriati": 530,
+       "tasso_pct": 84.8,
+       "quota_ordini_pct": 3.4
+      },
+      {
+       "cittadinanza": "SY",
+       "nome": "Syria",
+       "ordini": 580,
+       "rimpatriati": 135,
+       "tasso_pct": 23.3,
+       "quota_ordini_pct": 3.2
+      },
+      {
+       "cittadinanza": "BD",
+       "nome": "Bangladesh",
+       "ordini": 555,
+       "rimpatriati": 195,
+       "tasso_pct": 35.1,
+       "quota_ordini_pct": 3
+      },
+      {
+       "cittadinanza": "MN",
+       "nome": "Mongolia",
+       "ordini": 505,
+       "rimpatriati": 415,
+       "tasso_pct": 82.2,
+       "quota_ordini_pct": 2.8
+      }
+     ]
+    }
+   },
+   "aggiornato_eurostat_rimpatri": "2026-09-25",
+   "nota": "Ordini (migr_eiord) e rimpatriati verso paesi terzi (migr_eirtn, c_dest THRD) per paese emittente e cittadinanza, arrotondati a 5. Le prime dieci sono per numero di ordini; il tasso è rimpatriati/ordini dello stesso anno (coorti diverse, può superare il 100%). Aggregati e sconosciuti esclusi dalla classifica."
+  },
   "acquisizioni_cittadinanza": {
    "nome": "Acquisizioni di cittadinanza per anno",
    "nome_en": "Acquisitions of citizenship by year",
