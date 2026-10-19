@@ -336,6 +336,22 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2
 .fperm .fb { display: block; height: 7px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; margin-top: 5px; } .fperm .fb i { display: block; height: 100%; background: var(--accent); }
 .fperm .fv { text-align: right; font-variant-numeric: tabular-nums; } .fperm .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; }
 .fnd { color: var(--muted); font-size: 12.5px; }
+.fbase { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.04em; margin: -4px 0 12px; line-height: 1.5; }
+.fun { list-style: none; margin: 0; padding: 0; }
+.fun li { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 118px; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.fun li:last-child { border-bottom: 0; }
+.fun li.base { font-weight: 700; }
+.fun li.base .fb i { background: var(--ink); opacity: 0.85; }
+.fun .fl small { display: block; color: var(--muted); font-size: 11px; font-weight: 400; line-height: 1.35; margin-top: 2px; }
+.fun .fb { height: 14px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; }
+.fun .fb i { display: block; height: 100%; border-radius: 2px; min-width: 2px; }
+.fun .fv { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.fun .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; font-weight: 400; }
+.fun .fv.nd { color: var(--muted); font-weight: 400; font-size: 11.5px; }
+.fun .pct { font-family: var(--mono); font-size: 11px; color: #35c9c2; }
+.c-k0 { background: rgba(255,255,255,0.28); } .c-k1 { background: #8fd9d5; } .c-k2 { background: #35c9c2; } .c-k3 { background: var(--accent); } .c-k4 { background: #7fb0f0; } .c-k5 { background: #ef9f62; } .c-k6 { background: rgba(255,255,255,0.12); }
+.c-r1 { background: #ef9f62; } .c-r2 { background: #ef6f62; } .c-r3 { background: #c94b57; }
+@media (max-width: 900px) { .fun li { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr) 100px; gap: 8px; } }
 @media (max-width: 900px) { .fgrid, .fgrid2 { grid-template-columns: 1fr; } .fsteps li { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) 120px; gap: 8px; } }
 .per { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 .per-col { border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; background: var(--panel); }
@@ -588,14 +604,14 @@ footer.method p { margin: 8px 0 0; }
     <div class="sec-head"><div><div class="eyebrow">Funnel</div><h2 id="funnel-title"></h2><p id="funnel-sub"></p></div></div>
     <div class="fsel" id="funnel-sel"></div>
     <div class="fgrid">
-      <div class="card"><div class="in"><h3 id="funnel-h-steps"></h3><ol class="fsteps" id="funnel-steps"></ol></div></div>
-      <div>
-        <div class="card"><div class="in"><h3 id="funnel-h-lfs"></h3><div id="funnel-lfs"></div></div></div>
-        <div class="card" style="margin-top:16px"><div class="in"><h3 id="funnel-h-acq"></h3><div id="funnel-acq"></div></div></div>
-      </div>
+      <div class="card"><div class="in"><h3 id="funnel-h-a"></h3><p class="fbase" id="funnel-base-a"></p><ol class="fun" id="funnel-a"></ol></div></div>
+      <div class="card"><div class="in"><h3 id="funnel-h-b"></h3><p class="fbase" id="funnel-base-b"></p><ol class="fun" id="funnel-b"></ol></div></div>
     </div>
     <div class="fgrid fgrid2">
-      <div class="card"><div class="in"><h3 id="funnel-h-perm"></h3><div id="funnel-perm"></div></div></div>
+      <div>
+        <div class="card"><div class="in"><h3 id="funnel-h-perm"></h3><div id="funnel-perm"></div></div></div>
+        <div class="card" style="margin-top:16px"><div class="in"><h3 id="funnel-h-acq"></h3><div id="funnel-acq"></div></div></div>
+      </div>
       <div class="card"><div class="in"><h3 id="funnel-h-naz"></h3><div class="ptab-wrap" id="funnel-naz"></div></div></div>
     </div>
     <p class="srcs" id="funnel-fonti" style="margin-top:12px"></p>
@@ -735,6 +751,24 @@ window.__start = function () {
     fn_naz: ['Nazionalità', 'Nationality', 'Staatsangehörigkeit'], fn_quota: ['Quota', 'Share', 'Anteil'], fn_tot: ['Totale', 'Total', 'Gesamt'],
     fn_nd: ['dato non trasmesso dallo Stato', 'not reported by the state', 'vom Staat nicht gemeldet'],
     fn_note: ['Fonte: Eurostat, estrazione del {d}; i nomi dei paesi d\'origine sono nella forma inglese di Eurostat; dati su asilo e rimpatri arrotondati a 5. Tasso = rimpatriati/ordini dello stesso anno. Nessun valore è stimato: dove manca, lo Stato non lo trasmette.', 'Source: Eurostat, extracted on {d}; countries of origin are named as in Eurostat; asylum and return data rounded to 5. Rate = returns/orders in the same year. Nothing is estimated: where a figure is missing, the state does not report it.', 'Quelle: Eurostat, Abruf am {d}; Herkunftsländer in der englischen Eurostat-Schreibweise; Asyl- und Rückführungsdaten auf 5 gerundet. Quote = Rückführungen/Anordnungen desselben Jahres. Nichts ist geschätzt: wo eine Zahl fehlt, meldet der Staat sie nicht.'],
+    fn_h_a: ['Origine della popolazione, 15-74 anni', 'Origin of the population, ages 15-74', 'Herkunft der Bevölkerung, 15-74 Jahre'],
+    fn_base_a: ['Base 100% = residenti di 15-74 anni nelle famiglie private, indagine forze di lavoro {y} (stime in migliaia, qui in persone). Ogni riga è una fetta del 100%.', 'Base 100% = residents aged 15-74 in private households, Labour Force Survey {y} (estimates in thousands, shown in persons). Each row is a slice of the 100%.', 'Basis 100 % = Einwohner 15-74 Jahre in Privathaushalten, Arbeitskräfteerhebung {y} (Schätzungen in Tausend, hier in Personen). Jede Zeile ist ein Anteil der 100 %.'],
+    fn_h_b: ['Cittadini extra-UE: dalla residenza al rimpatrio', 'Non-EU citizens: from residence to return', 'Nicht-EU-Bürger: vom Aufenthalt zur Rückführung'],
+    fn_base_b: ['Base 100% = cittadini extra-UE residenti al 1° gennaio {y}, tutte le età (dati amministrativi). Le righe sono gruppi diversi, non somme.', 'Base 100% = non-EU citizens resident on 1 January {y}, all ages (administrative data). Rows are different groups, not a sum.', 'Basis 100 % = am 1. Januar {y} wohnhafte Nicht-EU-Bürger, alle Altersgruppen (Verwaltungsdaten). Die Zeilen sind verschiedene Gruppen, keine Summe.'],
+    fn_a0: ['Popolazione 15-74 anni', 'Population aged 15-74', 'Bevölkerung 15-74 Jahre'],
+    fn_a1: ['Cittadini nati nel paese, entrambi i genitori nati nel paese', 'Nationals born in the country, both parents born in the country', 'Staatsbürger, im Land geboren, beide Eltern im Land geboren'],
+    fn_a2: ['Cittadini nati nel paese, un genitore nato all\'estero', 'Nationals born in the country, one parent born abroad', 'Staatsbürger, im Land geboren, ein Elternteil im Ausland geboren'],
+    fn_a3: ['Cittadini nati nel paese, entrambi i genitori nati all\'estero', 'Nationals born in the country, both parents born abroad', 'Staatsbürger, im Land geboren, beide Eltern im Ausland geboren'],
+    fn_a4: ['Cittadini nati all\'estero (naturalizzati e nati fuori)', 'Nationals born abroad (naturalised and born outside)', 'Im Ausland geborene Staatsbürger (eingebürgert oder im Ausland geboren)'],
+    fn_a5: ['Stranieri di altri paesi UE', 'Foreigners from other EU countries', 'Ausländer aus anderen EU-Ländern'],
+    fn_a6: ['Stranieri extra-UE', 'Non-EU foreigners', 'Nicht-EU-Ausländer'],
+    fn_a7: ['Apolidi, cittadinanza o origine non dichiarata (differenza)', 'Stateless, citizenship or origin not stated (difference)', 'Staatenlose, Staatsangehörigkeit oder Herkunft nicht angegeben (Differenz)'],
+    fn_sub_par: ['Tutta la 2ª generazione con due genitori esteri, cittadini e stranieri: genitori da paesi UE {a}, extra-UE {b}', 'Whole 2nd generation with both parents born abroad, nationals and foreigners: parents from EU countries {a}, non-EU {b}', 'Gesamte 2. Generation mit beiden Eltern im Ausland geboren, Staatsbürger und Ausländer: Eltern aus EU-Ländern {a}, Nicht-EU {b}'],
+    fn_sub_born: ['Tutti i nati all\'estero, cittadini e stranieri: nati in paesi UE {a}, extra-UE {b}', 'All foreign-born, nationals and foreigners: born in EU countries {a}, non-EU {b}', 'Alle im Ausland Geborenen, Staatsbürger und Ausländer: in EU-Ländern geboren {a}, Nicht-EU {b}'],
+    fn_sub_for: ['Nati nel paese {a}, nati all\'estero {b}', 'Born in the country {a}, born abroad {b}', 'Im Land geboren {a}, im Ausland geboren {b}'],
+    fn_b0: ['Cittadini extra-UE residenti', 'Resident non-EU citizens', 'Wohnhafte Nicht-EU-Bürger'],
+    fn_sub_pend: ['Nell\'anno: prime domande {a}, decisioni positive {b}', 'In the year: first-time applications {a}, positive decisions {b}', 'Im Jahr: Erstanträge {a}, positive Entscheidungen {b}'],
+    fn_flow: ['flusso dell\'anno', 'flow of the year', 'Strom des Jahres'],
     copied: ['Copiato', 'Copied', 'Kopiert'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary', 'WhatsApp-Zusammenfassung kopieren'], copy_prompt: ['Copia il testo:', 'Copy the text:', 'Text kopieren:']
   };
   const t = k => S[k] ? (S[k][LI] != null ? S[k][LI] : S[k][1]) : k;
@@ -1345,52 +1379,49 @@ window.__start = function () {
     const F = window.FUNNEL; const sec = document.getElementById('funnel'); if (!F || !F.paesi || !sec) { if (sec) sec.hidden = true; return; }
     sec.hidden = false;
     const loc = LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT';
-    const num = v => v == null ? '—' : v.toLocaleString(loc, { maximumFractionDigits: 1 });
+    const num = v => v == null ? '—' : v.toLocaleString(loc, { maximumFractionDigits: 0 });
     const pc = v => v == null ? '—' : (Math.round(v * 10) / 10).toLocaleString(loc) + '%';
+    const k = v => v == null ? null : Math.round(v * 1000); // migliaia (indagine) → persone
     if (!F.paesi[state.funnel]) state.funnel = 'IT';
     const sig = state.funnel, D = F.paesi[sig], p = bySigla.get(sig), Y = F.anno;
     document.getElementById('funnel-title').textContent = t('fn_title');
     document.getElementById('funnel-sub').textContent = t('fn_sub');
     document.getElementById('funnel-sel').innerHTML = Object.keys(F.paesi).map(s => `<button type="button" class="chip${s === sig ? ' on' : ''}" data-fsel="${s}" title="${esc(bySigla.get(s) ? tx(bySigla.get(s), 'nome') : s)}">${flag(s)} ${s}</button>`).join('');
-    const P = D.popolazione, N = D.nazionali_nati_estero, A = D.asilo, R = D.rimpatri, PV = D.permessi_validi, TP = D.protezione_temporanea;
-    // catena: gruppo stock e gruppo flussi, barre relative al massimo del gruppo (popolazione e cittadini esclusi)
     const nome = p ? tx(p, 'nome') : sig;
-    document.getElementById('funnel-h-steps').textContent = `${flag(sig)} ${nome}: ${t('fn_h_steps')}`;
-    const pop = P && P.totale;
-    const riga = (l, v, sub, w, cls, anno) => `<li><span class="fl">${esc(l)}${anno ? `<small>${anno}</small>` : ''}</span><span class="fb">${w != null ? `<i class="${cls || ''}" style="width:${Math.max(0.5, Math.min(100, w))}%"></i>` : ''}</span><span class="fv${v == null ? ' nd' : ''}">${v == null ? t('fn_nd') : num(v)}${sub ? `<small>${sub}</small>` : ''}</span></li>`;
-    const ofPop = v => v != null && pop ? pc(v / pop * 100) + ' ' + t('fn_of_pop') : '';
-    const stock = [
-      [t('fn_eu'), P && P.altri_ue, P && P.anno], [t('fn_xeu'), P && P.extra_ue, P && P.anno], [t('fn_natfor'), N && N.nazionali_nati_estero, N && N.anno],
-      [t('fn_perm'), PV && PV.totale, PV && PV.anno], [t('fn_tp'), TP && TP.valore, TP && TP.periodo], [t('fn_pend'), A && A.pendenti_dicembre, A && A.anno]
-    ];
-    const smax = Math.max(1, ...stock.map(x => x[1] || 0));
-    const flussi = [
-      [t('fn_app'), A && A.prime_domande], [t('fn_dec'), A && A.decisioni], [t('fn_pos'), A && A.decisioni_positive, A && A.decisioni ? pc(A.decisioni_positive / A.decisioni * 100) + ' ' + t('fn_of_dec') : ''],
-      [t('fn_irr'), R && R.irregolari_trovati, '', 'b2'], [t('fn_ref'), R && R.respinti_frontiera, '', 'b2'],
-      [t('fn_ord'), R && R.ordini_di_lasciare, R && R.irregolari_trovati ? pc(R.ordini_di_lasciare / R.irregolari_trovati * 100) + ' ' + t('fn_of_irr') : '', 'b3'],
-      [t('fn_ret'), R && R.rimpatriati_verso_paesi_terzi, R && R.tasso_rimpatrio_paesi_terzi_pct != null ? t('fn_rate') + ' ' + pc(R.tasso_rimpatrio_paesi_terzi_pct) : '', 'b3']
-    ];
-    const fmax = Math.max(1, ...flussi.map(x => x[1] || 0));
-    document.getElementById('funnel-steps').innerHTML =
-      `<li class="grp">${t('fn_g_stock')}</li>` +
-      riga(t('fn_pop'), pop, '', 100, '', P && P.anno) + riga(t('fn_nat'), P && P.nazionali, ofPop(P && P.nazionali), P && pop ? P.nazionali / pop * 100 : null, '', null) +
-      stock.map(([l, v, a]) => riga(l, v, ofPop(v), v != null ? v / smax * 100 : null, '', a)).join('') +
-      `<li class="grp">${t('fn_g_flow')} ${Y}</li>` + flussi.map(([l, v, sub, cls]) => riga(l, v, sub, v != null ? v / fmax * 100 : null, cls, null)).join('');
-    // LFS: composizione per origine e per cittadinanza
-    const L = D.lfs_15_74, LC = D.lfs_15_74_per_cittadinanza;
-    document.getElementById('funnel-h-lfs').textContent = t('fn_h_lfs');
-    let lfs = '';
-    if (L) {
-      const q = L.quote_pct;
-      lfs += `<div class="fstack"><i class="c-l1" style="width:${q.nati_paese_genitori_paese || 0}%"></i><i class="c-l2" style="width:${q.nati_paese_genitore_estero || 0}%"></i><i class="c-l3" style="width:${q.nati_estero || 0}%"></i></div>`;
-      lfs += `<div class="flegend">${[['c-l1', t('fn_l1'), L.nati_paese_genitori_paese, q.nati_paese_genitori_paese], ['c-l2', t('fn_l2'), L.nati_paese_genitore_estero, q.nati_paese_genitore_estero], ['c-l3', t('fn_l3'), L.nati_estero, q.nati_estero]].map(([c, l, v, pq]) => `<div><span><b class="${c}"></b>${esc(l)}</span><span class="v">${pc(pq)} · ${num(v)}k</span></div>`).join('')}</div>`;
-      if (LC) {
-        const row = (l, b) => `<tr><td>${esc(l)}</td><td>${num(b.totale)}</td><td>${num(b.nati_paese_genitori_paese)}</td><td>${num(b.nati_paese_genitore_estero)}</td><td>${num(b.nati_estero)}</td></tr>`;
-        lfs += `<table class="ftab"><thead><tr><th>${t('fn_mig')}</th><th>${t('fn_tot')}</th><th>${esc(t('fn_s1'))}</th><th>${esc(t('fn_s2'))}</th><th>${esc(t('fn_s3'))}</th></tr></thead><tbody>${row(t('fn_cit_nat'), LC.nazionali)}${row(t('fn_cit_for'), LC.stranieri)}</tbody></table>`;
-      }
-      lfs += `<p class="empty" style="margin-top:8px">${t('fn_lfs_note')} ${L.anno}.</p>`;
-    } else lfs = `<p class="fnd">${t('fn_nd')}</p>`;
-    document.getElementById('funnel-lfs').innerHTML = lfs;
+    const P = D.popolazione, A = D.asilo, R = D.rimpatri, PV = D.permessi_validi, TP = D.protezione_temporanea, C = D.lfs_15_74_per_cittadinanza, O = D.lfs_15_74_origine_genitori;
+    // riga del funnel: barra centrata larga quanto la quota sulla base
+    const riga = (l, v, base, cls, sub, extra, isBase) => { const w = v != null && base ? Math.max(0.6, Math.min(100, v / base * 100)) : null; return `<li${isBase ? ' class="base"' : ''}><span class="fl">${esc(l)}${sub ? `<small>${sub}</small>` : ''}</span><span class="fb">${w != null ? `<i class="${cls}" style="width:${w}%;margin-left:${(100 - w) / 2}%"></i>` : ''}</span><span class="fv${v == null ? ' nd' : ''}">${v == null ? t('fn_nd') : num(v)}${v != null && base ? `<small><span class="pct">${pc(v / base * 100)}</span>${extra ? ' · ' + extra : ''}</small>` : (extra ? `<small>${extra}</small>` : '')}</span></li>`; };
+    // A: origine della popolazione 15-74 (LFS)
+    document.getElementById('funnel-h-a').textContent = `${flag(sig)} ${nome} · ${t('fn_h_a')}`;
+    if (C && C.totale && C.totale.totale != null) {
+      const N = C.nazionali, UE = C.stranieri_ue, XUE = C.stranieri_extra_ue, tot = k(C.totale.totale);
+      const a1 = k(N.nati_paese_genitori_paese), a2 = k(N.nati_paese_un_genitore_estero), a3 = k(N.nati_paese_due_genitori_estero), a4 = k(N.nati_estero), a5 = k(UE.totale), a6 = k(XUE.totale);
+      const noti = [a1, a2, a3, a4, a5, a6].filter(x => x != null).reduce((x, y) => x + y, 0);
+      const resto = [a1, a2, a3, a4, a5, a6].every(x => x != null) ? Math.max(0, tot - noti) : null;
+      const SG = O && O.seconda_generazione, NE = O && O.nati_estero;
+      const subPar = SG && SG.di_cui_genitori_ue != null ? t('fn_sub_par').replace('{a}', num(k(SG.di_cui_genitori_ue))).replace('{b}', num(k(SG.di_cui_genitori_extra_ue))) : '';
+      const subBorn = NE && NE.nati_ue != null ? t('fn_sub_born').replace('{a}', num(k(NE.nati_ue))).replace('{b}', num(k(NE.nati_extra_ue))) : '';
+      const subFor = B => B && (B.nati_paese != null || B.nati_estero != null) ? t('fn_sub_for').replace('{a}', num(k(B.nati_paese))).replace('{b}', num(k(B.nati_estero))) : '';
+      document.getElementById('funnel-base-a').textContent = t('fn_base_a').replace('{y}', C.anno);
+      document.getElementById('funnel-a').innerHTML =
+        riga(t('fn_a0'), tot, tot, 'c-k0', '', '', true) +
+        riga(t('fn_a1'), a1, tot, 'c-k0') + riga(t('fn_a2'), a2, tot, 'c-k1') + riga(t('fn_a3'), a3, tot, 'c-k2', subPar) +
+        riga(t('fn_a4'), a4, tot, 'c-k3', subBorn) + riga(t('fn_a5'), a5, tot, 'c-k4', subFor(UE)) + riga(t('fn_a6'), a6, tot, 'c-k5', subFor(XUE)) +
+        riga(t('fn_a7'), resto, tot, 'c-k6');
+    } else { document.getElementById('funnel-base-a').textContent = ''; document.getElementById('funnel-a').innerHTML = `<li><span class="fl fnd">${t('fn_nd')}</span></li>`; }
+    // B: cittadini extra-UE, dalla residenza al rimpatrio (tutte le età)
+    document.getElementById('funnel-h-b').textContent = t('fn_h_b');
+    const base = P && P.extra_ue;
+    document.getElementById('funnel-base-b').textContent = base ? t('fn_base_b').replace('{y}', P.anno) : '';
+    const subPend = A ? t('fn_sub_pend').replace('{a}', num(A.prime_domande)).replace('{b}', num(A.decisioni_positive)) : '';
+    document.getElementById('funnel-b').innerHTML =
+      riga(t('fn_b0'), base, base, 'c-k5', '', P ? String(P.anno) : '', true) +
+      riga(t('fn_perm'), PV && PV.totale, base, 'c-k5', '', PV ? String(PV.anno) : '') +
+      riga(t('fn_tp'), TP && TP.valore, base, 'c-r1', '', TP ? TP.periodo : '') +
+      riga(t('fn_pend'), A && A.pendenti_dicembre, base, 'c-r1', subPend, A ? A.anno + '-12' : '') +
+      riga(t('fn_irr'), R && R.irregolari_trovati, base, 'c-r2', '', t('fn_flow') + ' ' + Y) +
+      riga(t('fn_ord'), R && R.ordini_di_lasciare, base, 'c-r2', '', R && R.irregolari_trovati ? pc(R.ordini_di_lasciare / R.irregolari_trovati * 100) + ' ' + t('fn_of_irr') : '') +
+      riga(t('fn_ret'), R && R.rimpatriati_verso_paesi_terzi, base, 'c-r3', '', R && R.tasso_rimpatrio_paesi_terzi_pct != null ? t('fn_rate') + ' ' + pc(R.tasso_rimpatrio_paesi_terzi_pct) : '');
     // acquisizioni 2015-2024
     const AC = D.acquisizioni_cittadinanza;
     document.getElementById('funnel-h-acq').textContent = t('fn_h_acq');

@@ -127,16 +127,32 @@ const COMPOSTI = [
     nome: 'Popolazione 15-74 anni per stato migratorio e cittadinanza (indagine forze di lavoro)', nome_en: 'Population aged 15-74 by migration status and citizenship (Labour Force Survey)', nome_de: 'Bevölkerung 15-74 Jahre nach Migrationsstatus und Staatsangehörigkeit (Arbeitskräfteerhebung)',
     async calcola() {
       const T = anni(2021, ANNO);
-      const c = await cubo(this.dataset, { geo: GEO, time: T, sex: 'T', age: 'Y15-74', unit: 'THS_PER', isced11: 'TOTAL', citizen: ['TOTAL', 'NAT', 'FOR', 'EU27_2020_FOR', 'NEU27_2020_FOR'], mgstatus: ['TOTAL', 'NBO_NAT', 'NBO_ABR', 'FBO'] });
+      const c = await cubo(this.dataset, { geo: GEO, time: T, sex: 'T', age: 'Y15-74', unit: 'THS_PER', isced11: 'TOTAL', citizen: ['TOTAL', 'NAT', 'FOR', 'EU27_2020_FOR', 'NEU27_2020_FOR', 'STLS'], mgstatus: ['TOTAL', 'NBO', 'NBO_NAT', 'NBO_ABR', 'NBO_ABR_PAR1', 'NBO_ABR_PAR2', 'FBO', 'UNK'] });
       const valori = {};
       for (const g of GEO) {
         const u = ultimo(T, t => c.get({ geo: g, time: t, citizen: 'NAT', mgstatus: 'TOTAL' }));
         if (!u) { valori[g] = null; continue; }
         const v = (cz, m) => c.get({ geo: g, time: u.anno, citizen: cz, mgstatus: m });
-        const blocco = cz => ({ totale: v(cz, 'TOTAL'), nati_paese_genitori_paese: v(cz, 'NBO_NAT'), nati_paese_genitore_estero: v(cz, 'NBO_ABR'), nati_estero: v(cz, 'FBO') });
-        valori[g] = { anno: +u.anno, unita: 'migliaia', nazionali: blocco('NAT'), stranieri: blocco('FOR'), stranieri_ue: blocco('EU27_2020_FOR'), stranieri_extra_ue: blocco('NEU27_2020_FOR') };
+        const blocco = cz => ({ totale: v(cz, 'TOTAL'), nati_paese: v(cz, 'NBO'), nati_paese_genitori_paese: v(cz, 'NBO_NAT'), nati_paese_genitore_estero: v(cz, 'NBO_ABR'), nati_paese_un_genitore_estero: v(cz, 'NBO_ABR_PAR1'), nati_paese_due_genitori_estero: v(cz, 'NBO_ABR_PAR2'), nati_estero: v(cz, 'FBO'), sconosciuto: v(cz, 'UNK') });
+        valori[g] = { anno: +u.anno, unita: 'migliaia', totale: blocco('TOTAL'), nazionali: blocco('NAT'), stranieri: blocco('FOR'), stranieri_ue: blocco('EU27_2020_FOR'), stranieri_extra_ue: blocco('NEU27_2020_FOR'), apolidi: blocco('STLS') };
       }
       return { valori, aggiornato: c.aggiornato, nota: 'Popolazione nelle famiglie private, 15-74 anni, in migliaia. nazionali.nati_paese_genitore_estero = cittadini del paese nati nel paese con almeno un genitore nato all\'estero (seconda generazione naturalizzata o nata cittadina); nazionali.nati_estero = cittadini nati all\'estero (immigrati naturalizzati). Celle piccole possono essere null per segreto statistico.' };
+    }
+  },
+  {
+    id: 'origine_genitori_lfs', dataset: 'lfsa_pgaccpm',
+    nome: 'Seconda generazione per origine dei genitori e nati all\'estero per gruppo di paese di nascita, 15-74 anni, tutte le cittadinanze (indagine forze di lavoro)', nome_en: 'Second generation by parents\' origin and foreign-born by group of country of birth, ages 15-74, all citizenships (Labour Force Survey)', nome_de: 'Zweite Generation nach Herkunft der Eltern und im Ausland Geborene nach Geburtslandgruppe, 15-74 Jahre, alle Staatsangehörigkeiten (Arbeitskräfteerhebung)',
+    async calcola() {
+      const T = anni(2021, ANNO);
+      const c = await cubo(this.dataset, { geo: GEO, time: T, sex: 'T', age: 'Y15-74', unit: 'THS_PER', c_birth: ['TOTAL', 'EU27_2020_FOR', 'NEU27_2020_FOR'], c_bthpar: ['TOTAL', 'NAT', 'EU27_2020_FOR', 'NEU27_2020_FOR', 'FOR'], mgstatus: ['NBO_ABR', 'FBO'] });
+      const valori = {};
+      for (const g of GEO) {
+        const u = ultimo(T, t => c.get({ geo: g, time: t, mgstatus: 'NBO_ABR', c_birth: 'TOTAL', c_bthpar: 'TOTAL' }));
+        if (!u) { valori[g] = null; continue; }
+        const v = (m, cb, cp) => c.get({ geo: g, time: u.anno, mgstatus: m, c_birth: cb, c_bthpar: cp });
+        valori[g] = { anno: +u.anno, unita: 'migliaia', seconda_generazione: { totale: u.valore, un_genitore_nato_paese: v('NBO_ABR', 'TOTAL', 'NAT'), due_genitori_nati_estero: v('NBO_ABR', 'TOTAL', 'FOR'), di_cui_genitori_ue: v('NBO_ABR', 'TOTAL', 'EU27_2020_FOR'), di_cui_genitori_extra_ue: v('NBO_ABR', 'TOTAL', 'NEU27_2020_FOR') }, nati_estero: { totale: v('FBO', 'TOTAL', 'TOTAL'), nati_ue: v('FBO', 'EU27_2020_FOR', 'TOTAL'), nati_extra_ue: v('FBO', 'NEU27_2020_FOR', 'TOTAL') } };
+      }
+      return { valori, aggiornato: c.aggiornato, nota: 'Eurostat non incrocia stato migratorio, cittadinanza e origine dei genitori nella stessa tabella: queste ripartizioni UE/extra-UE valgono per tutta la seconda generazione e per tutti i nati all\'estero, cittadini e stranieri insieme. Per la seconda generazione Eurostat classifica il paese di nascita dei genitori così: NAT = un genitore nato nel paese (l\'altro all\'estero); FOR = entrambi nati all\'estero, di cui UE o extra-UE; la quota UE/extra-UE vale quindi solo per chi ha entrambi i genitori nati all\'estero.' };
     }
   },
   {
@@ -252,6 +268,7 @@ const COMPOSTI = [
       nazionali_nati_estero: n ? { anno: n.anno, nazionali_totale: n.nazionali_totale, nazionali_nati_estero: n.nazionali_nati_estero, quota_pct: n.quota_pct, di_cui_nati_ue: n.di_cui_nati_ue, di_cui_nati_extra_ue: n.di_cui_nati_extra_ue, residenti_nati_estero_ogni_cittadinanza: n.popolazione_nata_estero } : null,
       lfs_15_74: l ? { anno: l.anno, unita: 'migliaia', totale: l.totale_migliaia, nati_paese_genitori_paese: l.nati_paese_genitori_paese_migliaia, nati_paese_genitore_estero: l.nati_paese_genitore_estero_migliaia, nati_estero: l.nati_estero_migliaia, sconosciuto: l.sconosciuto_migliaia, quote_pct: l.quote_pct } : null,
       lfs_15_74_per_cittadinanza: sc,
+      lfs_15_74_origine_genitori: composti.origine_genitori_lfs.valori[g],
       acquisizioni_cittadinanza: a ? { anni: a.anni, totale_2015_2024: a.totale_2015_2024 } : null,
       permessi_validi: r ? { anno: r.anno, totale: r.totale, prime_cinque: r.prime_cinque } : null,
       verifica_protezione_temporanea_ucraini: vt,
