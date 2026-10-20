@@ -1,0 +1,17 @@
+{
+  "name": "Europa 2032",
+  "short_name": "Europa 2032",
+  "description": "Chi governa in Europa, chi è primo nei sondaggi e come può cambiare la mappa del potere entro il 2030.",
+  "lang": "it",
+  "start_url": "./?app=1",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#06070b",
+  "theme_color": "#06070b",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

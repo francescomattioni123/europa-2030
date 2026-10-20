@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Great Remigration Plan</title>
+<meta name="description" content="The Great Remigration Plan (GRP): cinque fasi, funnel dell'Italia, tracker 2027-2032, esecuzione, costi e contesto europeo. Documento di policy di Europa 2032.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Great Remigration Plan (GRP) · Europa 2032">
+<meta property="og:description" content="Cinque fasi, funnel dell'Italia, tracker 2027-2032, esecuzione e costi. Ogni numero è collegato al file di lavoro.">
+<meta property="og:url" content="https://francescomattioni123.github.io/europa-2030/grp.html">
+<meta property="og:image" content="https://francescomattioni123.github.io/europa-2030/og.jpg">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<meta name="theme-color" content="#06070b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { color-scheme: dark; --bg: #06070b; --panel: rgba(255,255,255,0.025); --panel-2: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.08); --border-2: rgba(255,255,255,0.18); --ink: #f2f3f7; --ink-2: #aeb3c2; --muted: #6f7486; --accent: #3987e5; --accent-glow: rgba(57,135,229,0.45); --r: 14px; --nav-h: 54px; --sans: "Geist", "Inter", "Helvetica Neue", Arial, sans-serif; --mono: "Geist Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: var(--ink); }
+.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+.nav { position: sticky; top: 0; z-index: 30; height: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); padding-top: env(safe-area-inset-top, 0px); display: flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--border); background: rgba(6,7,11,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.nav .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.nav .logo i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent-glow); }
+.nav .links { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+.nav .links::-webkit-scrollbar { display: none; }
+.nav .links a { font-size: 12.5px; color: var(--ink-2); text-decoration: none; padding: 6px 9px; border-radius: 8px; white-space: nowrap; }
+.nav .links a:hover, .nav .links a.on { color: var(--ink); background: var(--panel-2); }
+.nav .links a b { font-family: var(--mono); font-weight: 500; color: var(--muted); margin-right: 5px; font-size: 11px; }
+.hero { padding-block: 44px 10px; }
+.kicker { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.kicker span { color: var(--muted); }
+h1 { font-size: clamp(34px, 5.2vw, 62px); letter-spacing: -0.04em; line-height: 1.02; margin: 12px 0 0; font-weight: 800; }
+h1 em { font-style: normal; color: var(--accent); }
+.sec { padding-block: 40px 8px; }
+.sec > h2 { font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.03em; margin: 0 0 6px; line-height: 1.1; }
+.sec > h2 b { font-family: var(--mono); font-weight: 500; color: var(--muted); font-size: 0.6em; letter-spacing: 0.08em; margin-right: 10px; vertical-align: middle; }
+.sec h3 { font-size: 17px; margin: 26px 0 8px; letter-spacing: -0.01em; }
+.sec h3:first-of-type { margin-top: 18px; }
+.sec p { color: var(--ink-2); max-width: 820px; margin: 10px 0; }
+.sec p.lead { color: var(--ink); font-size: 17px; line-height: 1.5; max-width: 860px; }
+.sec ul { color: var(--ink-2); max-width: 820px; padding-left: 20px; }
+.sec li { margin: 6px 0; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.card { border: 1px solid var(--border); background: var(--panel); border-radius: var(--r); padding: 14px 16px; margin-top: 12px; }
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { padding: 7px 9px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; white-space: nowrap; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.tot td { font-weight: 700; color: var(--ink); }
+tr.sub td { color: var(--ink-2); }
+td.code { font-family: var(--mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+td.cat { min-width: 240px; }
+td small, th small { display: block; color: var(--muted); font-weight: 400; font-size: 11px; line-height: 1.35; text-transform: none; letter-spacing: 0; }
+.lv1 { padding-left: 14px; } .lv2 { padding-left: 28px; } .lv3 { padding-left: 42px; } .lv4 { padding-left: 56px; } .lv5 { padding-left: 70px; }
+.fase { display: inline-block; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 999px; color: #1a1d26; white-space: nowrap; }
+.fatt { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px; color: #1a1d26; white-space: nowrap; }
+.tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 2px 7px; border-radius: 6px; border: 1px solid var(--border-2); color: var(--ink); background: var(--panel-2); white-space: nowrap; }
+.nd { color: var(--muted); font-family: var(--mono); font-size: 11.5px; }
+.wide table { min-width: 900px; }
+.wide-xl table { min-width: 1150px; }
+.wide td, .wide th { font-size: 12.5px; }
+.note { font-size: 12.5px; color: var(--muted); margin-top: 8px; max-width: none; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.kpi { border: 1px solid var(--border); background: var(--panel); border-radius: var(--r); padding: 12px 14px; }
+.kpi .v { font-size: clamp(26px, 3vw, 40px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.kpi .l { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+tr.it td { background: rgba(57,135,229,0.12); color: var(--ink); font-weight: 600; }
+.srcs { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 24px; line-height: 1.6; }
+footer { padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 40px; color: var(--muted); font-size: 12.5px; }
+footer a { color: var(--ink-2); }
+@media (max-width: 760px) { .grid2, .kpis { grid-template-columns: 1fr 1fr; } td.cat { min-width: 180px; } .nav .logo span { display: none; } }
+@media (max-width: 480px) { .kpis { grid-template-columns: 1fr 1fr; } }
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  :root { color-scheme: light; }
+  body { background: #fff; color: #111; font-size: 11px; }
+  .nav, footer .noprint { display: none !important; }
+  .wrap { width: 100%; }
+  .sec { padding-block: 14px 4px; break-inside: auto; }
+  .sec > h2 { font-size: 20px; break-after: avoid; } .sec h3 { break-after: avoid; }
+  .sec p, .sec ul, .sec li { color: #222; }
+  .card { border-color: #ccc; background: #fff; break-inside: avoid; page-break-inside: avoid; }
+  .scroll { overflow: visible; }
+  .wide table, .wide-xl table { min-width: 0; width: 100%; font-size: 9.5px; }
+  th, td { border-bottom: 1px solid #ddd; padding: 4px 5px; color: #111; } th { color: #555; }
+  td.code, .nd, .note, .srcs, td small { color: #555; }
+  tr.it td { background: #e8f0fb; }
+  .fase, .fatt { border: 1px solid #ccc; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .tag { border-color: #999; background: #f3f3f3; color: #111; }
+  .kicker { color: #1d5fb5; } h1 em { color: #1d5fb5; }
+  a { color: #111; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<nav class="nav wrap" id="nav">
+  <a class="logo" href="./"><i></i>Europa 2032 <span>· GRP</span></a>
+  <div class="links" id="links"></div>
+</nav>
+<main class="wrap" id="main">
+  <header class="hero" id="top">
+    <div class="kicker" id="kicker">Europa 2032</div>
+    <h1>The Great <em>Remigration</em> Plan (“GRP”)</h1>
+  </header>
+  <div id="contenuto"></div>
+</main>
+<footer class="wrap">
+  <div>Documento di policy di Europa 2032. Dati: <a href="docs/grp/GRP-Italia.xlsx">GRP-Italia.xlsx</a> · testi: <a href="docs/grp/Great-Remigration-Plan-Italia.docx">Great-Remigration-Plan-Italia.docx</a> · generato da scripts/grp.js (<span id="gen"></span>).</div>
+  <div class="noprint" style="margin-top:8px"><a href="./">← Torna all'osservatorio Europa 2032</a> · <a href="javascript:window.print()">Stampa o salva in PDF</a></div>
+</footer>
+<script src="data/grp.js"></script>
+<script src="data/grp-nazionalita.js"></script>
+<script>
+(function () {
+  const G = window.GRP; if (!G) { document.getElementById('contenuto').innerHTML = '<p class="note">Dati non disponibili: eseguire <code>node scripts/grp.js</code>.</p>'; return; }
+  document.getElementById('gen').textContent = G.generato;
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const LOC = { useGrouping: true, minimumGroupingDigits: 1 }; // in italiano 3255 si scrive 3.255
+  const IT = (n, o) => n.toLocaleString('it-IT', Object.assign({}, LOC, o || {}));
+  // Numeri: sopra i 10.000 in migliaia con la k (339k, 3.650k, 21,3k); sotto i 10.000 interi con il punto (4.780). null = n.d.
+  const fmtN = (n, dec) => { if (n == null || n === '') return '<span class="nd">n.d.</span>'; if (typeof n !== 'number') return esc(n); const a = Math.abs(n); if (a >= 10000) { const k = n / 1000; return (Math.abs(k) >= 100 ? IT(Math.round(k)) : IT(k, { minimumFractionDigits: 1, maximumFractionDigits: 1 })) + 'k'; } return Number.isInteger(n) ? IT(n) : IT(n, { minimumFractionDigits: dec == null ? 1 : dec, maximumFractionDigits: dec == null ? 1 : dec }); };
+  const fmtPct = (x, dec) => { if (x == null) return '<span class="nd">n.d.</span>'; const p = Math.round(x * 1000) / 10; const d = dec == null ? (Number.isInteger(p) ? 0 : 1) : dec; return IT(p, { minimumFractionDigits: d, maximumFractionDigits: d }) + '%'; };
+  const fmtM = x => x == null ? '<span class="nd">n.d.</span>' : IT(x, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const colFase = f => (G.fasi.find(x => x.id === f) || {}).colore || '#E7E6E6';
+  const chipFase = f => f ? `<span class="fase" style="background:${colFase(f)}">${esc(f)}</span>` : '';
+  const chipFatt = f => { if (!f) return '<span class="nd">n.d.</span>'; const k = String(f).trim(); const c = G.fattibilita_colori[k]; return c ? `<span class="fatt" style="background:${c}">${esc(k)}</span>` : esc(f); };
+  const cella = v => v == null ? '<span class="nd">n.d.</span>' : (typeof v === 'number' ? fmtN(v) : esc(v));
+  const P = G.testi.paragrafi; const T = k => P[k] || [];
+  const paras = (k, filtro) => T(k).filter(x => x.tipo === 'p' && (!filtro || filtro(x.testo))).map(x => `<p>${esc(x.testo)}</p>`).join('');
+  const tabellaDocx = (righe, opts) => { if (!righe || !righe.length) return ''; const [h, ...r] = righe; const o = opts || {}; return `<div class="card scroll"><table><thead><tr>${h.map((c, i) => `<th${o.num && o.num.includes(i) ? ' class="num"' : ''}>${esc(c)}</th>`).join('')}</tr></thead><tbody>${r.map(row => `<tr${o.it && row[0] === 'Italia' ? ' class="it"' : ''}>${row.map((c, i) => o.fase === i ? `<td>${chipFase(c)}</td>` : `<td${o.num && o.num.includes(i) ? ' class="num"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`; };
+
+  const SEZ = []; const add = (id, label, titolo, html) => SEZ.push({ id, label, titolo, html });
+  const FI = G.funnel_italia, FT = Object.fromEntries(G.fasi_tab.map(t => [t.id, t]));
+
+  // 0. Preambolo
+  add('preambolo', 'Preambolo', 'Preambolo', `<p class="lead">${esc(G.testi.intestazione[0] || '')}</p>${G.testi.preambolo.map(p => `<p>${esc(p)}</p>`).join('')}`);
+
+  // 1. Sintesi
+  const sin = G.testi.sintesi;
+  add('sintesi', 'Sintesi', 'Italia · Sintesi', `${sin.intro.map(p => `<p class="lead">${esc(p)}</p>`).join('')}${tabellaDocx(sin.tabella, { fase: 0, num: [2] })}<div class="kpis">${[['59.282k', 'presenti in Italia'], ['339k', 'irregolari, Fase 1'], ['22,4%', 'ordini eseguiti nel 2025'], ['100%', 'obiettivo Fase 1 nel 2032']].map(([v, l]) => `<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('')}</div>${sin.paragrafi.map(p => `<p>${esc(p)}</p>`).join('')}`);
+
+  // 2. Metodo
+  const albero = FI.albero.map(e => { const tot = e.segno === '='; return `<tr class="${tot ? 'tot' : 'sub'}"><td class="code">${esc(e.codice)}</td><td class="cat lv${Math.min(5, e.livello)}">${esc(e.voce)}${e.nota ? `<small>${esc(e.nota)}</small>` : ''}</td><td class="num">${fmtN(e.persone)}</td><td class="num">${e.quota == null ? '<span class="nd">n.d.</span>' : fmtPct(e.quota, e.quota < 0.01 ? 2 : 1)}</td><td>${chipFase(e.fase)}</td><td><small style="display:inline">${esc(e.fonte || '')}</small></td></tr>`; }).join('');
+  const flussiRows = righe => righe.map(e => `<tr class="${e.segno === '=' ? 'tot' : 'sub'}"><td class="code">${esc(e.codice)}</td><td class="cat lv${Math.min(5, e.livello || 0)}">${esc(e.voce)}${e.nota ? `<small>${esc(e.nota)}</small>` : ''}</td><td class="num">${fmtN(e.persone)}</td><td class="num">${e.quota == null ? '' : fmtPct(e.quota)}</td><td>${chipFase(e.fase)}</td><td><small style="display:inline">${esc(e.fonte || '')}</small></td></tr>`).join('');
+  const metodoP = T('1. Il metodo: funnel e fasi');
+  add('metodo', 'Metodo', '1. Il metodo: funnel e fasi', `${paras('1. Il metodo: funnel e fasi')}
+    <h3>1.1 Le cinque fasi</h3>${tabellaDocx((T('1.1 Le cinque fasi').find(x => x.tipo === 'tabella') || {}).righe, { fase: 0 })}
+    <div class="card" style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center">${G.fasi.map(f => `<span>${chipFase(f.id)} <small style="color:var(--muted)">${esc(f.nome)}</small></span>`).join('')}</div>
+    <h3>1.2 Il funnel dell'Italia</h3><p class="note">${esc(FI.nota)}</p>
+    <div class="card scroll wide"><table><thead><tr><th>Codice</th><th>Categoria</th><th class="num">Persone</th><th class="num">% tot.</th><th>Fase</th><th>Fonte · anno</th></tr></thead><tbody>${albero}</tbody></table></div>
+    ${paras('1.2 Il funnel dell’Italia')}
+    <h3>1.3 Flussi 2025 nel perimetro operativo</h3>
+    <div class="card scroll"><table><thead><tr><th>Codice</th><th>Passaggio</th><th class="num">Persone</th><th class="num">% ordini</th><th>Fase</th><th>Fonte · anno</th></tr></thead><tbody>${flussiRows(FI.flussi)}</tbody></table></div>
+    ${paras('1.3 Flussi 2025 nel perimetro operativo')}
+    <div class="card scroll"><table><thead><tr><th>Codice</th><th>Categoria trasversale</th><th class="num">Persone</th><th class="num">% tot.</th><th>Fase</th><th>Fonte · anno</th></tr></thead><tbody>${flussiRows(FI.trasversali)}</tbody></table></div>`);
+
+  // 3-7. Fasi
+  const faseSez = (id, label, titoloDocx, tab, conFlussi) => {
+    const chi = tab.blocchi[0], fl = tab.blocchi[1];
+    const righeChi = chi.righe.filter(r => r.codice !== 'O');
+    const origini = chi.righe.filter(r => r.codice === 'O').concat(fl ? fl.righe.filter(r => r.codice === 'O') : []);
+    const tChi = `<div class="card scroll"><table><thead><tr><th>Codice</th><th>Voce</th><th class="num">Persone</th><th>Fase</th><th>Fonte</th></tr></thead><tbody>${righeChi.map(r => `<tr class="${r.segno === '=' ? 'tot' : 'sub'}"><td class="code">${esc(r.codice)}</td><td class="cat lv${Math.min(5, r.livello)}">${esc(r.voce)}</td><td class="num">${fmtN(r.persone)}</td><td>${chipFase(r.fase)}</td><td><small style="display:inline">${esc(r.fonte || '')}</small></td></tr>`).join('')}</tbody></table></div>`;
+    const giur = righeChi.filter(r => r.stato || r.fare || r.cambio);
+    const tGiur = `<div class="card scroll wide"><table><thead><tr><th>Voce</th><th>Stato giuridico oggi</th><th>Cosa si può fare oggi</th><th>Cambio di legge per remigrare</th></tr></thead><tbody>${giur.map(r => `<tr><td class="cat"><b>${esc(r.voce)}</b><small>${esc(r.codice)} · ${fmtN(r.persone)} · ${esc(r.fase || '')}</small></td><td>${cella(r.stato)}</td><td>${cella(r.fare)}</td><td>${cella(r.cambio)}</td></tr>`).join('')}</tbody></table></div>`;
+    let tFl = '';
+    if (conFlussi && fl) {
+      const rf = fl.righe.filter(r => r.codice !== 'O');
+      tFl = `<h3>${esc(fl.titolo)}</h3><div class="card scroll wide"><table><thead><tr><th>Codice</th><th>Voce</th><th class="num">Persone</th><th>Stato giuridico</th><th>Cosa si può fare</th><th>Cambio di legge</th><th>Fonte</th></tr></thead><tbody>${rf.map(r => `<tr class="${r.segno === '=' ? 'tot' : 'sub'}"><td class="code">${esc(r.codice)}</td><td class="cat lv${Math.min(5, r.livello)}">${esc(r.voce)}</td><td class="num">${fmtN(r.persone)}</td><td>${r.stato ? esc(r.stato) : ''}</td><td>${r.fare ? esc(r.fare) : ''}</td><td>${r.cambio ? esc(r.cambio) : ''}</td><td><small style="display:inline">${esc(r.fonte || '')}</small></td></tr>`).join('')}</tbody></table></div>`;
+    }
+    const tOrig = origini.map(o => `<p class="note">${esc(o.voce)}${o.fonte ? ' (' + esc(o.fonte) + ')' : ''}</p>`).join('');
+    add(id, label, titoloDocx, `<p class="lead">${esc(tab.sottotitolo)}</p>${paras(titoloDocx, s => s !== tab.sottotitolo)}<h3>Chi sono e quanti sono</h3>${tChi}<h3>Stato giuridico, cosa si può fare, cambio di legge</h3>${tGiur}${tFl}${tOrig}${tab.fonti ? `<p class="note">Fonti: ${esc(tab.fonti)}</p>` : ''}`);
+  };
+  faseSez('fase1', 'Fase 1', '2. Fase 1 · Irregolari e condannati', FT['Fase 1'], false);
+  faseSez('fase2', 'Fase 2', '3. Fase 2 · Regolari extra-UE', FT['Fase 2'], true);
+  faseSez('fase3', 'Fase 3', '4. Fase 3 · Cittadini italiani di origine straniera', FT['Fase 3'], true);
+  faseSez('fase4', 'Fase 4', '5. Fase 4 · Cittadini UE (Romania) e protezione temporanea', FT['Fase 4'], true);
+  faseSez('fuori', 'Fuori', '6. FUORI · Nessuna remigrazione', FT['FUORI'], false);
+
+  // 8. Tracker
+  const TR = G.tracker;
+  const isPct = r => /tasso|quota/i.test(r.indicatore) && [r.base_2025, ...Object.values(r.anni)].every(v => v == null || typeof v !== 'number' || v <= 1.5);
+  const cellTr = (v, pct) => v == null ? '<span class="nd">n.d.</span>' : (typeof v === 'string' ? `<span class="tag">${esc(v)}</span>` : (pct ? fmtPct(v) : fmtN(v)));
+  const tTracker = TR.gruppi.filter(g => g.righe.some(r => r.indicatore && !/^Nessun indicatore/.test(r.indicatore))).map(g => `<h3>${esc(g.titolo)}</h3><div class="card scroll wide-xl"><table><thead><tr><th>Categoria</th><th>Indicatore</th><th class="num">Base 2025</th>${TR.anni.map(y => `<th class="num">${y}</th>`).join('')}<th>Cambio di legge richiesto</th></tr></thead><tbody>${g.righe.map(r => { const pct = isPct(r); return `<tr><td>${esc(r.categoria)}</td><td class="cat">${esc(r.indicatore)}</td><td class="num">${cellTr(r.base_2025, pct)}</td>${TR.anni.map(y => `<td class="num">${cellTr(r.anni[y], pct)}</td>`).join('')}<td><small style="display:inline">${esc(r.cambio || '')}</small></td></tr>`; }).join('')}</tbody></table></div>`).join('');
+  add('tracker', 'Tracker', '7. Tracker 2027-2032', `${paras('7. Tracker 2027-2032')}<p class="note">${esc(TR.ipotesi)}</p>${tTracker}<p class="note">${esc(TR.nota)}</p>`);
+
+  // 9. Esecuzione
+  const ES = G.esecuzione;
+  const tabEs = t => { const cols = t.colonne; const keys = cols.map(c => c.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')); const iF = cols.findIndex(c => /fattibilit/i.test(c)); return `<h3>${esc(t.titolo)}</h3><div class="card scroll wide-xl"><table><thead><tr>${cols.map((c, i) => `<th${/^(costo|totale|cooperazione|capacit|rimpatri it|obiettivo)/i.test(c) ? ' class="num"' : ''}>${esc(c)}</th>`).join('')}</tr></thead><tbody>${t.righe.map(r => `<tr>${keys.map((k, i) => { const v = r[k]; if (i === iF) return `<td>${chipFatt(v)}</td>`; if (i === 0) return `<td class="cat"><b>${cella(v)}</b></td>`; const num = typeof v === 'number'; return `<td${num ? ' class="num"' : ''}>${num ? (v <= 1 && /quota|tasso/i.test(cols[i]) ? fmtPct(v) : fmtN(v)) : cella(v)}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>${t.note.map(n => `<p class="note">${esc(n)}</p>`).join('')}`; };
+  // Paesi d'origine (tabella 4): colonne Eurostat ordini/rimpatri/tasso Italia 2025 per cittadinanza, e sotto le prime 15 nazionalità
+  const NZ = window.GRP_NAZ; const ISO = { Tunisia: 'TN', Egitto: 'EG', Albania: 'AL', Marocco: 'MA', Bangladesh: 'BD', Pakistan: 'PK', Algeria: 'DZ', Nigeria: 'NG', Georgia: 'GE', Ucraina: 'UA', Romania: 'RO' };
+  const nazIT = nome => { if (!NZ) return null; const k = ISO[String(nome).replace(/\s*\(.*\)\s*$/, '').trim()]; if (!k) return null; const e = (NZ.tutte_IT || []).find(x => x.cittadinanza === k); return e ? e['2025'] : { ordini: null, rimpatriati: null, tasso_pct: null }; };
+  const tabEs4 = t => { const cols = t.colonne.concat(['Ordini IT 2025 (Eurostat)', 'Rimpatri IT 2025 (Eurostat)', 'Tasso (Eurostat)']); const keys = t.colonne.map(c => c.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')); const iF = t.colonne.findIndex(c => /fattibilit/i.test(c)); return `<h3>${esc(t.titolo)}</h3><div class="card scroll wide-xl"><table><thead><tr>${cols.map((c, i) => `<th${i >= t.colonne.length || /^(costo|totale|rimpatri it|obiettivo)/i.test(c) ? ' class="num"' : ''}>${esc(c)}</th>`).join('')}</tr></thead><tbody>${t.righe.map(r => { const n = nazIT(r[keys[0]]); return `<tr>${keys.map((k, i) => { const v = r[k]; if (i === iF) return `<td>${chipFatt(v)}</td>`; if (i === 0) return `<td class="cat"><b>${cella(v)}</b></td>`; const num = typeof v === 'number'; return `<td${num ? ' class="num"' : ''}>${num ? fmtN(v) : cella(v)}</td>`; }).join('')}<td class="num">${n ? fmtN(n.ordini) : '<span class="nd">n.d.</span>'}</td><td class="num">${n ? fmtN(n.rimpatriati) : '<span class="nd">n.d.</span>'}</td><td class="num">${n && n.tasso_pct != null ? fmtPct(n.tasso_pct / 100) : '<span class="nd">n.d.</span>'}</td></tr>`; }).join('')}</tbody></table></div>${t.note.map(n => `<p class="note">${esc(n)}</p>`).join('')}<p class="note">Colonne Eurostat: migr_eiord e migr_eirtn (verso paesi terzi) per cittadinanza, 2025${NZ ? `, aggiornati il ${esc(NZ.aggiornato_eurostat.migr_eiord)} e il ${esc(NZ.aggiornato_eurostat.migr_eirtn)}` : ''}. Romania: cittadini UE, non nel dataset (n.d.). Le colonne "Rimpatri IT 2025" e "Obiettivo 2032" del file di lavoro restano come nel GRP.</p>${tabNaz()}`; };
+  const tabNaz = () => { if (!NZ || !NZ.nazionalita) return '<p class="note">Dati per nazionalità non disponibili (data/grp-nazionalita.js).</p>'; const geo = ['IT', 'FR', 'DE', 'AT'], tot = NZ.totali, al = NZ.altri; const cel = (x, pct) => pct ? (x == null ? '<span class="nd">n.d.</span>' : fmtPct(x / 100)) : fmtN(x); const r3 = (e, g, t) => `<td class="num">${cel(e[g][t].ordini)}</td><td class="num">${cel(e[g][t].rimpatriati)}</td><td class="num">${cel(e[g][t].tasso_pct, true)}</td>`; return `<h3>Prime 15 nazionalità per ordini (Italia 2025), con confronto 2024 e con Francia, Germania e Austria</h3><div class="card scroll wide-xl"><table><thead><tr><th>Nazionalità</th><th class="num">IT ordini 2025</th><th class="num">IT rimpatri 2025</th><th class="num">IT tasso 2025</th><th class="num">IT ordini 2024</th><th class="num">IT rimpatri 2024</th><th class="num">IT tasso 2024</th>${['FR', 'DE', 'AT'].map(g => `<th class="num">${g} ordini 2025</th><th class="num">${g} rimpatri 2025</th><th class="num">${g} tasso</th>`).join('')}</tr></thead><tbody>${NZ.nazionalita.map(e => `<tr><td class="cat">${esc(e.nome)}</td>${r3(e, 'IT', '2025')}${r3(e, 'IT', '2024')}${['FR', 'DE', 'AT'].map(g => r3(e, g, '2025')).join('')}</tr>`).join('')}<tr class="sub"><td>Altre nazionalità</td><td class="num">${cel(al.IT['2025'].ordini)}</td><td class="num">${cel(al.IT['2025'].rimpatriati)}</td><td></td><td class="num">${cel(al.IT['2024'].ordini)}</td><td class="num">${cel(al.IT['2024'].rimpatriati)}</td><td></td>${['FR', 'DE', 'AT'].map(g => `<td class="num">${cel(al[g]['2025'].ordini)}</td><td class="num">${cel(al[g]['2025'].rimpatriati)}</td><td></td>`).join('')}</tr><tr class="tot"><td>Totale</td>${geo.flatMap(g => (g === 'IT' ? ['2025', '2024'] : ['2025']).map(t => `<td class="num">${cel(tot[g][t].ordini)}</td><td class="num">${cel(tot[g][t].rimpatriati)}</td><td class="num">${cel(tot[g][t].tasso_pct, true)}</td>`)).join('')}</tr></tbody></table></div><p class="note">${esc(NZ.nota)} Estrazione del ${esc(NZ.estratto)}; aggiornamento Eurostat: migr_eiord ${esc(NZ.aggiornato_eurostat.migr_eiord)}, migr_eirtn ${esc(NZ.aggiornato_eurostat.migr_eirtn)}. Il tasso può superare il 100% perché ordini e rimpatri dello stesso anno riguardano coorti diverse.</p>`; };
+  add('esecuzione', 'Esecuzione', '8. Come si esegue: modalità e fattibilità', `${paras('8. Come si esegue: modalità e fattibilità')}<div class="card" style="display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center"><span class="eyebrow" style="margin:0">Fattibilità</span>${Object.keys(G.fattibilita_colori).map(k => chipFatt(k)).join('')}</div>${ES.tabelle.map(t => /^Paesi d/.test(t.titolo) ? tabEs4(t) : tabEs(t)).join('')}`);
+
+  // 10. Costi
+  const C = G.costi;
+  const tAnni = (righe, tot) => `<div class="card scroll wide"><table><thead><tr><th>Voce</th>${C.anni.map(y => `<th class="num">${y}</th>`).join('')}${tot ? '<th class="num">Totale 2027-32</th>' : ''}<th>Fonte / formula</th></tr></thead><tbody>${righe.map(r => `<tr class="${/^TOTALE|^COSTO NETTO/.test(r.voce) ? 'tot' : ''}"><td class="cat">${esc(r.voce)}</td>${C.anni.map(y => `<td class="num">${/^Costo (per|variabile)/.test(r.voce) ? fmtN(r.anni[y]) : (tot ? fmtM(r.anni[y]) : (r.anni[y] != null && r.anni[y] <= 1 && /quota/i.test(r.voce) ? fmtPct(r.anni[y], 0) : fmtN(r.anni[y])))}</td>`).join('')}${tot ? `<td class="num">${/^Costo (per|variabile)/.test(r.voce) ? '' : fmtM(r.totale)}</td>` : ''}<td><small style="display:inline">${esc(r.formula || r.fonte || '')}</small></td></tr>`).join('')}</tbody></table></div>`;
+  const tUnit = `<div class="card scroll"><table><thead><tr><th>Voce</th><th class="num">Valore</th><th>Fonte / nota</th></tr></thead><tbody>${C.unitari.map(r => `<tr><td class="cat">${esc(r.voce)}</td><td class="num">${r.valore != null && r.valore <= 1 && /quota/i.test(r.voce) ? fmtPct(r.valore, 0) : fmtN(r.valore)}</td><td><small style="display:inline">${esc(r.nota || '')}</small></td></tr>`).join('')}</tbody></table></div>`;
+  const tRif = `<div class="card scroll"><table><thead><tr><th>Voce</th><th class="num">Valore</th><th>Fonte / nota</th></tr></thead><tbody>${C.riferimenti.map(r => `<tr><td class="cat">${esc(r.voce)}</td><td class="num">${fmtN(r.valore)}</td><td><small style="display:inline">${esc(r.nota || '')}</small></td></tr>`).join('')}</tbody></table></div>`;
+  add('costi', 'Costi', '9. Costi 2027-2032', `${paras('9. Costi 2027-2032', s => !s.startsWith('Lettura.'))}<h3>Costi unitari (ipotesi)</h3>${tUnit}<h3>Volumi per anno (dal tracker)</h3>${tAnni(C.volumi, false)}<h3>Costi per anno, milioni di euro</h3>${tAnni(C.per_anno, true)}<h3>Risparmi per anno, costo netto e costo per rimpatrio</h3>${tAnni(C.risparmi.concat(C.netto), true)}<h3>Riferimenti di spesa attuale</h3>${tRif}<h3>Lettura</h3>${paras('9. Costi 2027-2032', s => s.startsWith('Lettura.')).replace(/<p>Lettura\.\s*/, '<p>')}`);
+
+  // 11. Contesto europeo
+  const F27 = G.funnel_27; const fl = c => F27.flussi.find(x => x.codice === c) || { valori: {} };
+  const ord = fl('F2').valori, rim = fl('F3').valori, tas = fl('F3/F2').valori;
+  const paesi = F27.paesi.filter(p => p !== 'UE27').map(p => ({ p, nome: F27.nomi[p], o: ord[p], r: rim[p], t: tas[p], m: ord[p] != null && rim[p] != null ? ord[p] - rim[p] : null })).sort((a, b) => (b.o || 0) - (a.o || 0));
+  const ue = { o: ord.UE27, r: rim.UE27, t: tas.UE27, m: ord.UE27 != null && rim.UE27 != null ? ord.UE27 - rim.UE27 : null };
+  add('europa', 'Europa', '10. Il contesto europeo', `${paras('10. Il contesto europeo')}<div class="kpis">${[[fmtN(ue.o), 'ordini UE27 nel 2025'], [fmtN(ue.r), 'rimpatri verso paesi terzi'], [fmtPct(ue.t), 'tasso di esecuzione UE27'], [fmtN(ue.m), 'rimpatri mancanti al 100%']].map(([v, l]) => `<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`).join('')}</div><div class="card scroll"><table><thead><tr><th>Paese</th><th class="num">Ordini 2025</th><th class="num">Rimpatri 2025</th><th class="num">Tasso</th><th class="num">Rimpatri mancanti al 100%</th></tr></thead><tbody>${paesi.map(x => `<tr${x.p === 'IT' ? ' class="it"' : ''}><td>${esc(x.nome)}</td><td class="num">${fmtN(x.o)}</td><td class="num">${fmtN(x.r)}</td><td class="num">${fmtPct(x.t)}</td><td class="num">${fmtN(x.m)}</td></tr>`).join('')}<tr class="tot"><td>UE27</td><td class="num">${fmtN(ue.o)}</td><td class="num">${fmtN(ue.r)}</td><td class="num">${fmtPct(ue.t)}</td><td class="num">${fmtN(ue.m)}</td></tr></tbody></table></div><p class="note">Fonte: Eurostat migr_eiord e migr_eirtn (verso paesi terzi), 2025. Obiettivo del piano: UE27 al 60% entro il 2032; Italia al 100% nel 2032.</p>`);
+
+  // 12. Futuro Nazionale
+  const fn = T('11. Rapporto con il programma di Futuro Nazionale');
+  add('fn', 'Futuro Nazionale', '11. Rapporto con il programma di Futuro Nazionale', `${paras('11. Rapporto con il programma di Futuro Nazionale')}${tabellaDocx((fn.find(x => x.tipo === 'tabella') || {}).righe, { fase: 1 })}`);
+
+  // 13. Garanzie
+  const ga = T('12. Garanzie');
+  add('garanzie', 'Garanzie', '12. Garanzie', `<ul>${ga.filter(x => x.tipo === 'lista').map(x => `<li>${esc(x.testo)}</li>`).join('')}</ul>${ga.filter(x => x.tipo === 'p').map(x => `<p class="note">${esc(x.testo)}</p>`).join('')}<p class="note">${esc(G.ipotesi_base)}</p>`);
+
+  document.getElementById('contenuto').innerHTML = SEZ.map((s, i) => `<section class="sec" id="${s.id}"><h2><b>${String(i).padStart(2, '0')}</b>${esc(s.titolo)}</h2>${s.html}</section>`).join('');
+  document.getElementById('links').innerHTML = SEZ.map((s, i) => `<a href="#${s.id}"><b>${String(i).padStart(2, '0')}</b>${esc(s.label)}</a>`).join('');
+  // evidenzia la sezione corrente nella nav
+  const links = [...document.querySelectorAll('#links a')];
+  if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); const a = links.find(x => x.classList.contains('on')); if (a) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); } }); }, { rootMargin: '-20% 0px -70% 0px' }); SEZ.forEach(s => io.observe(document.getElementById(s.id))); }
+})();
+</script>
+</body>
+</html>

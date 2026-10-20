@@ -1,0 +1,4188 @@
+// Ordini e rimpatri per cittadinanza (Eurostat), generato da scripts/grp-nazionalita.js. Non modificare a mano.
+window.GRP_NAZ = {
+ "estratto": "2026-10-20",
+ "aggiornato_eurostat": {
+  "migr_eiord": "2026-09-30",
+  "migr_eirtn": "2026-09-25"
+ },
+ "fonte": {
+  "ordini": "https://ec.europa.eu/eurostat/databrowser/view/migr_eiord/default/table",
+  "rimpatri": "https://ec.europa.eu/eurostat/databrowser/view/migr_eirtn/default/table"
+ },
+ "geo": [
+  "IT",
+  "FR",
+  "DE",
+  "AT"
+ ],
+ "anni": [
+  "2024",
+  "2025"
+ ],
+ "criterio": "prime 15 nazionalità per ordini Italia 2025; stesse nazionalità per FR, DE, AT",
+ "nota": "Ordini: cittadini di paesi terzi con ordine di lasciare il territorio; rimpatriati: verso paesi terzi (c_dest THRD). Dati Eurostat arrotondati a 5. Tasso = rimpatriati/ordini dello stesso anno. null = non disponibile o confidenziale, mai stimato. Nomi dei paesi nella forma inglese di Eurostat.",
+ "nazionalita": [
+  {
+   "cittadinanza": "MA",
+   "nome": "Morocco",
+   "IT": {
+    "2024": {
+     "ordini": 5405,
+     "rimpatriati": 445,
+     "tasso_pct": 8.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 3570,
+     "rimpatriati": 335,
+     "tasso_pct": 9.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 9505,
+     "rimpatriati": 1245,
+     "tasso_pct": 13.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 10260,
+     "rimpatriati": 1470,
+     "tasso_pct": 14.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 1395,
+     "rimpatriati": 390,
+     "tasso_pct": 28,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1065,
+     "rimpatriati": 835,
+     "tasso_pct": 78.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 1125,
+     "rimpatriati": 80,
+     "tasso_pct": 7.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 425,
+     "rimpatriati": 100,
+     "tasso_pct": 23.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "TN",
+   "nome": "Tunisia",
+   "IT": {
+    "2024": {
+     "ordini": 4040,
+     "rimpatriati": 1065,
+     "tasso_pct": 26.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 2425,
+     "rimpatriati": 705,
+     "tasso_pct": 29.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 10800,
+     "rimpatriati": 1155,
+     "tasso_pct": 10.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 11295,
+     "rimpatriati": 1300,
+     "tasso_pct": 11.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 1430,
+     "rimpatriati": 325,
+     "tasso_pct": 22.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 750,
+     "rimpatriati": 540,
+     "tasso_pct": 72,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 320,
+     "rimpatriati": 45,
+     "tasso_pct": 14.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 110,
+     "rimpatriati": 60,
+     "tasso_pct": 54.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "DZ",
+   "nome": "Algeria",
+   "IT": {
+    "2024": {
+     "ordini": 580,
+     "rimpatriati": 55,
+     "tasso_pct": 9.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 2055,
+     "rimpatriati": 85,
+     "tasso_pct": 4.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 21710,
+     "rimpatriati": 2515,
+     "tasso_pct": 11.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 26215,
+     "rimpatriati": 1680,
+     "tasso_pct": 6.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 1905,
+     "rimpatriati": 585,
+     "tasso_pct": 30.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1710,
+     "rimpatriati": 710,
+     "tasso_pct": 41.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 130,
+     "rimpatriati": 40,
+     "tasso_pct": 30.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 135,
+     "rimpatriati": 95,
+     "tasso_pct": 70.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "AL",
+   "nome": "Albania",
+   "IT": {
+    "2024": {
+     "ordini": 3095,
+     "rimpatriati": 900,
+     "tasso_pct": 29.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1495,
+     "rimpatriati": 860,
+     "tasso_pct": 57.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 3355,
+     "rimpatriati": 1375,
+     "tasso_pct": 41,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 2815,
+     "rimpatriati": 1095,
+     "tasso_pct": 38.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 1910,
+     "rimpatriati": 1310,
+     "tasso_pct": 68.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 990,
+     "rimpatriati": 1175,
+     "tasso_pct": 118.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 285,
+     "rimpatriati": 375,
+     "tasso_pct": 131.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 255,
+     "rimpatriati": 280,
+     "tasso_pct": 109.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "EG",
+   "nome": "Egypt",
+   "IT": {
+    "2024": {
+     "ordini": 1760,
+     "rimpatriati": 300,
+     "tasso_pct": 17,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1155,
+     "rimpatriati": 575,
+     "tasso_pct": 49.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 2280,
+     "rimpatriati": 110,
+     "tasso_pct": 4.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 2645,
+     "rimpatriati": 140,
+     "tasso_pct": 5.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 395,
+     "rimpatriati": 70,
+     "tasso_pct": 17.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 510,
+     "rimpatriati": 130,
+     "tasso_pct": 25.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 280,
+     "rimpatriati": 80,
+     "tasso_pct": 28.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 665,
+     "rimpatriati": 55,
+     "tasso_pct": 8.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "PE",
+   "nome": "Peru",
+   "IT": {
+    "2024": {
+     "ordini": 1200,
+     "rimpatriati": 155,
+     "tasso_pct": 12.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1100,
+     "rimpatriati": 240,
+     "tasso_pct": 21.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 455,
+     "rimpatriati": 75,
+     "tasso_pct": 16.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 580,
+     "rimpatriati": 100,
+     "tasso_pct": 17.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 65,
+     "rimpatriati": 15,
+     "tasso_pct": 23.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 130,
+     "rimpatriati": 50,
+     "tasso_pct": 38.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 15,
+     "rimpatriati": 5,
+     "tasso_pct": 33.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 15,
+     "rimpatriati": 10,
+     "tasso_pct": 66.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "NG",
+   "nome": "Nigeria",
+   "IT": {
+    "2024": {
+     "ordini": 1730,
+     "rimpatriati": 190,
+     "tasso_pct": 11,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 890,
+     "rimpatriati": 275,
+     "tasso_pct": 30.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 1930,
+     "rimpatriati": 115,
+     "tasso_pct": 6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1735,
+     "rimpatriati": 100,
+     "tasso_pct": 5.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 780,
+     "rimpatriati": 385,
+     "tasso_pct": 49.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 820,
+     "rimpatriati": 470,
+     "tasso_pct": 57.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 165,
+     "rimpatriati": 125,
+     "tasso_pct": 75.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 195,
+     "rimpatriati": 115,
+     "tasso_pct": 59,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "CN",
+   "nome": "China",
+   "IT": {
+    "2024": {
+     "ordini": 45,
+     "rimpatriati": 0,
+     "tasso_pct": 0,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 845,
+     "rimpatriati": 130,
+     "tasso_pct": 15.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 665,
+     "rimpatriati": 165,
+     "tasso_pct": 24.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1010,
+     "rimpatriati": 185,
+     "tasso_pct": 18.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 415,
+     "rimpatriati": 95,
+     "tasso_pct": 22.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 710,
+     "rimpatriati": 175,
+     "tasso_pct": 24.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 235,
+     "rimpatriati": 240,
+     "tasso_pct": 102.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 165,
+     "rimpatriati": 225,
+     "tasso_pct": 136.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "GE",
+   "nome": "Georgia",
+   "IT": {
+    "2024": {
+     "ordini": 840,
+     "rimpatriati": 270,
+     "tasso_pct": 32.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 595,
+     "rimpatriati": 250,
+     "tasso_pct": 42,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 4875,
+     "rimpatriati": 1740,
+     "tasso_pct": 35.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 4175,
+     "rimpatriati": 1515,
+     "tasso_pct": 36.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 2465,
+     "rimpatriati": 2645,
+     "tasso_pct": 107.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1395,
+     "rimpatriati": 2805,
+     "tasso_pct": 201.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 360,
+     "rimpatriati": 400,
+     "tasso_pct": 111.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 260,
+     "rimpatriati": 305,
+     "tasso_pct": 117.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "BD",
+   "nome": "Bangladesh",
+   "IT": {
+    "2024": {
+     "ordini": 1145,
+     "rimpatriati": 70,
+     "tasso_pct": 6.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 555,
+     "rimpatriati": 140,
+     "tasso_pct": 25.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 7340,
+     "rimpatriati": 160,
+     "tasso_pct": 2.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 5515,
+     "rimpatriati": 150,
+     "tasso_pct": 2.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 70,
+     "rimpatriati": 45,
+     "tasso_pct": 64.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 105,
+     "rimpatriati": 40,
+     "tasso_pct": 38.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 260,
+     "rimpatriati": 10,
+     "tasso_pct": 3.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 295,
+     "rimpatriati": 30,
+     "tasso_pct": 10.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "PK",
+   "nome": "Pakistan",
+   "IT": {
+    "2024": {
+     "ordini": 920,
+     "rimpatriati": 50,
+     "tasso_pct": 5.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 505,
+     "rimpatriati": 100,
+     "tasso_pct": 19.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 3500,
+     "rimpatriati": 200,
+     "tasso_pct": 5.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 2880,
+     "rimpatriati": 225,
+     "tasso_pct": 7.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 800,
+     "rimpatriati": 195,
+     "tasso_pct": 24.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 735,
+     "rimpatriati": 210,
+     "tasso_pct": 28.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 365,
+     "rimpatriati": 40,
+     "tasso_pct": 11,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 200,
+     "rimpatriati": 50,
+     "tasso_pct": 25,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "IR",
+   "nome": "Iran",
+   "IT": {
+    "2024": {
+     "ordini": 70,
+     "rimpatriati": 5,
+     "tasso_pct": 7.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 500,
+     "rimpatriati": 0,
+     "tasso_pct": 0,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 1095,
+     "rimpatriati": 20,
+     "tasso_pct": 1.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1370,
+     "rimpatriati": 25,
+     "tasso_pct": 1.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 705,
+     "rimpatriati": 115,
+     "tasso_pct": 16.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1170,
+     "rimpatriati": 235,
+     "tasso_pct": 20.1,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 335,
+     "rimpatriati": 90,
+     "tasso_pct": 26.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 315,
+     "rimpatriati": 75,
+     "tasso_pct": 23.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "IN",
+   "nome": "India",
+   "IT": {
+    "2024": {
+     "ordini": 555,
+     "rimpatriati": 90,
+     "tasso_pct": 16.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 490,
+     "rimpatriati": 110,
+     "tasso_pct": 22.4,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 1795,
+     "rimpatriati": 140,
+     "tasso_pct": 7.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 2000,
+     "rimpatriati": 160,
+     "tasso_pct": 8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 995,
+     "rimpatriati": 205,
+     "tasso_pct": 20.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 1115,
+     "rimpatriati": 290,
+     "tasso_pct": 26,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 705,
+     "rimpatriati": 305,
+     "tasso_pct": 43.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 400,
+     "rimpatriati": 370,
+     "tasso_pct": 92.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "SN",
+   "nome": "Senegal",
+   "IT": {
+    "2024": {
+     "ordini": 760,
+     "rimpatriati": 60,
+     "tasso_pct": 7.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 460,
+     "rimpatriati": 55,
+     "tasso_pct": 12,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 2525,
+     "rimpatriati": 185,
+     "tasso_pct": 7.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 3080,
+     "rimpatriati": 190,
+     "tasso_pct": 6.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 105,
+     "rimpatriati": 30,
+     "tasso_pct": 28.6,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 90,
+     "rimpatriati": 35,
+     "tasso_pct": 38.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 10,
+     "rimpatriati": 5,
+     "tasso_pct": 50,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 5,
+     "rimpatriati": 5,
+     "tasso_pct": 100,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  },
+  {
+   "cittadinanza": "GM",
+   "nome": "Gambia, The",
+   "IT": {
+    "2024": {
+     "ordini": 650,
+     "rimpatriati": 105,
+     "tasso_pct": 16.2,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 370,
+     "rimpatriati": 155,
+     "tasso_pct": 41.9,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "FR": {
+    "2024": {
+     "ordini": 315,
+     "rimpatriati": 15,
+     "tasso_pct": 4.8,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 350,
+     "rimpatriati": 20,
+     "tasso_pct": 5.7,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "DE": {
+    "2024": {
+     "ordini": 170,
+     "rimpatriati": 215,
+     "tasso_pct": 126.5,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 245,
+     "rimpatriati": 280,
+     "tasso_pct": 114.3,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   },
+   "AT": {
+    "2024": {
+     "ordini": 25,
+     "rimpatriati": 10,
+     "tasso_pct": 40,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    },
+    "2025": {
+     "ordini": 25,
+     "rimpatriati": 10,
+     "tasso_pct": 40,
+     "stato_ordini": null,
+     "stato_rimpatri": null
+    }
+   }
+  }
+ ],
+ "altri": {
+  "IT": {
+   "2024": {
+    "ordini": 5175,
+    "rimpatriati": 720,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   },
+   "2025": {
+    "ordini": 4285,
+    "rimpatriati": 765,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   }
+  },
+  "FR": {
+   "2024": {
+    "ordini": 56595,
+    "rimpatriati": 5455,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   },
+   "2025": {
+    "ordini": 61625,
+    "rimpatriati": 6585,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   }
+  },
+  "DE": {
+   "2024": {
+    "ordini": 43470,
+    "rimpatriati": 12070,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   },
+   "2025": {
+    "ordini": 43700,
+    "rimpatriati": 21315,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   }
+  },
+  "AT": {
+   "2024": {
+    "ordini": 8555,
+    "rimpatriati": 4650,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   },
+   "2025": {
+    "ordini": 7700,
+    "rimpatriati": 5520,
+    "nota": "totale meno le 15 nazionalità; null se una cella manca"
+   }
+  }
+ },
+ "totali": {
+  "IT": {
+   "2024": {
+    "ordini": 27970,
+    "rimpatriati": 4480,
+    "tasso_pct": 16,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 21295,
+    "rimpatriati": 4780,
+    "tasso_pct": 22.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   }
+  },
+  "FR": {
+   "2024": {
+    "ordini": 128740,
+    "rimpatriati": 14670,
+    "tasso_pct": 11.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 137550,
+    "rimpatriati": 14940,
+    "tasso_pct": 10.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   }
+  },
+  "DE": {
+   "2024": {
+    "ordini": 57075,
+    "rimpatriati": 18695,
+    "tasso_pct": 32.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 55240,
+    "rimpatriati": 29295,
+    "tasso_pct": 53,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   }
+  },
+  "AT": {
+   "2024": {
+    "ordini": 13170,
+    "rimpatriati": 6500,
+    "tasso_pct": 49.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 11165,
+    "rimpatriati": 7305,
+    "tasso_pct": 65.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   }
+  }
+ },
+ "tutte_IT": [
+  {
+   "2024": {
+    "ordini": 5405,
+    "rimpatriati": 445,
+    "tasso_pct": 8.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 3570,
+    "rimpatriati": 335,
+    "tasso_pct": 9.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MA",
+   "nome": "Morocco"
+  },
+  {
+   "2024": {
+    "ordini": 4040,
+    "rimpatriati": 1065,
+    "tasso_pct": 26.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 2425,
+    "rimpatriati": 705,
+    "tasso_pct": 29.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TN",
+   "nome": "Tunisia"
+  },
+  {
+   "2024": {
+    "ordini": 580,
+    "rimpatriati": 55,
+    "tasso_pct": 9.5,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 2055,
+    "rimpatriati": 85,
+    "tasso_pct": 4.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "DZ",
+   "nome": "Algeria"
+  },
+  {
+   "2024": {
+    "ordini": 3095,
+    "rimpatriati": 900,
+    "tasso_pct": 29.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 1495,
+    "rimpatriati": 860,
+    "tasso_pct": 57.5,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AL",
+   "nome": "Albania"
+  },
+  {
+   "2024": {
+    "ordini": 1760,
+    "rimpatriati": 300,
+    "tasso_pct": 17,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 1155,
+    "rimpatriati": 575,
+    "tasso_pct": 49.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "EG",
+   "nome": "Egypt"
+  },
+  {
+   "2024": {
+    "ordini": 1200,
+    "rimpatriati": 155,
+    "tasso_pct": 12.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 1100,
+    "rimpatriati": 240,
+    "tasso_pct": 21.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PE",
+   "nome": "Peru"
+  },
+  {
+   "2024": {
+    "ordini": 1730,
+    "rimpatriati": 190,
+    "tasso_pct": 11,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 890,
+    "rimpatriati": 275,
+    "tasso_pct": 30.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NG",
+   "nome": "Nigeria"
+  },
+  {
+   "2024": {
+    "ordini": 45,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 845,
+    "rimpatriati": 130,
+    "tasso_pct": 15.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CN",
+   "nome": "China"
+  },
+  {
+   "2024": {
+    "ordini": 840,
+    "rimpatriati": 270,
+    "tasso_pct": 32.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 595,
+    "rimpatriati": 250,
+    "tasso_pct": 42,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GE",
+   "nome": "Georgia"
+  },
+  {
+   "2024": {
+    "ordini": 1145,
+    "rimpatriati": 70,
+    "tasso_pct": 6.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 555,
+    "rimpatriati": 140,
+    "tasso_pct": 25.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BD",
+   "nome": "Bangladesh"
+  },
+  {
+   "2024": {
+    "ordini": 920,
+    "rimpatriati": 50,
+    "tasso_pct": 5.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 505,
+    "rimpatriati": 100,
+    "tasso_pct": 19.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PK",
+   "nome": "Pakistan"
+  },
+  {
+   "2024": {
+    "ordini": 70,
+    "rimpatriati": 5,
+    "tasso_pct": 7.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 500,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "IR",
+   "nome": "Iran"
+  },
+  {
+   "2024": {
+    "ordini": 555,
+    "rimpatriati": 90,
+    "tasso_pct": 16.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 490,
+    "rimpatriati": 110,
+    "tasso_pct": 22.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "IN",
+   "nome": "India"
+  },
+  {
+   "2024": {
+    "ordini": 760,
+    "rimpatriati": 60,
+    "tasso_pct": 7.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 460,
+    "rimpatriati": 55,
+    "tasso_pct": 12,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SN",
+   "nome": "Senegal"
+  },
+  {
+   "2024": {
+    "ordini": 650,
+    "rimpatriati": 105,
+    "tasso_pct": 16.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 370,
+    "rimpatriati": 155,
+    "tasso_pct": 41.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GM",
+   "nome": "Gambia, The"
+  },
+  {
+   "2024": {
+    "ordini": 500,
+    "rimpatriati": 150,
+    "tasso_pct": 30,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 350,
+    "rimpatriati": 125,
+    "tasso_pct": 35.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MD",
+   "nome": "Moldova"
+  },
+  {
+   "2024": {
+    "ordini": 75,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 335,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AF",
+   "nome": "Afghanistan"
+  },
+  {
+   "2024": {
+    "ordini": 320,
+    "rimpatriati": 55,
+    "tasso_pct": 17.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 265,
+    "rimpatriati": 60,
+    "tasso_pct": 22.6,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BR",
+   "nome": "Brazil"
+  },
+  {
+   "2024": {
+    "ordini": 260,
+    "rimpatriati": 45,
+    "tasso_pct": 17.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 240,
+    "rimpatriati": 55,
+    "tasso_pct": 22.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CO",
+   "nome": "Colombia"
+  },
+  {
+   "2024": {
+    "ordini": 65,
+    "rimpatriati": 5,
+    "tasso_pct": 7.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 225,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "IQ",
+   "nome": "Iraq"
+  },
+  {
+   "2024": {
+    "ordini": 280,
+    "rimpatriati": 45,
+    "tasso_pct": 16.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 195,
+    "rimpatriati": 50,
+    "tasso_pct": 25.6,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GH",
+   "nome": "Ghana"
+  },
+  {
+   "2024": {
+    "ordini": 195,
+    "rimpatriati": 25,
+    "tasso_pct": 12.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 195,
+    "rimpatriati": 55,
+    "tasso_pct": 28.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LK",
+   "nome": "Sri Lanka"
+  },
+  {
+   "2024": {
+    "ordini": 215,
+    "rimpatriati": 5,
+    "tasso_pct": 2.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 190,
+    "rimpatriati": 5,
+    "tasso_pct": 2.6,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CU",
+   "nome": "Cuba"
+  },
+  {
+   "2024": {
+    "ordini": 205,
+    "rimpatriati": 15,
+    "tasso_pct": 7.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 180,
+    "rimpatriati": 50,
+    "tasso_pct": 27.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CL",
+   "nome": "Chile"
+  },
+  {
+   "2024": {
+    "ordini": 245,
+    "rimpatriati": 50,
+    "tasso_pct": 20.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 150,
+    "rimpatriati": 45,
+    "tasso_pct": 30,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TR",
+   "nome": "Türkiye"
+  },
+  {
+   "2024": {
+    "ordini": 60,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 130,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ER",
+   "nome": "Eritrea"
+  },
+  {
+   "2024": {
+    "ordini": 275,
+    "rimpatriati": 60,
+    "tasso_pct": 21.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 120,
+    "rimpatriati": 30,
+    "tasso_pct": 25,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "XK",
+   "nome": "Kosovo*"
+  },
+  {
+   "2024": {
+    "ordini": 80,
+    "rimpatriati": 10,
+    "tasso_pct": 12.5,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 100,
+    "rimpatriati": 15,
+    "tasso_pct": 15,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AR",
+   "nome": "Argentina"
+  },
+  {
+   "2024": {
+    "ordini": 105,
+    "rimpatriati": 15,
+    "tasso_pct": 14.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 90,
+    "rimpatriati": 15,
+    "tasso_pct": 16.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BA",
+   "nome": "Bosnia and Herzegovina"
+  },
+  {
+   "2024": {
+    "ordini": 60,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 90,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SD",
+   "nome": "Sudan"
+  },
+  {
+   "2024": {
+    "ordini": 105,
+    "rimpatriati": 5,
+    "tasso_pct": 4.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 85,
+    "rimpatriati": 5,
+    "tasso_pct": 5.9,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GN",
+   "nome": "Guinea"
+  },
+  {
+   "2024": {
+    "ordini": 120,
+    "rimpatriati": 20,
+    "tasso_pct": 16.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 80,
+    "rimpatriati": 45,
+    "tasso_pct": 56.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "RS",
+   "nome": "Serbia"
+  },
+  {
+   "2024": {
+    "ordini": 170,
+    "rimpatriati": 25,
+    "tasso_pct": 14.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 80,
+    "rimpatriati": 15,
+    "tasso_pct": 18.8,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CI",
+   "nome": "Côte d’Ivoire"
+  },
+  {
+   "2024": {
+    "ordini": 60,
+    "rimpatriati": 5,
+    "tasso_pct": 8.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 70,
+    "rimpatriati": 5,
+    "tasso_pct": 7.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ML",
+   "nome": "Mali"
+  },
+  {
+   "2024": {
+    "ordini": 165,
+    "rimpatriati": 15,
+    "tasso_pct": 9.1,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 70,
+    "rimpatriati": 15,
+    "tasso_pct": 21.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SV",
+   "nome": "El Salvador"
+  },
+  {
+   "2024": {
+    "ordini": 135,
+    "rimpatriati": 10,
+    "tasso_pct": 7.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 70,
+    "rimpatriati": 15,
+    "tasso_pct": 21.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "EC",
+   "nome": "Ecuador"
+  },
+  {
+   "2024": {
+    "ordini": 205,
+    "rimpatriati": 5,
+    "tasso_pct": 2.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 65,
+    "rimpatriati": 5,
+    "tasso_pct": 7.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SY",
+   "nome": "Syria"
+  },
+  {
+   "2024": {
+    "ordini": 20,
+    "rimpatriati": 5,
+    "tasso_pct": 25,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 60,
+    "rimpatriati": 25,
+    "tasso_pct": 41.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MK",
+   "nome": "North Macedonia"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 60,
+    "rimpatriati": 10,
+    "tasso_pct": 16.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "RU",
+   "nome": "Russia"
+  },
+  {
+   "2024": {
+    "ordini": 55,
+    "rimpatriati": 15,
+    "tasso_pct": 27.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 60,
+    "rimpatriati": 5,
+    "tasso_pct": 8.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "VE",
+   "nome": "Venezuela"
+  },
+  {
+   "2024": {
+    "ordini": 140,
+    "rimpatriati": 30,
+    "tasso_pct": 21.4,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 50,
+    "rimpatriati": 20,
+    "tasso_pct": 40,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PH",
+   "nome": "Philippines"
+  },
+  {
+   "2024": {
+    "ordini": 30,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 45,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SO",
+   "nome": "Somalia"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 45,
+    "rimpatriati": 10,
+    "tasso_pct": 22.2,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "DO",
+   "nome": "Dominican Republic"
+  },
+  {
+   "2024": {
+    "ordini": 80,
+    "rimpatriati": 10,
+    "tasso_pct": 12.5,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 40,
+    "rimpatriati": 5,
+    "tasso_pct": 12.5,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LY",
+   "nome": "Libya"
+  },
+  {
+   "2024": {
+    "ordini": 30,
+    "rimpatriati": 10,
+    "tasso_pct": 33.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 35,
+    "rimpatriati": 5,
+    "tasso_pct": 14.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KG",
+   "nome": "Kyrgyzstan"
+  },
+  {
+   "2024": {
+    "ordini": 50,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 30,
+    "rimpatriati": 5,
+    "tasso_pct": 16.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CM",
+   "nome": "Cameroon"
+  },
+  {
+   "2024": {
+    "ordini": 35,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 30,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ET",
+   "nome": "Ethiopia"
+  },
+  {
+   "2024": {
+    "ordini": 30,
+    "rimpatriati": 10,
+    "tasso_pct": 33.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 30,
+    "rimpatriati": 10,
+    "tasso_pct": 33.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MU",
+   "nome": "Mauritius"
+  },
+  {
+   "2024": {
+    "ordini": 25,
+    "rimpatriati": 5,
+    "tasso_pct": 20,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 30,
+    "rimpatriati": 10,
+    "tasso_pct": 33.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "US",
+   "nome": "United States"
+  },
+  {
+   "2024": {
+    "ordini": 30,
+    "rimpatriati": 5,
+    "tasso_pct": 16.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 20,
+    "rimpatriati": 5,
+    "tasso_pct": 25,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "HN",
+   "nome": "Honduras"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 20,
+    "rimpatriati": 5,
+    "tasso_pct": 25,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NP",
+   "nome": "Nepal"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 15,
+    "rimpatriati": 5,
+    "tasso_pct": 33.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "UK",
+   "nome": "United Kingdom"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 15,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ME",
+   "nome": "Montenegro"
+  },
+  {
+   "2024": {
+    "ordini": 255,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 15,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "UA",
+   "nome": "Ukraine"
+  },
+  {
+   "2024": {
+    "ordini": 25,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 15,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GA",
+   "nome": "Gabon"
+  },
+  {
+   "2024": {
+    "ordini": 30,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 15,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SL",
+   "nome": "Sierra Leone"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 5,
+    "tasso_pct": 50,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 15,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PY",
+   "nome": "Paraguay"
+  },
+  {
+   "2024": {
+    "ordini": 15,
+    "rimpatriati": 10,
+    "tasso_pct": 66.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BY",
+   "nome": "Belarus"
+  },
+  {
+   "2024": {
+    "ordini": 25,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GW",
+   "nome": "Guinea-Bissau"
+  },
+  {
+   "2024": {
+    "ordini": 20,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LR",
+   "nome": "Liberia"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CA",
+   "nome": "Canada"
+  },
+  {
+   "2024": {
+    "ordini": 20,
+    "rimpatriati": 5,
+    "tasso_pct": 25,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 5,
+    "tasso_pct": 50,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MX",
+   "nome": "Mexico"
+  },
+  {
+   "2024": {
+    "ordini": 35,
+    "rimpatriati": 5,
+    "tasso_pct": 14.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BO",
+   "nome": "Bolivia"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 5,
+    "tasso_pct": 50,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "UZ",
+   "nome": "Uzbekistan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 5,
+    "tasso_pct": 50,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MY",
+   "nome": "Malaysia"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 5,
+    "tasso_pct": 50,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AZ",
+   "nome": "Azerbaijan"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PS",
+   "nome": "Palestine*"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AO",
+   "nome": "Angola"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TD",
+   "nome": "Chad"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CG",
+   "nome": "Congo"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KE",
+   "nome": "Kenya"
+  },
+  {
+   "2024": {
+    "ordini": 15,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TZ",
+   "nome": "Tanzania"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BJ",
+   "nome": "Benin"
+  },
+  {
+   "2024": {
+    "ordini": 35,
+    "rimpatriati": 5,
+    "tasso_pct": 14.3,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 5,
+    "tasso_pct": 100,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BF",
+   "nome": "Burkina Faso"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CV",
+   "nome": "Cabo Verde"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MR",
+   "nome": "Mauritania"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NE",
+   "nome": "Niger"
+  },
+  {
+   "2024": {
+    "ordini": 25,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TG",
+   "nome": "Togo"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "DM",
+   "nome": "Dominica"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CR",
+   "nome": "Costa Rica"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GT",
+   "nome": "Guatemala"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NI",
+   "nome": "Nicaragua"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "UY",
+   "nome": "Uruguay"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 5,
+    "tasso_pct": 100,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KZ",
+   "nome": "Kazakhstan"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MN",
+   "nome": "Mongolia"
+  },
+  {
+   "2024": {
+    "ordini": 15,
+    "rimpatriati": 10,
+    "tasso_pct": 66.7,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TH",
+   "nome": "Thailand"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AM",
+   "nome": "Armenia"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "JO",
+   "nome": "Jordan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KW",
+   "nome": "Kuwait"
+  },
+  {
+   "2024": {
+    "ordini": 10,
+    "rimpatriati": 5,
+    "tasso_pct": 50,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LB",
+   "nome": "Lebanon"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AU",
+   "nome": "Australia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AD",
+   "nome": "Andorra"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "VA",
+   "nome": "Holy See"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MC",
+   "nome": "Monaco"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SM",
+   "nome": "San Marino"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CF",
+   "nome": "Central African Republic"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CD",
+   "nome": "Democratic Republic of the Congo"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GQ",
+   "nome": "Equatorial Guinea"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ST",
+   "nome": "São Tomé and Príncipe"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BI",
+   "nome": "Burundi"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KM",
+   "nome": "Comoros"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "DJ",
+   "nome": "Djibouti"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MG",
+   "nome": "Madagascar"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MW",
+   "nome": "Malawi"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MZ",
+   "nome": "Mozambique"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "RW",
+   "nome": "Rwanda"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SC",
+   "nome": "Seychelles"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "UG",
+   "nome": "Uganda"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ZM",
+   "nome": "Zambia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ZW",
+   "nome": "Zimbabwe"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SS",
+   "nome": "South Sudan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "EH",
+   "nome": "Western Sahara"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BW",
+   "nome": "Botswana"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LS",
+   "nome": "Lesotho"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NA",
+   "nome": "Namibia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ZA",
+   "nome": "South Africa"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SZ",
+   "nome": "Eswatini"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AG",
+   "nome": "Antigua and Barbuda"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BS",
+   "nome": "Bahamas"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BB",
+   "nome": "Barbados"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GD",
+   "nome": "Grenada"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "HT",
+   "nome": "Haiti"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "JM",
+   "nome": "Jamaica"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KN",
+   "nome": "Saint Kitts and Nevis"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LC",
+   "nome": "Saint Lucia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "VC",
+   "nome": "Saint Vincent and the Grenadines"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TT",
+   "nome": "Trinidad and Tobago"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BZ",
+   "nome": "Belize"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PA",
+   "nome": "Panama"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "GY",
+   "nome": "Guyana"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SR",
+   "nome": "Suriname"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 5,
+    "tasso_pct": 100,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TJ",
+   "nome": "Tajikistan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TM",
+   "nome": "Turkmenistan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "JP",
+   "nome": "Japan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KP",
+   "nome": "North Korea"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KR",
+   "nome": "South Korea"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TW",
+   "nome": "Taiwan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BT",
+   "nome": "Bhutan"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MV",
+   "nome": "Maldives"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BN",
+   "nome": "Brunei Darussalam"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KH",
+   "nome": "Cambodia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "ID",
+   "nome": "Indonesia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "LA",
+   "nome": "Laos"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MM",
+   "nome": "Myanmar/Burma"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SG",
+   "nome": "Singapore"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TL",
+   "nome": "Timor-Leste"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "VN",
+   "nome": "Viet Nam"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "BH",
+   "nome": "Bahrain"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "IL",
+   "nome": "Israel"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "OM",
+   "nome": "Oman"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "QA",
+   "nome": "Qatar"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SA",
+   "nome": "Saudi Arabia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "AE",
+   "nome": "United Arab Emirates"
+  },
+  {
+   "2024": {
+    "ordini": 5,
+    "rimpatriati": 0,
+    "tasso_pct": 0,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "YE",
+   "nome": "Yemen"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NZ",
+   "nome": "New Zealand"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "FJ",
+   "nome": "Fiji"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PG",
+   "nome": "Papua New Guinea"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "SB",
+   "nome": "Solomon Islands"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "VU",
+   "nome": "Vanuatu"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "KI",
+   "nome": "Kiribati"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "MH",
+   "nome": "Marshall Islands"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "FM",
+   "nome": "Federated States of Micronesia"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "NR",
+   "nome": "Nauru"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "PW",
+   "nome": "Palau"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "CK",
+   "nome": "Cook Islands"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "WS",
+   "nome": "Samoa"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TO",
+   "nome": "Tonga"
+  },
+  {
+   "2024": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "2025": {
+    "ordini": 0,
+    "rimpatriati": 0,
+    "tasso_pct": null,
+    "stato_ordini": null,
+    "stato_rimpatri": null
+   },
+   "cittadinanza": "TV",
+   "nome": "Tuvalu"
+  }
+ ]
+};

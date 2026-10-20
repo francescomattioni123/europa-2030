@@ -1,0 +1,28 @@
+{
+	"appId": "it.europa2030.app",
+	"appName": "Europa 2032",
+	"webDir": "www",
+	"backgroundColor": "#06070b",
+	"ios": {
+		"contentInset": "never",
+		"backgroundColor": "#06070b",
+		"scheme": "Europa 2030"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 800,
+			"launchAutoHide": true,
+			"backgroundColor": "#06070b",
+			"showSpinner": false
+		},
+		"StatusBar": {
+			"style": "DARK",
+			"backgroundColor": "#06070b"
+		}
+	},
+	"packageClassList": [
+		"AppPlugin",
+		"SplashScreenPlugin",
+		"StatusBarPlugin"
+	]
+}

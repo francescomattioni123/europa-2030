@@ -1,0 +1,1506 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Europa 2032</title>
+<meta name="description" content="Chi governa in Europa, chi è primo nei sondaggi e come può cambiare la mappa del potere entro il 2032. Scenari, Consiglio UE e agenda comune delle destre.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Europa 2032 · la mappa del potere in Europa">
+<meta property="og:description" content="Chi governa oggi, chi è primo nei sondaggi e come può cambiare il continente entro il 2032. Quattro scenari, 30 paesi, il potere reale in Consiglio UE.">
+<meta property="og:url" content="https://francescomattioni123.github.io/europa-2030/">
+<meta property="og:image" content="https://francescomattioni123.github.io/europa-2030/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Europa 2032 · la mappa del potere in Europa">
+<meta name="twitter:description" content="Chi governa oggi, chi è primo nei sondaggi e come può cambiare il continente entro il 2032.">
+<meta name="twitter:image" content="https://francescomattioni123.github.io/europa-2030/og.jpg">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#06070b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Europa 2032">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: schermo nero da sala operativa. Hero a tutta altezza con copy + KPI a sinistra e il globo a destra,
+   poi strisce di contenuto (cambi di governo, calendario, agenda) e un cassetto laterale per la scheda paese. */
+:root {
+  color-scheme: dark;
+  --bg: #06070b;
+  --bg-2: #0b0d14;
+  --panel: rgba(255,255,255,0.025);
+  --panel-2: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.08);
+  --border-2: rgba(255,255,255,0.18);
+  --ink: #f2f3f7;
+  --ink-2: #aeb3c2;
+  --muted: #6f7486;
+  --accent: #3987e5;
+  --accent-glow: rgba(57,135,229,0.45);
+  --f-sx: #a8233f;
+  --f-csx: #ef6f62;
+  --f-cen: #b8a21c;
+  --f-cdx: #35c9c2;
+  --f-dn: #2f5fe8;
+  --f-tec: #6b6f7c;
+  --sans: "Geist", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Geist Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r: 14px;
+  --nav-h: 56px;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+h2 { font-size: clamp(26px, 3.2vw, 40px); font-weight: 700; line-height: 1.05; }
+h3 { font-size: 16px; font-weight: 600; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mono { font-family: var(--mono); }
+.eyebrow { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+.wrap { padding-inline: clamp(16px, 4vw, 56px); max-width: 1480px; margin-inline: auto; }
+
+/* Sfondo */
+.bgfx { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(900px 600px at 78% 18%, rgba(57,135,229,0.16), transparent 60%),
+    radial-gradient(700px 500px at 12% 90%, rgba(230,103,103,0.07), transparent 60%),
+    var(--bg); }
+.bgfx::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1.2px); background-size: 28px 28px; mask-image: radial-gradient(circle at 70% 30%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(circle at 70% 30%, #000 20%, transparent 75%); }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 30; height: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); padding-top: env(safe-area-inset-top, 0px); display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--border); background: rgba(6,7,11,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.tabbar { position: sticky; top: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); z-index: 29; background: rgba(6,7,11,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.tabs { display: flex; gap: 6px; padding-block: 8px; }
+.tab { font-size: 13px; font-weight: 600; padding: 7px 14px; border-radius: 999px; color: var(--ink-2); border: 1px solid transparent; }
+.tab:hover { color: var(--ink); background: var(--panel-2); }
+.tab.on { color: var(--ink); background: var(--panel-2); border-color: var(--border-2); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04); }
+.tab[data-tab="grp"].on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-glow); }
+body[data-tab="europa"] main > [data-tab="grp"], body[data-tab="grp"] main > [data-tab="europa"], body[data-tab="europa"] .links a[data-tab="grp"], body[data-tab="grp"] .links a[data-tab="europa"] { display: none !important; }
+.grp-head { padding-block: 34px 6px; max-width: 760px; }
+.grp-head h1 { font-size: clamp(34px, 5vw, 58px); letter-spacing: -0.04em; line-height: 1.02; margin: 0; }
+.grp-head h1 em { font-style: normal; color: var(--accent); }
+.grp-head .lede { color: var(--ink-2); font-size: 16px; line-height: 1.5; margin-top: 14px; }
+@media (max-width: 560px) { .tab { font-size: 12.5px; padding: 6px 11px; } .tabs { padding-block: 6px; } }
+.nav .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.01em; }
+.nav .logo i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent-glow); }
+.nav .links { display: flex; gap: 4px; }
+.nav .links a { font-size: 13px; color: var(--ink-2); text-decoration: none; padding: 6px 10px; border-radius: 8px; }
+.nav .links a:hover { color: var(--ink); background: var(--panel-2); }
+.nav .stamp { font-family: var(--mono); font-size: 11.5px; color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+.nav .stamp b { color: var(--ink-2); font-weight: 500; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.langs { display: inline-flex; border: 1px solid var(--border-2); border-radius: 7px; overflow: hidden; }
+.langbtn { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; padding: 4px 7px; color: var(--muted); }
+.langbtn:hover { color: var(--ink); background: var(--panel-2); }
+.langbtn.on { background: #ffffff; color: #06070b; }
+.live { width: 6px; height: 6px; border-radius: 50%; background: #19c37d; box-shadow: 0 0 8px #19c37d; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 40px; align-items: end; padding-block: 34px 18px; }
+.hero-copy { min-width: 0; }
+.hero-side { display: grid; gap: 12px; min-width: 0; }
+.hero h1 { font-size: clamp(40px, 4.8vw, 72px); font-weight: 800; line-height: 0.94; letter-spacing: -0.045em; background: linear-gradient(180deg, #ffffff 0%, #c7cbd8 70%, #8a90a3 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero h1 em { font-style: normal; color: transparent; background: linear-gradient(90deg, #7fb3ff, var(--accent)); -webkit-background-clip: text; background-clip: text; }
+.hero .lede { color: var(--ink-2); font-size: 16.5px; max-width: 54ch; margin: 0; }
+.kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.kpi { border: 1px solid var(--border); background: var(--panel); border-radius: var(--r); padding: 14px 16px 12px; position: relative; overflow: hidden; }
+.kpi::before { content: ""; position: absolute; inset: 0 auto auto 0; height: 2px; width: 100%; background: linear-gradient(90deg, var(--accent), transparent); opacity: 0.6; }
+.kpi .v { font-size: clamp(34px, 3.6vw, 52px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.kpi .v.dn { color: var(--f-dn); text-shadow: 0 0 24px var(--accent-glow); }
+.kpi .l { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.3; }
+.kpi .d { font-family: var(--mono); font-size: 11px; margin-top: 4px; color: var(--ink-2); min-height: 14px; }
+
+.ctl { display: grid; gap: 14px; border: 1px solid var(--border); background: var(--panel); border-radius: var(--r); padding: 14px 16px; }
+.seg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 12px; background: rgba(0,0,0,0.35); border: 1px solid var(--border); }
+.seg button { padding: 8px 6px; border-radius: 9px; font-size: 13px; color: var(--ink-2); line-height: 1.15; transition: background .2s, color .2s; }
+.seg button:hover { color: var(--ink); }
+.seg button.on { background: #ffffff; color: #06070b; font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.4); }
+.seg-help { font-size: 12.5px; color: var(--muted); margin: -4px 0 0; min-height: 36px; }
+.range { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 6px 14px; }
+.range label { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.range .cur { font-family: var(--mono); font-size: 13px; color: var(--ink); font-weight: 600; min-width: 46px; text-align: right; }
+.range input { width: 100%; margin: 0; accent-color: var(--accent); height: 4px; cursor: pointer; }
+.ticks { grid-column: 2; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.ticks span { cursor: pointer; }
+.ticks span.on { color: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; flex: none; }
+.sw.hatch { background: repeating-linear-gradient(45deg, #35c9c2 0 2px, #2f5fe8 2px 4px); }
+
+/* Cupola */
+.stage { position: relative; width: 100%; border: 1px solid var(--border); border-radius: 18px; background: rgba(255,255,255,0.012); overflow: hidden; }
+.stage canvas { display: block; width: 100%; cursor: grab; touch-action: none; }
+.stage canvas.drag { cursor: grabbing; }
+.hud { position: absolute; left: 14px; right: 14px; bottom: 9px; display: flex; justify-content: space-between; align-items: center; gap: 12px; pointer-events: none; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.hud .read { display: flex; gap: 16px; flex-wrap: wrap; }
+.hud .read b { color: var(--ink); font-weight: 600; }
+.hud button { pointer-events: auto; border: 1px solid var(--border); background: rgba(6,7,11,0.6); backdrop-filter: blur(8px); color: var(--ink-2); font-family: var(--mono); font-size: 11px; padding: 6px 10px; border-radius: 8px; }
+.hud button:hover { color: var(--ink); border-color: var(--border-2); }
+.hud-btns { display: flex; gap: 6px; }
+.hud-btns #zin, .hud-btns #zout { width: 30px; padding: 6px 0; text-align: center; font-size: 14px; }
+
+/* Chips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding-block: 10px 26px; }
+.chip { font-family: var(--mono); font-size: 11.5px; padding: 5px 9px 5px 7px; border-radius: 8px; background: var(--panel); border: 1px solid var(--border); color: var(--ink-2); display: inline-flex; gap: 6px; align-items: center; transition: border-color .15s, transform .15s; }
+.chip i.c { width: 8px; height: 8px; border-radius: 50%; }
+.chip i.dn { width: 5px; height: 5px; border-radius: 50%; background: var(--f-dn); box-shadow: 0 0 6px var(--accent-glow); }
+.chip:hover { border-color: var(--border-2); color: var(--ink); transform: translateY(-1px); }
+.chip.sel { border-color: #fff; color: var(--ink); }
+
+/* Novità */
+.novita { margin-top: 4px; }
+.nov-head { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; }
+.nov-head h3 { font-size: 18px; margin: 4px 0 0; }
+.copy { font-family: var(--mono); font-size: 11.5px; border: 1px solid var(--border-2); border-radius: 8px; padding: 7px 11px; color: var(--ink); background: rgba(255,255,255,0.04); }
+.copy:hover { background: rgba(255,255,255,0.08); }
+.copy.done { border-color: #19c37d; color: #19c37d; }
+#nov-list { margin: 10px 0 0; padding-left: 18px; color: var(--ink-2); font-size: 13.5px; display: grid; gap: 4px; }
+#nov-older { margin-top: 10px; font-size: 13px; color: var(--muted); }
+#nov-older summary { cursor: pointer; font-size: 11.5px; }
+#nov-older-list { margin-top: 8px; display: grid; gap: 8px; }
+#nov-older-list b { color: var(--ink-2); font-family: var(--mono); font-size: 11.5px; }
+#nov-older-list ul { margin: 2px 0 0; padding-left: 18px; }
+
+/* Segui */
+.follow { margin-top: 12px; border: 1px solid rgba(47,95,232,0.45); background: linear-gradient(90deg, rgba(47,95,232,0.14), rgba(47,95,232,0.03)); border-radius: var(--r); padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+.follow h3 { font-size: 18px; margin: 4px 0 0; }
+.follow p { margin: 4px 0 0; color: var(--ink-2); font-size: 13.5px; max-width: 56ch; }
+.follow-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.fbtn { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--border-2); background: rgba(255,255,255,0.05); color: var(--ink); text-decoration: none; }
+.fbtn:hover { background: rgba(255,255,255,0.1); }
+.fbtn.primary { background: #ffffff; color: #06070b; border-color: #ffffff; }
+.fbtn.primary:hover { background: #e9ebf2; }
+.fbtn.soon { opacity: 0.55; cursor: default; }
+.fbtn.soon:hover { background: rgba(255,255,255,0.05); }
+.fbtn small { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--muted); }
+.fbtn.primary small { color: #4a4f63; }
+
+/* Sezioni */
+.sec { padding-block: 56px 20px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 24px; margin-bottom: 20px; }
+.sec-head p { margin: 6px 0 0; color: var(--ink-2); max-width: 64ch; font-size: 14.5px; }
+.card { border: 1px solid var(--border); background: var(--panel); border-radius: var(--r); }
+.two { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 16px; }
+.card .in { padding: 18px 20px 20px; }
+.card h3 { margin-bottom: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.card h3 small { font-family: var(--mono); font-size: 11px; color: var(--muted); font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; }
+.changes { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.changes li { display: grid; grid-template-columns: 110px 1fr auto; gap: 10px; align-items: center; padding: 9px 12px; border: 1px solid var(--border); background: rgba(0,0,0,0.25); border-radius: 10px; font-size: 13.5px; cursor: pointer; transition: border-color .15s; }
+.changes li:hover { border-color: var(--border-2); }
+.changes .when { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.changes .arrow { color: var(--muted); margin-inline: 4px; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; color: #06070b; white-space: nowrap; }
+.pill.dark { color: #ffffff; }
+.empty { color: var(--muted); font-size: 13.5px; }
+.bars { display: grid; gap: 6px; }
+.bar { display: grid; grid-template-columns: minmax(84px, 140px) 1fr 54px; align-items: center; gap: 10px; font-size: 13px; }
+.bar .n { color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar .t { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+.bar .f { height: 100%; border-radius: 0 3px 3px 0; transition: width .5s cubic-bezier(.2,.8,.2,1); }
+.bar .f.dn { box-shadow: 0 0 10px var(--accent-glow); }
+.bar .v { font-family: var(--mono); font-size: 12px; text-align: right; }
+.bar .v small { color: var(--muted); }
+.bar.row { cursor: pointer; }
+.bar.row:hover .n { color: var(--ink); }
+.warn { font-family: var(--mono); font-size: 11px; color: var(--f-cen); }
+
+/* Consiglio */
+.tier { padding: 10px 0 12px; border-bottom: 1px solid var(--border); }
+.tier:last-of-type { border-bottom: 0; }
+.tier-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 500; margin-bottom: 8px; }
+.st { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
+.st.blk { color: #ffd166; border-color: rgba(255,209,102,0.45); background: rgba(255,209,102,0.08); }
+.st.qmv { color: #8fb4ff; border-color: rgba(47,95,232,0.6); background: rgba(47,95,232,0.18); box-shadow: 0 0 12px rgba(47,95,232,0.35); }
+.tier-bar { position: relative; height: 22px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: visible; }
+.tier-bar .segs { display: flex; height: 100%; border-radius: 6px; overflow: hidden; }
+.tier-bar .segs i { display: flex; align-items: center; justify-content: center; font-style: normal; font-family: var(--mono); font-size: 9.5px; color: rgba(6,7,11,0.85); border-right: 1px solid rgba(6,7,11,0.6); flex: none; overflow: hidden; }
+.tier-bar .mark { position: absolute; top: -4px; bottom: -4px; width: 0; border-left: 1px dashed rgba(255,255,255,0.45); }
+.tier-bar .mark b { position: absolute; top: -14px; left: -12px; font-family: var(--mono); font-size: 9.5px; font-weight: 500; color: var(--muted); }
+.tier-foot { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-2); margin-top: 8px; }
+.pol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pol li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 9px 12px; border: 1px solid var(--border); border-radius: 10px; background: rgba(0,0,0,0.25); }
+.pol li .area { display: block; font-size: 10.5px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.pol li b { display: block; font-size: 13.5px; font-weight: 600; margin: 2px 0; }
+.pol li .nota { display: block; font-size: 12px; color: var(--muted); max-width: 52ch; }
+.pol li .right { display: grid; gap: 4px; justify-items: end; text-align: right; }
+.res { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.res.ok { background: var(--f-dn); color: #fff; box-shadow: 0 0 10px rgba(47,95,232,0.4); }
+.res.later { background: rgba(47,95,232,0.18); color: #8fb4ff; border: 1px solid rgba(47,95,232,0.5); }
+.res.no { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid var(--border); }
+.res.na { background: none; color: var(--muted); border: 1px dashed var(--border); font-weight: 500; }
+.tier-tag { font-size: 10.5px; color: var(--muted); }
+
+/* Dossier */
+.ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ds li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; padding: 11px 12px; border: 1px solid var(--border); border-radius: 10px; background: rgba(0,0,0,0.25); }
+.ds .area { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.ds b.t { display: block; font-size: 13.5px; font-weight: 600; margin: 2px 0 4px; }
+.ds .stato { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--ink-2); margin-right: 6px; vertical-align: middle; }
+.ds .stato.s-trilogo, .ds .stato.s-consiglio, .ds .stato.s-parlamento { border-color: rgba(255,209,102,0.5); color: #ffd166; }
+.ds .stato.s-adottato, .ds .stato.s-attuazione { border-color: rgba(53,201,194,0.5); color: #35c9c2; }
+.ds .stato.s-bloccato { border-color: rgba(239,111,98,0.5); color: #ef6f62; }
+.ds .nota { display: block; font-size: 12.5px; color: var(--ink-2); max-width: 56ch; }
+.ds .next { display: block; font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 4px; }
+.ds .goal { display: block; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.ds .right { display: grid; gap: 4px; justify-items: end; text-align: right; }
+.ds details { margin-top: 4px; }
+.ds summary { font-family: var(--mono); font-size: 10.5px; color: var(--muted); cursor: pointer; }
+.ds details p { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); max-width: 56ch; }
+.ds details a { color: var(--muted); font-size: 11px; word-break: break-all; }
+
+/* Voto atteso in Consiglio */
+.vote { margin: 8px 0 6px; display: grid; gap: 4px; }
+.vote .eyebrow { font-size: 10px; }
+.vstrip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; gap: 1px; background: rgba(255,255,255,0.04); }
+.vq { display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-family: var(--mono); font-size: 8.5px; color: rgba(6,7,11,0.85); min-width: 3px; }
+.vlegend .vq { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.vq.v-favorevole { background: #35c9c2; }
+.vq.v-condizionato { background: repeating-linear-gradient(45deg, #35c9c2 0 3px, rgba(53,201,194,0.35) 3px 6px); }
+.vq.v-contrario { background: #ef6f62; }
+.vq.v-astensione, .vq.v-opt_out { background: #6b6f7c; }
+.vq.v-opt_out { background: repeating-linear-gradient(135deg, #6b6f7c 0 3px, #3c3f4a 3px 6px); }
+.vq.v-da_verificare { background: transparent; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); color: var(--muted); }
+.vq.nuovo { box-shadow: inset 0 -3px 0 #2f5fe8; }
+.vq.v-da_verificare.nuovo { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35), inset 0 -3px 0 #2f5fe8; }
+.vq.dec { outline: 1px solid #ffffff; outline-offset: -1px; }
+.vnums { font-size: 11px; color: var(--ink-2); }
+.vdec { font-size: 12px; color: var(--muted); }
+.vdec b { color: var(--ink); font-weight: 600; margin-right: 4px; white-space: nowrap; }
+.vlegend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); margin-bottom: 10px; }
+.vlegend span { display: inline-flex; align-items: center; gap: 6px; }
+.exv { font-size: 12.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.exv.ex-passa { background: #35c9c2; color: #06070b; }
+.exv.ex-bloccato { background: #ef6f62; color: #06070b; }
+.exv.ex-incerto { background: transparent; color: #ffd166; border: 1px dashed rgba(255,209,102,0.7); }
+.conf { font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.conf.c-alta { color: var(--ink-2); }
+.conf.c-bassa { color: #ffd166; }
+.frag { font-family: var(--mono); font-size: 10.5px; color: #ffd166; max-width: 22ch; text-align: right; }
+.oldv { display: grid; gap: 1px; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); font-size: 11px; color: var(--muted); max-width: 26ch; text-align: right; }
+.oldv .mono { font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+.cv { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.cv li { border: 1px solid var(--border); border-radius: 10px; padding: 9px 11px; background: rgba(0,0,0,0.25); display: grid; gap: 5px; }
+.cv li > b { font-size: 13px; font-weight: 600; }
+.cv-v { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 12px; }
+.cv-lab { font-size: 10.5px; color: var(--muted); min-width: 14ch; }
+.vtag { font-size: 11.5px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
+.vtag.v-favorevole { background: #35c9c2; color: #06070b; } .vtag.v-condizionato { background: rgba(53,201,194,0.25); color: #35c9c2; border: 1px solid rgba(53,201,194,0.6); }
+.vtag.v-contrario { background: #ef6f62; color: #06070b; } .vtag.v-astensione, .vtag.v-opt_out { background: #3c3f4a; color: var(--ink); }
+.vtag.v-da_verificare { border: 1px dashed rgba(255,255,255,0.4); color: var(--muted); }
+.cv-n { flex-basis: 100%; color: var(--ink-2); }
+.cv-src { font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+
+/* Piano */
+.piano-kpi { margin-bottom: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.fchip { display: inline-block; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 999px; color: #1a1d26; white-space: nowrap; }
+.fasi { margin-bottom: 16px; }
+.grp-link { display: inline-block; margin-top: 12px; padding: 10px 16px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; }
+.grp-link:hover { filter: brightness(1.1); }
+@media (max-width: 900px) { .piano-kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* funnel */
+.fsel { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.fsel .chip { cursor: pointer; }
+.fsel .chip.on { border-color: var(--accent); color: var(--ink); background: rgba(57,135,229,0.12); box-shadow: 0 0 0 1px var(--accent-glow); }
+.fgrid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px; margin-bottom: 16px; }
+.fgrid2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); }
+.fsteps { list-style: none; margin: 0; padding: 0; }
+.fsteps li { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 150px; gap: 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.fsteps li:last-child { border-bottom: 0; }
+.fsteps li.grp { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 0 4px; border-bottom: 0; }
+.fsteps li.grp:first-child { padding-top: 0; }
+.fsteps .fl small { display: block; color: var(--muted); font-size: 11px; }
+.fsteps .fb { height: 9px; background: rgba(255,255,255,0.06); border-radius: 5px; overflow: hidden; }
+.fsteps .fb i { display: block; height: 100%; background: #35c9c2; }
+.fsteps .fb i.b2 { background: var(--accent); }
+.fsteps .fb i.b3 { background: #ef6f62; }
+.fsteps .fv { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.fsteps .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; font-weight: 400; }
+.fsteps .fv.nd { color: var(--muted); font-weight: 400; font-size: 11.5px; }
+.fstack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 12px 0 10px; background: rgba(255,255,255,0.05); }
+.fstack i { display: block; height: 100%; }
+.flegend { display: grid; gap: 6px; font-size: 12.5px; color: var(--ink-2); }
+.flegend div { display: flex; justify-content: space-between; gap: 10px; }
+.flegend b { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 8px; flex: none; position: relative; top: 1px; }
+.flegend span.v { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--ink); }
+.c-l1 { background: rgba(255,255,255,0.22); } .c-l2 { background: #35c9c2; } .c-l3 { background: var(--accent); }
+.ftab { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 10px; }
+.ftab th, .ftab td { padding: 5px 6px; border-bottom: 1px solid var(--border); text-align: right; font-variant-numeric: tabular-nums; }
+.ftab th:first-child, .ftab td:first-child { text-align: left; }
+.ftab th { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+.facq { display: flex; align-items: flex-end; gap: 4px; height: 56px; margin-top: 10px; }
+.facq i { flex: 1; background: #35c9c2; opacity: 0.75; border-radius: 2px 2px 0 0; min-height: 2px; position: relative; }
+.facq i:last-child { opacity: 1; }
+.facq i::after { content: attr(data-y); position: absolute; top: 100%; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 9px; color: var(--muted); margin-top: 3px; }
+.facq-tot { font-family: var(--mono); font-size: 11px; color: var(--ink-2); margin-top: 22px; }
+.fperm li { display: grid; grid-template-columns: minmax(0, 1fr) 90px; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.fperm li:last-child { border-bottom: 0; }
+.fperm { list-style: none; margin: 0; padding: 0; }
+.fperm .fb { display: block; height: 7px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; margin-top: 5px; } .fperm .fb i { display: block; height: 100%; background: var(--accent); }
+.fperm .fv { text-align: right; font-variant-numeric: tabular-nums; } .fperm .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; }
+.fnd { color: var(--muted); font-size: 12.5px; }
+.fbase { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.04em; margin: -4px 0 12px; line-height: 1.5; }
+.fun { list-style: none; margin: 0; padding: 0; }
+.fun li { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 118px; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.fun li:last-child { border-bottom: 0; }
+.fun li.base { font-weight: 700; }
+.fun li.base .fb i { background: var(--ink); opacity: 0.85; }
+.fun .fl small { display: block; color: var(--muted); font-size: 11px; font-weight: 400; line-height: 1.35; margin-top: 2px; }
+.fun .fb { height: 14px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; }
+.fun .fb i { display: block; height: 100%; border-radius: 2px; min-width: 2px; }
+.fun .fv { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.fun .fv small { display: block; color: var(--muted); font-family: var(--mono); font-size: 10.5px; font-weight: 400; }
+.fun .fv.nd { color: var(--muted); font-weight: 400; font-size: 11.5px; }
+.fun .pct { font-family: var(--mono); font-size: 11px; color: #35c9c2; }
+.c-k0 { background: rgba(255,255,255,0.28); } .c-k1 { background: #8fd9d5; } .c-k2 { background: #35c9c2; } .c-k3 { background: var(--accent); } .c-k4 { background: #7fb0f0; } .c-k5 { background: #ef9f62; } .c-k6 { background: rgba(255,255,255,0.12); }
+.c-r1 { background: #ef9f62; } .c-r2 { background: #ef6f62; } .c-r3 { background: #c94b57; }
+@media (max-width: 900px) { .fun li { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr) 100px; gap: 8px; } }
+@media (max-width: 900px) { .fgrid, .fgrid2 { grid-template-columns: 1fr; } .fsteps li { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr) 120px; gap: 8px; } }
+.per { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.per-col { border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; background: var(--panel); }
+.per-col h3 { font-size: 13px; margin-bottom: 8px; font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.per-col.in h3 { color: #35c9c2; } .per-col.out h3 { color: var(--muted); }
+.per-col ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 13.5px; display: grid; gap: 4px; }
+.pils { display: grid; gap: 12px; }
+.pil-head { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 10px; }
+.pil-n { font-size: 22px; font-weight: 600; color: var(--accent); line-height: 1.1; }
+.pil-head h3 { margin: 0 0 4px; font-size: 17px; }
+.pil-head p { margin: 0; color: var(--ink-2); font-size: 13.5px; max-width: 70ch; }
+.mis { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.mis li { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; background: rgba(0,0,0,0.25); display: grid; gap: 4px; }
+.mis-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; align-items: center; }
+.mis-top b { font-size: 13.5px; font-weight: 600; }
+.mis-tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.mtag { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); letter-spacing: 0.04em; }
+.mtag.lv-ue { color: #8fb4ff; border-color: rgba(47,95,232,0.5); } .mtag.lv-terzo_paese { color: #ffd166; border-color: rgba(255,209,102,0.45); }
+.mtag.st-in_vigore { color: #35c9c2; border-color: rgba(53,201,194,0.5); } .mtag.st-nuova { color: #ffffff; border-color: #ffffff; }
+.mis li p { margin: 0; font-size: 13px; color: var(--ink-2); }
+.mis-num { font-size: 11px; color: var(--ink); }
+.mis-src { font-size: 10.5px; color: var(--muted); } .mis-src a { color: var(--muted); }
+.piano-two { margin-top: 16px; }
+.tappe { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.tappe li { display: grid; grid-template-columns: 72px 1fr; gap: 10px; font-size: 13px; }
+.tappe .when { color: var(--accent); font-size: 11px; padding-top: 2px; }
+.tappe b { display: block; font-weight: 600; } .tappe span:not(.when) { color: var(--ink-2); }
+.vinc { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; }
+.vinc li b { display: block; font-weight: 600; } .vinc li span { color: var(--ink-2); } .vinc li a { font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-left: 6px; }
+.ptab-wrap { overflow-x: auto; }
+.ptab { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 13px; }
+.ptab th, .ptab td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+.ptab th { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+.ptab td.num, .ptab th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.ptab tr[data-go] { cursor: pointer; } .ptab tr[data-go]:hover td { background: rgba(255,255,255,0.03); }
+.ptab .tbar { display: inline-block; width: 56px; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; vertical-align: middle; margin-right: 8px; overflow: hidden; }
+.ptab .tbar i { display: block; height: 100%; background: #35c9c2; }
+.ptab td.gap { color: #ffd166; }
+@media (max-width: 700px) { .per { grid-template-columns: 1fr; } }
+
+/* Calendario */
+.cal-card { overflow-x: auto; padding: 10px 6px 4px; }
+.cal-card svg { display: block; min-width: 820px; width: 100%; height: auto; }
+
+/* Matrice */
+.matrix-wrap { overflow-x: auto; }
+table.matrix { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 1040px; font-size: 13px; }
+.matrix th, .matrix td { padding: 9px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.matrix thead th { position: sticky; top: 0; background: #0b0d14; text-align: center; font-weight: 500; font-size: 12px; line-height: 1.2; padding-top: 12px; z-index: 1; }
+.matrix thead th .g { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+.matrix thead th .fl { font-size: 18px; display: block; }
+.matrix th.row { text-align: left; padding-left: 16px; min-width: 320px; font-weight: 500; }
+.matrix th.row .area { font-family: var(--mono); font-size: 10.5px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+.matrix th.row .nota { display: block; font-weight: 400; font-size: 12px; color: var(--muted); margin-top: 2px; max-width: 48ch; }
+.matrix td { text-align: center; }
+.cell { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 26px; border-radius: 7px; font-family: var(--mono); font-size: 13px; }
+.cell.l2 { background: var(--f-dn); color: #ffffff; box-shadow: 0 0 12px rgba(47,95,232,0.45); }
+.cell.l1 { background: rgba(57,135,229,0.22); color: var(--ink); border: 1px solid rgba(57,135,229,0.35); }
+.cell.l0 { background: rgba(255,255,255,0.04); color: var(--muted); border: 1px solid var(--border); }
+.cell.ln { color: var(--muted); }
+.matrix td.score { white-space: nowrap; padding-right: 14px; }
+.score .sb { display: inline-block; width: 64px; height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; vertical-align: middle; margin-right: 8px; overflow: hidden; }
+.score .sb i { display: block; height: 100%; background: var(--f-dn); }
+.score span { font-family: var(--mono); font-size: 12px; color: var(--ink-2); }
+.mlegend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px; color: var(--ink-2); margin-top: 12px; }
+.mlegend span { display: inline-flex; gap: 6px; align-items: center; }
+.mlegend .cell { width: 22px; height: 18px; font-size: 11px; box-shadow: none; }
+.convdiv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.convdiv .in h3 { margin-bottom: 12px; }
+.convdiv .conv h3 { color: #7fb3ff; } .convdiv .div h3 { color: var(--f-csx); }
+.convdiv ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.convdiv li strong { display: block; font-weight: 600; }
+.convdiv li span { color: var(--ink-2); font-size: 13.5px; }
+
+footer.method { margin-top: 48px; border-top: 1px solid var(--border); padding-block: 24px 48px; color: var(--ink-2); font-size: 13.5px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+footer.method p { margin: 8px 0 0; }
+
+/* Cassetto scheda paese */
+.scrim { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; opacity: 0; pointer-events: none; transition: opacity .25s; }
+.scrim.on { opacity: 1; pointer-events: auto; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(460px, 100%); z-index: 41; background: #0b0d14; border-left: 1px solid var(--border); transform: translateX(104%); transition: transform .32s cubic-bezier(.2,.8,.2,1); overflow: auto; padding: calc(env(safe-area-inset-top, 0px) + 18px) 22px calc(env(safe-area-inset-bottom, 0px) + 28px); box-shadow: -20px 0 60px rgba(0,0,0,0.5); }
+.drawer.open { transform: none; }
+.drawer .close { position: sticky; top: 0; float: right; border: 1px solid var(--border); background: #0b0d14; border-radius: 8px; width: 32px; height: 32px; display: grid; place-items: center; color: var(--ink-2); z-index: 2; }
+.drawer .close:hover { color: var(--ink); border-color: var(--border-2); }
+.country-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.country-head .flag { font-size: 34px; line-height: 1; }
+.country-head h2 { font-size: 30px; }
+.proj { margin-top: 14px; border: 1px solid var(--border); border-left-width: 4px; border-radius: 12px; padding: 12px 14px; background: rgba(255,255,255,0.03); }
+.proj .who { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.proj .who b { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.proj .who span { color: var(--ink-2); font-size: 13.5px; }
+.proj .sub { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+.section { margin-top: 20px; }
+.section > .eyebrow { display: block; margin-bottom: 8px; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; font-size: 13.5px; margin: 0; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.tag { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--border); border-left: 3px solid var(--muted); }
+.note { font-size: 13.5px; color: var(--ink-2); margin: 10px 0 0; }
+.dnbox { border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; }
+.dnbox .big { font-size: 34px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--f-dn); text-shadow: 0 0 20px var(--accent-glow); }
+.dnbox .sub { font-size: 12.5px; color: var(--muted); }
+.trend-up { color: var(--f-dn); } .trend-down { color: var(--f-csx); } .trend-flat { color: var(--muted); }
+.scen-rows { display: grid; gap: 6px; }
+.scen-row { display: grid; grid-template-columns: 128px 1fr; gap: 10px; align-items: center; font-size: 13px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 9px; background: rgba(0,0,0,0.25); }
+.scen-row.on { border-color: var(--border-2); }
+.scen-row .k { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+.srcs { font-size: 12px; color: var(--muted); word-break: break-all; line-height: 1.7; }
+.srcs a { color: var(--muted); }
+
+/* Installazione */
+.install { position: fixed; left: 12px; right: 12px; bottom: calc(env(safe-area-inset-bottom, 0px) + 12px); z-index: 45; display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: rgba(11,13,20,0.96); border: 1px solid var(--border-2); border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,0.5); backdrop-filter: blur(10px); max-width: 560px; margin-inline: auto; }
+.install img { border-radius: 10px; flex: none; }
+.install-text { display: grid; gap: 2px; font-size: 13px; min-width: 0; flex: 1; }
+.install-text b { font-size: 14px; }
+.install-text span { color: var(--ink-2); }
+.install-x { flex: none; width: 28px; height: 28px; border-radius: 7px; color: var(--muted); border: 1px solid var(--border); }
+.install-x:hover { color: var(--ink); }
+
+/* Tooltip */
+.tip { position: fixed; z-index: 50; pointer-events: none; background: rgba(8,9,14,0.92); border: 1px solid var(--border-2); border-radius: 10px; padding: 10px 12px; font-size: 13px; max-width: 290px; box-shadow: 0 12px 30px rgba(0,0,0,.5); opacity: 0; transition: opacity .12s; backdrop-filter: blur(8px); }
+.tip.on { opacity: 1; }
+.tip .t { font-weight: 600; }
+.tip .s { color: var(--ink-2); }
+.tip .m { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 1080px) {
+  .hero { grid-template-columns: 1fr; align-items: start; }
+  .two, .convdiv { grid-template-columns: 1fr; }
+  .nav .links { display: none; }
+  .hud .hint { display: none; }
+}
+@media (max-width: 560px) {
+  .ds li { grid-template-columns: 1fr; }
+  .ds .right { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; text-align: left; gap: 4px 10px; }
+  .ds .right .oldv { flex-basis: 100%; }
+  .oldv, .frag { text-align: left; max-width: none; }
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .seg { grid-template-columns: 1fr 1fr; }
+  .changes li { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<div class="bgfx" aria-hidden="true"></div>
+
+<nav class="nav wrap">
+  <a class="logo" href="#top" style="text-decoration:none"><i></i>Europa 2032</a>
+  <div class="links">
+    <a href="#top" data-tab="europa">Mappa</a><a href="#novita" data-tab="europa">Novità</a><a href="#cambi" data-tab="europa">Cambi di governo</a><a href="#consiglio" data-tab="europa">Consiglio UE</a><a href="#calendario" data-tab="europa">Calendario</a><a href="#agenda" data-tab="europa">Agenda</a><a href="#metodo" data-tab="europa">Metodo</a><a href="#piano" data-tab="grp">Piano</a><a href="#funnel" data-tab="grp">Funnel</a>
+  </div>
+  <div class="nav-right"><div class="stamp"><i class="live"></i>dati al <b id="stamp">15 ott 2026</b></div><div class="langs" role="group" aria-label="Lingua"><button type="button" class="langbtn" data-lang="it">IT</button><button type="button" class="langbtn" data-lang="en">EN</button><button type="button" class="langbtn" data-lang="de">DE</button></div></div>
+</nav>
+<div class="tabbar"><div class="wrap tabs" role="tablist" aria-label="Sezioni"><button type="button" class="tab" data-tab="europa" role="tab">Europa 2032</button><button type="button" class="tab" data-tab="grp" role="tab">Great Remigration Plan</button></div></div>
+
+<main id="top" class="wrap">
+  <section class="hero" data-tab="europa">
+    <div class="hero-copy">
+      <div>
+        <div class="eyebrow">Osservatorio · UE 27 + Regno Unito, Norvegia, Svizzera</div>
+        <h1 style="margin-top:10px">La mappa del potere<br>in <em>Europa</em></h1>
+        <p class="lede" style="margin-top:14px">Chi governa oggi, chi è primo nei sondaggi e come può cambiare il continente entro il 2032. Scegli uno scenario, muovi il cursore nel tempo, clicca un paese.</p>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="kpis" id="kpis"></div>
+      <div class="ctl">
+        <div class="seg" role="group" aria-label="Scenario" id="seg">
+          <button type="button" data-scen="status_quo">Status quo</button>
+          <button type="button" data-scen="primo">Primo nei sondaggi</button>
+          <button type="button" data-scen="coalizione" class="on">Coalizione probabile</button>
+          <button type="button" data-scen="trend">Trend continua</button>
+        </div>
+        <p class="seg-help" id="seg-help"></p>
+        <div class="range">
+          <label for="anno">Orizzonte</label>
+          <input type="range" id="anno" min="0" max="7" value="7" step="1" aria-label="Orizzonte temporale">
+          <span class="cur" id="cur">Oggi</span>
+          <div class="ticks" id="ticks"></div>
+        </div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </div>
+  </section>
+  <div class="stage" data-tab="europa">
+    <canvas id="globo" aria-label="Europa in proiezione sferica, paesi colorati per famiglia politica del governo" role="img"></canvas>
+    <div class="hud">
+        <div class="read"><span class="hint">trascina per spostare · clicca un paese</span><span>scenario <b id="hud-scen">primo nei sondaggi</b> · orizzonte <b id="hud-anno">oggi</b></span></div>
+        <div class="hud-btns"><button type="button" id="zout" aria-label="Riduci">−</button><button type="button" id="zin" aria-label="Ingrandisci">+</button><button type="button" id="centra">⌖ centra l'Europa</button></div>
+    </div>
+  </div>
+  <div class="chips" id="chips" data-tab="europa"></div>
+
+  <section class="novita card reveal" id="novita" data-tab="europa">
+    <div class="in">
+      <div class="nov-head"><div><span class="eyebrow">Novità · aggiornamento settimanale</span><h3 id="nov-title"></h3></div><button type="button" class="copy" id="nov-copy">Copia il riassunto per WhatsApp</button></div>
+      <ul id="nov-list"></ul>
+      <details id="nov-older"><summary class="mono">Aggiornamenti precedenti</summary><div id="nov-older-list"></div></details>
+    </div>
+  </section>
+
+  <section class="follow reveal" id="segui" data-tab="europa">
+    <div class="follow-copy"><span class="eyebrow" id="fl-eyebrow">Il brief settimanale</span><h3 id="fl-title">Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario</h3><p id="fl-text">Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.</p></div>
+    <div class="follow-btns" id="fl-btns"></div>
+  </section>
+
+  <section class="sec reveal" id="cambi" data-tab="europa">
+    <div class="sec-head"><div><div class="eyebrow">Scenario</div><h2 id="cambi-title">Cosa cambia</h2><p id="cambi-sub"></p></div></div>
+    <div class="two">
+      <div class="card"><div class="in"><h3>Cambi di governo <small id="cambi-count"></small></h3><div id="changes"></div></div></div>
+      <div class="card"><div class="in"><h3>Destra nazionalista nei sondaggi <small>primo partito per paese</small></h3><div id="ranking"></div><p class="empty" style="margin:10px 0 0">Valore nel sondaggio più recente e, in grigio, la differenza rispetto alle ultime elezioni. Clicca per aprire la scheda.</p></div></div>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="consiglio" data-tab="europa">
+    <div class="sec-head"><div><div class="eyebrow">Potere reale</div><h2>Cosa può fare questo blocco in Consiglio UE</h2><p>I governi contano quando votano insieme. Qui la mappa dello scenario scelto diventa voti in Consiglio: quanti stati, quanta popolazione, e quali proposte dell'agenda comune diventano bloccabili o approvabili, e da quale anno.</p></div></div>
+    <div class="two">
+      <div class="card"><div class="in"><h3>Il blocco di destra in Consiglio <small id="cons-when"></small></h3><div id="cons-bars"></div></div></div>
+      <div class="card"><div class="in"><h3>I dossier sul tavolo a Bruxelles <small>nello scenario scelto</small></h3><div id="cons-pol"></div></div></div>
+    </div>
+  </section>
+
+  <section class="sec reveal" id="calendario" data-tab="europa">
+    <div class="sec-head"><div><div class="eyebrow">Calendario</div><h2>Le elezioni che decidono il 2032</h2><p>Ogni punto è il prossimo voto nazionale che assegna il governo. Il colore è il vincitore previsto nello scenario scelto; i punti oltre l'orizzonte restano spenti. Il cerchio tratteggiato è un voto anticipato probabile o una formazione di governo senza voto.</p></div></div>
+    <div class="card cal-card"><svg id="cal" viewBox="0 0 1000 300"></svg></div>
+  </section>
+
+  <section class="grp-head" id="grp" data-tab="grp">
+    <div class="eyebrow">Europa 2032 · Documento di policy</div>
+    <h1 style="margin-top:10px">The Great <em>Remigration</em> Plan (“GRP”)</h1>
+    <p class="lede">Cinque fasi, un obiettivo per anno fino al 2032: per l'Italia il 100% di esecuzione degli ordini, 100k rimpatri l'anno a regime. Qui il capitolo europeo e il funnel paese per paese; <a href="grp.html">il piano completo</a> ha funnel dell'Italia, tracker 2027-2032, esecuzione e costi.</p>
+  </section>
+  <section class="sec reveal" id="piano" data-tab="grp" hidden>
+    <div class="sec-head"><div><div class="eyebrow" id="piano-eyebrow">Piano</div><h2 id="piano-title"></h2><p id="piano-sub"></p></div></div>
+    <div class="kpis piano-kpi" id="piano-kpi"></div>
+    <div class="per" id="piano-per"></div>
+    <div class="pils" id="piano-pil"></div>
+    <div class="two piano-two">
+      <div class="card"><div class="in"><h3 id="piano-h-tappe"></h3><ul class="tappe" id="piano-tappe"></ul></div></div>
+      <div class="card"><div class="in"><h3 id="piano-h-vinc"></h3><ul class="vinc" id="piano-vinc"></ul></div></div>
+    </div>
+    <div class="card" style="margin-top:16px"><div class="in"><h3 id="piano-h-paesi"></h3><div class="ptab-wrap" id="piano-paesi"></div></div></div>
+    <p class="srcs" id="piano-fonti" style="margin-top:12px"></p>
+  </section>
+
+  <section class="sec reveal" id="funnel" data-tab="grp" hidden>
+    <div class="sec-head"><div><div class="eyebrow">Funnel</div><h2 id="funnel-title"></h2><p id="funnel-sub"></p></div></div>
+    <div class="fsel" id="funnel-sel"></div>
+    <div class="fgrid">
+      <div class="card"><div class="in"><h3 id="funnel-h-a"></h3><p class="fbase" id="funnel-base-a"></p><ol class="fun" id="funnel-a"></ol></div></div>
+      <div class="card"><div class="in"><h3 id="funnel-h-b"></h3><p class="fbase" id="funnel-base-b"></p><ol class="fun" id="funnel-b"></ol></div></div>
+    </div>
+    <div class="fgrid fgrid2">
+      <div>
+        <div class="card"><div class="in"><h3 id="funnel-h-perm"></h3><div id="funnel-perm"></div></div></div>
+        <div class="card" style="margin-top:16px"><div class="in"><h3 id="funnel-h-acq"></h3><div id="funnel-acq"></div></div></div>
+      </div>
+      <div class="card"><div class="in"><h3 id="funnel-h-naz"></h3><div class="ptab-wrap" id="funnel-naz"></div></div></div>
+    </div>
+    <p class="srcs" id="funnel-fonti" style="margin-top:12px"></p>
+  </section>
+
+  <section class="sec reveal" id="agenda" data-tab="europa">
+    <div class="sec-head"><div><div class="eyebrow">Agenda</div><h2>Cosa possono fare insieme le destre</h2><p>Dodici partiti, dodici proposte concrete. Dove la riga è tutta blu c'è una politica che un'Europa a trazione nazionalista può davvero portare avanti; dove si spezza, no.</p></div></div>
+    <div class="card matrix-wrap"><table class="matrix" id="matrix"></table></div>
+    <div class="mlegend">
+      <span><i class="cell l2">●</i> favorevole</span>
+      <span><i class="cell l1">◐</i> parziale o ambiguo</span>
+      <span><i class="cell l0">○</i> contrario</span>
+      <span><i class="cell ln">·</i> non applicabile</span>
+      <span>Gruppi PE: ECR conservatori · PfE Patrioti · ESN Europa delle Nazioni Sovrane</span>
+    </div>
+    <div class="convdiv" id="convdiv"></div>
+  </section>
+
+  <footer class="method" id="metodo" data-tab="europa">
+    <div><span class="eyebrow">Gli scenari</span>
+      <p><strong>Status quo</strong>: nessun governo cambia. <strong>Primo nei sondaggi</strong>: a ogni elezione il governo va alla famiglia del partito oggi primo nei sondaggi, meccanicamente, cordoni sanitari ignorati. <strong>Coalizione probabile</strong>: la coalizione che oggi appare più realistica, cordoni sanitari inclusi. <strong>Trend continua</strong>: la crescita della destra nazionalista prosegue e i cordoni cedono dove è già vicina al potere. Nei tre scenari diversi dallo status quo, dove un governo è in crisi (Germania, Austria, Paesi Bassi, Slovacchia, Romania, Portogallo) si usa la data del voto anticipato probabile, non la scadenza naturale. Sono chiavi di lettura, non previsioni. La sezione sul Consiglio applica le regole del voto a maggioranza qualificata (articolo 16 TUE) alle popolazioni Eurostat 2025: 15 stati e 65% della popolazione per approvare, 4 stati e oltre il 35% per bloccare, unanimità per politica estera, fisco e articolo 7.</p></div>
+    <div><span class="eyebrow">Le famiglie</span>
+      <p>Il colore è la famiglia di chi guida l'esecutivo: il presidente in Francia e a Cipro, il primo ministro altrove. Il tratteggio blu su un altro colore segnala una destra nazionalista al governo come partner o in appoggio esterno. Casi limite spiegati nelle schede: ANO in Cechia e SDS in Slovenia sono a destra; Smer in Slovacchia resta a sinistra nominalmente; la Svizzera è un governo di concordanza.</p></div>
+    <div><span class="eyebrow">Fonti</span>
+      <p>Medie sondaggi PolitPro ed Europe Elects, istituti nazionali citati in ogni scheda (SWG, INSA, YouGov, Verian, Yle, Norstat e altri), Wikipedia per risultati e calendario, stampa nazionale per gli eventi di governo. La matrice è una sintesi editoriale di programmi e voti al Parlamento europeo, non una dichiarazione dei partiti.</p></div>
+  </footer>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<div class="install" id="install" hidden>
+  <img src="icons/icon-192.png" alt="" width="40" height="40">
+  <div class="install-text"><b id="inst-title"></b><span id="inst-body"></span></div>
+  <button type="button" class="fbtn primary" id="inst-btn" hidden></button>
+  <button type="button" class="install-x" id="inst-close" aria-label="Chiudi">✕</button>
+</div>
+<aside class="drawer" id="drawer" aria-label="Scheda paese"></aside>
+<div class="tip" id="tip"></div>
+
+<script src="data/mondo-topo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="consiglio.js"></script>
+<script>
+// Caricamento dati: nell'app nativa prova prima la versione pubblicata (sempre aggiornata), poi quella inclusa nell'app.
+(function () {
+  const FILES = ['data/paesi.js', 'data/politiche.js', 'data/aggiornamenti.js', 'data/iscrizione.js', 'data/dossier.js', 'data/posizioni.js', 'data/piano.js', 'data/funnel.js'];
+  const native = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  window.EU30_NATIVE = native;
+  const base = native ? 'https://francescomattioni123.github.io/europa-2030/' : '';
+  const load = src => new Promise((ok, ko) => { const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = ko; document.head.appendChild(s); });
+  (async () => {
+    for (const f of FILES) { try { await load(base + f + (base ? '?t=' + Date.now() : '')); } catch (e) { if (base) { try { await load(f); } catch (e2) {} } } }
+    if (window.__start) window.__start();
+  })();
+})();
+</script>
+<script>
+window.__start = function () {
+  const PAESI = window.PAESI, POL = window.POLITICHE, TOPO = window.MONDO_TOPO;
+  /* ---------- Lingua (it / en / de) ---------- */
+  const LANGS = ['it', 'en', 'de'];
+  const LANG = (() => { try { const s = localStorage.getItem('eu30-lang'); if (LANGS.includes(s)) return s; } catch (e) {} const n = (navigator.language || 'it').toLowerCase(); return n.startsWith('it') ? 'it' : n.startsWith('de') ? 'de' : 'en'; })();
+  const LI = LANGS.indexOf(LANG), EN = LANG !== 'it', SUF = LANG === 'it' ? '' : '_' + LANG;
+  document.documentElement.lang = LANG;
+  // testo di un oggetto dati: campo con suffisso di lingua (_en, _de) se esiste, altrimenti l'italiano
+  const tx = (o, k) => (SUF && o && o[k + SUF]) ? o[k + SUF] : (o ? (o[k] == null ? '' : o[k]) : '');
+  const txa = (o, k) => (SUF && o && o[k + SUF]) ? o[k + SUF] : (o ? (o[k] || []) : []);
+  const S = {
+    f_sx: ['Sinistra', 'Left', 'Linke'], f_csx: ['Centrosinistra', 'Centre-left', 'Mitte-links'], f_cen: ['Centro e liberali', 'Centre and liberals', 'Mitte und Liberale'], f_cdx: ['Centrodestra', 'Centre-right', 'Mitte-rechts'], f_dn: ['Destra nazionalista', 'Nationalist right', 'Nationalistische Rechte'], f_tec: ['Concordanza / tecnico', 'Concordance / technocratic', 'Konkordanz / Technokraten'],
+    oggi: ['Oggi', 'Today', 'Heute'], oggi_l: ['oggi', 'today', 'heute'], fine: ['fine', 'end of', 'Ende'],
+    sc_sq: ['status quo', 'status quo', 'Status quo'], sc_pr: ['primo nei sondaggi', 'poll leader', 'Umfragesieger'], sc_co: ['coalizione probabile', 'likely coalition', 'wahrscheinliche Koalition'], sc_tr: ['trend continua', 'trend continues', 'Trend hält an'],
+    sc_sq_h: ['I governi di oggi restano in carica fino al 2032.', 'Today\'s governments stay in office until 2032.', 'Die heutigen Regierungen bleiben bis 2032 im Amt.'],
+    sc_pr_h: ['A ogni elezione il governo va al partito oggi primo nei sondaggi, cordoni sanitari ignorati (AfD in Germania, RN in Francia). Unica eccezione editoriale: Regno Unito a Reform.', 'At each election the government goes to the party currently leading the polls, cordons sanitaires ignored (AfD in Germany, RN in France). One editorial exception: the United Kingdom goes to Reform.', 'Bei jeder Wahl geht die Regierung an die Partei, die heute in den Umfragen führt, Brandmauern werden ignoriert (AfD in Deutschland, RN in Frankreich). Einzige redaktionelle Ausnahme: das Vereinigte Königreich geht an Reform.'],
+    sc_co_h: ['A ogni elezione vince la coalizione che oggi appare più realistica, con i voti anticipati dove il governo è in crisi. Valutazione editoriale: in Germania e nel Regno Unito si assume che i cordoni cedano.', 'At each election the most realistic coalition wins, with snap elections where the government is in crisis. Editorial call: in Germany and the United Kingdom the cordons are assumed to give way.', 'Bei jeder Wahl gewinnt die heute realistischste Koalition, mit Neuwahlen dort, wo die Regierung in der Krise ist. Redaktionelle Annahme: in Deutschland und im Vereinigten Königreich fallen die Brandmauern.'],
+    sc_tr_h: ['La crescita della destra nazionalista prosegue fino al 2032 e i cordoni sanitari cedono dove è già vicina al potere.', 'The nationalist right keeps growing to 2032 and cordons sanitaires give way wherever it is already close to power.', 'Die nationalistische Rechte wächst bis 2032 weiter, und die Brandmauern fallen überall dort, wo sie der Macht schon nahe ist.'],
+    leg_partner: ['Destra nazionalista partner', 'Nationalist right as partner', 'Nationalistische Rechte als Partner'],
+    tt_today: ['Oggi: ', 'Today: ', 'Heute: '], tt_dn_gov: [' · destra naz. al governo', ' · nationalist right in government', ' · nationalistische Rechte in der Regierung'], tt_at: ['Al', 'By', 'Bis'], tt_partner: [' con destra naz. partner', ' with nationalist right as partner', ' mit nationalistischer Rechter als Partner'], tt_leader: ['primo nei sondaggi: ', 'poll leader: ', 'Umfragesieger: '], tt_vote: [' · voto ', ' · election ', ' · Wahl '], tt_early: [' · anticipato prob. ', ' · likely snap ', ' · wahrsch. Neuwahl '],
+    k1: ['governi guidati dalla destra nazionalista', 'governments led by the nationalist right', 'Regierungen unter Führung der nationalistischen Rechten'], k2: ['paesi con destra nazionalista al governo o in appoggio', 'countries with the nationalist right in government or in support', 'Länder mit nationalistischer Rechter in der Regierung oder als Stütze'], k3: ['della popolazione UE sotto un governo a guida nazionalista', 'of the EU population under a nationalist-led government', 'der EU-Bevölkerung unter einer nationalistisch geführten Regierung'],
+    vs_oggi: ['rispetto a oggi', 'vs today', 'gegenüber heute'], pt_oggi: ['punti rispetto a oggi', 'points vs today', 'Punkte gegenüber heute'], dec: ['elezioni decisive in arrivo', 'decisive elections ahead', 'entscheidende Wahlen voraus'],
+    ch_title0: ['Cosa cambia nello scenario', 'What changes in the scenario', 'Was sich im Szenario ändert'], ch_title: ['Cosa cambia entro il', 'What changes by', 'Was sich ändert bis'], paese: ['paese', 'country', 'Land'], paesi: ['paesi', 'countries', 'Länder'],
+    ch_empty0: ['Porta il cursore oltre "Oggi" per vedere i cambi di governo previsti dallo scenario. Oggi: 3 governi a guida nazionalista (Italia, Cechia, Slovenia) e 9 paesi con una destra nazionalista al governo o in appoggio.', 'Move the slider past "Today" to see the government changes the scenario predicts. Today: 3 nationalist-led governments (Italy, Czechia, Slovenia) and 9 countries with the nationalist right in government or in support.', 'Schieben Sie den Regler über "Heute" hinaus, um die vom Szenario erwarteten Regierungswechsel zu sehen. Heute: 3 nationalistisch geführte Regierungen (Italien, Tschechien, Slowenien) und 9 Länder mit nationalistischer Rechter in der Regierung oder als Stütze.'],
+    ch_empty: ['Nessun cambio di guida in questo scenario entro l\'orizzonte scelto.', 'No change of leadership in this scenario within the chosen horizon.', 'Kein Führungswechsel in diesem Szenario innerhalb des gewählten Horizonts.'],
+    plus_dn: ['+ destra naz.', '+ nationalist right', '+ nat. Rechte'], plus_dn_p: ['+ destra naz. partner', '+ nationalist right as partner', '+ nat. Rechte als Partner'],
+    close: ['Chiudi', 'Close', 'Schließen'], scheda: ['Scheda paese', 'Country file', 'Länderprofil'], dn_gov: ['destra naz. al governo', 'nationalist right in government', 'nat. Rechte in der Regierung'],
+    scen_after: ['Scenario', 'Scenario', 'Szenario'], after_vote: ['dopo il voto di', 'after the vote of', 'nach der Wahl von'], with_partner: [' · con destra nazionalista partner', ' · with nationalist right as partner', ' · mit nationalistischer Rechter als Partner'], change_gov: [' · cambio di governo', ' · change of government', ' · Regierungswechsel'], confirm: [' · conferma', ' · confirmed', ' · bestätigt'],
+    gov_now: ['Governo in carica oggi', 'Government in office today', 'Heute amtierende Regierung'], who_now: ['Chi comanda oggi', 'Who is in charge today', 'Wer heute regiert'], presidente: ['Presidente', 'President', 'Präsident'], pm: ['Primo ministro', 'Prime minister', 'Premierminister'], dal: ['dal', 'since', 'seit'], Dal: ['Dal', 'Since', 'Seit'], capo_gov: ['Capo del governo', 'Head of government', 'Regierungschef'], prossimo_voto: ['Prossimo voto', 'Next election', 'Nächste Wahl'], ant_prob: ['anticipato probabile', 'likely snap', 'wahrsch. Neuwahl'],
+    t_mag: ['maggioranza', 'majority', 'Mehrheit'], t_min: ['minoranza', 'minority', 'Minderheit'], t_int: ['affari correnti', 'caretaker', 'geschäftsführend'], e_leg: ['legislative', 'legislative', 'Parlamentswahl'], e_pres: ['presidenziali', 'presidential', 'Präsidentschaftswahl'],
+    cal_b: ['Calendario.', 'Calendar.', 'Kalender.'], ant_b: ['Voto anticipato probabile:', 'Likely snap election:', 'Wahrscheinliche Neuwahl:'], ant_note: ['Negli scenari diversi dallo status quo la mappa usa questa data.', 'In every scenario other than the status quo the map uses this date.', 'In allen Szenarien außer dem Status quo verwendet die Karte dieses Datum.'],
+    sond: ['Sondaggi', 'Polls', 'Umfragen'], ult: ['Ultime elezioni', 'Last election', 'Letzte Wahl'], dn_main: ['Destra nazionalista principale', 'Main nationalist-right party', 'Wichtigste Partei der nationalistischen Rechten'], gruppo: ['gruppo PE', 'EP group', 'EP-Fraktion'],
+    tr_up: ['▲ in crescita', '▲ rising', '▲ steigend'], tr_down: ['▼ in calo', '▼ falling', '▼ fallend'], tr_flat: ['● stabile', '● stable', '● stabil'], dal_voto: ['dal voto', 'since the election', 'seit der Wahl'],
+    scen_next: ['Scenari al prossimo voto', 'Scenarios at the next election', 'Szenarien bei der nächsten Wahl'], fonti: ['Fonti', 'Sources', 'Quellen'],
+    cal_oggi: ['oggi', 'today', 'heute'],
+    m_prop: ['Proposta', 'Proposal', 'Vorschlag'], m_fav: ['Favorevoli', 'In favour', 'Dafür'], m_l0: ['contrario', 'against', 'dagegen'], m_l1: ['parziale o ambiguo', 'partial or ambiguous', 'teilweise oder unklar'], m_l2: ['favorevole', 'in favour', 'dafür'], m_na: ['non applicabile', 'not applicable', 'nicht anwendbar'],
+    conv_h: ['Dove convergono: l\'agenda unitaria realistica', 'Where they converge: the realistic common agenda', 'Wo sie übereinstimmen: die realistische gemeinsame Agenda'], div_h: ['Dove si dividono: ciò che un blocco di destra non può fare insieme', 'Where they split: what a right-wing bloc cannot do together', 'Wo sie sich spalten: was ein rechter Block nicht gemeinsam tun kann'],
+    tier_a: ['Governi a guida nazionalista', 'Nationalist-led governments', 'Nationalistisch geführte Regierungen'], tier_b: ['+ governi con destra nazionalista partner', '+ governments with the nationalist right as partner', '+ Regierungen mit nationalistischer Rechter als Partner'], tier_c: ['+ governi di centrodestra', '+ centre-right governments', '+ Mitte-rechts-Regierungen'],
+    st_qmv: ['Maggioranza qualificata', 'Qualified majority', 'Qualifizierte Mehrheit'], st_blk: ['Minoranza di blocco', 'Blocking minority', 'Sperrminorität'], st_no: ['Sotto soglia', 'Below threshold', 'Unter der Schwelle'],
+    stati: ['stati su 27', 'states out of 27', 'von 27 Staaten'], pop_ue: ['della popolazione UE', 'of the EU population', 'der EU-Bevölkerung'],
+    cons_note: ['Minoranza di blocco: almeno 4 stati con oltre il 35% della popolazione. Maggioranza qualificata: almeno 15 stati con il 65% della popolazione. Regno Unito, Norvegia e Svizzera non votano.', 'Blocking minority: at least 4 states with over 35% of the population. Qualified majority: at least 15 states with 65% of the population. The United Kingdom, Norway and Switzerland do not vote.', 'Sperrminorität: mindestens 4 Staaten mit über 35% der Bevölkerung. Qualifizierte Mehrheit: mindestens 15 Staaten mit 65% der Bevölkerung. Vereinigtes Königreich, Norwegen und Schweiz stimmen nicht ab.'],
+    r_na: ['Non passa dal Consiglio', 'Does not go through the Council', 'Läuft nicht über den Rat'], r_appr: ['Approvabile', 'Can pass', 'Beschließbar'], r_block: ['Bloccabile', 'Can be blocked', 'Blockierbar'], r_veto: ['Un veto basta', 'One veto is enough', 'Ein Veto genügt'], r_now: ['già oggi', 'already today', 'schon heute'], r_from: ['dal', 'from', 'ab'], r_no: ['Non entro il 2032', 'Not by 2032', 'Nicht bis 2032'],
+    tg_a: ['solo destra nazionalista', 'nationalist right alone', 'nationalistische Rechte allein'], tg_b: ['con i partner', 'with its partners', 'mit ihren Partnern'], tg_c: ['con il centrodestra', 'with the centre-right', 'mit der Mitte-rechts'],
+    c_appr: ['maggioranza qualificata', 'qualified majority', 'qualifizierte Mehrheit'], c_block: ['minoranza di blocco', 'blocking minority', 'Sperrminorität'], c_una: ['unanimità', 'unanimity', 'Einstimmigkeit'], c_naz: ['competenza nazionale', 'national competence', 'nationale Zuständigkeit'],
+    fl_eyebrow: ['Il brief settimanale', 'The weekly brief', 'Das Wochenbriefing'], fl_title: ['Ogni lunedì: chi sale, chi scende, cosa cambia nello scenario', 'Every Monday: who is up, who is down, what changes in the scenario', 'Jeden Montag: wer steigt, wer fällt, was sich im Szenario ändert'], fl_text: ['Tre righe con i numeri e il link alla mappa aggiornata. Scegli dove riceverlo.', 'Three lines with the numbers and the link to the updated map. Choose where to get it.', 'Drei Zeilen mit den Zahlen und dem Link zur aktualisierten Karte. Wählen Sie, wo Sie es erhalten möchten.'], fl_tg: ['Canale Telegram', 'Telegram channel', 'Telegram-Kanal'], fl_mail: ['Iscriviti via email', 'Subscribe by email', 'Per E-Mail abonnieren'], fl_x: ['Segui su X', 'Follow on X', 'Auf X folgen'], fl_soon: ['in arrivo', 'coming soon', 'demnächst'], fl_share: ['Copia il link della pagina', 'Copy the page link', 'Link der Seite kopieren'], fl_shared: ['Link copiato', 'Link copied', 'Link kopiert'],
+    inst_ios_t: ['Aggiungi Europa 2032 alla schermata Home', 'Add Europa 2032 to your Home Screen', 'Europa 2032 zum Home-Bildschirm hinzufügen'], inst_ios_b: ['Tocca Condividi (il quadrato con la freccia) e poi "Aggiungi alla schermata Home": si apre come un\'app, anche senza rete.', 'Tap Share (the square with the arrow), then "Add to Home Screen": it opens like an app, even offline.', 'Tippen Sie auf Teilen (das Quadrat mit dem Pfeil) und dann auf "Zum Home-Bildschirm": öffnet sich wie eine App, auch offline.'], inst_and_t: ['Installa Europa 2032', 'Install Europa 2032', 'Europa 2032 installieren'], inst_and_b: ['Icona sulla schermata Home, schermo intero, funziona anche senza rete.', 'Home screen icon, full screen, works offline too.', 'Symbol auf dem Home-Bildschirm, Vollbild, funktioniert auch offline.'], inst_btn: ['Installa', 'Install', 'Installieren'],
+    ds_next: ['Prossima tappa', 'Next step', 'Nächster Schritt'], ds_goal_b: ['la destra vuole fermarlo', 'the right wants to stop it', 'die Rechte will es stoppen'], ds_goal_a: ['la destra vuole approvarlo', 'the right wants to pass it', 'die Rechte will es beschließen'], ds_goal_m: ['la destra vuole annacquarlo', 'the right wants to water it down', 'die Rechte will es verwässern'], r_mod: ['Modificabile', 'Can be amended', 'Änderbar'], r_all: ['Serve l\'unanimità di tutti i 27', 'Needs all 27 to agree', 'Braucht alle 27'], ds_more: ['Fonti e dettagli', 'Sources and details', 'Quellen und Details'],
+    st_proposta: ['Proposta', 'Proposal', 'Vorschlag'], st_parlamento: ['In Parlamento', 'In Parliament', 'Im Parlament'], st_consiglio: ['In Consiglio', 'In Council', 'Im Rat'], st_trilogo: ['Trilogo', 'Trilogue', 'Trilog'], st_adottato: ['Adottato', 'Adopted', 'Angenommen'], st_attuazione: ['In attuazione', 'In application', 'In Anwendung'], st_bloccato: ['Bloccato', 'Stalled', 'Blockiert'],
+    v_favorevole: ['Favorevole', 'In favour', 'Dafür'], v_contrario: ['Contrario', 'Against', 'Dagegen'], v_astensione: ['Astensione', 'Abstention', 'Enthaltung'], v_condizionato: ['Condizionato', 'Conditional', 'Unter Vorbehalt'], v_opt_out: ['Opt-out', 'Opt-out', 'Opt-out'], v_da_verificare: ['Da verificare', 'To be verified', 'Zu prüfen'],
+    ex_passa: ['Passa', 'Passes', 'Wird angenommen'], ex_bloccato: ['Bloccato', 'Blocked', 'Blockiert'], ex_incerto: ['Incerto', 'Uncertain', 'Ungewiss'],
+    conf_alta: ['confidenza alta', 'high confidence', 'hohe Sicherheit'], conf_media: ['confidenza media', 'medium confidence', 'mittlere Sicherheit'], conf_bassa: ['confidenza bassa', 'low confidence', 'geringe Sicherheit'],
+    ex_fav: ['favorevoli', 'in favour', 'dafür'], ex_con: ['contrari', 'against', 'dagegen'], ex_ast: ['astenuti o opt-out', 'abstaining or opt-out', 'Enthaltung oder Opt-out'], ex_dv: ['da verificare', 'to be verified', 'zu prüfen'], ex_pop: ['della popolazione', 'of the population', 'der Bevölkerung'],
+    ex_dec: ['Governi decisivi', 'Decisive governments', 'Entscheidende Regierungen'], ex_nodec: ['Nessun governo da solo cambia l\'esito', 'No single government changes the outcome', 'Keine einzelne Regierung ändert das Ergebnis'],
+    ex_fragile: ['fragile: dipende da voti condizionati', 'fragile: relies on conditional votes', 'fragil: hängt von Stimmen unter Vorbehalt ab'],
+    ex_compatto: ['Ipotesi di blocco compatto', 'Compact-bloc hypothesis', 'Annahme eines geschlossenen Blocks'], ex_title: ['Voto atteso in Consiglio, governo per governo', 'Expected Council vote, government by government', 'Erwartete Abstimmung im Rat, Regierung für Regierung'], ex_nuovo: ['nuovo governo nello scenario', 'new government in the scenario', 'neue Regierung im Szenario'],
+    mot_blocco: ['minoranza di blocco', 'blocking minority', 'Sperrminorität'], mot_mancano: ['mancano voti favorevoli', 'not enough votes in favour', 'zu wenige Ja-Stimmen'], mot_veto: ['veto', 'veto', 'Veto'],
+    cv_title: ['Come vota su…', 'How it votes on…', 'Wie es abstimmt über…'], cv_now: ['governo attuale', 'current government', 'aktuelle Regierung'], cv_scen: ['nello scenario', 'in the scenario', 'im Szenario'], cv_src: ['fonte', 'source', 'Quelle'],
+    pl_oggi: ['oggi', 'today', 'heute'], 
+    pl_st_vigore: ['in vigore', 'in force', 'in Kraft'], pl_st_adottato: ['adottato, non ancora applicato', 'adopted, not yet applied', 'beschlossen, noch nicht angewandt'], pl_st_proposta: ['proposta sul tavolo', 'proposal on the table', 'Vorschlag auf dem Tisch'], pl_st_nuova: ['misura nuova del piano', 'new measure of the plan', 'neue Maßnahme des Plans'],
+    pl_lv_ue: ['livello UE', 'EU level', 'EU-Ebene'], pl_lv_naz: ['livello nazionale', 'national level', 'nationale Ebene'], pl_lv_terzo: ['con i paesi terzi', 'with third countries', 'mit Drittstaaten'],
+    pl_h_tappe: ['Tappe', 'Milestones', 'Etappen'], pl_h_vinc: ['Vincoli legali che il piano rispetta', 'Legal constraints the plan respects', 'Rechtliche Grenzen, die der Plan einhält'], pl_h_paesi: ['Paese per paese: ordini di lasciare il territorio, rimpatri effettivi, obiettivo', 'Country by country: orders to leave, effective returns, target', 'Land für Land: Ausreiseanordnungen, tatsächliche Rückführungen, Ziel'],
+    pl_paese: ['Paese', 'Country', 'Land'], pl_irregolari: ['Irregolari trovati', 'Found irregular', 'Irregulär aufgegriffen'], pl_ordinati: ['Ordini di lasciare', 'Orders to leave', 'Ausreiseanordnungen'], pl_rimpatriati: ['Rimpatriati', 'Returned', 'Rückgeführt'], pl_tasso: ['Tasso', 'Rate', 'Quote'], pl_obiettivo: ['Obiettivo 2032', 'Target 2032', 'Ziel 2032'], pl_gap: ['Rimpatri in più l\'anno', 'Extra returns per year', 'Zusätzliche Rückführungen pro Jahr'],
+    pl_tab_note: ['Dati Eurostat: cittadini di paesi terzi trovati in posizione irregolare, con ordine di lasciare il territorio e rimpatriati verso un paese terzo nell\'anno indicato (esclusi i trasferimenti Dublino). Sono flussi annui, non lo stock di irregolari presenti. "Rimpatri in più" = rimpatri annui necessari per raggiungere l\'obiettivo sugli ordini attuali. Clicca un paese per la scheda.', 'Eurostat data: third-country nationals found to be irregularly present, ordered to leave and returned to a third country in the year shown (Dublin transfers excluded). These are yearly flows, not the stock of irregular migrants present. "Extra returns" = yearly returns needed to reach the target on current orders. Click a country for its file.', 'Eurostat-Daten: irregulär aufgegriffene Drittstaatsangehörige, Ausreiseanordnungen und in einen Drittstaat Rückgeführte im angegebenen Jahr (ohne Dublin-Überstellungen). Jahresflüsse, nicht der Bestand an Irregulären. "Zusätzliche Rückführungen" = jährlich nötige Rückführungen, um das Ziel bei den heutigen Anordnungen zu erreichen. Land anklicken für das Profil.'],
+    pl_eyebrow: ['GRP · Europa 2032', 'GRP · Europa 2032', 'GRP · Europa 2032'], pl_fasi_h: ['Le cinque fasi', 'The five phases', 'Die fünf Phasen'], pl_fase: ['Fase', 'Phase', 'Phase'], pl_chi: ['Chi', 'Who', 'Wer'], pl_persone: ['Persone', 'People', 'Personen'], pl_serve: ['Cosa serve per remigrarli', 'What it takes to remigrate them', 'Was nötig ist'], pl_apri: ['Apri il piano completo: fasi, tracker 2027-2032, esecuzione, costi', 'Open the full plan: phases, 2027-2032 tracker, execution, costs', 'Den vollständigen Plan öffnen: Phasen, Tracker 2027-2032, Umsetzung, Kosten'], pl_ipotesi: ['Ipotesi di base', 'Base assumption', 'Grundannahme'], pl_h2: ['Obiettivi, pilastri, tappe e vincoli', 'Targets, pillars, milestones and limits', 'Ziele, Säulen, Etappen und Grenzen'],
+    fn_title: ['Il funnel della migrazione, paese per paese', 'The migration funnel, country by country', 'Der Migrations-Funnel, Land für Land'],
+    fn_sub: ['Dalla popolazione residente ai rimpatri eseguiti: tutti i numeri Eurostat di un paese in un\'unica catena, senza stime. Scegli il paese.', 'From the resident population to enforced returns: all of a country\'s Eurostat figures in one chain, with no estimates. Pick a country.', 'Von der Wohnbevölkerung bis zu den vollzogenen Rückführungen: alle Eurostat-Zahlen eines Landes in einer Kette, ohne Schätzungen. Land wählen.'],
+    fn_h_steps: ['Dallo stock ai rimpatri', 'From stock to returns', 'Vom Bestand zu den Rückführungen'],
+    fn_g_stock: ['Stock: popolazione al 1° gennaio, permessi e domande a fine anno', 'Stock: population on 1 January, permits and applications at year end', 'Bestand: Bevölkerung am 1. Januar, Titel und Anträge zum Jahresende'],
+    fn_g_flow: ['Flussi dell\'anno', 'Flows of the year', 'Ströme des Jahres'],
+    fn_pop: ['Popolazione residente', 'Resident population', 'Wohnbevölkerung'], fn_nat: ['di cui cittadini del paese', 'of which nationals', 'davon Staatsbürger'], fn_eu: ['Cittadini di altri paesi UE', 'Citizens of other EU countries', 'Bürger anderer EU-Länder'], fn_xeu: ['Cittadini extra-UE', 'Non-EU citizens', 'Nicht-EU-Bürger'], fn_natfor: ['Cittadini del paese nati all\'estero', 'Nationals born abroad', 'Im Ausland geborene Staatsbürger'],
+    fn_perm: ['Permessi di soggiorno validi', 'Valid residence permits', 'Gültige Aufenthaltstitel'], fn_tp: ['Protezione temporanea (ucraini)', 'Temporary protection (Ukrainians)', 'Vorübergehender Schutz (Ukrainer)'], fn_pend: ['Domande di asilo pendenti', 'Pending asylum applications', 'Anhängige Asylanträge'],
+    fn_app: ['Prime domande di asilo', 'First-time asylum applications', 'Asyl-Erstanträge'], fn_dec: ['Decisioni di prima istanza', 'First-instance decisions', 'Erstinstanzliche Entscheidungen'], fn_pos: ['di cui positive', 'of which positive', 'davon positiv'], fn_irr: ['Irregolari trovati', 'Irregular migrants found', 'Irregulär Aufgegriffene'], fn_ref: ['Respinti alla frontiera esterna', 'Refused entry at the external border', 'An der Außengrenze zurückgewiesen'], fn_ord: ['Ordini di lasciare il territorio', 'Orders to leave', 'Ausreiseanordnungen'], fn_ret: ['Rimpatriati verso paesi terzi', 'Returned to third countries', 'In Drittstaaten rückgeführt'],
+    fn_of_pop: ['della popolazione', 'of the population', 'der Bevölkerung'], fn_of_irr: ['degli irregolari trovati', 'of those found', 'der Aufgegriffenen'], fn_of_dec: ['delle decisioni', 'of decisions', 'der Entscheidungen'], fn_rate: ['tasso di rimpatrio', 'return rate', 'Rückführungsquote'], fn_of_nat: ['dei cittadini', 'of nationals', 'der Staatsbürger'],
+    fn_h_lfs: ['Chi vive nel paese: origine dei 15-74enni', 'Who lives in the country: origin of those aged 15-74', 'Wer im Land lebt: Herkunft der 15- bis 74-Jährigen'],
+    fn_l1: ['Nati nel paese da genitori nati nel paese', 'Native-born, both parents native-born', 'Im Land geboren, Eltern im Land geboren'], fn_l2: ['Nati nel paese con almeno un genitore nato all\'estero', 'Native-born with at least one parent born abroad', 'Im Land geboren, mindestens ein Elternteil im Ausland geboren'], fn_l3: ['Nati all\'estero', 'Born abroad', 'Im Ausland geboren'],
+    fn_s1: ['nati, genitori del paese', 'native, native parents', 'geboren, Eltern aus dem Land'], fn_s2: ['2ª generazione', '2nd generation', '2. Generation'], fn_s3: ['nati all\'estero', 'born abroad', 'im Ausland geboren'], fn_cit_nat: ['Cittadini', 'Nationals', 'Staatsbürger'], fn_cit_for: ['Stranieri', 'Foreigners', 'Ausländer'], fn_mig: ['migliaia', 'thousands', 'Tausend'], fn_lfs_note: ['Indagine forze di lavoro, famiglie private, 15-74 anni, in migliaia.', 'Labour Force Survey, private households, ages 15-74, thousands.', 'Arbeitskräfteerhebung, Privathaushalte, 15-74 Jahre, in Tausend.'],
+    fn_h_acq: ['Acquisizioni di cittadinanza', 'Acquisitions of citizenship', 'Einbürgerungen'], fn_acq_tot: ['Totale 2015-2024', 'Total 2015-2024', 'Summe 2015-2024'],
+    fn_h_perm: ['Permessi validi: prime cinque nazionalità', 'Valid permits: top five nationalities', 'Gültige Titel: fünf häufigste Staatsangehörigkeiten'],
+    fn_h_naz: ['Ordini di lasciare e rimpatri per nazionalità', 'Orders to leave and returns by nationality', 'Ausreiseanordnungen und Rückführungen nach Staatsangehörigkeit'],
+    fn_naz: ['Nazionalità', 'Nationality', 'Staatsangehörigkeit'], fn_quota: ['Quota', 'Share', 'Anteil'], fn_tot: ['Totale', 'Total', 'Gesamt'],
+    fn_nd: ['dato non trasmesso dallo Stato', 'not reported by the state', 'vom Staat nicht gemeldet'],
+    fn_note: ['Fonte: Eurostat, estrazione del {d}; i nomi dei paesi d\'origine sono nella forma inglese di Eurostat; dati su asilo e rimpatri arrotondati a 5. Tasso = rimpatriati/ordini dello stesso anno. Nessun valore è stimato: dove manca, lo Stato non lo trasmette.', 'Source: Eurostat, extracted on {d}; countries of origin are named as in Eurostat; asylum and return data rounded to 5. Rate = returns/orders in the same year. Nothing is estimated: where a figure is missing, the state does not report it.', 'Quelle: Eurostat, Abruf am {d}; Herkunftsländer in der englischen Eurostat-Schreibweise; Asyl- und Rückführungsdaten auf 5 gerundet. Quote = Rückführungen/Anordnungen desselben Jahres. Nichts ist geschätzt: wo eine Zahl fehlt, meldet der Staat sie nicht.'],
+    fn_h_a: ['Origine della popolazione, 15-74 anni', 'Origin of the population, ages 15-74', 'Herkunft der Bevölkerung, 15-74 Jahre'],
+    fn_base_a: ['Base 100% = residenti di 15-74 anni nelle famiglie private, indagine forze di lavoro {y} (stime in migliaia, qui in persone). Ogni riga è una fetta del 100%.', 'Base 100% = residents aged 15-74 in private households, Labour Force Survey {y} (estimates in thousands, shown in persons). Each row is a slice of the 100%.', 'Basis 100 % = Einwohner 15-74 Jahre in Privathaushalten, Arbeitskräfteerhebung {y} (Schätzungen in Tausend, hier in Personen). Jede Zeile ist ein Anteil der 100 %.'],
+    fn_h_b: ['Cittadini extra-UE: dalla residenza al rimpatrio', 'Non-EU citizens: from residence to return', 'Nicht-EU-Bürger: vom Aufenthalt zur Rückführung'],
+    fn_base_b: ['Base 100% = cittadini extra-UE residenti al 1° gennaio {y}, tutte le età (dati amministrativi). Le righe sono gruppi diversi, non somme.', 'Base 100% = non-EU citizens resident on 1 January {y}, all ages (administrative data). Rows are different groups, not a sum.', 'Basis 100 % = am 1. Januar {y} wohnhafte Nicht-EU-Bürger, alle Altersgruppen (Verwaltungsdaten). Die Zeilen sind verschiedene Gruppen, keine Summe.'],
+    fn_a0: ['Popolazione 15-74 anni', 'Population aged 15-74', 'Bevölkerung 15-74 Jahre'],
+    fn_a1: ['Cittadini nati nel paese, entrambi i genitori nati nel paese', 'Nationals born in the country, both parents born in the country', 'Staatsbürger, im Land geboren, beide Eltern im Land geboren'],
+    fn_a2: ['Cittadini nati nel paese, un genitore nato all\'estero', 'Nationals born in the country, one parent born abroad', 'Staatsbürger, im Land geboren, ein Elternteil im Ausland geboren'],
+    fn_a3: ['Cittadini nati nel paese, entrambi i genitori nati all\'estero', 'Nationals born in the country, both parents born abroad', 'Staatsbürger, im Land geboren, beide Eltern im Ausland geboren'],
+    fn_a4: ['Cittadini nati all\'estero (naturalizzati e nati fuori)', 'Nationals born abroad (naturalised and born outside)', 'Im Ausland geborene Staatsbürger (eingebürgert oder im Ausland geboren)'],
+    fn_a5: ['Stranieri di altri paesi UE', 'Foreigners from other EU countries', 'Ausländer aus anderen EU-Ländern'],
+    fn_a6: ['Stranieri extra-UE', 'Non-EU foreigners', 'Nicht-EU-Ausländer'],
+    fn_a7: ['Apolidi, cittadinanza o origine non dichiarata (differenza)', 'Stateless, citizenship or origin not stated (difference)', 'Staatenlose, Staatsangehörigkeit oder Herkunft nicht angegeben (Differenz)'],
+    fn_sub_par: ['Tutta la 2ª generazione con due genitori esteri, cittadini e stranieri: genitori da paesi UE {a}, extra-UE {b}', 'Whole 2nd generation with both parents born abroad, nationals and foreigners: parents from EU countries {a}, non-EU {b}', 'Gesamte 2. Generation mit beiden Eltern im Ausland geboren, Staatsbürger und Ausländer: Eltern aus EU-Ländern {a}, Nicht-EU {b}'],
+    fn_sub_born: ['Tutti i nati all\'estero, cittadini e stranieri: nati in paesi UE {a}, extra-UE {b}', 'All foreign-born, nationals and foreigners: born in EU countries {a}, non-EU {b}', 'Alle im Ausland Geborenen, Staatsbürger und Ausländer: in EU-Ländern geboren {a}, Nicht-EU {b}'],
+    fn_sub_for: ['Nati nel paese {a}, nati all\'estero {b}', 'Born in the country {a}, born abroad {b}', 'Im Land geboren {a}, im Ausland geboren {b}'],
+    fn_b0: ['Cittadini extra-UE residenti', 'Resident non-EU citizens', 'Wohnhafte Nicht-EU-Bürger'],
+    fn_sub_pend: ['Nell\'anno: prime domande {a}, decisioni positive {b}', 'In the year: first-time applications {a}, positive decisions {b}', 'Im Jahr: Erstanträge {a}, positive Entscheidungen {b}'],
+    fn_flow: ['flusso dell\'anno', 'flow of the year', 'Strom des Jahres'],
+    copied: ['Copiato', 'Copied', 'Kopiert'], copy: ['Copia il riassunto per WhatsApp', 'Copy the WhatsApp summary', 'WhatsApp-Zusammenfassung kopieren'], copy_prompt: ['Copia il testo:', 'Copy the text:', 'Text kopieren:']
+  };
+  const t = k => S[k] ? (S[k][LI] != null ? S[k][LI] : S[k][1]) : k;
+  const MESI = { it: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'], en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], de: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'] }[LANG];
+  // testi statici della pagina nelle altre lingue (l'HTML è in italiano)
+  const STATIC = {
+    en: {
+      '.links a[href="#top"]': 'Map', '.links a[href="#novita"]': 'What\'s new', '.links a[href="#cambi"]': 'Government changes', '.links a[href="#consiglio"]': 'EU Council', '.links a[href="#piano"]': 'Plan', '.links a[href="#funnel"]': 'Funnel', '.links a[href="#calendario"]': 'Calendar', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Method',
+      '.grp-head .eyebrow': 'Europa 2032 · Policy document', '.grp-head h1': 'The Great <em>Remigration</em> Plan (“GRP”)', '.grp-head .lede': 'Five phases, one target per year to 2032: for Italy 100% enforcement of orders, 100k returns a year at full speed. Here the European chapter and the country-by-country funnel; <a href="grp.html">the full plan</a> (in Italian) has the Italian funnel, the 2027-2032 tracker, execution and costs.',
+      '.hero-copy .eyebrow': 'Observatory · EU 27 + United Kingdom, Norway, Switzerland',
+      '.hero h1': 'The map of power<br>in <em>Europe</em>',
+      '.hero .lede': 'Who governs today, who leads the polls and how the continent may change by 2032. Pick a scenario, move the time slider, click a country.',
+      '#seg [data-scen="status_quo"]': 'Status quo', '#seg [data-scen="primo"]': 'Poll leader', '#seg [data-scen="coalizione"]': 'Likely coalition', '#seg [data-scen="trend"]': 'Trend continues',
+      'label[for="anno"]': 'Horizon', '.hud .hint': 'drag to pan · click a country', '.hud .read span:nth-child(2)': 'scenario <b id="hud-scen"></b> · horizon <b id="hud-anno"></b>', '#centra': '⌖ centre on Europe',
+      '#novita .eyebrow': 'What\'s new · weekly update', '#nov-older summary': 'Previous updates',
+      '#cambi .sec-head .eyebrow': 'Scenario', '#cambi .card:nth-child(2) h3': 'Nationalist right in the polls <small>leading party per country</small>', '#cambi .card:nth-child(2) .empty': 'Value in the latest poll and, in grey, the difference from the last election. Click to open the country file.',
+      '#consiglio .sec-head .eyebrow': 'Real power', '#consiglio h2': 'What this bloc can do in the EU Council', '#consiglio .sec-head p': 'Governments count when they vote together. Here the map of the chosen scenario becomes votes in the Council: how many states, how much population, and which proposals of the common agenda become blockable or passable, and from which year.',
+      '#consiglio .card:nth-child(1) h3': 'The right-wing bloc in the Council <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'The dossiers on the table in Brussels <small>in the selected scenario</small>',
+      '#cambi .card:nth-child(1) h3': 'Government changes <small id="cambi-count"></small>',
+      '#calendario .sec-head .eyebrow': 'Calendar', '#calendario h2': 'The elections that decide 2032', '#calendario .sec-head p': 'Each dot is the next national vote that assigns the government. The colour is the predicted winner in the chosen scenario; dots beyond the horizon stay unlit. A dashed circle is a likely snap election or a government formation without a vote.',
+      '#agenda .sec-head .eyebrow': 'Agenda', '#agenda h2': 'What the right can do together', '#agenda .sec-head p': 'Twelve parties, twelve concrete proposals. Where a row is solid blue there is a policy a nationalist-led Europe can really push together; where it breaks, it cannot.',
+      '.mlegend span:nth-child(1)': '<i class="cell l2">●</i> in favour', '.mlegend span:nth-child(2)': '<i class="cell l1">◐</i> partial or ambiguous', '.mlegend span:nth-child(3)': '<i class="cell l0">○</i> against', '.mlegend span:nth-child(4)': '<i class="cell ln">·</i> not applicable', '.mlegend span:nth-child(5)': 'EP groups: ECR conservatives · PfE Patriots · ESN Europe of Sovereign Nations',
+      '#metodo > div:nth-child(1) .eyebrow': 'The scenarios', '#metodo > div:nth-child(1) p': '<strong>Status quo</strong>: no government changes. <strong>Poll leader</strong>: at each election the government goes to the family of the party currently first in the polls, mechanically, cordons sanitaires ignored. <strong>Likely coalition</strong>: the coalition that looks most realistic today, cordons included. <strong>Trend continues</strong>: the nationalist right keeps growing and cordons give way where it is already close to power. In the three non-status-quo scenarios, where a government is in crisis (Germany, Austria, Netherlands, Slovakia, Romania, Portugal) the likely snap-election date is used instead of the regular term. These are reading keys, not forecasts. The Council section applies the qualified-majority rules (Article 16 TEU) to Eurostat 2025 populations: 15 states and 65% of the population to pass, 4 states and over 35% to block, unanimity for foreign policy, taxation and Article 7.',
+      '#metodo > div:nth-child(2) .eyebrow': 'The families', '#metodo > div:nth-child(2) p': 'The colour is the family of whoever leads the executive: the president in France and Cyprus, the prime minister elsewhere. Blue hatching over another colour marks a nationalist right in government as a partner or in external support. Edge cases are explained in the country files: ANO in Czechia and SDS in Slovenia are coded as nationalist right; Smer in Slovakia stays nominally left; Switzerland is a concordance government.',
+      '#metodo > div:nth-child(3) .eyebrow': 'Sources', '#metodo > div:nth-child(3) p': 'PolitPro and Europe Elects poll averages, national pollsters cited in each country file (SWG, INSA, YouGov, Verian, Yle, Norstat and others), Wikipedia for results and calendar, national press for government events. The matrix is an editorial synthesis of manifestos and European Parliament votes, not a statement by the parties.',
+      '.nav .stamp': '<i class="live"></i>data as of <b id="stamp"></b>'
+    },
+    de: {
+      '.links a[href="#top"]': 'Karte', '.links a[href="#novita"]': 'Neu', '.links a[href="#cambi"]': 'Regierungswechsel', '.links a[href="#consiglio"]': 'EU-Rat', '.links a[href="#piano"]': 'Plan', '.links a[href="#funnel"]': 'Funnel', '.links a[href="#calendario"]': 'Kalender', '.links a[href="#agenda"]': 'Agenda', '.links a[href="#metodo"]': 'Methode',
+      '.grp-head .eyebrow': 'Europa 2032 · Policy-Dokument', '.grp-head h1': 'The Great <em>Remigration</em> Plan (“GRP”)', '.grp-head .lede': 'Fünf Phasen, ein Ziel pro Jahr bis 2032: für Italien 100 % Vollzug der Anordnungen, 100k Rückführungen pro Jahr im Regelbetrieb. Hier das europäische Kapitel und der Funnel Land für Land; <a href="grp.html">der vollständige Plan</a> (auf Italienisch) enthält den Funnel Italiens, den Tracker 2027-2032, Umsetzung und Kosten.',
+      '.hero-copy .eyebrow': 'Observatorium · EU 27 + Vereinigtes Königreich, Norwegen, Schweiz',
+      '.hero h1': 'Die Landkarte der Macht<br>in <em>Europa</em>',
+      '.hero .lede': 'Wer heute regiert, wer in den Umfragen führt und wie sich der Kontinent bis 2032 verändern kann. Szenario wählen, Zeitregler bewegen, Land anklicken.',
+      '#seg [data-scen="status_quo"]': 'Status quo', '#seg [data-scen="primo"]': 'Umfragesieger', '#seg [data-scen="coalizione"]': 'Wahrscheinliche Koalition', '#seg [data-scen="trend"]': 'Trend hält an',
+      'label[for="anno"]': 'Horizont', '.hud .hint': 'ziehen zum Verschieben · Land anklicken', '.hud .read span:nth-child(2)': 'Szenario <b id="hud-scen"></b> · Horizont <b id="hud-anno"></b>', '#centra': '⌖ Europa zentrieren',
+      '#novita .eyebrow': 'Neu · wöchentliche Aktualisierung', '#nov-older summary': 'Frühere Aktualisierungen',
+      '#cambi .sec-head .eyebrow': 'Szenario', '#cambi .card:nth-child(2) h3': 'Nationalistische Rechte in den Umfragen <small>stärkste Partei je Land</small>', '#cambi .card:nth-child(2) .empty': 'Wert der jüngsten Umfrage und, in Grau, die Differenz zur letzten Wahl. Klicken öffnet das Länderprofil.',
+      '#consiglio .sec-head .eyebrow': 'Reale Macht', '#consiglio h2': 'Was dieser Block im EU-Rat erreichen kann', '#consiglio .sec-head p': 'Regierungen zählen, wenn sie gemeinsam abstimmen. Hier wird die Karte des gewählten Szenarios zu Stimmen im Rat: wie viele Staaten, wie viel Bevölkerung, und welche Vorschläge der gemeinsamen Agenda blockierbar oder beschließbar werden, und ab welchem Jahr.',
+      '#consiglio .card:nth-child(1) h3': 'Der rechte Block im Rat <small id="cons-when"></small>', '#consiglio .card:nth-child(2) h3': 'Die Dossiers auf dem Tisch in Brüssel <small>im gewählten Szenario</small>',
+      '#cambi .card:nth-child(1) h3': 'Regierungswechsel <small id="cambi-count"></small>',
+      '#calendario .sec-head .eyebrow': 'Kalender', '#calendario h2': 'Die Wahlen, die 2032 entscheiden', '#calendario .sec-head p': 'Jeder Punkt ist die nächste nationale Wahl, die über die Regierung entscheidet. Die Farbe zeigt den erwarteten Sieger im gewählten Szenario; Punkte jenseits des Horizonts bleiben dunkel. Ein gestrichelter Kreis steht für eine wahrscheinliche Neuwahl oder eine Regierungsbildung ohne Wahl.',
+      '#agenda .sec-head .eyebrow': 'Agenda', '#agenda h2': 'Was die Rechte gemeinsam tun kann', '#agenda .sec-head p': 'Zwölf Parteien, zwölf konkrete Vorschläge. Wo eine Zeile durchgehend blau ist, gibt es eine Politik, die ein nationalistisch geführtes Europa wirklich gemeinsam vorantreiben kann; wo sie bricht, nicht.',
+      '.mlegend span:nth-child(1)': '<i class="cell l2">●</i> dafür', '.mlegend span:nth-child(2)': '<i class="cell l1">◐</i> teilweise oder unklar', '.mlegend span:nth-child(3)': '<i class="cell l0">○</i> dagegen', '.mlegend span:nth-child(4)': '<i class="cell ln">·</i> nicht anwendbar', '.mlegend span:nth-child(5)': 'EP-Fraktionen: EKR Konservative · PfE Patrioten · ESN Europa der Souveränen Nationen',
+      '#metodo > div:nth-child(1) .eyebrow': 'Die Szenarien', '#metodo > div:nth-child(1) p': '<strong>Status quo</strong>: keine Regierung wechselt. <strong>Umfragesieger</strong>: bei jeder Wahl geht die Regierung an die Parteienfamilie, die heute in den Umfragen vorn liegt, mechanisch, Brandmauern ignoriert. <strong>Wahrscheinliche Koalition</strong>: die Koalition, die heute am realistischsten erscheint, Brandmauern eingeschlossen. <strong>Trend hält an</strong>: die nationalistische Rechte wächst weiter, und die Brandmauern fallen dort, wo sie der Macht schon nahe ist. In den drei Szenarien außer dem Status quo wird dort, wo eine Regierung in der Krise ist (Deutschland, Österreich, Niederlande, Slowakei, Rumänien, Portugal), das wahrscheinliche Neuwahldatum statt des regulären Termins verwendet. Das sind Lesehilfen, keine Prognosen. Der Abschnitt zum Rat wendet die Regeln der qualifizierten Mehrheit (Artikel 16 EUV) auf die Eurostat-Bevölkerungszahlen 2025 an: 15 Staaten und 65% der Bevölkerung zum Beschließen, 4 Staaten und über 35% zum Blockieren, Einstimmigkeit bei Außenpolitik, Steuern und Artikel 7.',
+      '#metodo > div:nth-child(2) .eyebrow': 'Die Familien', '#metodo > div:nth-child(2) p': 'Die Farbe ist die Parteienfamilie dessen, der die Exekutive führt: der Präsident in Frankreich und Zypern, sonst der Regierungschef. Blaue Schraffur über einer anderen Farbe markiert eine nationalistische Rechte in der Regierung als Partner oder als Stütze von außen. Grenzfälle werden in den Länderprofilen erklärt: ANO in Tschechien und SDS in Slowenien zählen zur nationalistischen Rechten; Smer in der Slowakei bleibt nominell links; die Schweiz ist eine Konkordanzregierung.',
+      '#metodo > div:nth-child(3) .eyebrow': 'Quellen', '#metodo > div:nth-child(3) p': 'Umfragedurchschnitte von PolitPro und Europe Elects, nationale Institute in jedem Länderprofil (SWG, INSA, YouGov, Verian, Yle, Norstat und andere), Wikipedia für Ergebnisse und Kalender, nationale Presse für Regierungsereignisse. Die Matrix ist eine redaktionelle Synthese aus Programmen und Abstimmungen im Europäischen Parlament, keine Aussage der Parteien.',
+      '.nav .stamp': '<i class="live"></i>Stand <b id="stamp"></b>'
+    }
+  };
+  if (STATIC[LANG]) for (const [sel, html] of Object.entries(STATIC[LANG])) document.querySelectorAll(sel).forEach(el => { el.innerHTML = html; });
+  document.getElementById('piano-eyebrow').textContent = t('pl_eyebrow'); document.getElementById('piano-h-tappe').textContent = t('pl_h_tappe'); document.getElementById('piano-h-vinc').textContent = t('pl_h_vinc'); document.getElementById('piano-h-paesi').textContent = t('pl_h_paesi');
+  document.querySelectorAll('.langbtn').forEach(b => { b.classList.toggle('on', b.dataset.lang === LANG); b.addEventListener('click', () => { try { localStorage.setItem('eu30-lang', b.dataset.lang); } catch (e) {} location.reload(); }); });
+  /* ---------- Schede: "Europa 2032" e "Great Remigration Plan" ---------- */
+  const TABS = ['europa', 'grp'];
+  const tabDiHash = h => { const id = (h || '').replace(/^#\/?/, ''); const el = id && document.getElementById(id); const sec = el && el.closest('[data-tab]'); return sec ? sec.dataset.tab : null; };
+  // salto istantaneo (interrompe anche lo scorrimento "smooth" nativo verso un'ancora calcolata sul layout precedente)
+  const salta = (dove) => { const h = document.documentElement, prev = h.style.scrollBehavior; h.style.scrollBehavior = 'auto'; void getComputedStyle(h).scrollBehavior; const top = typeof dove === 'number' ? dove : (dove ? Math.max(0, dove.getBoundingClientRect().top + window.scrollY - (document.querySelector('.tabbar') ? 110 : 70)) : null); if (top != null) { try { window.scrollTo({ top, behavior: 'instant' }); } catch (e) { window.scrollTo(0, top); } } h.style.scrollBehavior = prev; };
+  function setTab(tab, opts) {
+    if (!TABS.includes(tab)) tab = 'europa';
+    const prev = document.body.dataset.tab;
+    document.body.dataset.tab = tab;
+    document.querySelectorAll('.tab').forEach(b => { b.classList.toggle('on', b.dataset.tab === tab); b.setAttribute('aria-selected', b.dataset.tab === tab); });
+    try { localStorage.setItem('eu30-tab', tab); } catch (e) {}
+    if (prev !== tab) {
+      if (tab === 'europa' && typeof resize === 'function') requestAnimationFrame(resize);
+      if (!(opts && opts.keepScroll)) { salta(0); setTimeout(() => salta(0), 80); }
+    }
+  }
+  document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { setTab(b.dataset.tab); if (location.hash) history.replaceState(null, '', location.pathname + location.search); }));
+  window.addEventListener('hashchange', () => { const tb = tabDiHash(location.hash); const el = document.getElementById(location.hash.slice(1)); if (tb && tb !== document.body.dataset.tab) { setTab(tb, { keepScroll: true }); if (el) { salta(el); setTimeout(() => salta(el), 120); setTimeout(() => salta(el), 500); } } });
+  setTab(tabDiHash(location.hash) || (() => { try { return localStorage.getItem('eu30-tab'); } catch (e) { return null; } })() || 'europa', { keepScroll: true });
+  if (tabDiHash(location.hash)) for (const ms of [60, 300, 800]) setTimeout(() => { const el = document.getElementById(location.hash.slice(1)); if (el) salta(el); }, ms);
+  const FAM = {
+    sinistra:            { label: t('f_sx'),              hex: '#a8233f', map: '#a8233f' },
+    centrosinistra:      { label: t('f_csx'),        hex: '#ef6f62', map: '#ef6f62' },
+    centro:              { label: t('f_cen'),     hex: '#b8a21c', map: '#b8a21c' },
+    centrodestra:        { label: t('f_cdx'),          hex: '#35c9c2', map: '#35c9c2' },
+    destra_nazionalista: { label: t('f_dn'),   hex: '#2f5fe8', map: '#2f5fe8' },
+    tecnico:             { label: t('f_tec'), hex: '#6b6f7c', map: '#6b6f7c' }
+  };
+  const DN = '#2f5fe8';
+  const STEPS = [{ label: t('oggi'), y: null }, { label: '2026', y: 2026 }, { label: '2027', y: 2027 }, { label: '2028', y: 2028 }, { label: '2029', y: 2029 }, { label: '2030', y: 2030 }, { label: '2031', y: 2031 }, { label: '2032', y: 2032 }];
+  const SCEN = {
+    status_quo: { label: t('sc_sq'), help: t('sc_sq_h') },
+    primo: { label: t('sc_pr'), help: t('sc_pr_h') },
+    coalizione: { label: t('sc_co'), help: t('sc_co_h') },
+    trend: { label: t('sc_tr'), help: t('sc_tr_h') }
+  };
+  const state = { scen: 'coalizione', step: 7, sel: null, funnel: (() => { try { return localStorage.getItem('eu30-funnel') || 'IT'; } catch (e) { return 'IT'; } })() };
+  const byIso = new Map(PAESI.map(p => [p.iso, p]));
+  const bySigla = new Map(PAESI.map(p => [p.sigla, p]));
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const flag = s => String.fromCodePoint(...[...s].map(c => 0x1F1E6 + c.charCodeAt(0) - 65));
+  const fmtData = d => { if (!d) return ''; const [y, m] = d.split('-'); return (m ? MESI[+m - 1] + ' ' : '') + y; };
+  const anno = d => +String(d).slice(0, 4);
+  // data che decide il governo: voto anticipato probabile (negli scenari non status quo), transizione in corso, o scadenza naturale
+  const evento = (p, scen = state.scen) => (scen !== 'status_quo' && p.anticipate && p.anticipate.data) || (p.transizione && p.transizione.data) || p.prossime_elezioni.data;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fmtPct = v => (+v).toFixed(1).replace('.', ',');
+  const leader = p => p.capo_stato ? p.capo_stato : { nome: p.governo.premier, partito: p.governo.partito, famiglia: p.governo.famiglia };
+
+  // famiglia che guida dopo il prossimo voto, per scenario
+  function scenFam(p, scen) {
+    if (scen === 'status_quo') return p.governo.famiglia;
+    if (scen === 'primo') return p.scenario.primo || p.sondaggi.partiti[0].famiglia;
+    return p.scenario[scen];
+  }
+  function scenPartner(p, scen) {
+    if (scen === 'status_quo') return p.governo.destra_nazionalista_al_governo && p.governo.famiglia !== 'destra_nazionalista';
+    return !!p.scenario['partner_' + scen];
+  }
+  function stato(p, scen = state.scen, step = state.step) {
+    const cur = { fam: p.governo.famiglia, dn: !!p.governo.destra_nazionalista_al_governo, proiettato: false, cambiato: false };
+    const y = STEPS[step].y;
+    if (!y || scen === 'status_quo') return cur;
+    if (anno(evento(p, scen)) <= y) {
+      const fam = scenFam(p, scen);
+      const dn = fam === 'destra_nazionalista' || scenPartner(p, scen);
+      return { fam, dn, proiettato: true, cambiato: fam !== cur.fam || dn !== cur.dn };
+    }
+    return cur;
+  }
+  // partito che guiderebbe il governo per una data famiglia: la destra principale, oppure il primo partito di quella famiglia nei sondaggi
+  function guida(p, fam) { if (fam === 'destra_nazionalista' && p.destra_principale.pct_sondaggio != null) return { partito: p.destra_principale.partito, leader: p.destra_principale.leader }; const q = p.sondaggi.partiti.find(x => x.famiglia === fam); return q ? { partito: q.partito, leader: null } : null; }
+  const pill = fam => `<span class="pill${fam === 'destra_nazionalista' || fam === 'sinistra' ? ' dark' : ''}" style="background:${FAM[fam].hex}">${FAM[fam].label}</span>`;
+
+  /* ---------- Controls ---------- */
+  const ticks = document.getElementById('ticks');
+  ticks.innerHTML = STEPS.map((s, i) => `<span data-i="${i}">${s.label}</span>`).join('');
+  const slider = document.getElementById('anno');
+  slider.addEventListener('input', () => { state.step = +slider.value; render(); });
+  ticks.addEventListener('click', e => { const t = e.target.closest('span'); if (t) { state.step = +t.dataset.i; slider.value = state.step; render(); } });
+  document.querySelectorAll('#seg button').forEach(b => b.addEventListener('click', () => {
+    state.scen = b.dataset.scen;
+    document.querySelectorAll('#seg button').forEach(x => x.classList.toggle('on', x === b));
+    render();
+  }));
+  document.getElementById('legend').innerHTML =
+    ['sinistra', 'centrosinistra', 'centro', 'centrodestra', 'destra_nazionalista', 'tecnico'].map(f => `<span><i class="sw" style="background:${FAM[f].map}"></i>${FAM[f].label}</span>`).join('') +
+    `<span><i class="sw hatch"></i>${t('leg_partner')}</span>`;
+
+  /* ---------- Cupola (canvas): Europa in proiezione ortografica, ritagliata da un arco e una linea di base ---------- */
+  const canvas = document.getElementById('globo');
+  const ctx = canvas.getContext('2d');
+  const feats = topojson.feature(TOPO, TOPO.objects.countries).features;
+  const scope = feats.filter(f => byIso.has(String(f.id)));
+  const contextLand = topojson.merge(TOPO, TOPO.objects.countries.geometries.filter(g => !byIso.has(String(g.id))));
+  const borders = topojson.mesh(TOPO, TOPO.objects.countries, (a, b) => a !== b);
+  const graticule = d3.geoGraticule().step([10, 10])();
+  const proj = d3.geoOrthographic().clipAngle(90);
+  const gpath = d3.geoPath(proj, ctx);
+  const HOME = [-12, -51, 0];
+  const EUROPA = { type: 'Polygon', coordinates: [[[-10.5, 34.5], [-10.5, 71], [35, 71], [35, 34.5], [-10.5, 34.5]]] };
+  // forma della cupola: altezza visibile = 0.9 raggi, cioè quasi una semisfera
+  const DOME = { padTop: 22, padBottom: 48, cap: 0.9, fit: [0.16, 0.84] };
+  let base = HOME.slice(), W = 0, H = 0, zoom = 1, baseScale = 1, fitT = [0, 0], dpr = 1, hover = null, dragging = false, t0 = performance.now();
+  const dome = { cx: 0, cy: 0, r: 0, yBase: 0, top: 0 };
+  const mainPoly = f => { if (f.geometry.type === 'Polygon') return f.geometry; let best = null, ba = -1; for (const c of f.geometry.coordinates) { const a = d3.geoArea({ type: 'Polygon', coordinates: c }); if (a > ba) { ba = a; best = c; } } return { type: 'Polygon', coordinates: best }; };
+  const centroids = new Map(scope.map(f => [String(f.id), d3.geoCentroid(mainPoly(f))]));
+  // colori animati per paese
+  const col = new Map(scope.map(f => { const p = byIso.get(String(f.id)); const st = stato(p); return [String(f.id), { cur: d3.color(FAM[st.fam].map), from: d3.color(FAM[st.fam].map), to: d3.color(FAM[st.fam].map), hatch: st.dn && st.fam !== 'destra_nazionalista' ? 1 : 0, hFrom: 0, hTo: 0 }]; }));
+  let animStart = 0;
+  function hatchPattern() {
+    const c = document.createElement('canvas'); c.width = c.height = 8; const x = c.getContext('2d');
+    x.strokeStyle = DN; x.lineWidth = 2.4; x.beginPath(); x.moveTo(-2, 10); x.lineTo(10, -2); x.moveTo(-2, 2); x.lineTo(2, -2); x.moveTo(6, 10); x.lineTo(10, 6); x.stroke();
+    return ctx.createPattern(c, 'repeat');
+  }
+  let hatch = null;
+  function layoutDome() {
+    dome.top = DOME.padTop; dome.yBase = H - DOME.padBottom;
+    dome.r = (dome.yBase - dome.top) / DOME.cap; dome.cx = W / 2; dome.cy = dome.top + dome.r;
+  }
+  function inDome(x, y) { const dx = x - dome.cx, dy = y - dome.cy; return y <= dome.yBase && dx * dx + dy * dy <= dome.r * dome.r; }
+  function domePath() {
+    const k = dome.yBase - dome.cy, half = Math.sqrt(Math.max(0, dome.r * dome.r - k * k));
+    ctx.beginPath(); ctx.moveTo(dome.cx - half, dome.yBase); ctx.arc(dome.cx, dome.cy, dome.r, Math.atan2(k, -half), Math.atan2(k, half), false); ctx.closePath();
+  }
+  function fit() { proj.rotate(HOME); const ty = y => dome.cy + (y - dome.cy) / TILT; proj.fitExtent([[W * DOME.fit[0], ty(dome.top + 30)], [W * DOME.fit[1], ty(dome.yBase - 48)]], EUROPA); baseScale = proj.scale(); fitT = proj.translate(); proj.rotate(base); }
+  function applyScale() { proj.translate(fitT).scale(baseScale * zoom); }
+  function resize() {
+    W = Math.max(300, canvas.parentElement.clientWidth);
+    H = Math.round(Math.min(window.innerHeight * 0.72, W < 700 ? W * 0.85 : W * 0.5));
+    H = Math.max(260, H);
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr; canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    layoutDome(); fit(); applyScale();
+    hatch = hatchPattern();
+    draw();
+  }
+  function setZoom(z) { const from = zoom, to = Math.max(0.7, Math.min(2.6, z)), s = performance.now(); (function step(now) { const k = Math.min(1, (now - s) / 450); zoom = from + (to - from) * (1 - Math.pow(1 - k, 3)); applyScale(); draw(); if (k < 1) requestAnimationFrame(step); })(s); }
+  document.getElementById('zin').addEventListener('click', () => setZoom(zoom * 1.25));
+  document.getElementById('zout').addEventListener('click', () => setZoom(zoom / 1.25));
+  window.EU30 = { dome: DOME, set(o) { Object.assign(DOME, o); resize(); }, rotate(r) { base = r; proj.rotate(r); draw(); } };
+  // Resa 3D: lastra inclinata, paesi estrusi con fianchi scuri, ombra portata, luce dall'alto, bordo luminoso
+  const DEPTH = 8, TILT = 0.9;
+  const scopeUnion = topojson.merge(TOPO, TOPO.objects.countries.geometries.filter(g => byIso.has(String(g.id))));
+  const scopeBorders = topojson.mesh(TOPO, TOPO.objects.countries, (a, b) => a !== b && byIso.has(String(a.id)) && byIso.has(String(b.id)));
+  const shade = new Map();
+  function sideColor(hex, k) { const key = hex + k; if (!shade.has(key)) shade.set(key, d3.color(hex).darker(1.3 + k * 0.12).formatHex()); return shade.get(key); }
+  function toPath(geo) { const p = new Path2D(); d3.geoPath(proj, p)(geo); return p; }
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    // riflesso sotto la linea di base
+    let g = ctx.createLinearGradient(0, dome.yBase, 0, H);
+    g.addColorStop(0, 'rgba(57,135,229,0.16)'); g.addColorStop(1, 'rgba(57,135,229,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, dome.yBase, W, H - dome.yBase);
+    // alone esterno
+    ctx.save(); domePath(); ctx.shadowColor = 'rgba(90,160,255,0.75)'; ctx.shadowBlur = Math.max(18, W * 0.028); ctx.strokeStyle = 'rgba(57,135,229,0.55)'; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
+    // interno della cupola
+    ctx.save(); domePath(); ctx.clip();
+    g = ctx.createRadialGradient(dome.cx, dome.cy + dome.r * 0.25, dome.r * 0.15, dome.cx, dome.cy, dome.r * 1.02);
+    g.addColorStop(0, '#0b1020'); g.addColorStop(0.7, '#0e1530'); g.addColorStop(1, '#1d2d55');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    // lastra inclinata
+    ctx.translate(0, dome.cy); ctx.scale(1, TILT); ctx.translate(0, -dome.cy);
+    ctx.beginPath(); gpath(graticule); ctx.strokeStyle = 'rgba(255,255,255,0.05)'; ctx.lineWidth = 0.7; ctx.stroke();
+    ctx.beginPath(); gpath(contextLand); ctx.fillStyle = '#161a26'; ctx.fill();
+    ctx.beginPath(); gpath(borders); ctx.strokeStyle = 'rgba(0,0,0,0.5)'; ctx.lineWidth = 0.6; ctx.stroke();
+    const paths = new Map(scope.map(f => [String(f.id), toPath(f)]));
+    const unionP = toPath(scopeUnion), bordersP = toPath(scopeBorders);
+    const lift = s => (s && (s === hover || s === state.sel)) ? 4 : 0;
+    // ombra portata
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,0.65)'; ctx.shadowBlur = 26; ctx.shadowOffsetY = DEPTH + 10; ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fill(unionP); ctx.restore();
+    // fianchi
+    for (let k = DEPTH; k >= 1; k--) {
+      ctx.save(); ctx.translate(0, k);
+      for (const f of scope) { const id = String(f.id), c = col.get(id); const l = lift(byIso.get(id).sigla); if (l) ctx.translate(0, -l); ctx.fillStyle = sideColor(c.cur.formatHex(), k); ctx.fill(paths.get(id)); if (l) ctx.translate(0, l); }
+      ctx.restore();
+    }
+    // facce superiori
+    for (const f of scope) {
+      const id = String(f.id), c = col.get(id), p = byIso.get(id); const l = lift(p.sigla);
+      ctx.save(); if (l) ctx.translate(0, -l);
+      ctx.fillStyle = c.cur.formatHex(); ctx.fill(paths.get(id));
+      if (c.hatch > 0.01) { ctx.globalAlpha = c.hatch; ctx.fillStyle = hatch; ctx.fill(paths.get(id)); ctx.globalAlpha = 1; }
+      ctx.restore();
+    }
+    // luce dall'alto sulla lastra
+    ctx.save(); ctx.clip(unionP);
+    g = ctx.createLinearGradient(0, dome.top, 0, dome.yBase); g.addColorStop(0, 'rgba(255,255,255,0.22)'); g.addColorStop(0.45, 'rgba(255,255,255,0.04)'); g.addColorStop(1, 'rgba(0,0,0,0.22)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore();
+    // confini interni e bordo esterno
+    ctx.strokeStyle = 'rgba(0,0,0,0.45)'; ctx.lineWidth = 0.9; ctx.lineJoin = 'round'; ctx.stroke(bordersP);
+    ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = 1; ctx.stroke(unionP);
+    // alone per i governi a guida nazionalista
+    ctx.save(); ctx.shadowColor = 'rgba(80,150,255,0.95)'; ctx.shadowBlur = 16; ctx.strokeStyle = 'rgba(120,175,255,0.9)'; ctx.lineWidth = 1.2;
+    for (const f of scope) { const c = col.get(String(f.id)); if (c.to.formatHex() === DN && c.cur.formatHex() === DN) ctx.stroke(paths.get(String(f.id))); }
+    ctx.restore();
+    // hover / selezione: paese sollevato con bordo bianco
+    for (const [s, color, w] of [[hover, 'rgba(255,255,255,0.8)', 1.4], [state.sel, '#ffffff', 2]]) {
+      if (!s) continue; const f = scope.find(x => byIso.get(String(x.id)).sigla === s); if (!f) continue;
+      ctx.save(); ctx.translate(0, -lift(s)); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.stroke(paths.get(String(f.id))); ctx.restore();
+    }
+    // etichette
+    ctx.save(); ctx.font = `600 ${Math.max(9.5, Math.min(13, W / 95))}px ${getComputedStyle(document.body).getPropertyValue('--mono')}`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.shadowColor = 'rgba(0,0,0,0.9)'; ctx.shadowBlur = 5;
+    for (const f of scope) {
+      const ll = centroids.get(String(f.id)); const xy = proj(ll); if (!xy) continue;
+      const yt = dome.cy + (xy[1] - dome.cy) * TILT; if (!inDome(xy[0], yt)) continue;
+      const a = gpath.area(mainPoly(f)); if (a < W * W / 900) continue;
+      ctx.fillText(byIso.get(String(f.id)).sigla, xy[0], xy[1] - lift(byIso.get(String(f.id)).sigla));
+    }
+    ctx.restore();
+    ctx.restore();
+    // bordo della cupola e linea di base
+    domePath(); ctx.strokeStyle = 'rgba(190,215,255,0.55)'; ctx.lineWidth = 1.2; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, dome.yBase + 0.5); ctx.lineTo(W, dome.yBase + 0.5); ctx.strokeStyle = 'rgba(190,215,255,0.45)'; ctx.lineWidth = 1; ctx.stroke();
+  }
+  let dirty = true;
+  function tick(now) {
+    if (animStart) { const k = Math.min(1, (now - animStart) / 550); const e = 1 - Math.pow(1 - k, 3); col.forEach(c => { c.cur = d3.color(d3.interpolateRgb(c.from, c.to)(e)); c.hatch = c.hFrom + (c.hTo - c.hFrom) * e; }); if (k >= 1) animStart = 0; dirty = true; }
+    if (dirty) { draw(); dirty = false; }
+    requestAnimationFrame(tick);
+  }
+  function retarget() {
+    col.forEach((c, iso) => { const st = stato(byIso.get(iso)); c.from = d3.color(c.cur); c.to = d3.color(FAM[st.fam].map); c.hFrom = c.hatch; c.hTo = st.dn && st.fam !== 'destra_nazionalista' ? 1 : 0; });
+    animStart = performance.now(); if (reduced) { col.forEach(c => { c.cur = c.to; c.hatch = c.hTo; }); draw(); }
+  }
+  // interazione: trascina per spostare, click per aprire
+  function ptAt(e) { const rect = canvas.getBoundingClientRect(); return [e.clientX - rect.left, e.clientY - rect.top]; }
+  function countryAt(e) { const [x, y] = ptAt(e); if (!inDome(x, y)) return null; const ll = proj.invert([x, dome.cy + (y - dome.cy) / TILT]); if (!ll) return null; const f = scope.find(f => d3.geoContains(f, ll)); return f ? byIso.get(String(f.id)) : null; }
+  let pStart = null, rStart = null, moved = false;
+  canvas.addEventListener('pointerdown', e => { pStart = [e.clientX, e.clientY]; rStart = proj.rotate(); moved = false; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointermove', e => {
+    if (pStart) {
+      const dx = e.clientX - pStart[0], dy = e.clientY - pStart[1];
+      if (Math.abs(dx) + Math.abs(dy) > 3) { moved = true; dragging = true; canvas.classList.add('drag'); hideTip(); }
+      if (dragging) { const k = 180 / (Math.PI * baseScale * zoom); base = [rStart[0] + dx * k, Math.max(-80, Math.min(-20, rStart[1] - dy * k)), 0]; proj.rotate(base); draw(); }
+      return;
+    }
+    const p = countryAt(e); const s = p ? p.sigla : null;
+    if (s !== hover) { hover = s; canvas.style.cursor = s ? 'pointer' : 'grab'; dirty = true; }
+    if (p) showTip(e, p); else hideTip();
+  });
+  const endDrag = e => { if (!pStart) return; if (!moved) { const p = countryAt(e); if (p) select(p.sigla); } pStart = null; if (dragging) { dragging = false; canvas.classList.remove('drag'); t0 = performance.now(); } };
+  canvas.addEventListener('pointerup', endDrag); canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('pointerleave', () => { hover = null; hideTip(); canvas.style.cursor = 'grab'; dirty = true; });
+  document.getElementById('centra').addEventListener('click', () => {
+    const from = base.slice(), s = performance.now(); const ip = d3.interpolate(from, HOME); setZoom(1);
+    (function step(now) { const k = Math.min(1, (now - s) / 600); base = ip(1 - Math.pow(1 - k, 3)); proj.rotate(base); draw(); if (k < 1) requestAnimationFrame(step); else t0 = performance.now(); })(s);
+  });
+  function focusOn() { /* la cupola non si sposta: la selezione è evidenziata dal bordo bianco */ }
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(tick);
+
+  /* ---------- Chips ---------- */
+  const chips = document.getElementById('chips');
+  function renderChips() {
+    chips.innerHTML = PAESI.map(p => { const st = stato(p); return `<button type="button" class="chip${p.sigla === state.sel ? ' sel' : ''}" data-s="${p.sigla}" title="${esc(tx(p, 'nome'))}"><i class="c" style="background:${FAM[st.fam].map}"></i>${flag(p.sigla)} ${p.sigla}${st.dn && st.fam !== 'destra_nazionalista' ? '<i class="dn"></i>' : ''}</button>`; }).join('');
+  }
+  chips.addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) select(b.dataset.s); });
+
+  /* ---------- Tooltip ---------- */
+  const tip = document.getElementById('tip');
+  function showTip(e, p) {
+    const st = stato(p); const L = leader(p);
+    let html = `<div class="t">${flag(p.sigla)} ${esc(tx(p, 'nome'))}</div><div class="s">${t('tt_today')}${esc(L.nome)} (${esc(L.partito)}) · ${FAM[L.famiglia].label}${p.governo.destra_nazionalista_al_governo && p.governo.famiglia !== 'destra_nazionalista' ? t('tt_dn_gov') : ''}</div>`;
+    if (st.proiettato) { const gd = guida(p, st.fam); html += `<div class="s">${t('tt_at')} ${STEPS[state.step].label}: <b style="color:${FAM[st.fam].map}">${gd ? esc(gd.partito) + ' · ' : ''}${FAM[st.fam].label}</b>${st.dn && st.fam !== 'destra_nazionalista' ? t('tt_partner') : ''}</div>`; }
+    html += `<div class="m">${t('tt_leader')}${esc(p.sondaggi.partiti[0].partito)} ${fmtPct(p.sondaggi.partiti[0].pct)}%${t('tt_vote')}${fmtData(p.prossime_elezioni.data)}${p.anticipate ? t('tt_early') + fmtData(p.anticipate.data) : ''}</div>`;
+    tip.innerHTML = html; tip.classList.add('on');
+    tip.style.left = Math.min(e.clientX + 16, window.innerWidth - 300) + 'px'; tip.style.top = Math.min(e.clientY + 16, window.innerHeight - 120) + 'px';
+  }
+  function hideTip() { tip.classList.remove('on'); }
+
+  /* ---------- KPI ---------- */
+  const kpis = document.getElementById('kpis');
+  const kprev = { lead: 0, gov: 0, votes: 0 };
+  function countUp(el, from, to) {
+    if (reduced || from === to) { el.textContent = String(to); return; }
+    const s = performance.now(); (function step(now) { const k = Math.min(1, (now - s) / 500); el.textContent = String(Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(step); })(s);
+  }
+  function renderKpis(stati) {
+    const lead = stati.filter(x => x.st.fam === 'destra_nazionalista').length;
+    const gov = stati.filter(x => x.st.dn).length;
+    const lead0 = PAESI.filter(p => p.governo.famiglia === 'destra_nazionalista').length;
+    const gov0 = PAESI.filter(p => p.governo.destra_nazionalista_al_governo).length;
+    const y = STEPS[state.step].y; const votes = y ? PAESI.filter(p => anno(evento(p)) <= y).length : 0;
+    const delta = (a, b) => state.step === 0 ? '' : `${a - b >= 0 ? '+' : ''}${a - b} ${t('vs_oggi')}`;
+    if (!kpis.children.length) kpis.innerHTML = `
+      <div class="kpi"><div class="v dn num" id="k-lead">0</div><div class="l">${t('k1')}</div><div class="d" id="k-lead-d"></div></div>
+      <div class="kpi"><div class="v num" id="k-gov">0</div><div class="l">${t('k2')}</div><div class="d" id="k-gov-d"></div></div>
+      <div class="kpi"><div class="v num" id="k-votes">0<small style="font-size:0.55em">%</small></div><div class="l">${t('k3')}</div><div class="d" id="k-votes-d"></div></div>`;
+    const popPct = Math.round(blocco(TIERS[0], state.scen, state.step).pop), popPct0 = Math.round(blocco(TIERS[0], 'status_quo', 0).pop);
+    countUp(document.getElementById('k-lead'), kprev.lead, lead); countUp(document.getElementById('k-gov'), kprev.gov, gov); countUp(document.getElementById('k-votes').firstChild, kprev.votes, popPct);
+    document.getElementById('k-lead-d').textContent = delta(lead, lead0); document.getElementById('k-gov-d').textContent = delta(gov, gov0);
+    document.getElementById('k-votes-d').textContent = state.step === 0 ? `${votes} ${t('dec')}` : delta(popPct, popPct0).replace(t('vs_oggi'), t('pt_oggi'));
+    Object.assign(kprev, { lead, gov, votes: popPct });
+  }
+
+  /* ---------- Cambi + ranking ---------- */
+  function renderChanges(stati) {
+    const changes = stati.filter(x => x.st.cambiato).sort((a, b) => evento(a.p).localeCompare(evento(b.p)));
+    document.getElementById('cambi-title').textContent = state.step === 0 ? t('ch_title0') : `${t('ch_title')} ${STEPS[state.step].label}`;
+    document.getElementById('cambi-sub').textContent = SCEN[state.scen].help;
+    document.getElementById('cambi-count').textContent = changes.length ? `${changes.length} ${changes.length === 1 ? t('paese') : t('paesi')}` : '';
+    document.getElementById('changes').innerHTML = changes.length
+      ? `<ul class="changes">${changes.map(({ p, st }) => `<li data-go="${p.sigla}"><span>${flag(p.sigla)} ${esc(tx(p, 'nome'))}</span><span>${pill(p.governo.famiglia)}<span class="arrow">→</span>${pill(st.fam)}${(() => { const gd = guida(p, st.fam); return gd ? ` <span class="mono" style="font-size:11.5px;color:var(--ink-2)">${esc(gd.partito.split(' (')[0])}</span>` : ''; })()}${st.dn && st.fam !== 'destra_nazionalista' ? ` <span class="warn">${t('plus_dn')}</span>` : ''}</span><span class="when">${fmtData(evento(p))}</span></li>`).join('')}</ul>`
+      : `<div class="empty">${state.step === 0 ? t('ch_empty0') : t('ch_empty')}</div>`;
+    const top = PAESI.filter(p => p.destra_principale.pct_sondaggio != null).sort((a, b) => b.destra_principale.pct_sondaggio - a.destra_principale.pct_sondaggio).slice(0, 12);
+    const max = top[0].destra_principale.pct_sondaggio;
+    document.getElementById('ranking').innerHTML = `<div class="bars">${top.map(p => { const d = p.destra_principale; const short = (d.partito.match(/\(([^)]+)\)/) || [, d.partito])[1]; const dl = d.pct_ultime_elezioni != null ? d.pct_sondaggio - d.pct_ultime_elezioni : null; return `<div class="bar row" data-go="${p.sigla}"><span class="n" title="${esc(d.partito)}">${flag(p.sigla)} ${esc(short)}</span><span class="t"><span class="f dn" style="width:${d.pct_sondaggio / max * 100}%;background:${DN}"></span></span><span class="v num">${fmtPct(d.pct_sondaggio)}${dl != null ? ` <small>${dl >= 0 ? '+' : ''}${fmtPct(dl)}</small>` : ''}</span></div>`; }).join('')}</div>`;
+  }
+  document.getElementById('cambi').addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) select(b.dataset.go); });
+
+  /* ---------- Cassetto paese ---------- */
+  const drawer = document.getElementById('drawer'), scrim = document.getElementById('scrim');
+  function select(sigla) { state.sel = sigla; render(); focusOn(bySigla.get(sigla)); }
+  function closeDrawer() { state.sel = null; render(); }
+  scrim.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && state.sel) closeDrawer(); });
+  drawer.addEventListener('click', e => { if (e.target.closest('.close')) closeDrawer(); });
+  function bars(list) {
+    const max = Math.max(...list.map(x => x.pct));
+    return `<div class="bars">${list.map(x => `<div class="bar"><span class="n" title="${esc(x.partito)}">${esc(x.partito)}</span><span class="t"><span class="f${x.famiglia === 'destra_nazionalista' ? ' dn' : ''}" style="width:${x.pct / max * 100}%;background:${FAM[x.famiglia].hex}"></span></span><span class="v num">${fmtPct(x.pct)}</span></div>`).join('')}</div>`;
+  }
+  function renderDrawer() {
+    const open = !!state.sel; drawer.classList.toggle('open', open); scrim.classList.toggle('on', open);
+    if (!open) return;
+    const p = bySigla.get(state.sel), g = p.governo, d = p.destra_principale, s = p.scenario, st = stato(p), L = leader(p);
+    const trendCls = d.trend === 'in_crescita' ? 'trend-up' : d.trend === 'in_calo' ? 'trend-down' : 'trend-flat';
+    const trendTxt = d.trend === 'in_crescita' ? t('tr_up') : d.trend === 'in_calo' ? t('tr_down') : t('tr_flat');
+    const dl = d.pct_sondaggio != null && d.pct_ultime_elezioni != null ? d.pct_sondaggio - d.pct_ultime_elezioni : null;
+    const tipo = { maggioranza: t('t_mag'), minoranza: t('t_min'), ad_interim: t('t_int') }[g.tipo] || g.tipo;
+    drawer.innerHTML = `
+      <button type="button" class="close" aria-label="${t('close')}">✕</button>
+      <div class="eyebrow">${t('scheda')}</div>
+      <div class="country-head"><span class="flag">${flag(p.sigla)}</span><h2>${esc(tx(p, 'nome'))}</h2>${pill(L.famiglia)}${g.destra_nazionalista_al_governo && g.famiglia !== 'destra_nazionalista' ? `<span class="warn">${t('dn_gov')}</span>` : ''}</div>
+      ${st.proiettato ? (() => { const gd = guida(p, st.fam); return `<div class="proj" style="border-color:${FAM[st.fam].map}"><span class="eyebrow">${t('scen_after')} ${SCEN[state.scen].label} · ${t('after_vote')} ${fmtData(evento(p))}</span><div class="who"><b style="color:${FAM[st.fam].map}">${gd ? esc(gd.partito) : FAM[st.fam].label}</b>${gd && gd.leader ? `<span>${esc(gd.leader)}</span>` : ''}</div><div class="sub">${FAM[st.fam].label}${st.dn && st.fam !== 'destra_nazionalista' ? t('with_partner') : ''}${st.cambiato ? t('change_gov') : t('confirm')}</div></div>`; })() : ''}
+      <div class="section"><span class="eyebrow">${st.proiettato ? t('gov_now') : t('who_now')}</span>
+        <dl class="kv">
+          ${p.capo_stato ? `<dt>${t('presidente')}</dt><dd><b>${esc(p.capo_stato.nome)}</b> · ${esc(p.capo_stato.partito)} · ${t('dal')} ${fmtData(p.capo_stato.dal)}</dd><dt>${t('pm')}</dt><dd>${esc(g.premier)} · ${esc(g.partito)} · ${t('dal')} ${fmtData(g.dal)} · ${tipo}</dd>` : `<dt>${t('capo_gov')}</dt><dd><b>${esc(g.premier)}</b> · ${esc(g.partito)}</dd><dt>${t('Dal')}</dt><dd>${fmtData(g.dal)} · ${tipo}</dd>`}
+          <dt>${t('prossimo_voto')}</dt><dd>${fmtData(p.prossime_elezioni.data)} · ${p.prossime_elezioni.tipo === 'presidenziali' ? t('e_pres') : t('e_leg')}${p.anticipate ? ` · <span class="warn">${t('ant_prob')} ${fmtData(p.anticipate.data)}</span>` : ''}</dd>
+        </dl>
+        <div class="tags">${g.coalizione.map(c => `<span class="tag" style="border-left-color:${FAM[c.famiglia].hex}">${esc(c.partito)}</span>`).join('')}</div>
+        ${p.capo_stato ? `<p class="note">${esc(tx(p.capo_stato, 'nota'))}</p>` : ''}
+        <p class="note">${esc(tx(g, 'note'))}</p>
+        ${p.prossime_elezioni.note ? `<p class="note"><b>${t('cal_b')}</b> ${esc(tx(p.prossime_elezioni, 'note'))}</p>` : ''}
+        ${p.anticipate ? `<p class="note"><b class="warn">${t('ant_b')} ${fmtData(p.anticipate.data)}.</b> ${esc(tx(p.anticipate, 'nota'))} ${t('ant_note')}</p>` : ''}
+      </div>
+      <div class="section"><span class="eyebrow">${t('sond')} · ${esc(tx(p.sondaggi, 'fonte'))}</span>${bars(p.sondaggi.partiti)}</div>
+      <div class="section"><span class="eyebrow">${t('ult')} · ${fmtData(p.ultime_elezioni.data)}</span>${bars(p.ultime_elezioni.risultati)}</div>
+      <div class="section"><span class="eyebrow">${t('dn_main')}</span>
+        <div class="dnbox"><div><b>${esc(d.partito)}</b><div class="sub">${esc(d.leader)} · ${t('gruppo')} ${esc(d.gruppo_pe)}</div></div>
+        <div style="text-align:right"><div class="big num">${d.pct_sondaggio != null ? fmtPct(d.pct_sondaggio) + '%' : 'n.d.'}</div><div class="sub ${trendCls}">${trendTxt}${dl != null ? ` · ${dl >= 0 ? '+' : ''}${fmtPct(dl)} ${t('dal_voto')}` : ''}</div></div></div>
+      </div>
+      ${window.POSIZIONI && window.DOSSIER && window.EU30C && p.ue ? (() => { const st2 = stato(p); const rows = window.DOSSIER.filter(d => d.regola !== 'nazionale').map(d => { const vNow = EU30C.votoAtteso(window.POSIZIONI, d.id, p, { cambiato: false }); const vScen = st2.cambiato ? EU30C.votoAtteso(window.POSIZIONI, d.id, p, st2) : null; const cell = (v, lab) => `<div class="cv-v"><span class="cv-lab mono">${lab}</span><span class="vtag v-${v.voto}">${t('v_' + v.voto)}</span>${v.confidenza ? `<span class="conf c-${v.confidenza}">${t('conf_' + v.confidenza)}</span>` : ''}${tx(v, 'nota') ? `<span class="cv-n">${esc(tx(v, 'nota'))}</span>` : ''}${v.fonte ? `<a class="cv-src" href="${esc(v.fonte)}" target="_blank" rel="noopener">${t('cv_src')}</a>` : ''}</div>`; return `<li><b>${esc(tx(d, 'titolo'))}</b>${cell(vNow, t('cv_now'))}${vScen ? cell(vScen, `${t('cv_scen')} ${SCEN[state.scen].label}${vScen.partito ? ' · ' + esc(vScen.partito) : ''}`) : ''}</li>`; }).join(''); return `<div class="section"><span class="eyebrow">${t('cv_title')}</span><ul class="cv">${rows}</ul></div>`; })() : ''}
+      <div class="section"><span class="eyebrow">${t('scen_next')}</span>
+        <div class="scen-rows">${Object.keys(SCEN).map(k => `<div class="scen-row${k === state.scen ? ' on' : ''}"><span class="k">${SCEN[k].label}</span><span>${pill(scenFam(p, k))}${scenPartner(p, k) ? ` <span class="warn">${t('plus_dn_p')}</span>` : ''}</span></div>`).join('')}</div>
+        <p class="note">${esc(tx(s, 'commento_coalizione'))}</p>
+      </div>
+      <div class="section"><span class="eyebrow">${t('fonti')}</span><div class="srcs">${p.fonti.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 72))}</a>`).join('<br>')}</div></div>`;
+    drawer.scrollTop = 0;
+  }
+
+  /* ---------- Potere in Consiglio UE ---------- */
+  const UE = PAESI.filter(p => p.ue);
+  const POP_UE = UE.reduce((a, p) => a + p.popolazione, 0);
+  const TIERS = [
+    { id: 'A', label: t('tier_a'), test: st => st.fam === 'destra_nazionalista' },
+    { id: 'B', label: t('tier_b'), test: st => st.dn },
+    { id: 'C', label: t('tier_c'), test: st => st.dn || st.fam === 'centrodestra' }
+  ];
+  function blocco(tier, scen, step) {
+    const m = UE.filter(p => tier.test(stato(p, scen, step)));
+    const pop = m.reduce((a, p) => a + p.popolazione, 0) / POP_UE * 100;
+    return { paesi: m, n: m.length, pop, qmv: m.length >= 15 && pop >= 65, blocking: m.length >= 4 && pop > 35 };
+  }
+  function esito(b, tipo) { return tipo === 'approvare' ? b.qmv : tipo === 'bloccare' ? b.blocking : tipo === 'unanimita' ? b.n >= 1 : false; }
+  function renderConsiglio() {
+    const when = state.step === 0 ? t('oggi_l') : t('fine') + ' ' + STEPS[state.step].label;
+    document.getElementById('cons-when').textContent = `${when} · ${SCEN[state.scen].label}`;
+    const bars = TIERS.map(tier => {
+      const b = blocco(tier, state.scen, state.step);
+      const stat = b.qmv ? ['qmv', t('st_qmv')] : b.blocking ? ['blk', t('st_blk')] : ['no', t('st_no')];
+      const segs = b.paesi.slice().sort((x, y) => y.popolazione - x.popolazione).map(p => { const st = stato(p); const w = p.popolazione / POP_UE * 100; return `<i style="width:${w}%;background:${FAM[st.fam].map}" title="${esc(p.nome)} · ${p.popolazione} mln">${w > 3.2 ? p.sigla : ''}</i>`; }).join('');
+      return `<div class="tier"><div class="tier-head"><span>${tier.label}</span><span class="st ${stat[0]}">${stat[1]}</span></div>
+        <div class="tier-bar"><div class="segs">${segs}</div><i class="mark" style="left:35%"><b>35%</b></i><i class="mark" style="left:65%"><b>65%</b></i></div>
+        <div class="tier-foot mono"><span>${b.n} ${t('stati')}</span><span>${b.pop.toFixed(0)}% ${t('pop_ue')}</span></div></div>`;
+    }).join('');
+    document.getElementById('cons-bars').innerHTML = bars + `<p class="empty" style="margin:12px 0 0">${t('cons_note')}</p>`;
+    // politiche: primo anno in cui il blocco (dal più stretto al più largo) ottiene l'esito richiesto
+    const rows = POL.temi.map(t => {
+      if (t.consiglio === 'nazionale') return { t, html: `<span class="res na">${S.r_na[LI]}</span>` };
+      let found = null;
+      // blocco più stretto che ci riesce entro il 2032, e primo anno in cui ci riesce
+      for (const tier of TIERS) { for (let s = 0; s <= 5; s++) { if (esito(blocco(tier, state.scen, s), t.consiglio)) { found = { s, tier }; break; } } if (found) break; }
+      const verb = { approvare: S.r_appr, bloccare: S.r_block, unanimita: S.r_veto }[t.consiglio][LI];
+      const now = found && found.s <= state.step;
+      return { t, html: found ? `<span class="res ${now ? 'ok' : 'later'}">${verb} ${found.s === 0 ? S.r_now[LI] : S.r_from[LI] + ' ' + STEPS[found.s].label}</span><span class="tier-tag mono">${found.tier.id === 'A' ? S.tg_a[LI] : found.tier.id === 'B' ? S.tg_b[LI] : S.tg_c[LI]}</span>` : `<span class="res no">${S.r_no[LI]}</span>` };
+    });
+    if (window.DOSSIER && window.DOSSIER.length) { renderDossier(); return; }
+    document.getElementById('cons-pol').innerHTML = `<ul class="pol">${rows.map(({ t, html }) => `<li><div><span class="area mono">${esc(tx(t, 'area'))} · ${{ approvare: S.c_appr, bloccare: S.c_block, unanimita: S.c_una, nazionale: S.c_naz }[t.consiglio][LI]}</span><b>${esc(tx(t, 'titolo'))}</b><span class="nota">${esc(tx(t, 'consiglio_nota'))}</span></div><div class="right">${html}</div></li>`).join('')}</ul>`;
+  }
+
+  function renderDossier() {
+    const esitoD = (b, d) => d.regola === 'unanimita' ? (d.obiettivo_destra === 'approvare' ? b.n >= 27 : b.n >= 1) : (d.obiettivo_destra === 'approvare' ? b.qmv : b.blocking);
+    const POS = window.POSIZIONI, y = STEPS[state.step].y;
+    const items = window.DOSSIER.map(d => {
+      // vecchio verdetto: ipotesi di blocco compatto
+      let old;
+      if (d.regola === 'nazionale') old = t('r_na');
+      else {
+        let found = null;
+        for (const tier of TIERS) { for (let s = 0; s <= 5; s++) { if (esitoD(blocco(tier, state.scen, s), d)) { found = { s, tier }; break; } } if (found) break; }
+        const verb = d.regola === 'unanimita' ? (d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_veto')) : d.obiettivo_destra === 'approvare' ? t('r_appr') : d.obiettivo_destra === 'modificare' ? t('r_mod') : t('r_block');
+        old = !found ? (d.regola === 'unanimita' && d.obiettivo_destra === 'approvare' ? t('r_all') : t('r_no')) : `${verb} ${found.s === 0 ? t('r_now') : t('r_from') + ' ' + STEPS[found.s].label} · ${found.tier.id === 'A' ? t('tg_a') : found.tier.id === 'B' ? t('tg_b') : t('tg_c')}`;
+      }
+      // nuovo verdetto: voto atteso governo per governo
+      let res = '', vote = '';
+      if (d.regola === 'nazionale') res = `<span class="res na">${t('r_na')}</span>`;
+      else if (POS && POS.dossier && POS.dossier[d.id] && window.EU30C) {
+        const V = EU30C.verdetto(PAESI, POS, d, state.scen, y), k = V.conti;
+        res = `<span class="exv ex-${V.esito}">${t('ex_' + V.esito)}</span><span class="conf c-${V.confidenza}">${t('conf_' + V.confidenza)}</span>${V.fragile ? `<span class="frag">${t('ex_fragile')}</span>` : ''}`;
+        const ord = V.righe.slice().sort((a, b) => b.pop - a.pop);
+        const strip = ord.map(r => `<i class="vq v-${r.v.voto}${r.v.origine === 'nuovo' ? ' nuovo' : ''}${V.decisivi.includes(r.sigla) ? ' dec' : ''}" style="flex:${Math.max(r.pop, 0.6)}" title="${esc(tx(bySigla.get(r.sigla), 'nome'))} · ${t('v_' + r.v.voto)}${r.v.confidenza ? ' · ' + t('conf_' + r.v.confidenza) : ''}${r.v.origine === 'nuovo' ? ' · ' + t('ex_nuovo') : ''}">${r.pop > 9 ? r.sigla : ''}</i>`).join('');
+        const mot = V.motivo ? ` · ${t('mot_' + V.motivo)}` : '';
+        const nums = d.regola === 'unanimita'
+          ? `${k.fav} ${t('ex_fav')} · ${k.con} ${t('ex_con')} · ${k.ast} ${t('ex_ast')} · ${k.dv} ${t('ex_dv')}${mot}`
+          : `${k.fav} ${t('ex_fav')} (${k.popFav.toFixed(1).replace('.', LANG === 'en' ? '.' : ',')}% ${t('ex_pop')}) · ${k.con} ${t('ex_con')} · ${k.ast} ${t('ex_ast')} · ${k.dv} ${t('ex_dv')}${mot}`;
+        const dec = V.decisivi.length ? `${t('ex_dec')}: ${V.decisivi.map(s => `<b>${flag(s)} ${s}</b>`).join(' ')}` : t('ex_nodec');
+        vote = `<div class="vote"><span class="eyebrow">${t('ex_title')}</span><div class="vstrip">${strip}</div><span class="vnums mono">${nums}</span><span class="vdec">${dec}</span></div>`;
+      } else res = `<span class="res no">${t('v_da_verificare')}</span>`;
+      const rule = { qmv: t('c_appr'), unanimita: t('c_una'), nazionale: t('c_naz') }[d.regola] || d.regola;
+      const goal = { bloccare: t('ds_goal_b'), approvare: t('ds_goal_a'), modificare: t('ds_goal_m') }[d.obiettivo_destra] || '';
+      return `<li><div><span class="area">${esc(tx(d, 'area'))} · ${rule}</span><b class="t">${esc(tx(d, 'titolo'))}</b><span class="stato s-${esc(d.stato)}">${t('st_' + d.stato)}</span><span class="goal">${goal}</span>${vote}<span class="nota">${esc(tx(d, 'stato_nota'))}</span>${tx(d, 'prossima_tappa') ? `<span class="next">${t('ds_next')}: ${esc(tx(d, 'prossima_tappa'))}</span>` : ''}<details><summary>${t('ds_more')}</summary><p>${esc(tx(d, 'descrizione'))} ${esc(tx(d, 'obiettivo_nota'))}</p>${(d.fonti || []).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 60))}</a>`).join('<br>')}</details></div><div class="right">${res}<span class="oldv"><span class="mono">${t('ex_compatto')}</span>${esc(old)}</span></div></li>`;
+    });
+    document.getElementById('cons-pol').innerHTML = `<div class="vlegend">${['favorevole', 'condizionato', 'astensione', 'opt_out', 'contrario', 'da_verificare'].map(v => `<span><i class="vq v-${v}"></i>${t('v_' + v)}</span>`).join('')}<span><i class="vq v-favorevole nuovo"></i>${t('ex_nuovo')}</span></div><ul class="ds">${items.join('')}</ul>`;
+  }
+
+  /* ---------- Piano (GRP) ---------- */
+  function renderPiano() {
+    const P = window.PIANO; const sec = document.getElementById('piano'); if (!P || !sec) { if (sec) sec.hidden = true; return; }
+    sec.hidden = false;
+    const y = STEPS[state.step].y;
+    const num = v => v == null ? 'n.d.' : (typeof v === 'number' ? v.toLocaleString(LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT', { useGrouping: true, minimumGroupingDigits: 1 }) : esc(v));
+    const pct = v => v == null ? 'n.d.' : (Math.round(v * 10) / 10).toLocaleString(LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT') + '%';
+    document.getElementById('piano-title').textContent = t('pl_h2');
+    document.getElementById('piano-sub').textContent = tx(P, 'premessa');
+    // obiettivi
+    document.getElementById('piano-kpi').innerHTML = (P.obiettivi || []).map(o => `<div class="kpi"><div class="v num">${o.unita === '%' ? pct(o.obiettivo) : num(o.obiettivo)}</div><div class="l">${esc(tx(o, 'etichetta'))}</div><div class="d">${t('pl_oggi')}: ${o.unita === '%' ? pct(o.oggi) : num(o.oggi)}${o.anno_oggi ? ' (' + o.anno_oggi + ')' : ''}</div></div>`).join('');
+    // le cinque fasi (al posto del vecchio perimetro dentro/fuori)
+    const kloc = LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT'; const kf = v => v == null ? 'n.d.' : (Math.abs(v) >= 10000 ? ((Math.abs(v / 1000) >= 100 ? Math.round(v / 1000).toLocaleString(kloc, { useGrouping: true, minimumGroupingDigits: 1 }) : (v / 1000).toLocaleString(kloc, { minimumFractionDigits: 1, maximumFractionDigits: 1 })) + 'k') : num(v));
+    document.getElementById('piano-per').innerHTML = `<div class="card fasi"><div class="in"><h3>${t('pl_fasi_h')}</h3><div class="ptab-wrap"><table class="ptab" style="min-width:560px"><thead><tr><th>${t('pl_fase')}</th><th>${t('pl_chi')}</th><th>${t('pl_persone')}</th><th>${t('pl_serve')}</th></tr></thead><tbody>${(P.fasi || []).map(f => `<tr><td><span class="fchip" style="background:${esc(f.colore)}">${esc(f.id)}</span></td><td>${esc(tx(f, 'chi'))}</td><td class="num">${kf(f.persone)}</td><td>${esc(tx(f, 'serve'))}</td></tr>`).join('')}</tbody></table></div><p class="empty" style="margin-top:8px"><b>${t('pl_ipotesi')}:</b> ${esc(tx(P, 'ipotesi'))}</p><a class="grp-link" href="grp.html">${t('pl_apri')} →</a></div></div>`;
+    // pilastri e misure
+    const ST = { in_vigore: t('pl_st_vigore'), adottato_non_applicato: t('pl_st_adottato'), proposta: t('pl_st_proposta'), nuova: t('pl_st_nuova') };
+    const LV = { ue: t('pl_lv_ue'), nazionale: t('pl_lv_naz'), terzo_paese: t('pl_lv_terzo') };
+    const RG = { qmv: t('c_appr'), unanimita: t('c_una'), nazionale: t('c_naz') };
+    document.getElementById('piano-pil').innerHTML = (P.pilastri || []).map((pl, i) => `<div class="card pil"><div class="in"><div class="pil-head"><span class="pil-n mono">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(tx(pl, 'titolo'))}</h3><p>${esc(tx(pl, 'descrizione'))}</p></div></div><ul class="mis">${(pl.misure || []).map(m => {
+      let verdict = '';
+      if (m.dossier && window.DOSSIER && window.POSIZIONI && window.EU30C) { const d = window.DOSSIER.find(x => x.id === m.dossier); if (d && window.POSIZIONI.dossier[d.id]) { const V = EU30C.verdetto(PAESI, window.POSIZIONI, d, state.scen, y); verdict = `<span class="exv ex-${V.esito}" title="${esc(tx(d, 'titolo'))}">${t('ex_' + V.esito)}</span>`; } }
+      return `<li><div class="mis-top"><b>${esc(tx(m, 'titolo'))}</b><span class="mis-tags"><span class="mtag lv-${esc(m.livello)}">${LV[m.livello] || esc(m.livello)}</span><span class="mtag st-${esc(m.stato)}">${ST[m.stato] || esc(m.stato)}</span>${m.regola ? `<span class="mtag">${RG[m.regola]}</span>` : ''}${m.quando ? `<span class="mtag mono">${esc(m.quando)}</span>` : ''}${verdict}</span></div><p>${esc(tx(m, 'testo'))}</p>${m.numero ? `<span class="mis-num mono">${esc(tx(m, 'numero'))}</span>` : ''}${(m.fonte || []).length ? `<span class="mis-src">${m.fonte.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').split('/')[0])}</a>`).join(' · ')}</span>` : ''}</li>`; }).join('')}</ul></div></div>`).join('');
+    // tappe
+    document.getElementById('piano-tappe').innerHTML = (P.tappe || []).map(s => `<li><span class="when mono">${fmtData(s.data)}</span><div><b>${esc(tx(s, 'titolo'))}</b><span>${esc(tx(s, 'testo'))}</span></div></li>`).join('');
+    // paesi
+    const rows = (P.paesi || []).slice().sort((a, b) => (b.ordinati || 0) - (a.ordinati || 0));
+    document.getElementById('piano-paesi').innerHTML = `<table class="ptab"><thead><tr><th>${t('pl_paese')}</th><th>${t('pl_irregolari')}</th><th>${t('pl_ordinati')}</th><th>${t('pl_rimpatriati')}</th><th>${t('pl_tasso')}</th><th>${t('pl_obiettivo')}</th><th>${t('pl_gap')}</th></tr></thead><tbody>${rows.map(r => { const p = bySigla.get(r.sigla); const target = r.obiettivo_tasso != null && r.ordinati != null ? Math.round(r.ordinati * r.obiettivo_tasso / 100) : null; const gap = target != null && r.rimpatriati != null ? target - r.rimpatriati : null; return `<tr data-go="${r.sigla}"><td>${flag(r.sigla)} ${esc(p ? tx(p, 'nome') : r.sigla)} <small class="mono">${r.anno || ''}</small></td><td class="num">${num(r.irregolari)}</td><td class="num">${num(r.ordinati)}</td><td class="num">${num(r.rimpatriati)}</td><td class="num"><span class="tbar"><i style="width:${Math.min(100, r.tasso || 0)}%"></i></span>${pct(r.tasso)}</td><td class="num">${pct(r.obiettivo_tasso)}</td><td class="num ${gap > 0 ? 'gap' : ''}">${gap == null ? 'n.d.' : (gap > 0 ? '+' : '') + num(gap)}</td></tr>`; }).join('')}</tbody></table><p class="empty">${t('pl_tab_note')}</p>`;
+    // vincoli
+    document.getElementById('piano-vinc').innerHTML = (P.vincoli || []).map(v => `<li><b>${esc(tx(v, 'nome'))}</b><span>${esc(tx(v, 'testo'))}</span>${v.fonte ? `<a href="${esc(v.fonte)}" target="_blank" rel="noopener">${t('cv_src')}</a>` : ''}</li>`).join('');
+    document.getElementById('piano-fonti').innerHTML = (P.fonti || []).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, '').slice(0, 72))}</a>`).join('<br>');
+  }
+  document.getElementById('piano').addEventListener('click', e => { const r = e.target.closest('tr[data-go]'); if (r) select(r.dataset.go); });
+
+  /* ---------- Calendario ---------- */
+  const cal = d3.select('#cal');
+  function renderCal() {
+    cal.selectAll('*').remove();
+    const CW = 1000, CH = 300, ml = 24, mr = 24, top = 48;
+    const x = d3.scaleTime().domain([new Date(2026, 9, 1), new Date(2032, 11, 31)]).range([ml, CW - mr]);
+    const items = PAESI.map(p => { const d = evento(p); const [y, m] = d.split('-').map(Number); return { p, date: new Date(y, (m || 1) - 1, 15), trans: !!p.transizione || (!!p.anticipate && d === p.anticipate.data) }; }).sort((a, b) => a.date - b.date);
+    const lanes = [];
+    items.forEach(it => { let li = lanes.findIndex(last => x(it.date) - last > 48); if (li < 0) { li = lanes.length; lanes.push(0); } lanes[li] = x(it.date); it.lane = li; });
+    const laneH = Math.min(34, (CH - top - 30) / Math.max(lanes.length, 1));
+    const defs = cal.append('defs'); const fl = defs.append('filter').attr('id', 'glow').attr('x', '-80%').attr('y', '-80%').attr('width', '260%').attr('height', '260%');
+    fl.append('feGaussianBlur').attr('stdDeviation', 3).attr('result', 'b'); const m = fl.append('feMerge'); m.append('feMergeNode').attr('in', 'b'); m.append('feMergeNode').attr('in', 'SourceGraphic');
+    const ax = d3.axisTop(x).ticks(d3.timeYear.every(1)).tickFormat(d3.timeFormat('%Y')).tickSize(-(CH - top - 16));
+    const gx = cal.append('g').attr('transform', `translate(0,${top - 16})`).call(ax);
+    gx.selectAll('line').attr('stroke', 'rgba(255,255,255,0.07)'); gx.select('.domain').remove();
+    gx.selectAll('text').attr('fill', '#6f7486').attr('font-family', 'Geist Mono, monospace').attr('font-size', 12).attr('dx', 6).attr('text-anchor', 'start');
+    const today = new Date(2026, 9, 15);
+    cal.append('line').attr('x1', x(today)).attr('x2', x(today)).attr('y1', top - 32).attr('y2', CH - 18).attr('stroke', '#f2f3f7').attr('stroke-dasharray', '3 3').attr('stroke-opacity', 0.5);
+    cal.append('text').attr('x', x(today) + 6).attr('y', CH - 8).attr('fill', '#aeb3c2').attr('font-family', 'Geist Mono, monospace').attr('font-size', 11).text(t('cal_oggi'));
+    const y = STEPS[state.step].y;
+    const it = cal.append('g').selectAll('g').data(items).join('g').attr('transform', d => `translate(${x(d.date)},${top + d.lane * laneH + 8})`).style('cursor', 'pointer')
+      .on('click', (e, d) => select(d.p.sigla)).on('mousemove', (e, d) => showTip(e, d.p)).on('mouseleave', hideTip);
+    const reached = d => y && anno(evento(d.p)) <= y;
+    it.append('circle').attr('r', d => d.p.sigla === state.sel ? 9 : 7)
+      .attr('fill', d => reached(d) ? FAM[scenFam(d.p, state.scen)].map : '#0b0d14')
+      .attr('stroke', d => FAM[scenFam(d.p, state.scen)].map).attr('stroke-opacity', d => reached(d) ? 0 : 0.8)
+      .attr('stroke-width', 1.5).attr('stroke-dasharray', d => d.trans ? '2 2' : null)
+      .attr('filter', d => reached(d) && scenFam(d.p, state.scen) === 'destra_nazionalista' ? 'url(#glow)' : null);
+    it.append('text').attr('x', 12).attr('dy', '0.35em').attr('fill', d => d.p.sigla === state.sel ? '#ffffff' : '#aeb3c2').attr('font-family', 'Geist Mono, monospace').attr('font-size', 11.5).attr('font-weight', d => d.p.sigla === state.sel ? 600 : 400).text(d => d.p.sigla);
+  }
+
+  /* ---------- Matrice ---------- */
+  function renderMatrix() {
+    const T = document.getElementById('matrix');
+    const sym = { 2: '●', 1: '◐', 0: '○' };
+    T.innerHTML = `<thead><tr><th class="row">${t('m_prop')}</th>${POL.partiti.map(pt => `<th><span class="fl">${flag(pt.paese)}</span>${esc(pt.nome)}<span class="g">${esc(pt.gruppo)}</span></th>`).join('')}<th>${t('m_fav')}</th></tr></thead>
+      <tbody>${POL.temi.map(t => { const vals = POL.partiti.map(pt => t.voti[pt.id]); const fav = vals.filter(v => v === 2).length, app = vals.filter(v => v != null).length; return `<tr><th class="row"><span class="area">${esc(tx(t, 'area'))}</span>${esc(tx(t, 'titolo'))}<span class="nota">${esc(tx(t, 'nota'))}</span></th>${POL.partiti.map(pt => { const v = t.voti[pt.id]; const lab = v == null ? S.m_na[LI] : [S.m_l0, S.m_l1, S.m_l2][v][LI]; return `<td><span class="cell ${v == null ? 'ln' : 'l' + v}" title="${esc(pt.nome)}: ${lab}">${v == null ? '-' : sym[v]}</span></td>`; }).join('')}<td class="score"><i class="sb"><i style="width:${fav / app * 100}%"></i></i><span>${fav}/${app}</span></td></tr>`; }).join('')}</tbody>`;
+    document.getElementById('convdiv').innerHTML = `
+      <div class="card conv"><div class="in"><h3>${t('conv_h')}</h3><ul>${POL.convergenze.map(c => `<li><strong>${esc(tx(c, 'titolo'))}</strong><span>${esc(tx(c, 'testo'))}</span></li>`).join('')}</ul></div></div>
+      <div class="card div"><div class="in"><h3>${t('div_h')}</h3><ul>${POL.divergenze.map(c => `<li><strong>${esc(tx(c, 'titolo'))}</strong><span>${esc(tx(c, 'testo'))}</span></li>`).join('')}</ul></div></div>`;
+  }
+
+  /* ---------- Reveal ---------- */
+  const rev = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduced) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    rev.forEach(el => io.observe(el));
+    setTimeout(() => rev.forEach(el => el.classList.add('in')), 1500);
+  } else rev.forEach(el => el.classList.add('in'));
+
+  /* ---------- Novità ---------- */
+  (function () {
+    const A = window.AGGIORNAMENTI || [], M = window.META || {};
+    if (M.aggiornato) { const [y, m, d] = M.aggiornato.split('-'); document.getElementById('stamp').textContent = `${+d} ${MESI[+m - 1]} ${y}`; }
+    if (!A.length) { document.getElementById('novita').hidden = true; return; }
+    const last = A[0];
+    document.getElementById('nov-title').textContent = (() => { const [y, m, d] = last.data.split('-'); return `${+d} ${MESI[+m - 1]} ${y}: ${tx(last, 'titolo')}`; })();
+    document.getElementById('nov-list').innerHTML = txa(last, 'punti').map(x => `<li>${esc(x)}</li>`).join('');
+    const older = A.slice(1);
+    if (!older.length) document.getElementById('nov-older').hidden = true;
+    else document.getElementById('nov-older-list').innerHTML = older.map(a => { const [y, m, d] = a.data.split('-'); return `<div><b>${+d} ${MESI[+m - 1]} ${y} · ${esc(tx(a, 'titolo'))}</b><ul>${txa(a, 'punti').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`; }).join('');
+    const btn = document.getElementById('nov-copy'); btn.textContent = t('copy');
+    btn.addEventListener('click', () => {
+      const txt = tx(last, 'whatsapp') || txa(last, 'punti').join(' ');
+      btn.textContent = t('copy'); const ok = () => { btn.textContent = t('copied'); btn.classList.add('done'); setTimeout(() => { btn.textContent = t('copy'); btn.classList.remove('done'); }, 2000); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok).catch(() => window.prompt(t('copy_prompt'), txt));
+      else window.prompt(t('copy_prompt'), txt);
+    });
+  })();
+
+  /* ---------- Segui ---------- */
+  (function () {
+    const I = window.ISCRIZIONE || {};
+    document.getElementById('fl-eyebrow').textContent = t('fl_eyebrow'); document.getElementById('fl-title').textContent = t('fl_title'); document.getElementById('fl-text').textContent = t('fl_text');
+    const btn = (href, label, cls, icon) => href
+      ? `<a class="fbtn ${cls}" href="${esc(href)}" target="_blank" rel="noopener">${icon}${label}</a>`
+      : `<span class="fbtn soon" title="${t('fl_soon')}">${icon}${label} <small>· ${t('fl_soon')}</small></span>`;
+    const tg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.04 15.47 8.7 20.2c.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.5c.3-1.2-.4-1.7-1.3-1.4L2.4 11.2c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4 10.7-6.7c.5-.3 1-.1.6.2"/></svg>';
+    const mail = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>';
+    const xi = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.1-6.7L5.4 22H2.3l7.6-8.7L2 2h6.7l4.6 6.1zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg>';
+    document.getElementById('fl-btns').innerHTML = btn(I.telegram, t('fl_tg'), 'primary', tg) + btn(I.email_form, t('fl_mail'), '', mail) + (I.x ? btn(I.x, t('fl_x'), '', xi) : '') + `<button type="button" class="fbtn" id="fl-copy">${t('fl_share')}</button>`;
+    const c = document.getElementById('fl-copy'); const url = I.pagina || location.href.split('#')[0];
+    c.addEventListener('click', () => { const ok = () => { c.textContent = t('fl_shared'); setTimeout(() => c.textContent = t('fl_share'), 2000); }; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok).catch(() => window.prompt('URL', url)); else window.prompt('URL', url); });
+  })();
+
+  /* ---------- App: service worker e invito all'installazione ---------- */
+  (function () {
+    if (window.EU30_NATIVE) return;
+    const canSW = 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost') && !/claude\.ai$/.test(location.hostname);
+    if (canSW) navigator.serviceWorker.register('sw.js').catch(() => {});
+    const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true || /[?&]app=1/.test(location.search);
+    const box = document.getElementById('install'); if (!box || standalone) return;
+    let dismissed = false; try { dismissed = localStorage.getItem('eu30-install') === 'no'; } catch (e) {}
+    if (dismissed) return;
+    const ua = navigator.userAgent; const ios = /iPhone|iPad|iPod/.test(ua) && !/CriOS|FxiOS/.test(ua) && /Safari/.test(ua);
+    const show = (title, body, btn) => { document.getElementById('inst-title').textContent = title; document.getElementById('inst-body').textContent = body; const b = document.getElementById('inst-btn'); if (btn) { b.textContent = t('inst_btn'); b.hidden = false; b.onclick = btn; } box.hidden = false; };
+    document.getElementById('inst-close').addEventListener('click', () => { box.hidden = true; try { localStorage.setItem('eu30-install', 'no'); } catch (e) {} });
+    if (ios) setTimeout(() => show(t('inst_ios_t'), t('inst_ios_b'), null), 2500);
+    let deferred = null;
+    window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; show(t('inst_and_t'), t('inst_and_b'), async () => { deferred.prompt(); await deferred.userChoice; box.hidden = true; }); });
+  })();
+
+  /* ---------- Render ---------- */
+  function renderFunnel() {
+    const F = window.FUNNEL; const sec = document.getElementById('funnel'); if (!F || !F.paesi || !sec) { if (sec) sec.hidden = true; return; }
+    sec.hidden = false;
+    const loc = LANG === 'en' ? 'en-GB' : LANG === 'de' ? 'de-DE' : 'it-IT';
+    const num = v => v == null ? 'n.d.' : v.toLocaleString(loc, { maximumFractionDigits: 0 });
+    const pc = v => v == null ? 'n.d.' : (Math.round(v * 10) / 10).toLocaleString(loc) + '%';
+    const k = v => v == null ? null : Math.round(v * 1000); // migliaia (indagine) → persone
+    if (!F.paesi[state.funnel]) state.funnel = 'IT';
+    const sig = state.funnel, D = F.paesi[sig], p = bySigla.get(sig), Y = F.anno;
+    document.getElementById('funnel-title').textContent = t('fn_title');
+    document.getElementById('funnel-sub').textContent = t('fn_sub');
+    document.getElementById('funnel-sel').innerHTML = Object.keys(F.paesi).map(s => `<button type="button" class="chip${s === sig ? ' on' : ''}" data-fsel="${s}" title="${esc(bySigla.get(s) ? tx(bySigla.get(s), 'nome') : s)}">${flag(s)} ${s}</button>`).join('');
+    const nome = p ? tx(p, 'nome') : sig;
+    const P = D.popolazione, A = D.asilo, R = D.rimpatri, PV = D.permessi_validi, TP = D.protezione_temporanea, C = D.lfs_15_74_per_cittadinanza, O = D.lfs_15_74_origine_genitori;
+    // riga del funnel: barra centrata larga quanto la quota sulla base
+    const riga = (l, v, base, cls, sub, extra, isBase) => { const w = v != null && base ? Math.max(0.6, Math.min(100, v / base * 100)) : null; return `<li${isBase ? ' class="base"' : ''}><span class="fl">${esc(l)}${sub ? `<small>${sub}</small>` : ''}</span><span class="fb">${w != null ? `<i class="${cls}" style="width:${w}%;margin-left:${(100 - w) / 2}%"></i>` : ''}</span><span class="fv${v == null ? ' nd' : ''}">${v == null ? t('fn_nd') : num(v)}${v != null && base ? `<small><span class="pct">${pc(v / base * 100)}</span>${extra ? ' · ' + extra : ''}</small>` : (extra ? `<small>${extra}</small>` : '')}</span></li>`; };
+    // A: origine della popolazione 15-74 (LFS)
+    document.getElementById('funnel-h-a').textContent = `${flag(sig)} ${nome} · ${t('fn_h_a')}`;
+    if (C && C.totale && C.totale.totale != null) {
+      const N = C.nazionali, UE = C.stranieri_ue, XUE = C.stranieri_extra_ue, tot = k(C.totale.totale);
+      const a1 = k(N.nati_paese_genitori_paese), a2 = k(N.nati_paese_un_genitore_estero), a3 = k(N.nati_paese_due_genitori_estero), a4 = k(N.nati_estero), a5 = k(UE.totale), a6 = k(XUE.totale);
+      const noti = [a1, a2, a3, a4, a5, a6].filter(x => x != null).reduce((x, y) => x + y, 0);
+      const resto = [a1, a2, a3, a4, a5, a6].every(x => x != null) ? Math.max(0, tot - noti) : null;
+      const SG = O && O.seconda_generazione, NE = O && O.nati_estero;
+      const subPar = SG && SG.di_cui_genitori_ue != null ? t('fn_sub_par').replace('{a}', num(k(SG.di_cui_genitori_ue))).replace('{b}', num(k(SG.di_cui_genitori_extra_ue))) : '';
+      const subBorn = NE && NE.nati_ue != null ? t('fn_sub_born').replace('{a}', num(k(NE.nati_ue))).replace('{b}', num(k(NE.nati_extra_ue))) : '';
+      const subFor = B => B && (B.nati_paese != null || B.nati_estero != null) ? t('fn_sub_for').replace('{a}', num(k(B.nati_paese))).replace('{b}', num(k(B.nati_estero))) : '';
+      document.getElementById('funnel-base-a').textContent = t('fn_base_a').replace('{y}', C.anno);
+      document.getElementById('funnel-a').innerHTML =
+        riga(t('fn_a0'), tot, tot, 'c-k0', '', '', true) +
+        riga(t('fn_a1'), a1, tot, 'c-k0') + riga(t('fn_a2'), a2, tot, 'c-k1') + riga(t('fn_a3'), a3, tot, 'c-k2', subPar) +
+        riga(t('fn_a4'), a4, tot, 'c-k3', subBorn) + riga(t('fn_a5'), a5, tot, 'c-k4', subFor(UE)) + riga(t('fn_a6'), a6, tot, 'c-k5', subFor(XUE)) +
+        riga(t('fn_a7'), resto, tot, 'c-k6');
+    } else { document.getElementById('funnel-base-a').textContent = ''; document.getElementById('funnel-a').innerHTML = `<li><span class="fl fnd">${t('fn_nd')}</span></li>`; }
+    // B: cittadini extra-UE, dalla residenza al rimpatrio (tutte le età)
+    document.getElementById('funnel-h-b').textContent = t('fn_h_b');
+    const base = P && P.extra_ue;
+    document.getElementById('funnel-base-b').textContent = base ? t('fn_base_b').replace('{y}', P.anno) : '';
+    const subPend = A ? t('fn_sub_pend').replace('{a}', num(A.prime_domande)).replace('{b}', num(A.decisioni_positive)) : '';
+    document.getElementById('funnel-b').innerHTML =
+      riga(t('fn_b0'), base, base, 'c-k5', '', P ? String(P.anno) : '', true) +
+      riga(t('fn_perm'), PV && PV.totale, base, 'c-k5', '', PV ? String(PV.anno) : '') +
+      riga(t('fn_tp'), TP && TP.valore, base, 'c-r1', '', TP ? TP.periodo : '') +
+      riga(t('fn_pend'), A && A.pendenti_dicembre, base, 'c-r1', subPend, A ? A.anno + '-12' : '') +
+      riga(t('fn_irr'), R && R.irregolari_trovati, base, 'c-r2', '', t('fn_flow') + ' ' + Y) +
+      riga(t('fn_ord'), R && R.ordini_di_lasciare, base, 'c-r2', '', R && R.irregolari_trovati ? pc(R.ordini_di_lasciare / R.irregolari_trovati * 100) + ' ' + t('fn_of_irr') : '') +
+      riga(t('fn_ret'), R && R.rimpatriati_verso_paesi_terzi, base, 'c-r3', '', R && R.tasso_rimpatrio_paesi_terzi_pct != null ? t('fn_rate') + ' ' + pc(R.tasso_rimpatrio_paesi_terzi_pct) : '');
+    // acquisizioni 2015-2024
+    const AC = D.acquisizioni_cittadinanza;
+    document.getElementById('funnel-h-acq').textContent = t('fn_h_acq');
+    if (AC) {
+      const ys = Object.keys(AC.anni), mx = Math.max(1, ...ys.map(y => AC.anni[y] || 0));
+      document.getElementById('funnel-acq').innerHTML = `<div class="facq">${ys.map(y => `<i data-y="${y.slice(2)}" style="height:${(AC.anni[y] || 0) / mx * 100}%" title="${y}: ${num(AC.anni[y])}"></i>`).join('')}</div><div class="facq-tot">${t('fn_acq_tot')}: <b>${num(AC.totale_2015_2024)}</b> · ${ys[ys.length - 1]}: ${num(AC.anni[ys[ys.length - 1]])}${P && P.nazionali && AC.totale_2015_2024 != null ? ` · ${pc(AC.totale_2015_2024 / P.nazionali * 100)} ${t('fn_of_nat')}` : ''}</div>`;
+    } else document.getElementById('funnel-acq').innerHTML = `<p class="fnd">${t('fn_nd')}</p>`;
+    // permessi: prime cinque
+    document.getElementById('funnel-h-perm').textContent = `${t('fn_h_perm')}${PV ? ' · ' + PV.anno : ''}`;
+    if (PV && PV.prime_cinque && PV.prime_cinque.length) {
+      const mx = Math.max(1, ...PV.prime_cinque.map(x => x.permessi || 0));
+      document.getElementById('funnel-perm').innerHTML = `<ul class="fperm">${PV.prime_cinque.map(x => `<li><span><span>${esc(x.nome)}</span><span class="fb"><i style="width:${(x.permessi || 0) / mx * 100}%"></i></span></span><span class="fv">${num(x.permessi)}<small>${pc(x.quota_pct)}</small></span></li>`).join('')}</ul><p class="empty" style="margin-top:8px">${t('fn_tot')}: ${num(PV.totale)}</p>`;
+    } else document.getElementById('funnel-perm').innerHTML = `<p class="fnd">${t('fn_nd')}</p>`;
+    // ordini e rimpatri per nazionalità
+    const NZ = D.rimpatri_per_nazionalita;
+    document.getElementById('funnel-h-naz').textContent = `${t('fn_h_naz')}${NZ ? ' · ' + NZ.anno : ''}`;
+    if (NZ && NZ.prime_dieci && NZ.prime_dieci.length) {
+      document.getElementById('funnel-naz').innerHTML = `<table class="ptab" style="min-width:420px"><thead><tr><th>${t('fn_naz')}</th><th>${t('pl_ordinati')}</th><th>${t('fn_quota')}</th><th>${t('pl_rimpatriati')}</th><th>${t('pl_tasso')}</th></tr></thead><tbody>${NZ.prime_dieci.map(x => `<tr><td>${esc(x.nome)}</td><td class="num">${num(x.ordini)}</td><td class="num">${pc(x.quota_ordini_pct)}</td><td class="num">${num(x.rimpatriati)}</td><td class="num"><span class="tbar"><i style="width:${Math.min(100, x.tasso_pct || 0)}%"></i></span>${pc(x.tasso_pct)}</td></tr>`).join('')}<tr><td><b>${t('fn_tot')}</b></td><td class="num"><b>${num(NZ.ordini_totale)}</b></td><td class="num">100%</td><td class="num"><b>${num(NZ.rimpatriati_totale)}</b></td><td class="num">${pc(R && R.tasso_rimpatrio_paesi_terzi_pct)}</td></tr></tbody></table>`;
+    } else document.getElementById('funnel-naz').innerHTML = `<p class="fnd">${t('fn_nd')}</p>`;
+    document.getElementById('funnel-fonti').textContent = t('fn_note').replace('{d}', (() => { const [y, m, d] = String(F.estratto || '').split('-'); return m ? `${+d} ${MESI[+m - 1]} ${y}` : F.estratto; })());
+  }
+  document.getElementById('funnel').addEventListener('click', e => { const b = e.target.closest('[data-fsel]'); if (!b) return; state.funnel = b.dataset.fsel; try { localStorage.setItem('eu30-funnel', state.funnel); } catch (err) {} renderFunnel(); });
+
+  function render() {
+    document.getElementById('seg-help').textContent = SCEN[state.scen].help;
+    document.getElementById('hud-scen').textContent = SCEN[state.scen].label;
+    document.getElementById('hud-anno').textContent = state.step === 0 ? t('oggi_l') : t('fine') + ' ' + STEPS[state.step].label;
+    document.getElementById('cur').textContent = STEPS[state.step].label;
+    ticks.querySelectorAll('span').forEach((s, i) => s.classList.toggle('on', i === state.step));
+    const stati = PAESI.map(p => ({ p, st: stato(p) }));
+    retarget(); renderChips(); renderKpis(stati); renderChanges(stati); renderConsiglio(); renderPiano(); renderFunnel(); renderCal(); renderDrawer();
+  }
+  renderMatrix();
+  render();
+};
+</script>
+</body>
+</html>
