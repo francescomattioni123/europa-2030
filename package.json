@@ -5,7 +5,8 @@
   "scripts": {
     "check": "node scripts/check.js",
     "migrazione": "node scripts/migrazione.js",
-    "grp": "node scripts/grp.js"
+    "grp": "node scripts/grp.js",
+    "grp-nazionalita": "node scripts/grp-nazionalita.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5"
