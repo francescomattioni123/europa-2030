@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "www": "rm -rf www && mkdir -p www/data www/icons && cp ../index.html ../manifest.json ../consiglio.js www/ && cp ../data/*.js www/data/ && cp ../icons/*.png www/icons/",
+    "www": "rm -rf www && mkdir -p www/data www/icons && cp ../index.html ../grp.html ../manifest.json ../consiglio.js www/ && cp ../data/*.js www/data/ && cp ../icons/*.png www/icons/",
     "sync": "npm run www && npx cap sync ios"
   },
   "keywords": [],
