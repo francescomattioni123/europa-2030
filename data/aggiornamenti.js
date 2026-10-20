@@ -1,7 +1,31 @@
 // Registro degli aggiornamenti. Il primo elemento è il più recente. META.aggiornato alimenta il timbro "dati al" in alto.
 // Ogni voce ha titolo/punti/whatsapp in italiano, *_en in inglese e *_de in tedesco.
-window.META = {"aggiornato": "2026-10-19"};
+window.META = {"aggiornato": "2026-10-20"};
 window.AGGIORNAMENTI = [
+  {
+    "data": "2026-10-20",
+    "titolo": "GRP v3: fasi, tracker 2027-2032, esecuzione, costi",
+    "punti": [
+      "The Great Remigration Plan (“GRP”) in versione 3: cinque fasi al posto del perimetro, orizzonte 2032, obiettivo Italia 100% di esecuzione degli ordini (100k ordini e 100k rimpatri l'anno).",
+      "Nuova pagina grp.html con preambolo, sintesi, funnel dell'Italia, schede per fase, tracker 2027-2032, esecuzione, costi 2027-2032, contesto europeo, misure di Futuro Nazionale e garanzie.",
+      "Ogni numero è letto dal file di lavoro GRP-Italia.xlsx (docs/grp) con lo script scripts/grp.js; dove il dato manca compare n.d."
+    ],
+    "whatsapp": "Europa 2030, aggiornamento del 20 ottobre 2026. The Great Remigration Plan (GRP) versione 3: cinque fasi, tracker 2027-2032, esecuzione e costi. Obiettivo Italia: 100% di esecuzione degli ordini nel 2032, 100k rimpatri l'anno contro i 4.780 del 2025. Pagina completa: https://francescomattioni123.github.io/europa-2030/grp.html · Osservatorio: https://francescomattioni123.github.io/europa-2030/",
+    "titolo_en": "GRP v3: phases, 2027-2032 tracker, execution, costs",
+    "punti_en": [
+      "The Great Remigration Plan (“GRP”) version 3: five phases instead of the perimeter, 2032 horizon, Italy target 100% enforcement of orders (100k orders and 100k returns a year).",
+      "New grp.html page (Italian) with preamble, summary, Italian funnel, phase sheets, 2027-2032 tracker, execution, 2027-2032 costs, European context, Futuro Nazionale measures and safeguards.",
+      "Every figure is read from the GRP-Italia.xlsx working file (docs/grp) by scripts/grp.js; missing data shows as n.d."
+    ],
+    "whatsapp_en": "Europa 2030, update of 20 October 2026. The Great Remigration Plan (GRP) version 3: five phases, 2027-2032 tracker, execution and costs. Italy target: 100% enforcement of orders in 2032, 100k returns a year against 4,780 in 2025. Full page: https://francescomattioni123.github.io/europa-2030/grp.html · Observatory: https://francescomattioni123.github.io/europa-2030/",
+    "titolo_de": "GRP v3: Phasen, Tracker 2027-2032, Umsetzung, Kosten",
+    "punti_de": [
+      "The Great Remigration Plan (“GRP”) Version 3: fünf Phasen statt Perimeter, Horizont 2032, Ziel Italien 100 % Vollzug der Anordnungen (100k Anordnungen und 100k Rückführungen pro Jahr).",
+      "Neue Seite grp.html (Italienisch) mit Präambel, Zusammenfassung, Funnel Italiens, Phasenblättern, Tracker 2027-2032, Umsetzung, Kosten 2027-2032, europäischem Kontext, Maßnahmen von Futuro Nazionale und Garantien.",
+      "Jede Zahl wird mit scripts/grp.js aus der Arbeitsdatei GRP-Italia.xlsx (docs/grp) gelesen; fehlende Daten erscheinen als n.d."
+    ],
+    "whatsapp_de": "Europa 2030, Update vom 20. Oktober 2026. The Great Remigration Plan (GRP) Version 3: fünf Phasen, Tracker 2027-2032, Umsetzung und Kosten. Ziel Italien: 100 % Vollzug der Anordnungen 2032, 100k Rückführungen pro Jahr gegenüber 4.780 im Jahr 2025. Vollständige Seite: https://francescomattioni123.github.io/europa-2030/grp.html · Observatorium: https://francescomattioni123.github.io/europa-2030/"
+  },
   {
     "data": "2026-10-19",
     "titolo": "Svezia in stallo, Romania alla fiducia, Vox e Chega ai massimi",
@@ -37,7 +61,7 @@ window.AGGIORNAMENTI = [
   },
   {
     "data": "2026-10-18",
-    "titolo": "Piano rimpatri, posizioni dei governi e correzioni ai dossier",
+    "titolo": "Piano GRP, posizioni dei governi e correzioni ai dossier",
     "punti": [
       "Nuova sezione Piano: il GRP, Great Remigration Plan, con 5 pilastri, 30 misure, tappe fino al 2030 e obiettivi di tasso di rimpatrio per 13 paesi (dati Eurostat 2025).",
       "Potere in Consiglio: il verdetto su ogni dossier è ora calcolato governo per governo (449 posizioni registrate) invece che per blocco compatto; il voto Mercosur del 9 gennaio 2026 è riprodotto esattamente.",

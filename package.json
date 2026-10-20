@@ -1,0 +1,13 @@
+{
+  "name": "europa-2030",
+  "private": true,
+  "description": "Europa 2030: dashboard sulla politica europea e Great Remigration Plan. Script di dati in scripts/.",
+  "scripts": {
+    "check": "node scripts/check.js",
+    "migrazione": "node scripts/migrazione.js",
+    "grp": "node scripts/grp.js"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

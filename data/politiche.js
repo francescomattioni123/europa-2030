@@ -8,18 +8,18 @@ window.POLITICHE = {
     { id: "rn",     nome: "RN",       paese: "FR", gruppo: "PfE" },
     { id: "afd",    nome: "AfD",      paese: "DE", gruppo: "ESN" },
     { id: "vox",    nome: "Vox",      paese: "ES", gruppo: "PfE" },
-    { id: "reform", nome: "Reform",   paese: "GB", gruppo: "—"   },
+    { id: "reform", nome: "Reform",   paese: "GB", gruppo: ", "   },
     { id: "pvv",    nome: "PVV",      paese: "NL", gruppo: "PfE" },
     { id: "fpo",    nome: "FPÖ",      paese: "AT", gruppo: "PfE" },
     { id: "pis",    nome: "PiS",      paese: "PL", gruppo: "ECR" },
     { id: "fidesz", nome: "Fidesz",   paese: "HU", gruppo: "PfE" },
     { id: "sd",     nome: "SD",       paese: "SE", gruppo: "ECR" },
     { id: "chega",  nome: "Chega",    paese: "PT", gruppo: "PfE" },
-    { id: "svp",    nome: "UDC/SVP",  paese: "CH", gruppo: "—"   }
+    { id: "svp",    nome: "UDC/SVP",  paese: "CH", gruppo: ", "   }
   ],
   temi: [
-    { id: "hub", area_de: "Migration", titolo_de: "Asylzentren außerhalb der EU und beschleunigte Rückführungen", nota_de: "Modell Italien–Albanien und die von der Kommission vorgeschlagenen „Return Hubs“: das solideste Feld der Konvergenz.", consiglio_nota_de: "EU-Verordnung zu Rückführungen und externen Zentren: Im Rat ist eine qualifizierte Mehrheit nötig (plus Europäisches Parlament).", area_en: "Immigration", titolo_en: "Asylum hubs outside the EU and accelerated returns", nota_en: "The Italy–Albania model and the 'return hubs' proposed by the Commission: this is the most solid ground for convergence.", consiglio_nota_en: "EU regulation on returns and external hubs: it needs a qualified majority in the Council (plus the European Parliament).", consiglio: "approvare", consiglio_nota: "Regolamento UE sui rimpatri e gli hub esterni: serve la maggioranza qualificata in Consiglio (più il Parlamento).", area: "Immigrazione", titolo: "Hub per l'asilo fuori dall'UE e rimpatri accelerati",
-      nota: "Modello Italia–Albania e 'return hubs' proposti dalla Commissione: è il terreno di convergenza più solido.",
+    { id: "hub", area_de: "Migration", titolo_de: "Asylzentren außerhalb der EU und beschleunigte Rückführungen", nota_de: "Modell Italien-Albanien und die von der Kommission vorgeschlagenen „Return Hubs“: das solideste Feld der Konvergenz.", consiglio_nota_de: "EU-Verordnung zu Rückführungen und externen Zentren: Im Rat ist eine qualifizierte Mehrheit nötig (plus Europäisches Parlament).", area_en: "Immigration", titolo_en: "Asylum hubs outside the EU and accelerated returns", nota_en: "The Italy-Albania model and the 'return hubs' proposed by the Commission: this is the most solid ground for convergence.", consiglio_nota_en: "EU regulation on returns and external hubs: it needs a qualified majority in the Council (plus the European Parliament).", consiglio: "approvare", consiglio_nota: "Regolamento UE sui rimpatri e gli hub esterni: serve la maggioranza qualificata in Consiglio (più il Parlamento).", area: "Immigrazione", titolo: "Hub per l'asilo fuori dall'UE e rimpatri accelerati",
+      nota: "Modello Italia-Albania e 'return hubs' proposti dalla Commissione: è il terreno di convergenza più solido.",
       voti: { fdi:2, rn:2, afd:2, vox:2, reform:2, pvv:2, fpo:2, pis:2, fidesz:2, sd:2, chega:2, svp:2 } },
     { id: "cedu", area_de: "Migration", titolo_de: "Die EMRK neu auslegen oder aus ihr austreten", nota_de: "Brief von neun Regierungen vom Mai 2025 (Italien und Dänemark an der Spitze); Reform UK schlägt den glatten Austritt vor.", consiglio_nota_de: "Die EMRK gehört zum Europarat, nicht zur EU: Entschieden wird Staat für Staat (Austritt, Vorbehalte, Druck auf den Gerichtshof).", area_en: "Immigration", titolo_en: "Reinterpreting or leaving the ECHR", nota_en: "Letter from nine governments in May 2025 (led by Italy and Denmark); Reform UK proposes outright withdrawal.", consiglio_nota_en: "The ECHR belongs to the Council of Europe, not the EU: decisions are taken state by state (withdrawal, reservations, pressure on the Court).", consiglio: "nazionale", consiglio_nota: "La CEDU è del Consiglio d'Europa, non dell'UE: si decide stato per stato (uscita, riserve, pressione sulla Corte).", area: "Immigrazione", titolo: "Reinterpretare o uscire dalla CEDU",
       nota: "Lettera dei nove governi del maggio 2025 (Italia e Danimarca in testa); Reform UK propone l'uscita secca.",

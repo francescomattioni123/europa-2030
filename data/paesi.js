@@ -2580,7 +2580,7 @@ window.PAESI = [
   },
   "sondaggi": {
    "data": "2026-10",
-   "fonte": "Yle/Taloustutkimus (7 set – 5 ott 2026)",
+   "fonte": "Yle/Taloustutkimus (7 set - 5 ott 2026)",
    "partiti": [
     {
      "partito": "SDP",
@@ -2618,8 +2618,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Yle/Taloustutkimus (7 Sep – 5 Oct 2026)",
-   "fonte_de": "Yle/Taloustutkimus (7. Sept. – 5. Okt. 2026)"
+   "fonte_en": "Yle/Taloustutkimus (7 Sep - 5 Oct 2026)",
+   "fonte_de": "Yle/Taloustutkimus (7. Sept. - 5. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Perussuomalaiset (PS)",
@@ -2635,7 +2635,7 @@ window.PAESI = [
    "coalizione": "centrosinistra",
    "commento_coalizione": "Con la SDP al 22-23% e i partiti di governo in calo, nel 2027 è probabile un governo a guida socialdemocratica con Centro e sinistra. I Veri Finlandesi, pur risaliti al 16,5%, sono ben sotto il 20,1% del 2023 e difficilmente potrebbero guidare un esecutivo.",
    "commento_coalizione_en": "With the SDP at 22-23% and the governing parties in decline, a Social Democrat-led government with the Centre and the left is likely in 2027. The Finns Party, although back up to 16.5%, are well below their 20.1% of 2023 and could hardly lead a government.",
-   "commento_coalizione_de": "Mit der SDP bei 22–23 % und den Regierungsparteien im Abwärtstrend ist 2027 eine sozialdemokratisch geführte Regierung mit Zentrum und Linksbündnis wahrscheinlich. Die Wahren Finnen liegen zwar wieder bei 16,5 %, aber deutlich unter den 20,1 % von 2023 und könnten kaum eine Regierung führen."
+   "commento_coalizione_de": "Mit der SDP bei 22-23 % und den Regierungsparteien im Abwärtstrend ist 2027 eine sozialdemokratisch geführte Regierung mit Zentrum und Linksbündnis wahrscheinlich. Die Wahren Finnen liegen zwar wieder bei 16,5 %, aber deutlich unter den 20,1 % von 2023 und könnten kaum eine Regierung führen."
   },
   "fonti": [
    "https://politpro.eu/en/finland",
@@ -3172,7 +3172,7 @@ window.PAESI = [
    "coalizione": "centrodestra",
    "commento_coalizione": "ND resta prima con 12-15 punti di vantaggio ma intorno al 30% non otterrebbe la maggioranza assoluta: probabile un secondo turno elettorale o una coalizione con PASOK. La destra radicale è frammentata (Elliniki Lysi, Foni Logikis, Niki) e sommata non supera il 12-13%: può al più condizionare ND, non guidare il governo.",
    "commento_coalizione_en": "ND remains first with a 12-15 point lead but at around 30% would not win an absolute majority: a second round of elections or a coalition with PASOK is likely. The radical right is fragmented (Elliniki Lysi, Foni Logikis, Niki) and combined does not exceed 12-13%: at most it can influence ND, not lead the government.",
-   "commento_coalizione_de": "Die ND bleibt mit 12–15 Punkten Vorsprung vorn, würde aber bei rund 30 % keine absolute Mehrheit erreichen: Wahrscheinlich sind ein zweiter Wahlgang oder eine Koalition mit der PASOK. Die radikale Rechte ist zersplittert (Elliniki Lysi, Foni Logikis, Niki) und kommt zusammen nicht über 12–13 %: Sie kann die ND allenfalls beeinflussen, aber nicht die Regierung führen."
+   "commento_coalizione_de": "Die ND bleibt mit 12-15 Punkten Vorsprung vorn, würde aber bei rund 30 % keine absolute Mehrheit erreichen: Wahrscheinlich sind ein zweiter Wahlgang oder eine Koalition mit der PASOK. Die radikale Rechte ist zersplittert (Elliniki Lysi, Foni Logikis, Niki) und kommt zusammen nicht über 12-13 %: Sie kann die ND allenfalls beeinflussen, aber nicht die Regierung führen."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_Greek_parliamentary_election",
@@ -3346,9 +3346,9 @@ window.PAESI = [
    "dal": "2024-07",
    "tipo": "minoranza",
    "destra_nazionalista_al_governo": false,
-   "note": "Coalizione Reform–Eesti 200 (SDE espulsa a marzo 2025) ridotta a 50 seggi su 101 dopo le defezioni di due deputati nel 2026; governo molto impopolare, i due partiti di coalizione sommano circa il 14% nei sondaggi a cinque mesi dal voto. Il 14 ottobre 2026 Keskerakond, Isamaa ed EKRE hanno depositato una mozione di sfiducia contro il governo Michal (33 firme, ne servono 51 per approvarla) che la SDE non sostiene senza un piano per il governo successivo; Eesti 200, all'1,2%, ha deciso di non fondersi con i Verdi.",
-   "note_en": "The Reform–Eesti 200 coalition (SDE expelled in March 2025) is down to 50 of 101 seats after two MPs defected in 2026; the government is deeply unpopular, the two coalition parties adding up to about 14% in the polls five months before the vote. On 14 October 2026 Keskerakond, Isamaa and EKRE tabled a no-confidence motion against the Michal government (33 signatures, 51 needed to carry it) which the SDE will not back without a plan for the next government; Eesti 200, at 1.2%, has decided not to merge with the Greens.",
-   "note_de": "Die Koalition Reform–Eesti 200 (SDE im März 2025 ausgeschlossen) ist nach dem Abgang zweier Abgeordneter 2026 auf 50 von 101 Sitzen geschrumpft; die Regierung ist sehr unbeliebt, die beiden Koalitionsparteien kommen fünf Monate vor der Wahl zusammen auf etwa 14% in den Umfragen. Am 14. Oktober 2026 haben Keskerakond, Isamaa und EKRE einen Misstrauensantrag gegen die Regierung Michal eingebracht (33 Unterschriften, 51 wären zur Annahme nötig), den die SDE ohne Plan für die nächste Regierung nicht unterstützt; Eesti 200, bei 1,2%, hat sich gegen eine Fusion mit den Grünen entschieden."
+   "note": "Coalizione Reform-Eesti 200 (SDE espulsa a marzo 2025) ridotta a 50 seggi su 101 dopo le defezioni di due deputati nel 2026; governo molto impopolare, i due partiti di coalizione sommano circa il 14% nei sondaggi a cinque mesi dal voto. Il 14 ottobre 2026 Keskerakond, Isamaa ed EKRE hanno depositato una mozione di sfiducia contro il governo Michal (33 firme, ne servono 51 per approvarla) che la SDE non sostiene senza un piano per il governo successivo; Eesti 200, all'1,2%, ha deciso di non fondersi con i Verdi.",
+   "note_en": "The Reform-Eesti 200 coalition (SDE expelled in March 2025) is down to 50 of 101 seats after two MPs defected in 2026; the government is deeply unpopular, the two coalition parties adding up to about 14% in the polls five months before the vote. On 14 October 2026 Keskerakond, Isamaa and EKRE tabled a no-confidence motion against the Michal government (33 signatures, 51 needed to carry it) which the SDE will not back without a plan for the next government; Eesti 200, at 1.2%, has decided not to merge with the Greens.",
+   "note_de": "Die Koalition Reform-Eesti 200 (SDE im März 2025 ausgeschlossen) ist nach dem Abgang zweier Abgeordneter 2026 auf 50 von 101 Sitzen geschrumpft; die Regierung ist sehr unbeliebt, die beiden Koalitionsparteien kommen fünf Monate vor der Wahl zusammen auf etwa 14% in den Umfragen. Am 14. Oktober 2026 haben Keskerakond, Isamaa und EKRE einen Misstrauensantrag gegen die Regierung Michal eingebracht (33 Unterschriften, 51 wären zur Annahme nötig), den die SDE ohne Plan für die nächste Regierung nicht unterstützt; Eesti 200, bei 1,2%, hat sich gegen eine Fusion mit den Grünen entschieden."
   },
   "ultime_elezioni": {
    "data": "2023-03",
@@ -3394,7 +3394,7 @@ window.PAESI = [
   },
   "sondaggi": {
    "data": "2026-10",
-   "fonte": "Norstat / Institute for Societal Studies (14 set – 12 ott 2026), via ERR",
+   "fonte": "Norstat / Institute for Societal Studies (14 set - 12 ott 2026), via ERR",
    "partiti": [
     {
      "partito": "Isamaa",
@@ -3432,8 +3432,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Norstat / Institute for Societal Studies (14 Sep – 12 Oct 2026), via ERR",
-   "fonte_de": "Norstat / Institute for Societal Studies (14. Sept. – 12. Okt. 2026), via ERR"
+   "fonte_en": "Norstat / Institute for Societal Studies (14 Sep - 12 Oct 2026), via ERR",
+   "fonte_de": "Norstat / Institute for Societal Studies (14. Sept. - 12. Okt. 2026), via ERR"
   },
   "destra_principale": {
    "partito": "EKRE",
@@ -3450,7 +3450,7 @@ window.PAESI = [
    "coalizione": "centrodestra",
    "commento_coalizione": "Con i sondaggi attuali Isamaa (Reinsalu) guiderebbe il prossimo governo, probabilmente con Keskerakond e/o SDE; EKRE, scissa nel 2024 e ferma al 14-18%, non è in grado di guidare un governo ma potrebbe entrare come partner minore di Isamaa (come nel 2019-21), scenario possibile se il centrodestra preferisse una coalizione di destra.",
    "commento_coalizione_en": "On current polls Isamaa (Reinsalu) would lead the next government, probably with Keskerakond and/or SDE; EKRE, split in 2024 and stuck at 14-18%, is in no position to lead a government but could join as Isamaa's junior partner (as in 2019-21), a possible scenario if the centre-right were to prefer a right-wing coalition.",
-   "commento_coalizione_de": "Nach den aktuellen Umfragen würde Isamaa (Reinsalu) die nächste Regierung führen, wahrscheinlich mit Keskerakond und/oder SDE; die EKRE, 2024 gespalten und bei 14–18 % stagnierend, ist nicht in der Lage, eine Regierung zu führen, könnte aber als Juniorpartner von Isamaa eintreten (wie 2019–21) – ein mögliches Szenario, falls Mitte-rechts eine Rechtskoalition vorziehen sollte."
+   "commento_coalizione_de": "Nach den aktuellen Umfragen würde Isamaa (Reinsalu) die nächste Regierung führen, wahrscheinlich mit Keskerakond und/oder SDE; die EKRE, 2024 gespalten und bei 14-18 % stagnierend, ist nicht in der Lage, eine Regierung zu führen, könnte aber als Juniorpartner von Isamaa eintreten (wie 2019-21) - ein mögliches Szenario, falls Mitte-rechts eine Rechtskoalition vorziehen sollte."
   },
   "fonti": [
    "https://news.err.ee/1610165908/norstat-isamaa-extends-lead-in-front-of-center-again",
@@ -3490,9 +3490,9 @@ window.PAESI = [
    "dal": "2026-05",
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": true,
-   "note": "Governo nato il 28/5/2026 dopo la caduta di Siliņa (JV). Alle elezioni del 3/10/2026 AS ha stravinto: risultati confermati dalla commissione elettorale il 16 ottobre con 41 seggi ad AS, 17 a LPV, 15 a SV–AJ, 10 a NA, 10 ai Progresīvie e 7 a JV, mentre ZZS resta fuori dalla Saeima per la prima volta in 24 anni. Il presidente Rinkēvičs ha incaricato Kulbergs il 6/10; AS esclude coalizioni con LPV e Progresīvie e ha respinto l'offerta di appoggio esterno di Šlesers (LPV); i primi colloqui formali con NA e JV sono fissati per il 28 ottobre, con l'obiettivo di un governo AS–NA–JV (58 seggi) entro il 18 novembre.",
-   "note_en": "Government formed on 28/5/2026 after the fall of Siliņa (JV). At the election of 3/10/2026 AS won by a landslide: results confirmed by the electoral commission on 16 October with 41 seats for AS, 17 for LPV, 15 for SV–AJ, 10 for NA, 10 for the Progressives and 7 for JV, while ZZS is out of the Saeima for the first time in 24 years. President Rinkēvičs tasked Kulbergs on 6/10; AS rules out coalitions with LPV and the Progressives and has rejected Šlesers' (LPV) offer of external support; the first formal talks with NA and JV are set for 28 October, aiming at an AS–NA–JV government (58 seats) by 18 November.",
-   "note_de": "Regierung gebildet am 28.5.2026 nach dem Sturz von Siliņa (JV). Bei der Wahl vom 3.10.2026 hat AS haushoch gewonnen: Die Wahlkommission hat die Ergebnisse am 16. Oktober bestätigt, mit 41 Sitzen für AS, 17 für LPV, 15 für SV–AJ, 10 für NA, 10 für die Progressiven und 7 für JV, während ZZS erstmals seit 24 Jahren nicht mehr in der Saeima vertreten ist. Präsident Rinkēvičs hat Kulbergs am 6.10. mit der Regierungsbildung beauftragt; AS schließt Koalitionen mit LPV und den Progressiven aus und hat das Angebot externer Unterstützung von Šlesers (LPV) abgelehnt; die ersten formellen Gespräche mit NA und JV sind für den 28. Oktober angesetzt, mit dem Ziel einer Regierung AS–NA–JV (58 Sitze) bis zum 18. November."
+   "note": "Governo nato il 28/5/2026 dopo la caduta di Siliņa (JV). Alle elezioni del 3/10/2026 AS ha stravinto: risultati confermati dalla commissione elettorale il 16 ottobre con 41 seggi ad AS, 17 a LPV, 15 a SV-AJ, 10 a NA, 10 ai Progresīvie e 7 a JV, mentre ZZS resta fuori dalla Saeima per la prima volta in 24 anni. Il presidente Rinkēvičs ha incaricato Kulbergs il 6/10; AS esclude coalizioni con LPV e Progresīvie e ha respinto l'offerta di appoggio esterno di Šlesers (LPV); i primi colloqui formali con NA e JV sono fissati per il 28 ottobre, con l'obiettivo di un governo AS-NA-JV (58 seggi) entro il 18 novembre.",
+   "note_en": "Government formed on 28/5/2026 after the fall of Siliņa (JV). At the election of 3/10/2026 AS won by a landslide: results confirmed by the electoral commission on 16 October with 41 seats for AS, 17 for LPV, 15 for SV-AJ, 10 for NA, 10 for the Progressives and 7 for JV, while ZZS is out of the Saeima for the first time in 24 years. President Rinkēvičs tasked Kulbergs on 6/10; AS rules out coalitions with LPV and the Progressives and has rejected Šlesers' (LPV) offer of external support; the first formal talks with NA and JV are set for 28 October, aiming at an AS-NA-JV government (58 seats) by 18 November.",
+   "note_de": "Regierung gebildet am 28.5.2026 nach dem Sturz von Siliņa (JV). Bei der Wahl vom 3.10.2026 hat AS haushoch gewonnen: Die Wahlkommission hat die Ergebnisse am 16. Oktober bestätigt, mit 41 Sitzen für AS, 17 für LPV, 15 für SV-AJ, 10 für NA, 10 für die Progressiven und 7 für JV, während ZZS erstmals seit 24 Jahren nicht mehr in der Saeima vertreten ist. Präsident Rinkēvičs hat Kulbergs am 6.10. mit der Regierungsbildung beauftragt; AS schließt Koalitionen mit LPV und den Progressiven aus und hat das Angebot externer Unterstützung von Šlesers (LPV) abgelehnt; die ersten formellen Gespräche mit NA und JV sind für den 28. Oktober angesetzt, mit dem Ziel einer Regierung AS-NA-JV (58 Sitze) bis zum 18. November."
   },
   "ultime_elezioni": {
    "data": "2026-10",
@@ -3508,7 +3508,7 @@ window.PAESI = [
      "famiglia": "destra_nazionalista"
     },
     {
-     "partito": "SV–AJ",
+     "partito": "SV-AJ",
      "pct": 11.9,
      "famiglia": "destra_nazionalista"
     },
@@ -3546,7 +3546,7 @@ window.PAESI = [
      "famiglia": "centrodestra"
     },
     {
-     "partito": "SV–AJ",
+     "partito": "SV-AJ",
      "pct": 14.1,
      "famiglia": "destra_nazionalista"
     },
@@ -3577,7 +3577,7 @@ window.PAESI = [
     }
    ],
    "fonte_en": "SKDS/LTV (4-16 Sep 2026, last pre-election poll)",
-   "fonte_de": "SKDS/LTV (4.–16. Sept. 2026, letzte Umfrage vor der Wahl)"
+   "fonte_de": "SKDS/LTV (4.-16. Sept. 2026, letzte Umfrage vor der Wahl)"
   },
   "destra_principale": {
    "partito": "Latvija pirmajā vietā (LPV)",
@@ -3593,10 +3593,10 @@ window.PAESI = [
    "partner_trend": true,
    "coalizione": "centrodestra",
    "partner_coalizione": true,
-   "commento_coalizione": "Il voto di ottobre 2026 ha consegnato ad AS una posizione dominante: la Lista Unita guiderà un governo di centrodestra con la nazional-conservatrice NA e JV. LPV di Šlesers e la populista SV–AJ sommano il 25% ma restano isolate: la destra radicale governa solo tramite NA come partner minore.",
+   "commento_coalizione": "Il voto di ottobre 2026 ha consegnato ad AS una posizione dominante: la Lista Unita guiderà un governo di centrodestra con la nazional-conservatrice NA e JV. LPV di Šlesers e la populista SV-AJ sommano il 25% ma restano isolate: la destra radicale governa solo tramite NA come partner minore.",
    "partner_primo": true,
-   "commento_coalizione_en": "The October 2026 vote handed AS a dominant position: the United List will lead a centre-right government with the national-conservative NA and JV. Šlesers's LPV and the populist SV–AJ together total 25% but remain isolated: the radical right governs only through NA as a junior partner.",
-   "commento_coalizione_de": "Die Wahl vom Oktober 2026 hat AS eine dominante Position verschafft: Die Vereinigte Liste wird eine Mitte-rechts-Regierung mit der nationalkonservativen NA und JV führen. LPV von Šlesers und die populistische SV–AJ kommen zusammen auf 25 %, bleiben aber isoliert: Die radikale Rechte regiert nur über die NA als Juniorpartner mit."
+   "commento_coalizione_en": "The October 2026 vote handed AS a dominant position: the United List will lead a centre-right government with the national-conservative NA and JV. Šlesers's LPV and the populist SV-AJ together total 25% but remain isolated: the radical right governs only through NA as a junior partner.",
+   "commento_coalizione_de": "Die Wahl vom Oktober 2026 hat AS eine dominante Position verschafft: Die Vereinigte Liste wird eine Mitte-rechts-Regierung mit der nationalkonservativen NA und JV führen. LPV von Šlesers und die populistische SV-AJ kommen zusammen auf 25 %, bleiben aber isoliert: Die radikale Rechte regiert nur über die NA als Juniorpartner mit."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/2026_Latvian_parliamentary_election",
@@ -3685,7 +3685,7 @@ window.PAESI = [
   },
   "sondaggi": {
    "data": "2026-10",
-   "fonte": "Baltijos tyrimai per ELTA (23 set – 5 ott 2026), via PolitPro",
+   "fonte": "Baltijos tyrimai per ELTA (23 set - 5 ott 2026), via PolitPro",
    "partiti": [
     {
      "partito": "TS-LKD",
@@ -3723,8 +3723,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "Baltijos tyrimai for ELTA (23 Sep – 5 Oct 2026), via PolitPro",
-   "fonte_de": "Baltijos tyrimai für ELTA (23. Sep. – 5. Okt. 2026), via PolitPro"
+   "fonte_en": "Baltijos tyrimai for ELTA (23 Sep - 5 Oct 2026), via PolitPro",
+   "fonte_de": "Baltijos tyrimai für ELTA (23. Sep. - 5. Okt. 2026), via PolitPro"
   },
   "destra_principale": {
    "partito": "Nemuno aušra",
@@ -3772,9 +3772,9 @@ window.PAESI = [
    "dal": "2023-11",
    "tipo": "maggioranza",
    "destra_nazionalista_al_governo": false,
-   "note": "Coalizione CSV–DP con 35 seggi su 60, stabile ma in calo nei consensi: nei sondaggi 2026 CSV, DP e LSAP sono quasi appaiati e la maggioranza uscente (circa 44-45%) non verrebbe riconfermata.",
-   "note_en": "CSV–DP coalition with 35 of 60 seats, stable but losing support: in the 2026 polls CSV, DP and LSAP are almost level and the outgoing majority (around 44-45%) would not be renewed.",
-   "note_de": "Koalition aus CSV und DP mit 35 von 60 Sitzen, stabil, aber mit sinkender Zustimmung: In den Umfragen 2026 liegen CSV, DP und LSAP fast gleichauf, und die amtierende Mehrheit (rund 44–45 %) würde nicht bestätigt."
+   "note": "Coalizione CSV-DP con 35 seggi su 60, stabile ma in calo nei consensi: nei sondaggi 2026 CSV, DP e LSAP sono quasi appaiati e la maggioranza uscente (circa 44-45%) non verrebbe riconfermata.",
+   "note_en": "CSV-DP coalition with 35 of 60 seats, stable but losing support: in the 2026 polls CSV, DP and LSAP are almost level and the outgoing majority (around 44-45%) would not be renewed.",
+   "note_de": "Koalition aus CSV und DP mit 35 von 60 Sitzen, stabil, aber mit sinkender Zustimmung: In den Umfragen 2026 liegen CSV, DP und LSAP fast gleichauf, und die amtierende Mehrheit (rund 44-45 %) würde nicht bestätigt."
   },
   "ultime_elezioni": {
    "data": "2023-10",
@@ -3820,7 +3820,7 @@ window.PAESI = [
   },
   "sondaggi": {
    "data": "2026-10",
-   "fonte": "ILRES / RTL-Luxemburger Wort (22 set – 2 ott 2026)",
+   "fonte": "ILRES / RTL-Luxemburger Wort (22 set - 2 ott 2026)",
    "partiti": [
     {
      "partito": "CSV",
@@ -3858,8 +3858,8 @@ window.PAESI = [
      "famiglia": "centro"
     }
    ],
-   "fonte_en": "ILRES / RTL-Luxemburger Wort (22 Sep – 2 Oct 2026)",
-   "fonte_de": "ILRES / RTL-Luxemburger Wort (22. Sept. – 2. Okt. 2026)"
+   "fonte_en": "ILRES / RTL-Luxemburger Wort (22 Sep - 2 Oct 2026)",
+   "fonte_de": "ILRES / RTL-Luxemburger Wort (22. Sept. - 2. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "ADR",
@@ -3873,9 +3873,9 @@ window.PAESI = [
    "trend": "centrodestra",
    "status_quo": "centrodestra",
    "coalizione": "centrodestra",
-   "commento_coalizione": "CSV resta primo partito ma la perdita di consensi apre a una coalizione alternativa DP–LSAP–Verdi; l'ADR cresce (12-13%) ma anche con il CSV non raggiungerebbe la maggioranza e nessun partito la considera un partner: la destra radicale non può realisticamente governare entro il 2030.",
-   "commento_coalizione_en": "CSV remains the largest party but its loss of support opens the way to an alternative DP–LSAP–Greens coalition; the ADR is growing (12-13%) but even with the CSV it would not reach a majority and no party regards it as a partner: the radical right cannot realistically govern by 2030.",
-   "commento_coalizione_de": "Die CSV bleibt stärkste Partei, doch der Stimmenverlust eröffnet die Möglichkeit einer alternativen Koalition aus DP, LSAP und Grünen; die ADR legt zu (12–13 %), würde aber auch mit der CSV keine Mehrheit erreichen, und keine Partei betrachtet sie als Partner: Die radikale Rechte kann bis 2030 realistischerweise nicht regieren."
+   "commento_coalizione": "CSV resta primo partito ma la perdita di consensi apre a una coalizione alternativa DP-LSAP-Verdi; l'ADR cresce (12-13%) ma anche con il CSV non raggiungerebbe la maggioranza e nessun partito la considera un partner: la destra radicale non può realisticamente governare entro il 2030.",
+   "commento_coalizione_en": "CSV remains the largest party but its loss of support opens the way to an alternative DP-LSAP-Greens coalition; the ADR is growing (12-13%) but even with the CSV it would not reach a majority and no party regards it as a partner: the radical right cannot realistically govern by 2030.",
+   "commento_coalizione_de": "Die CSV bleibt stärkste Partei, doch der Stimmenverlust eröffnet die Möglichkeit einer alternativen Koalition aus DP, LSAP und Grünen; die ADR legt zu (12-13 %), würde aber auch mit der CSV keine Mehrheit erreichen, und keine Partei betrachtet sie als Partner: Die radikale Rechte kann bis 2030 realistischerweise nicht regieren."
   },
   "fonti": [
    "https://en.wikipedia.org/wiki/Next_Luxembourg_general_election",
@@ -3931,7 +3931,7 @@ window.PAESI = [
   },
   "sondaggi": {
    "data": "2026-10",
-   "fonte": "MaltaToday (22 set – 2 ott 2026)",
+   "fonte": "MaltaToday (22 set - 2 ott 2026)",
    "partiti": [
     {
      "partito": "PL",
@@ -3944,12 +3944,12 @@ window.PAESI = [
      "famiglia": "centrodestra"
     }
    ],
-   "fonte_en": "MaltaToday (22 Sep – 2 Oct 2026)",
-   "fonte_de": "MaltaToday (22. Sep. – 2. Okt. 2026)"
+   "fonte_en": "MaltaToday (22 Sep - 2 Oct 2026)",
+   "fonte_de": "MaltaToday (22. Sep. - 2. Okt. 2026)"
   },
   "destra_principale": {
    "partito": "Nessuna forza rilevante",
-   "leader": "—",
+   "leader": ", ",
    "gruppo_pe": "n/a",
    "pct_sondaggio": null,
    "pct_ultime_elezioni": null,
