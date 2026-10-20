@@ -1,4 +1,4 @@
-# Europa 2030 · app iOS (Capacitor)
+# Europa 2032 · app iOS (Capacitor)
 
 L'app nativa impacchetta la stessa pagina della cartella principale. Nell'app i dati vengono scaricati dalla pagina pubblicata (sempre aggiornati) con riserva sui file inclusi.
 

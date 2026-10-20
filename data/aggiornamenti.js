@@ -4,27 +4,30 @@ window.META = {"aggiornato": "2026-10-20"};
 window.AGGIORNAMENTI = [
   {
     "data": "2026-10-20",
-    "titolo": "GRP v3: fasi, tracker 2027-2032, esecuzione, costi",
+    "titolo": "Europa 2032 e GRP v3: fasi, tracker 2027-2032, esecuzione, costi",
     "punti": [
+      "L'osservatorio si chiama Europa 2032: l'orizzonte degli scenari e del cursore arriva al 2032, cinque anni di attuazione del GRP (2028-2032) più la preparazione nel 2027.",
       "The Great Remigration Plan (“GRP”) in versione 3: cinque fasi al posto del perimetro, orizzonte 2032, obiettivo Italia 100% di esecuzione degli ordini (100k ordini e 100k rimpatri l'anno).",
       "Nuova pagina grp.html con preambolo, sintesi, funnel dell'Italia, schede per fase, tracker 2027-2032, esecuzione, costi 2027-2032, contesto europeo, misure di Futuro Nazionale e garanzie.",
       "Ogni numero è letto dal file di lavoro GRP-Italia.xlsx (docs/grp) con lo script scripts/grp.js; dove il dato manca compare n.d."
     ],
-    "whatsapp": "Europa 2030, aggiornamento del 20 ottobre 2026. The Great Remigration Plan (GRP) versione 3: cinque fasi, tracker 2027-2032, esecuzione e costi. Obiettivo Italia: 100% di esecuzione degli ordini nel 2032, 100k rimpatri l'anno contro i 4.780 del 2025. Pagina completa: https://francescomattioni123.github.io/europa-2030/grp.html · Osservatorio: https://francescomattioni123.github.io/europa-2030/",
-    "titolo_en": "GRP v3: phases, 2027-2032 tracker, execution, costs",
+    "whatsapp": "Europa 2032, aggiornamento del 20 ottobre 2026. The Great Remigration Plan (GRP) versione 3: cinque fasi, tracker 2027-2032, esecuzione e costi. Obiettivo Italia: 100% di esecuzione degli ordini nel 2032, 100k rimpatri l'anno contro i 4.780 del 2025. Pagina completa: https://francescomattioni123.github.io/europa-2030/grp.html · Osservatorio: https://francescomattioni123.github.io/europa-2030/",
+    "titolo_en": "Europa 2032 and GRP v3: phases, 2027-2032 tracker, execution, costs",
     "punti_en": [
+      "The observatory is now Europa 2032: the scenario horizon and the time slider reach 2032, five years of GRP implementation (2028-2032) plus preparation in 2027.",
       "The Great Remigration Plan (“GRP”) version 3: five phases instead of the perimeter, 2032 horizon, Italy target 100% enforcement of orders (100k orders and 100k returns a year).",
       "New grp.html page (Italian) with preamble, summary, Italian funnel, phase sheets, 2027-2032 tracker, execution, 2027-2032 costs, European context, Futuro Nazionale measures and safeguards.",
       "Every figure is read from the GRP-Italia.xlsx working file (docs/grp) by scripts/grp.js; missing data shows as n.d."
     ],
-    "whatsapp_en": "Europa 2030, update of 20 October 2026. The Great Remigration Plan (GRP) version 3: five phases, 2027-2032 tracker, execution and costs. Italy target: 100% enforcement of orders in 2032, 100k returns a year against 4,780 in 2025. Full page: https://francescomattioni123.github.io/europa-2030/grp.html · Observatory: https://francescomattioni123.github.io/europa-2030/",
-    "titolo_de": "GRP v3: Phasen, Tracker 2027-2032, Umsetzung, Kosten",
+    "whatsapp_en": "Europa 2032, update of 20 October 2026. The Great Remigration Plan (GRP) version 3: five phases, 2027-2032 tracker, execution and costs. Italy target: 100% enforcement of orders in 2032, 100k returns a year against 4,780 in 2025. Full page: https://francescomattioni123.github.io/europa-2030/grp.html · Observatory: https://francescomattioni123.github.io/europa-2030/",
+    "titolo_de": "Europa 2032 und GRP v3: Phasen, Tracker 2027-2032, Umsetzung, Kosten",
     "punti_de": [
+      "Das Observatorium heißt jetzt Europa 2032: Szenario-Horizont und Zeitregler reichen bis 2032, fünf Jahre GRP-Umsetzung (2028-2032) plus Vorbereitung 2027.",
       "The Great Remigration Plan (“GRP”) Version 3: fünf Phasen statt Perimeter, Horizont 2032, Ziel Italien 100 % Vollzug der Anordnungen (100k Anordnungen und 100k Rückführungen pro Jahr).",
       "Neue Seite grp.html (Italienisch) mit Präambel, Zusammenfassung, Funnel Italiens, Phasenblättern, Tracker 2027-2032, Umsetzung, Kosten 2027-2032, europäischem Kontext, Maßnahmen von Futuro Nazionale und Garantien.",
       "Jede Zahl wird mit scripts/grp.js aus der Arbeitsdatei GRP-Italia.xlsx (docs/grp) gelesen; fehlende Daten erscheinen als n.d."
     ],
-    "whatsapp_de": "Europa 2030, Update vom 20. Oktober 2026. The Great Remigration Plan (GRP) Version 3: fünf Phasen, Tracker 2027-2032, Umsetzung und Kosten. Ziel Italien: 100 % Vollzug der Anordnungen 2032, 100k Rückführungen pro Jahr gegenüber 4.780 im Jahr 2025. Vollständige Seite: https://francescomattioni123.github.io/europa-2030/grp.html · Observatorium: https://francescomattioni123.github.io/europa-2030/"
+    "whatsapp_de": "Europa 2032, Update vom 20. Oktober 2026. The Great Remigration Plan (GRP) Version 3: fünf Phasen, Tracker 2027-2032, Umsetzung und Kosten. Ziel Italien: 100 % Vollzug der Anordnungen 2032, 100k Rückführungen pro Jahr gegenüber 4.780 im Jahr 2025. Vollständige Seite: https://francescomattioni123.github.io/europa-2030/grp.html · Observatorium: https://francescomattioni123.github.io/europa-2030/"
   },
   {
     "data": "2026-10-19",
@@ -37,7 +40,7 @@ window.AGGIORNAMENTI = [
       "Dossier: il Consiglio europeo del 15-16 ottobre non ha trovato l'accordo sul bilancio 2028-2034 (nuovo box di Costa e vertice straordinario il 26 novembre), ha chiesto una proposta per i circa 70 miliardi mancanti all'Ucraina nel 2027 e la chiusura dei pacchetti auto, digitale e ambientale entro fine anno; sanzioni individuali prorogate di 36 mesi e 1.646 nuove designazioni il 12 ottobre; omnibus digitale fermo in Coreper.",
       "Scenari 2030 invariati: nessun cambio nelle coalizioni probabili; i trend di AfD, FPÖ, Fidesz e PiS passano da 'in crescita' o 'in calo' a 'stabile', ANO a 'in calo', Nemuno aušra a 'in crescita'."
     ],
-    "whatsapp": "Europa 2030, aggiornamento del 19 ottobre 2026. Svezia: Andersson bocciata dal Riksdag (99-248), ora il Centro sonda un governo di centro; nei sondaggi il blocco di Tidö torna avanti. Romania: fiducia al governo Niculescu il 20 ottobre. Vox al 19,5%, AfD 29%, FPÖ 40%, Chega primo in un sondaggio (30,7%), ANO giù al 29,7% dopo le senatoriali perse. Consiglio europeo: nessun accordo sul bilancio, vertice straordinario il 26 novembre; chiesta una proposta per i 70 miliardi che mancano all'Ucraina nel 2027. Scenari 2030 invariati. https://francescomattioni123.github.io/europa-2030/",
+    "whatsapp": "Europa 2032, aggiornamento del 19 ottobre 2026. Svezia: Andersson bocciata dal Riksdag (99-248), ora il Centro sonda un governo di centro; nei sondaggi il blocco di Tidö torna avanti. Romania: fiducia al governo Niculescu il 20 ottobre. Vox al 19,5%, AfD 29%, FPÖ 40%, Chega primo in un sondaggio (30,7%), ANO giù al 29,7% dopo le senatoriali perse. Consiglio europeo: nessun accordo sul bilancio, vertice straordinario il 26 novembre; chiesta una proposta per i 70 miliardi che mancano all'Ucraina nel 2027. Scenari 2030 invariati. https://francescomattioni123.github.io/europa-2030/",
     "titolo_en": "Sweden deadlocked, Romania faces a confidence vote, Vox and Chega at record highs",
     "punti_en": [
       "Sweden: the Riksdag rejected Magdalena Andersson on 15 October (99 yes, 248 no); since 19 October Centre Party leader Thand Ringqvist has been exploring a centre government, reporting by 26 October, while Novus puts the Tidö parties ahead 52.2% to 46.3% (SD 18%).",
@@ -57,7 +60,7 @@ window.AGGIORNAMENTI = [
       "Dossiers: Der Europäische Rat vom 15.-16. Oktober fand keine Einigung zum Haushalt 2028-2034 (neue Costa-Box und Sondergipfel am 26. November), forderte einen Vorschlag für die rund 70 Mrd., die der Ukraine 2027 fehlen, sowie den Abschluss der Pakete Automobil, Digital und Umwelt bis Jahresende; Einzelsanktionen um 36 Monate verlängert und 1.646 neue Listungen am 12. Oktober; Digital-Omnibus im AStV blockiert.",
       "Szenarien 2030 unverändert: keine Änderung bei den wahrscheinlichen Koalitionen; die Trends von AfD, FPÖ, Fidesz und PiS wechseln von 'wachsend' oder 'fallend' zu 'stabil', ANO zu 'fallend', Nemuno aušra zu 'wachsend'."
     ],
-    "whatsapp_de": "Europa 2030, Update vom 19. Oktober 2026. Schweden: Andersson vom Reichstag abgelehnt (99-248), das Zentrum sondiert eine Regierung der Mitte; in den Umfragen liegt der Tidö-Block wieder vorn. Rumänien: Vertrauensabstimmung über die Regierung Niculescu am 20. Oktober. Vox 19,5 %, AfD 29 %, FPÖ 40 %, Chega in einer Umfrage erstmals vorn (30,7 %), ANO nach verlorenen Senatswahlen bei 29,7 %. Europäischer Rat: keine Haushaltseinigung, Sondergipfel am 26. November; Vorschlag für die 70 Mrd. gefordert, die der Ukraine 2027 fehlen. https://francescomattioni123.github.io/europa-2030/"
+    "whatsapp_de": "Europa 2032, Update vom 19. Oktober 2026. Schweden: Andersson vom Reichstag abgelehnt (99-248), das Zentrum sondiert eine Regierung der Mitte; in den Umfragen liegt der Tidö-Block wieder vorn. Rumänien: Vertrauensabstimmung über die Regierung Niculescu am 20. Oktober. Vox 19,5 %, AfD 29 %, FPÖ 40 %, Chega in einer Umfrage erstmals vorn (30,7 %), ANO nach verlorenen Senatswahlen bei 29,7 %. Europäischer Rat: keine Haushaltseinigung, Sondergipfel am 26. November; Vorschlag für die 70 Mrd. gefordert, die der Ukraine 2027 fehlen. https://francescomattioni123.github.io/europa-2030/"
   },
   {
     "data": "2026-10-18",
@@ -68,7 +71,7 @@ window.AGGIORNAMENTI = [
       "Regolamento rimpatri: il trattenimento è di 24 mesi, prorogabili in via eccezionale di 6 (massimo 30), non 'fino a 30 mesi'.",
       "Protezione temporanea per gli ucraini prorogata al 4 marzo 2028 con la decisione di esecuzione (UE) 2026/1912."
     ],
-    "whatsapp": "Europa 2030, aggiornamento del 18 ottobre 2026. Nuova sezione Piano: il GRP, Great Remigration Plan, con 5 pilastri e 30 misure per eseguire davvero i rimpatri (oggi l'UE rimpatria il 28,6% di chi riceve l'ordine; obiettivo 60% nel 2030). Il verdetto del Consiglio su ogni dossier è ora calcolato governo per governo. Corretti i dossier: trattenimento 24 mesi più 6 eccezionali, protezione temporanea ucraini prorogata al 4 marzo 2028. https://francescomattioni123.github.io/europa-2030/",
+    "whatsapp": "Europa 2032, aggiornamento del 18 ottobre 2026. Nuova sezione Piano: il GRP, Great Remigration Plan, con 5 pilastri e 30 misure per eseguire davvero i rimpatri (oggi l'UE rimpatria il 28,6% di chi riceve l'ordine; obiettivo 60% nel 2030). Il verdetto del Consiglio su ogni dossier è ora calcolato governo per governo. Corretti i dossier: trattenimento 24 mesi più 6 eccezionali, protezione temporanea ucraini prorogata al 4 marzo 2028. https://francescomattioni123.github.io/europa-2030/",
     "titolo_en": "Returns plan, government positions and dossier corrections",
     "punti_en": [
       "New Plan section: the GRP, Great Remigration Plan, with 5 pillars, 30 measures, milestones to 2030 and return-rate targets for 13 countries (Eurostat 2025 data).",
@@ -76,7 +79,7 @@ window.AGGIORNAMENTI = [
       "Return Regulation: detention is 24 months, exceptionally extendable by 6 (30 at most), not 'up to 30 months'.",
       "Temporary protection for Ukrainians extended to 4 March 2028 by Implementing Decision (EU) 2026/1912."
     ],
-    "whatsapp_en": "Europa 2030, update of 18 October 2026. New Plan section: the GRP, Great Remigration Plan, with 5 pillars and 30 measures to actually enforce returns (today the EU returns 28.6% of those ordered to leave; target 60% in 2030). The Council verdict on each dossier is now computed government by government. Dossier corrections: detention 24 months plus 6 exceptional, temporary protection for Ukrainians extended to 4 March 2028. https://francescomattioni123.github.io/europa-2030/",
+    "whatsapp_en": "Europa 2032, update of 18 October 2026. New Plan section: the GRP, Great Remigration Plan, with 5 pillars and 30 measures to actually enforce returns (today the EU returns 28.6% of those ordered to leave; target 60% in 2030). The Council verdict on each dossier is now computed government by government. Dossier corrections: detention 24 months plus 6 exceptional, temporary protection for Ukrainians extended to 4 March 2028. https://francescomattioni123.github.io/europa-2030/",
     "titolo_de": "Rückführungsplan, Regierungspositionen und Korrekturen an den Dossiers",
     "punti_de": [
       "Neuer Abschnitt Plan: der GRP, Great Remigration Plan, mit 5 Säulen, 30 Maßnahmen, Etappen bis 2030 und Rückführungsquoten-Zielen für 13 Länder (Eurostat-Daten 2025).",
@@ -84,7 +87,7 @@ window.AGGIORNAMENTI = [
       "Rückführungsverordnung: die Haft beträgt 24 Monate, ausnahmsweise um 6 verlängerbar (höchstens 30), nicht 'bis zu 30 Monate'.",
       "Vorübergehender Schutz für Ukrainer mit dem Durchführungsbeschluss (EU) 2026/1912 bis zum 4. März 2028 verlängert."
     ],
-    "whatsapp_de": "Europa 2030, Update vom 18. Oktober 2026. Neuer Abschnitt Plan: der GRP, Great Remigration Plan, mit 5 Säulen und 30 Maßnahmen, um Rückführungen wirklich durchzusetzen (heute führt die EU 28,6 % der Ausreisepflichtigen zurück; Ziel 60 % im Jahr 2030). Das Ratsurteil zu jedem Dossier wird jetzt Regierung für Regierung berechnet. Korrekturen an den Dossiers: Haft 24 Monate plus 6 ausnahmsweise, vorübergehender Schutz für Ukrainer bis 4. März 2028 verlängert. https://francescomattioni123.github.io/europa-2030/"
+    "whatsapp_de": "Europa 2032, Update vom 18. Oktober 2026. Neuer Abschnitt Plan: der GRP, Great Remigration Plan, mit 5 Säulen und 30 Maßnahmen, um Rückführungen wirklich durchzusetzen (heute führt die EU 28,6 % der Ausreisepflichtigen zurück; Ziel 60 % im Jahr 2030). Das Ratsurteil zu jedem Dossier wird jetzt Regierung für Regierung berechnet. Korrekturen an den Dossiers: Haft 24 Monate plus 6 ausnahmsweise, vorübergehender Schutz für Ukrainer bis 4. März 2028 verlängert. https://francescomattioni123.github.io/europa-2030/"
   },
   {
     "data": "2026-10-15",
@@ -95,7 +98,7 @@ window.AGGIORNAMENTI = [
       "Voto anticipato probabile in Germania, Austria, Paesi Bassi, Slovacchia, Romania e Portogallo.",
       "Calcolo del potere in Consiglio UE con le soglie di maggioranza qualificata e minoranza di blocco."
     ],
-    "whatsapp": "Europa 2030, aggiornamento del 15 ottobre 2026. Oggi 3 governi a guida nazionalista (Italia, Cechia, Slovenia) e 9 paesi con una destra nazionalista al governo. Nei sondaggi: FPÖ 40%, AUR 36%, RN 35%, FrP 33%, AfD 30%. Con lo scenario \"coalizione probabile\" nel 2030 i governi a guida nazionalista diventano 10 e governano il 64% della popolazione UE: minoranza di blocco sicura, maggioranza qualificata con il centrodestra. https://francescomattioni123.github.io/europa-2030/",
+    "whatsapp": "Europa 2032, aggiornamento del 15 ottobre 2026. Oggi 3 governi a guida nazionalista (Italia, Cechia, Slovenia) e 9 paesi con una destra nazionalista al governo. Nei sondaggi: FPÖ 40%, AUR 36%, RN 35%, FrP 33%, AfD 30%. Con lo scenario \"coalizione probabile\" nel 2030 i governi a guida nazionalista diventano 10 e governano il 64% della popolazione UE: minoranza di blocco sicura, maggioranza qualificata con il centrodestra. https://francescomattioni123.github.io/europa-2030/",
     "titolo_en": "First release",
     "punti_en": [
       "Governments and polls for 30 countries as of 15 October 2026 (PolitPro averages and national pollsters).",
@@ -111,6 +114,6 @@ window.AGGIORNAMENTI = [
       "Vorgezogene Wahlen wahrscheinlich in Deutschland, Österreich, den Niederlanden, der Slowakei, Rumänien und Portugal.",
       "Berechnung der Macht im Rat der EU mit den Schwellen für qualifizierte Mehrheit und Sperrminorität."
     ],
-    "whatsapp_de": "Europa 2030, Update vom 15. Oktober 2026. Heute 3 nationalistisch geführte Regierungen (Italien, Tschechien, Slowenien) und 9 Länder mit einer nationalistischen Rechten in der Regierung. In den Umfragen: FPÖ 40%, AUR 36%, RN 35%, FrP 33%, AfD 30%. Im Szenario \"wahrscheinliche Koalition\" steigen die nationalistisch geführten Regierungen 2030 auf 10 und regieren 64% der EU-Bevölkerung: sichere Sperrminorität, qualifizierte Mehrheit mit Mitte-rechts. https://francescomattioni123.github.io/europa-2030/"
+    "whatsapp_de": "Europa 2032, Update vom 15. Oktober 2026. Heute 3 nationalistisch geführte Regierungen (Italien, Tschechien, Slowenien) und 9 Länder mit einer nationalistischen Rechten in der Regierung. In den Umfragen: FPÖ 40%, AUR 36%, RN 35%, FrP 33%, AfD 30%. Im Szenario \"wahrscheinliche Koalition\" steigen die nationalistisch geführten Regierungen 2030 auf 10 und regieren 64% der EU-Bevölkerung: sichere Sperrminorität, qualifizierte Mehrheit mit Mitte-rechts. https://francescomattioni123.github.io/europa-2030/"
   }
 ];

@@ -9,7 +9,7 @@ for (const f of ['paesi', 'dossier', 'posizioni']) vm.runInContext(fs.readFileSy
 const { PAESI, DOSSIER, POSIZIONI } = ctx.window;
 const UE = PAESI.filter(p => p.ue), TOT = UE.reduce((a, p) => a + p.popolazione, 0);
 const pct = n => (n / TOT * 100).toFixed(2) + '%';
-const YEARS = [null, 2026, 2027, 2028, 2029, 2030], ylab = y => y || 'oggi';
+const YEARS = [null, 2026, 2027, 2028, 2029, 2030, 2031, 2032], ylab = y => y || 'oggi';
 const D = id => DOSSIER.find(d => d.id === id);
 const line = s => console.log(s);
 

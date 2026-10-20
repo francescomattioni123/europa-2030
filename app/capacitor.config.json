@@ -1,6 +1,6 @@
 {
   "appId": "it.europa2030.app",
-  "appName": "Europa 2030",
+  "appName": "Europa 2032",
   "webDir": "www",
   "backgroundColor": "#06070b",
   "ios": { "contentInset": "never", "backgroundColor": "#06070b", "scheme": "Europa 2030" },

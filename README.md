@@ -1,4 +1,4 @@
-# Europa 2030
+# Europa 2032
 
 Dashboard sulla politica europea: chi governa in 30 paesi, chi è primo nei sondaggi, scenari fino al 2030, potere in Consiglio UE e agenda comune delle destre.
 

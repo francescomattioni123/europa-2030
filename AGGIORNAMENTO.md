@@ -1,4 +1,4 @@
-# Aggiornamento settimanale di Europa 2030
+# Aggiornamento settimanale di Europa 2032
 
 Questa pagina (https://francescomattioni123.github.io/europa-2030/) è una dashboard statica: `index.html` legge i file in `data/`.
 L'aggiornamento settimanale tocca SOLO i file dati. Non modificare `index.html`, `consiglio.js`, `sw.js`, `manifest.json`, `icons/` né `data/mondo-topo.js`. `index.html` e `consiglio.js` si modificano solo per eseguire un passo del piano v2 (BRIEF-V2), su un branch dedicato e con pull request, mai durante l'aggiornamento del lunedì.

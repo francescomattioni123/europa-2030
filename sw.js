@@ -1,4 +1,4 @@
-// Service worker di Europa 2030: la pagina e i dati si aggiornano dalla rete quando c'è, altrimenti dalla cache.
+// Service worker di Europa 2032: la pagina e i dati si aggiornano dalla rete quando c'è, altrimenti dalla cache.
 const VERSION = 'eu30-v7';
 const SHELL = ['./', './index.html', './manifest.json', './data/paesi.js', './data/politiche.js', './data/aggiornamenti.js', './data/iscrizione.js', './data/dossier.js', './data/posizioni.js', './data/piano.js', './data/funnel.js', './grp.html', './data/grp.js', './data/grp-nazionalita.js', './consiglio.js', './data/mondo-topo.js', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });

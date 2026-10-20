@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>it</string>
 	<key>CFBundleDisplayName</key>
-        <string>Europa 2030</string>
+        <string>Europa 2032</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
